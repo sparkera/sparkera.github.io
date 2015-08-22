@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Big Data Big Insight]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-08-22T02:27:11.000Z</updated>
+  <updated>2015-08-22T18:11:54.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/"/>
     <id>http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/</id>
     <published>2015-08-21T15:27:57.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/gettingStartedGit.jpg" alt=""><br>Recently, I migrate this site to Hexo. I download the theme from github to the Hexo project folder. I also keep the source code in the github in case I lost the source code. However, when I run the <code>git add .</code> and <code>git status</code>. It shows below error messages saying the theme folder is not tracked content. Most time, I did not check the git status - bad habit. I only realize that I miss the them files when I try to rebuild the Hexo site from home.<br><img src="/images/gituntracked.png" alt=""><br>After searching a while form Google, I got my issues resolved and share the steps below for reference.</p>
+    <updated>2015-08-22T18:11:54.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/gettingStartedGit.jpg" alt=""><br>Recently, I migrate this site to Hexo. I download the theme from github to the Hexo project folder. I also keep the source code in the github in case I lost the source code. However, when I run the <code>git add .</code> and <code>git status</code>. It shows below error messages saying the theme folder is not tracked content. Most time, I did not check the git status - bad habit. I only realize that I miss the theme files when I try to rebuild the Hexo site from home.<br><img src="/images/gituntracked.png" alt=""><br>After searching a while form Google, I got my issues resolved and share the steps below for reference.</p>
 <ul>
 <li>Removed the .git directories from the directories (In my case, ../theme/hueman/.git)</li>
 <li>Ran git rm -rf –cached <the untracked="" directory=""> (In my case, /C/Users/ddu/Git/sparkera/themes/hueman)</the></li>
