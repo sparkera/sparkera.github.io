@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[SparkEra]]></title>
+  <subtitle><![CDATA[Big Data Big Insight]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://www.sparkera.ca/"/>
+  <updated>2015-08-22T02:27:11.000Z</updated>
+  <id>http://www.sparkera.ca/</id>
+  
+  <author>
+    <name><![CDATA[Will]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Get Git Modified But Untracked Content Checked In]]></title>
+    <link href="http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/"/>
+    <id>http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/</id>
+    <published>2015-08-21T15:27:57.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/gettingStartedGit.jpg" alt=""><br>Recently, I migrate this site to Hexo. I download the theme from github to the Hexo project folder. I also keep the source code in the github in case I lost the source code. However, when I run the <code>git add .</code> and <code>git status</code>. It shows below error messages saying the theme folder is not tracked content. Most time, I did not check the git status - bad habit. I only realize that I miss the them files when I try to rebuild the Hexo site from home.<br><img src="/images/gituntracked.png" alt=""><br>After searching a while form Google, I got my issues resolved and share the steps below for reference.</p>
+<ul>
+<li>Removed the .git directories from the directories (In my case, ../theme/hueman/.git)</li>
+<li>Ran git rm -rf –cached <the untracked="" directory=""> (In my case, /C/Users/ddu/Git/sparkera/themes/hueman)</the></li>
+<li>Re-added the directories with a <code>git add .</code> and check by <code>git status</code>.</li>
+</ul>
+<p>Then all the untracked files are added. Then you can do <code>git commit -m</code> and <code>git push</code> the submit all the changes.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/gettingStartedGit.jpg" alt=""><br>Recently, I migrate this site to Hexo. I download the theme from github to the Hexo p]]>
+    </summary>
+    
+      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hadoop Streaming]]></title>
+    <link href="http://www.sparkera.ca/2015/06/21/Hadoop%20Streaming/"/>
+    <id>http://www.sparkera.ca/2015/06/21/Hadoop Streaming/</id>
+    <published>2015-06-21T04:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/hadoopstream.jpg" alt=""></p>
+<h4 id="1-_Streaming_Overview">1. Streaming Overview</h4><p>Hadoop Streaming is a generic API which allows writing Mappers and Reduces in any language. </p>
+<ul>
+<li>Develop MapReduce jobs in practically any language</li>
+<li>Uses Unix Streams as communication mechanism between Hadoop and your code</li>
+<li>Any language that can read standard input and write are supported</li>
+</ul>
+<p>Few good use-cases:</p>
+<ul>
+<li>Text processing - scripting languages do well in text analysis</li>
+<li>Utilities and/or expertise in languages other than Java</li>
+</ul>
+<h4 id="2-_Process_Flow">2. Process Flow</h4><p>Below is how streaming processing</p>
+<ul>
+<li>Map input passed over standard input</li>
+<li>Map processes input line-by-line</li>
+<li>Map writes output to standard output - Key-value separate by tab</li>
+<li>Reduce input passed over standard input<ul>
+<li>Same as mapper output – key-value pairs separated by tab</li>
+<li>Input is sorted by key</li>
+</ul>
+</li>
+<li>Reduce writes output to standard output</li>
+</ul>
+<p><img src="/images/hadoopstreaming.png" alt="&quot;avatar&quot;"></p>
+<h4 id="3-_Example_of_mapper">3. Example of mapper</h4><p><strong>mapper.py</strong>  </p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python </span></span><br><span class="line">import sys </span><br><span class="line"><span class="comment"># mapper.py </span></span><br><span class="line"><span class="comment"># input comes from STDIN (standard input) </span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">line</span> <span class="operator">in</span> sys.<span class="keyword">stdin</span>: </span><br><span class="line"><span class="comment"># remove leading and trailing white space </span></span><br><span class="line"><span class="built_in">line</span> = <span class="built_in">line</span>.strip() </span><br><span class="line"><span class="comment"># split the line into words </span></span><br><span class="line"><span class="keyword">words</span> = <span class="built_in">line</span>.<span class="built_in">split</span>() </span><br><span class="line"><span class="comment"># increase counters for word in words: </span></span><br><span class="line"><span class="comment"># write the results to STDOUT (standard output); </span></span><br><span class="line"><span class="comment"># what we output here will be the input for the </span></span><br><span class="line"><span class="comment"># Reduce step, i.e. the input for reducer.py </span></span><br><span class="line"><span class="comment"># tab-delimited; the trivial word count is 1 </span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">word</span> <span class="operator">in</span> <span class="keyword">words</span></span><br><span class="line">print <span class="string">'%s\t%s'</span> % (<span class="built_in">word</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="4-_Example_of_reducer">4. Example of reducer</h4><p><strong>reducer.py</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line">#reducer.py</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line">current_word = None</span><br><span class="line">current_count = <span class="operator">0</span><br><span class="line">word = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">input</span> comes <span class="keyword">from</span> STDIN</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> <span class="keyword">sys</span>.stdin:</span><br><span class="line">    # remove <span class="keyword">leading</span> <span class="keyword">and</span> trailing white <span class="keyword">space</span></span><br><span class="line">    line = line.strip()</span><br><span class="line"></span><br><span class="line">    # <span class="keyword">parse</span> the <span class="keyword">input</span> we got <span class="keyword">from</span> mapper.py</span><br><span class="line">    word, <span class="keyword">count</span> = line.<span class="keyword">split</span>(<span class="string">'\t'</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    # <span class="keyword">convert</span> <span class="keyword">count</span> (currently a <span class="keyword">string</span>) <span class="keyword">to</span> <span class="built_in">int</span></span><br><span class="line">    try:</span><br><span class="line">        <span class="keyword">count</span> = <span class="built_in">int</span>(<span class="keyword">count</span>)</span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        # <span class="keyword">count</span> was <span class="keyword">not</span> a <span class="built_in">number</span>, so silently <span class="keyword">ignore</span>/discard this line</span><br><span class="line">        continue</span><br><span class="line"></span><br><span class="line">    # this <span class="keyword">IF</span>-<span class="keyword">switch</span> works because Hadoop sorts <span class="keyword">map</span> <span class="keyword">output</span> <span class="keyword">by</span> <span class="keyword">key</span> <span class="keyword">before</span> passed <span class="keyword">to</span> the reducer</span><br><span class="line">    <span class="keyword">if</span> current_word == word:</span><br><span class="line">        current_count += <span class="keyword">count</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> current_word:</span><br><span class="line">            # write <span class="keyword">result</span> <span class="keyword">to</span> STDOUT</span><br><span class="line">            print <span class="string">'%s\t%s'</span> % (current_word, current_count)</span><br><span class="line">        current_count = <span class="keyword">count</span></span><br><span class="line">        current_word = word</span><br><span class="line"></span><br><span class="line"># <span class="keyword">do</span> <span class="keyword">not</span> forget <span class="keyword">to</span> <span class="keyword">output</span> the <span class="keyword">last</span> word <span class="keyword">if</span> needed!</span><br><span class="line"><span class="keyword">if</span> current_word == word:</span><br><span class="line">    print <span class="string">'%s\t%s'</span> % (current_word, current_count)</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-_Run_the_job">5. Run the job</h4><ul>
+<li>Test in local mode from Linux pipe</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat testText.txt | mapper.py | sort | reducer.py</span><br><span class="line">a <span class="number">1</span></span><br><span class="line">h <span class="number">1</span></span><br><span class="line">i <span class="number">4</span></span><br><span class="line">s <span class="number">1</span></span><br><span class="line">t <span class="number">5</span></span><br><span class="line">v <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Run in the cluster</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hadoop/yarn jar <span class="variable">$HADOOP_HOME</span>/share/hadoop/tools/lib/hadoop-streaming-*<span class="class">.jar</span> \</span><br><span class="line">-D mapred<span class="class">.job</span><span class="class">.name</span>=<span class="string">"Count Job via Streaming"</span> \</span><br><span class="line">-files <span class="variable">$HADOOP_SAMPLES_SRC</span>/scripts/mapper<span class="class">.py</span>, <span class="variable">$HADOOP_SAMPLES_SRC</span>/scripts/reducer<span class="class">.py</span> \</span><br><span class="line">-<span class="tag">input</span> /training/input/hamlet<span class="class">.txt</span> \</span><br><span class="line">-output /training/output/ \</span><br><span class="line">-mapper mapper<span class="class">.py</span> \</span><br><span class="line">-combiner reducer<span class="class">.py</span> \</span><br><span class="line">-reducer reducer.py</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/hadoopstream.jpg" alt=""></p>
+<h4 id="1-_Streaming_Overview">1. Streaming Overview</h4><p>Hadoop Streaming is a generic]]>
+    </summary>
+    
+      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Scala Constructor vs. Java Constructor]]></title>
+    <link href="http://www.sparkera.ca/2015/04/20/Scala%20and%20Java%20Constructors/"/>
+    <id>http://www.sparkera.ca/2015/04/20/Scala and Java Constructors/</id>
+    <published>2015-04-20T04:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/scala-vs-java.png" alt=""></p>
+<h4 id="1-_Constructor_With_Parameters">1. Constructor With Parameters</h4><p><strong>Java Code</strong>  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">   <span class="keyword">public</span> Bar bar;  </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Foo</span><span class="params">(Bar bar)</span> </span>&#123;  </span><br><span class="line">       <span class="keyword">this</span>.bar = bar;  </span><br><span class="line">   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Scala Code</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>(<span class="variable"><span class="keyword">val</span> bar</span>:Bar)</span><br></pre></td></tr></table></figure>
+<h4 id="2-_Constructor_With_Private_Attribute">2. Constructor With Private Attribute</h4><p><strong>Java Code</strong>  </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span>() </span>&#123;  </span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> Bar bar;  </span><br><span class="line">   <span class="keyword">public</span> Foo(Bar bar) &#123;  </span><br><span class="line">       <span class="keyword">this</span>.bar = bar;  </span><br><span class="line">   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Scala Code</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>(<span class="keyword">private</span> <span class="variable"><span class="keyword">val</span> bar</span>:Bar)</span><br></pre></td></tr></table></figure>
+<h4 id="3-_Call_Super_Constructor">3. Call <em>Super</em> Constructor</h4><p><strong>Java Code</strong>  </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span>() <span class="keyword">extends</span> <span class="title">SuperFoo</span> </span>&#123;  </span><br><span class="line">   <span class="keyword">public</span> Foo(Bar bar) &#123;   </span><br><span class="line">      <span class="keyword">super</span>(bar);  </span><br><span class="line">   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Scala Code</strong></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>(<span class="title">bar</span>:<span class="title">Bar</span>) <span class="keyword">extends</span> <span class="title">SuperFoo</span>(<span class="title">bar</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-_Multiple_Constructors">4. Multiple Constructors</h4><p><strong>Java Code</strong>  </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Foo</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> Bar bar;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;   </span><br><span class="line">       <span class="keyword">this</span>(<span class="keyword">new</span> Bar());   </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Foo</span>(<span class="params">Bar bar</span>) </span>&#123;  </span><br><span class="line">       <span class="keyword">this</span>. bar = bar;   </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Scala Code</strong></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>(</span><span class="function"><span class="keyword">val</span> <span class="title">bar</span>:</span><span class="type">Bar</span>)&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">this</span>(</span>) = <span class="keyword">this</span>(<span class="keyword">new</span> <span class="type">Bar</span>)  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-_Methods_of_getter_and_setter">5. Methods of <em>getter</em> and <em>setter</em></h4><p><strong>Java Code</strong>  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">   <span class="keyword">private</span> Bar bar;  </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Foo</span><span class="params">(Bar bar)</span> </span>&#123;  </span><br><span class="line">       <span class="keyword">this</span>.bar = bar;  </span><br><span class="line">   &#125; </span><br><span class="line">   <span class="function"><span class="keyword">public</span> Bar <span class="title">getBar</span><span class="params">()</span> </span>&#123;   </span><br><span class="line">      <span class="keyword">return</span> bar;   </span><br><span class="line">   &#125;  </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBar</span><span class="params">(Bar bar)</span> </span>&#123;   </span><br><span class="line">      <span class="keyword">this</span>.bar = bar;  </span><br><span class="line">   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1. Scala Code</strong></p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="import"><span class="keyword">import</span> scala.reflect._  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">Foo</span><span class="container">(@<span class="type">BeanProperty</span> <span class="title">var</span> <span class="title">bar</span>:<span class="type">Bar</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>2. Scala Code</strong></p>
+<pre><code><span class="keyword">import</span> scala.reflect._  
+<span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>(aBar:Bar) {  
+    @BeanProperty  
+    <span class="keyword">private</span> <span class="variable"><span class="keyword">var</span> bar</span> = aBar  
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/scala-vs-java.png" alt=""></p>
+<h4 id="1-_Constructor_With_Parameters">1. Constructor With Parameters</h4><p><strong>Ja]]>
+    </summary>
+    
+      <category term="scala" scheme="http://www.sparkera.ca/tags/scala/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Apache Hive Essentials Published]]></title>
+    <link href="http://www.sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/"/>
+    <id>http://www.sparkera.ca/2015/03/15/Apache Hive Essentials Published/</id>
+    <published>2015-03-15T04:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p>Finally, I made it. I got it published after working for 6 monthes.</p>
+<h3 id="Apache_Hive_Essentials">Apache Hive Essentials</h3><ul>
+<li>My very first book</li>
+<li>Also the first book on Apache Hive 1.0.0 in the world</li>
+</ul>
+<p>Check it out <a href="http://bit.ly/1LRkd5m" target="_blank" rel="external">here</a></p>
+<p><a href="https://www.packtpub.com/big-data-and-business-intelligence/apache-hive-essentials" target="_blank"><img src="/images/hivebooks.jpg" width="150" height="200" align="left"></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Finally, I made it. I got it published after working for 6 monthes.</p>
+<h3 id="Apache_Hive_Essentials">Apache Hive Essentials</h3><ul>
+<]]>
+    </summary>
+    
+      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+    
+      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hive and Hadoop Exceptions]]></title>
+    <link href="http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/"/>
+    <id>http://www.sparkera.ca/2015/02/12/Hive and Hadoop Exceptions/</id>
+    <published>2015-02-12T05:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
+<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.hadoop.hive.ql.metadata.HiveException:java.io.IOException:Filesystem <span class="keyword">closed</span></span><br></pre></td></tr></table></figure>
+<p>According to the search <a href="http://mail-archives.apache.org/mod_mbox/hadoop-common-user/201207.mbox/%3CCAL=yAAE1mM-JRb=eJGkAtxWQ7AJ3e7WJCT9BhgWq7XDTNxrwfw@mail.gmail.com%3E" target="_blank" rel="external">here</a>, the mainly reason for this is that when multiple nodes read HFDS files if one node is offline, it will throw such exception when the other nodes are still reading the data cached. There are two ways to resolve this.</p>
+<ul>
+<li>Turn off JVM reuse</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapred.job.reuse.jvm.num.tasks<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>-1<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Disable caches</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.hdfs.impl.disable.cache<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>true<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
+<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports fol]]>
+    </summary>
+    
+      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+    
+      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Data Analysis]]></title>
+    <link href="http://www.sparkera.ca/2015/02/06/Data-Analysis/"/>
+    <id>http://www.sparkera.ca/2015/02/06/Data-Analysis/</id>
+    <published>2015-02-06T05:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/Data-Analysis.jpg" alt=""></p>
+<p>A friend of mine asked me what is data analysis. This is a simple but difficult question. It is simple because we talk about data analysis all the time and everywhere. It is difficult because there are so many ways of explaining it at different time. In the ear of big data, I think data analysis have three following areas.</p>
+<ul>
+<li><p>Flatten Analysis: Analysis is performed on the static data set from single dimentional view. Most analysis are simple enough focusing on the fixed scope of data. It is more or less like statistics, such as total, average, standard devidations, etc. Simple SQL or Excel tools can be used to do flatten data analysis.</p>
+</li>
+<li><p>Dimentional Analysis</p>
+</li>
+<li><p>Iterational Analysis</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/Data-Analysis.jpg" alt=""></p>
+<p>A friend of mine asked me what is data analysis. This is a simple but difficult quest]]>
+    </summary>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Data Lake Stages]]></title>
+    <link href="http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/"/>
+    <id>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</id>
+    <published>2015-02-02T05:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/datalake.png" align="left"> <br><br><br>Edd has post a very impressive <a href="http://www.forbes.com/sites/edddumbill/2014/01/14/the-data-lake-dream/" target="_blank" rel="external">blog</a> about how Hadoop ecosystem influence the data lake in enterprise recently. It discussed about the four following stages when enterprise’s data evolution  to the dream of data lake. I also share some of mine as addition.</p>
+<h5 id="Stage_1_-_Life_Before_Hadoop">Stage 1 - Life Before Hadoop</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage1.png" alt="Life Before Hadoop" title="Life Before Hadoop"></p>
+<p>In this stage, the enterprise data architecture has following characteristics.</p>
+<ul>
+<li>Applications stand alone with their databases</li>
+<li>Some applications contribute data to a data warehouse</li>
+<li>Analysts run reporting and analytics in data warehouse</li>
+</ul>
+<p>What’s more:</p>
+<ul>
+<li>This is a period where typical enterprise data warehouse (EDW) happens. Most of data sets are structured and well-organized. </li>
+</ul>
+<h5 id="Stage_2_-_Hadoop_Is_Introduced">Stage 2 - Hadoop Is Introduced</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage2.png" alt="Hadoop Is Introduced" title="Hadoop Is Introduced"></p>
+<p>In this stage, the enterprise data architecture has following characteristics.</p>
+<ul>
+<li>Applications contribute data to Hadoop</li>
+<li>Hadoop runs batch MapReduce jobs</li>
+<li>Hadoop used for ETL into warehouse or analytic databases</li>
+<li>Hadoop data reintroduced into applications</li>
+</ul>
+<p>What’s more:</p>
+<ul>
+<li>This is a period where typical EDW and hadoop merge happens. Most of data sets are semi-structured and unstructured with structured data. </li>
+<li>The hot data is more likely injected to EDW since EDW has better support to BI tools and faster response for ad-hoc query.</li>
+<li>Data in Hadoop becomes a center data depository considering the data volume and management cost. Therefore, the EDW also injects its data to the Hadoop. Here is where I disagree with the Edd since I believe it is more like a data exchange (bidirections) instead of single direction in the picture.</li>
+<li>Analytics over Hadoop/Big data starts as data verification, long period statistics, and trending calculations.</li>
+</ul>
+<h5 id="Stage_3_-_Growing_The_Data_Lake">Stage 3 - Growing The Data Lake</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage3.png" alt="Growing The Data Lake" title="Growing The Data Lake"></p>
+<p>In this stage, the enterprise data architecture has following characteristics.</p>
+<ul>
+<li>Newly built systems center around Hadoop by default</li>
+<li>Applications use each other’s data via Hadoop</li>
+<li>Interactive use of Hadoop as in-Hadoop databases deployed (e.g. Impala, Greenplum, Spark)</li>
+<li>Hadoop becomes a default data destination, governance and metadata become important</li>
+<li>Data warehouse use becomes the exception, where legacy or special requirements dictate</li>
+<li>External data sources integrated via Hadoop</li>
+</ul>
+<p>What’s more:</p>
+<ul>
+<li>This is a period where typical EDW being replaced happens. </li>
+<li>Analytics over Hadoop becomes well accepted in terms of performance and compatibility.</li>
+<li>However, the Hadoop is still playing role of OLAP instead of OLTP</li>
+</ul>
+<h5 id="Stage_4_-_Data_Lake_And_Application_Cloud">Stage 4 - Data Lake And Application Cloud</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage4.png" alt="Data Lake And Application Cloud" title="Data Lake And Application Cloud"></p>
+<p>In this stage, the enterprise data architecture has following characteristics.</p>
+<ul>
+<li>New applications are built on a Hadoop application platform around the data lake</li>
+<li>Hadoop matures as an elastic distributed data computing platform, for both operational and analytical functions</li>
+<li>Data lake adds security and governance layers</li>
+<li>Data availability increases, application deployment time decreases</li>
+<li>Some apps still have special or legacy needs and execute independently</li>
+</ul>
+<p>What’s more:</p>
+<ul>
+<li>This is a period where typical Data Oriented Architecture (DOA) starts.</li>
+<li>Hadoop becomes the central, operational, analytical of enterprise data lake.</li>
+<li>Different data lakes can also flow/exchange with each other by data services in terms of <strong><em>DATA OCEAN</em></strong></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/datalake.png" align="left"> <br><br><br>Edd has post a very impressive <a href="http://www.forbes.com/sites/edddumbill/]]>
+    </summary>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Setup Spark in MAC]]></title>
+    <link href="http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/"/>
+    <id>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</id>
+    <published>2015-01-23T05:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/sparkmac.jpg" alt=""><br>It is great to see that Brew supports install Spark. It makes installation of Spark quite easier in Mac. I just follow few steps to get my spark instance installed locally.</p>
+<h4 id="1-_Install_brew_utility-">1. Install brew utility.</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">mymac:</span>$ ruby -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></span><br><span class="line">==&gt; This script will <span class="string">install:</span></span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>brew</span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/Library/</span>...</span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/share/</span>man<span class="regexp">/man1/</span>brew<span class="number">.1</span></span><br><span class="line">==&gt; The following directories will be made group <span class="string">writable:</span></span><br><span class="line"><span class="regexp">/usr/</span>local/.</span><br><span class="line"><span class="regexp">/usr/</span>local/bin</span><br><span class="line">==&gt; The following directories will have their group set to <span class="string">admin:</span></span><br><span class="line"><span class="regexp">/usr/</span>local/.</span><br><span class="line"><span class="regexp">/usr/</span>local/bin</span><br><span class="line"></span><br><span class="line">Press RETURN to <span class="keyword">continue</span> or any other key to abort</span><br><span class="line">==&gt; <span class="regexp">/usr/</span>bin<span class="regexp">/sudo /</span>bin<span class="regexp">/chmod g+rwx /</span>usr<span class="regexp">/local/</span>. <span class="regexp">/usr/</span>local/bin</span><br><span class="line"><span class="string">Password:</span></span><br><span class="line">==&gt; <span class="regexp">/usr/</span>bin<span class="regexp">/sudo /</span>usr<span class="regexp">/bin/</span>chgrp admin <span class="regexp">/usr/</span>local<span class="regexp">/. /</span>usr<span class="regexp">/local/</span>bin</span><br><span class="line">==&gt; <span class="regexp">/usr/</span>bin<span class="regexp">/sudo /</span>bin<span class="regexp">/mkdir /</span>Library<span class="regexp">/Caches/</span>Homebrew</span><br><span class="line">==&gt; <span class="regexp">/usr/</span>bin<span class="regexp">/sudo /</span>bin<span class="regexp">/chmod g+rwx /</span>Library<span class="regexp">/Caches/</span>Homebrew</span><br><span class="line">==&gt; Downloading and installing Homebrew...</span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">226972</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">59619</span>/<span class="number">59619</span>), done.</span><br><span class="line"><span class="string">remote:</span> Total <span class="number">226972</span> (delta <span class="number">166103</span>), reused <span class="number">226972</span> (delta <span class="number">166103</span>)</span><br><span class="line">Receiving <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">226972</span><span class="regexp">/226972), 52.13 MiB | 1021.00 KiB/</span>s, done.</span><br><span class="line">Resolving <span class="string">deltas:</span> <span class="number">100</span>% (<span class="number">166103</span>/<span class="number">166103</span>), done.</span><br><span class="line">From <span class="string">https:</span><span class="comment">//github.com/Homebrew/homebrew</span></span><br><span class="line"> * [<span class="keyword">new</span> branch]      master     -&gt; origin/master</span><br><span class="line">HEAD is now at e58a69c <span class="string">points2grid:</span> update <span class="number">1.3</span><span class="number">.0</span> bottle.</span><br><span class="line">==&gt; Installation successful!</span><br><span class="line">==&gt; Next steps</span><br><span class="line">Run `brew doctor` before you install anything</span><br><span class="line">Run `brew help` to get started</span><br></pre></td></tr></table></figure>
+<h4 id="2-_Install_the_spark_from_Brew">2. Install the spark from Brew</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mymac</span>:$ brew install apache-spark</span><br><span class="line">=<span class="function">=&gt;</span> Downloading </span><br><span class="line"><span class="attribute">http</span>:<span class="regexp">//</span>d3kbcqa49mib13.cloudfront.net/spark-<span class="number">1.2</span><span class="number">.0</span>-bin-hadoop2<span class="number">.4</span>.t</span><br><span class="line"><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span> <span class="number">100.0</span>% /usr/local/Cellar/apache-spark/<span class="number">1.2</span><span class="number">.0</span>: <span class="number">283</span> files, <span class="number">234</span>M, built <span class="keyword">in</span> <span class="number">24.8</span> minutes</span><br></pre></td></tr></table></figure>
+<h4 id="3-_Start_the_spark_shell-">3. Start the spark shell.</h4><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">bash-<span class="number">3.2</span>$ spark-shell</span><br><span class="line">Spark <span class="keyword">assembly</span> <span class="keyword">has</span> been built <span class="keyword">with</span> Hive, including Datanucleus jars <span class="keyword">on</span> classpath</span><br><span class="line"><span class="keyword">Using</span> Spark<span class="string">'s default log4j profile: org/apache/spark/log4j-defaults.properties</span><br><span class="line">15/01/23 20:21:39 INFO SecurityManager: Changing view acls to: dayongd</span><br><span class="line">15/01/23 20:21:39 INFO SecurityManager: Changing modify acls to: dayongd</span><br><span class="line">15/01/23 20:21:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(dayongd); users with modify permissions: Set(dayongd)</span><br><span class="line">15/01/23 20:21:39 INFO HttpServer: Starting HTTP Server</span><br><span class="line">15/01/23 20:21:39 INFO Utils: Successfully started service '</span>HTTP <span class="keyword">class</span> server<span class="string">' on port 56839.</span><br><span class="line">Welcome to</span><br><span class="line">      ____              __</span><br><span class="line">     / __/__  ___ _____/ /__</span><br><span class="line">    _\ \/ _ \/ _ `/ __/  '</span>_/</span><br><span class="line">   /___/ .__/\_,_/_/ /_/\_\   version <span class="number">1.2</span>.<span class="number">0</span></span><br><span class="line">      /_/</span><br><span class="line"> </span><br><span class="line"><span class="keyword">Using</span> Scala version <span class="number">2.10</span>.<span class="number">4</span> (Java HotSpot(TM) <span class="number">64</span>-Bit Server VM, Java <span class="number">1.7</span>.<span class="number">0</span>_67)</span><br><span class="line"><span class="keyword">Type</span> <span class="keyword">in</span> expressions <span class="keyword">to</span> have them evaluated.</span><br><span class="line"><span class="keyword">Type</span> :help <span class="keyword">for</span> more information.</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">44</span> WARN Utils: Your hostname, mymac resolves <span class="keyword">to</span> a loopback address: <span class="number">127.0</span>.<span class="number">0.1</span>; <span class="keyword">using</span> <span class="number">192.168</span>.<span class="number">3.7</span> instead (<span class="keyword">on</span> <span class="keyword">interface</span> en1)</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">44</span> WARN Utils: <span class="keyword">Set</span> SPARK_LOCAL_IP <span class="keyword">if</span> you need <span class="keyword">to</span> bind <span class="keyword">to</span> another address</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">44</span> INFO SecurityManager: Changing view acls <span class="keyword">to</span>: dayongd</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">44</span> INFO SecurityManager: Changing modify acls <span class="keyword">to</span>: dayongd</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">44</span> INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users <span class="keyword">with</span> view permissions: <span class="keyword">Set</span>(dayongd); users <span class="keyword">with</span> modify permissions: <span class="keyword">Set</span>(dayongd)</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">44</span> INFO Slf4jLogger: Slf4jLogger started</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">44</span> INFO Remoting: Starting remoting</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">45</span> INFO Remoting: Remoting started; listening <span class="keyword">on</span> addresses :[akka.tcp:<span class="comment">//sparkDriver@192.168.3.7:56841]</span></span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">45</span> INFO Utils: Successfully started service <span class="string">'sparkDriver'</span> <span class="keyword">on</span> port <span class="number">56841</span>.</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">45</span> INFO SparkEnv: Registering MapOutputTracker</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">45</span> INFO SparkEnv: Registering BlockManagerMaster</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">45</span> INFO DiskBlockManager: Created local directory at /<span class="keyword">var</span>/folders/zp/ns8pgfr91yj93hglw1mncph9ytq52s/T/spark-local-<span class="number">201501232021450</span>b71</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">45</span> INFO MemoryStore: MemoryStore started <span class="keyword">with</span> capacity <span class="number">265.4</span> MB</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">45</span> WARN NativeCodeLoader: Unable <span class="keyword">to</span> load native-hadoop <span class="keyword">library</span> <span class="keyword">for</span> your <span class="keyword">platform</span>... <span class="keyword">using</span> builtin-java classes <span class="keyword">where</span> applicable</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO HttpFileServer: HTTP File server directory <span class="keyword">is</span> /<span class="keyword">var</span>/folders/zp/ns8pgfr91yj93hglw1mncph9ytq52s/T/spark-e7b15fc0-<span class="number">7</span>c73-<span class="number">4</span>ddb-<span class="number">9</span>c71-ffa1e83f255a</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO HttpServer: Starting HTTP Server</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO Utils: Successfully started service <span class="string">'HTTP file server'</span> <span class="keyword">on</span> port <span class="number">56842</span>.</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO Utils: Successfully started service <span class="string">'SparkUI'</span> <span class="keyword">on</span> port <span class="number">4040</span>.</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO SparkUI: Started SparkUI at http:<span class="comment">//192.168.3.7:4040</span></span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO Executor: <span class="keyword">Using</span> REPL <span class="keyword">class</span> URI: http:<span class="comment">//192.168.3.7:56839</span></span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO AkkaUtils: Connecting <span class="keyword">to</span> HeartbeatReceiver: akka.tcp:<span class="comment">//sparkDriver@192.168.3.7:56841/user/HeartbeatReceiver</span></span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO NettyBlockTransferService: Server created <span class="keyword">on</span> <span class="number">56843</span></span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO BlockManagerMaster: Trying <span class="keyword">to</span> <span class="keyword">register</span> BlockManager</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO BlockManagerMasterActor: Registering <span class="keyword">block</span> manager localhost:<span class="number">56843</span> <span class="keyword">with</span> <span class="number">265.4</span> MB RAM, BlockManagerId(&lt;driver&gt;, localhost, <span class="number">56843</span>)</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">46</span> INFO BlockManagerMaster: Registered BlockManager</span><br><span class="line"><span class="number">15</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">20</span>:<span class="number">21</span>:<span class="number">47</span> INFO SparkILoop: Created spark context..</span><br><span class="line">Spark context available <span class="keyword">as</span> sc.</span><br><span class="line">scala&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Note:">Note:</h3><p>If there is below exception, pls. make sure the local loop address is avaliable in the host file.  </p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.net.<span class="string">UnknownHostException:</span> <span class="string">mymac:</span> <span class="string">mymac:</span> nodename nor servname provided, or not known</span><br></pre></td></tr></table></figure>
+<p>mymac$ sudo echo “127.0.0.1 mymac” &gt;&gt; /etc/hosts</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/sparkmac.jpg" alt=""><br>It is great to see that Brew supports install Spark. It makes installation of Spark quite easi]]>
+    </summary>
+    
+      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Apache Spark Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images/learningspark.png" width="150" height="200" align="right"></a></p>
+<h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.   </li>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>Start reading it.</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Scala Programming Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-scala-programming/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-scala-programming/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank"><img src="/images/beginscala.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Begining_Scala_2nd_ed">Begining Scala 2nd ed</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>This book has very quick style of explaining scala with many detail examples. Even some examples has code defect and typo, it is easy to find out. The last part about scala best practice is really a valueable chapter. The other part is ok and cover everthing well enough but not deep enough.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920030287.do?sortby=publicationDate" target="_blank"><img src="http://akamaicovers.oreilly.com/images/0636920030287/lrg.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Learning_Scala_Practical_Functional_Programming_for_the_JVM">Learning Scala Practical Functional Programming for the JVM</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>The book is my 1st book read about scala. It introduces the basic concet of scala as well as advanced topics. The last few chapters are little hard to read, but overall it is a great scala book having latest of scala features covered.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920026914.do" target="_blank"><img src="http://akamaicovers.oreilly.com/images/0636920026914/lrg.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Scala_Cookbook">Scala Cookbook</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>The book is my 2nd book read about scala. This book is full of examples. It is more easier to learn thaning reading long chapters. I start reading it right now.</p>
+<hr>
+<p><a href="http://scalapuzzlers.com/" target="_blank"><img src="http://www.artima.com/images/puzzlersCover185x240.gif" width="150" height="200" align="right"></a></p>
+<h3 id="Scala_Puzzlers">Scala Puzzlers</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>The book is my 3rd book read about scala. It is a free book in github and it is a fun book about scala. I start reading it right now.</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank"><img src="/images/beginscala.jpg" width="150" height="2]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="scala" scheme="http://www.sparkera.ca/tags/scala/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Data Science and Data Mining Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-data-science/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-data-science/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_blank"><img src="/images/AgileDataScience.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Agile_Data_Science_-_Building_Data_Analytics_Applications_with_Hadoop">Agile Data Science - Building Data Analytics Applications with Hadoop</h3><p><img src="/images/2.5star.png" width="150" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>The book looks like a case study from beginning to the end. It has lots of code covering implementation of one big data project. It requires coding skills of Python.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920028529.do" target="_blank"><img src="/images/doingdatascience.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Doing_Data_Science_-_Start_Talking_From_Frontline">Doing Data Science - Start Talking From Frontline</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.   </li>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>Prepare to read it</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_b]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="data science" scheme="http://www.sparkera.ca/tags/data-science/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Build Tools and Shell Program Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Geting_Good_with_GIT">Geting Good with GIT</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+</ul>
+<p>This is a tiny book for Git. It is good because it is short and simple. It covers basic usage of Git and a little about GitHub. It is particular good for people who want to learn Git from Zero. The is another link about GitHub call <a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a>, which is also recommended reading after this. The only pity is that it does not cover any advanced topics. Here is my <a href="https://www.evernote.com/shard/s36/sh/f2cf70fa-6f1c-483b-9eab-23e52462f09e/4a50f05a3852edeb5a5fca7d03ed8d87" target="_blank" rel="external">my book note</a></p>
+<hr>
+<p><a href="http://www.packtpub.com/git-version-control-for-everyone/book" target="_blank"><img src="/images/gitversioncontrolforeveryone.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Git:_Version_Control_for_Everyone">Git: Version Control for Everyone</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+</ul>
+<p>This is a complete beginner’s workflow for version control of common documents and content. It has examples used are from non-techie, day to day computing activities for Git enter and middle level. It covers basic usage of Git and a little about Bitbucket in chapter 4. This book has very dtail of git command in terms of command output and how to run it in both git GUI and CLI.</p>
+<hr>
+<p><a href="http://www.amazon.cn/gp/product/B004CLZ7BA" target="_blank"><img src="/images/maven3inaction.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Maven_3_In_Action">Maven 3 In Action</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>This is a few books having details about Maven 3, which is am excellent Java project management tools. This book not only cover the basic knowledge of maven, but also introduce related tools, like Hudson. In addition, there are more good maven readings such as, <a href="http://books.sonatype.com/mvnref-book/reference/index.html" target="_blank" rel="external">Maven Complete Reference</a>, and <a href="http://www.tutorialspoint.com/maven/" target="_blank" rel="external">Maven Tutorial</a></p>
+<hr>
+<p><a href="http://linuxcommand.org/tlcl.php" target="_blank"><img src="/images/thelinuxcmdline.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="The_Linux_Command_Line">The Linux Command Line</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>This is a good begining guide for fresh people in linux programming. It is also a good quick review book. I never learn linux form books but from using experence and system manuals. This is a a free book which is recommanded to read to learn Linux in systematic way.</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" heig]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
+    
+      <category term="linux" scheme="http://www.sparkera.ca/tags/linux/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Big Data Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-big-data/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-big-data/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/bookreview3.png" alt=""></p>
+<p><a href="http://www.amazon.com/Hadoop-Definitive-Guide-Tom-White/dp/1449311520/ref=sr_1_1?ie=UTF8&qid=1368752048&sr=8-1&keywords=hadoop" target="_blank"><img src="/images/hadoopdefinitiveguide.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Hadoop:_The_Definitive_Guide">Hadoop: The Definitive Guide</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.</li>
+<li>Level Mid. </li>
+<li>Level Adv. </li>
+</ul>
+<p>This is a really a good Hadoop book to recommend. I have read both 2nd and 3rd edition. The latest 3rd edition is based on the Hadoop 1.0. It covers almost everything on the Hadoop including Yarn. The author also has <a href="https://github.com/tomwhite/hadoop-book/" target="_blank"> github site </a> to share the code. Here is my <a href="https://www.evernote.com/shard/s36/sh/79d59799-3254-43a8-a316-e38e4760e3c8/a721c419a7cab4dd2592de6bc16203d4" target="_blank" rel="external">book note</a></p>
+<hr>
+<p><a href="http://www.amazon.com/Hadoop-Practice-Alex-Holmes/dp/1617290238/ref=sr_1_1?s=books&ie=UTF8&qid=1368753609&sr=1-1&keywords=hadoop+in+practice" target="_blank"><img src="/images/hadoopinpractice.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Hadoop_In_Practice">Hadoop In Practice</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>This is pretty good book, especially in the data science chapter. The hive part is a little bit old than other latest Hadoop book. The reading experience is also good. I like the way it provides number of “TECHNIQUE”. It touches some new tool of big data that other books do not cover, such as Cloudera Crunch. There are no comments in the source code (request by publication), but there are enough comments added inline in the book.</p>
+<hr>
+<p><a href="http://www.amazon.com/Hadoop-Real-World-Solutions-Cookbook/dp/1849519129/ref=sr_1_1?s=books&ie=UTF8&qid=1366441101&sr=1-1" target="_blank"><img src="/images/hadooprealworld.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Hadoop_Real_World_Solution_Cookbook">Hadoop Real World Solution Cookbook</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid. </li>
+<li>Level Adv.</li>
+</ul>
+<p>The code has no comments with explanation below. The way is really not I like. If put the comments in code, the book may have less pages to read. In addition, there are logic mistakes in the book because copy &amp; paste error I think at least three – five time after I read 100s of pages, eg. p143 “hashset” should be “hashmap”. The charpter 7 starts looking good and deep which requires your knowledge on data mining and graph processing. This is a good tool reference book anyway</p>
+<hr>
+<p><a href="http://www.amazon.cn/gp/product/B009X25AI8/ref=s9_simh_gw_p14_d0_i2?pf_rd_m=A1AJ19PSB66TGU&pf_rd_s=center-2&pf_rd_r=1TNX5AHP1FEA00R1XW0B&pf_rd_t=101&pf_rd_p=58223152&pf_rd_i=899254051" target="_blank"><img src="/images/hadoopinactionchi.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Hadoop_实战">Hadoop 实战</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid. </li>
+</ul>
+<p>This book is a Chinese book which has same name to below but with totally different. It covers majority Hadoop components and reading friendly. I only read the 1st edition, so the things are a little out of date. The 2ed is also on the shelf right now. Generally, it is just introduction and lacks of details and high skills.</p>
+<hr>
+<p><a href="http://www.manning.com/lam/" target="_blank"><img src="/images/hadoopinaction.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Hadoop_In_Action">Hadoop In Action</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.</li>
+<li>Level Mid. </li>
+</ul>
+<p>I got hard copy of this. This book is a little bit old based on Hadoop 0.19. It covers majority Hadoop components. It also has Chinese version.</p>
+<hr>
+<p><a href="http://packtlib.packtpub.com/hadoop-mapreduce-cookbook/book" target="_blank"><img src="/images/hadoopmrcookbook.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Hadoop_MapReduce_Cookbook">Hadoop MapReduce Cookbook</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.</li>
+<li>Level Mid. </li>
+<li>Level Adv. </li>
+</ul>
+<p>Some sample Hadoop commands lack of necessary space between command/parameters. In Ch8, it provide some data analytics implementation using Java and MapReduce, which I did not see details like this in other books. It it worthy more time of reading this part.</p>
+<hr>
+<p><a href="http://www.amazon.com/MapReduce-Design-Patterns-Effective-Algorithms/dp/1449327176" target="_blank"><img src="/images/hadoopmrdp.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="MapReduce_Design_Patterns">MapReduce Design Patterns</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>The topic is really focus. The pattern is not that exciting comparing with Java’s in description. There is small values if you already read below other books. There are typos and mistakes. I cannot find the source code either.</p>
+<hr>
+<p><a href="http://ofps.oreilly.com/titles/9781449302641/" target="_blank"><img src="/images/programmingpig.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Programming_Pig">Programming Pig</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>This is a tiny book about pig, around 200 pages. It covers everything. The extension of UDF parts lacks of enough examples. Also, these parts are a little bit hard for reading. I have also read the translation one, which is so so. You cannot find more examples of Pig than anywhere else. However, I expect there is another book I believe that could/should cover more practical examples and hands on scripts.</p>
+<hr>
+<p><a href="http://www.amazon.cn/Hadoop%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95-%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90MapReduce%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86-%E8%91%A3%E8%A5%BF%E6%88%90/dp/B00CJ367IU/ref=sr_1_1?ie=UTF8&qid=1369267204&sr=8-1&keywords=hadoop%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95+%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90mapreduce%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86" target="_blank"><img src="/images/hadoopmapreduceinternals.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Hadoop_Mapreduce_Internals">Hadoop Mapreduce Internals</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Adv.   </li>
+</ul>
+<p>This book tells how map and reduce are implemented in source code level. It covers lots of detail that other book never mentioned. It can help reading the source code. This is kind of book helping uderstanding instead of practicing something. There are less code samples with book. The picture and comparing form in this book are really good for reading and undersanding.</p>
+<hr>
+<p><a href="http://www.packtpub.com/hbase-administration-for-optimum-database-performance-cookbook/book" target="_blank"><img src="/images/hbasecookbook.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="HBase_Administration_Cookbook">HBase Administration Cookbook</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid. </li>
+<li>Level Adv. </li>
+</ul>
+<p>This book is for HBase administrators, developers, and will even help Hadoop administrators. You are not required to have HBase experience, but are expected to have a basic understanding of Hadoop and MapReduce. This is very practical tookit book for HBase admin. It does not talk more about API and focus on administration only.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920014348.do?sortby=publicationDate" target="_blank"><img src="/images/hbasedefinitiveguide.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="HBase:_The_Definitive_Guide">HBase: The Definitive Guide</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.</li>
+<li>Level Mid. </li>
+<li>Level Adv. </li>
+</ul>
+<p>This is a really a good HBase book to recommend. This is the 1st edition and shows you how Apache HBase can fulfill your needs. As the open source implementation of Google’s BigTable architecture, HBase scales to billions of rows and millions of columns, while ensuring that write and read performance remain constant. The author also has <a href="https://github.com/larsgeorge/hbase-book" target="_blank"> github site </a> to share the code. I am still in reading for now and it is a little bit hard. </p>
+<hr>
+<p><a href="http://www.amazon.com/Big-Data-Revolution-Transform-Think/dp/0544002695/ref=sr_1_1?ie=UTF8&qid=1367466814&sr=8-1&keywords=Big+Date%3AA+Revolution+That+Will+Transform+How+We+Live%2C+Work%2C+and+Think" target="_blank"><img src="/images/bigdataera.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Big_Data:_A_Revolution_That_Will_Transform_How_We_Live,_Work,_and_Think">Big Data: A Revolution That Will Transform How We Live, Work, and Think</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+</ul>
+<p>It is one of few books of big data using real example to tell what’s revolution brought by big data. The signatures of big data it describes are really impressive. This book motives readers to explore the value behind of big data. It is a good book to encourage people to explore the big data area.</p>
+<hr>
+<p><a href="http://www.packtpub.com/apache-hive-essentials-how-to/book" target="_blank"><img src="/images/instantapachehiveessentials.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Instant_Apache_Hive_Essentials_How-to">Instant Apache Hive Essentials How-to</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>The book creates fast way to query data using hive in few hours. This is great than searching the apache confluence to see the breaked help documents especially for new hive users. The book has few pages to read and easier to understand. The author also gives level of complex for each chapters so that different level of users could quickly pick up what he/she needs.</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/bookreview3.png" alt=""></p>
+<p><a href="http://www.amazon.com/Hadoop-Definitive-Guide-Tom-White/dp/1449311520/ref=sr_1]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Data Warehouse and Business Intelligence Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-dw-bi/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-dw-bi/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<hr>
+<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Oracle_PL/SQL_Receipts">Oracle PL/SQL Receipts</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+<li>Level Adv.</li>
+</ul>
+<p>This is a good PL/SQL book for all level of reading. It uses different small tables with solutions to cover every corner of PL/SQL in Oracle 11g. This is a good cook book. It is easy to learn and to read.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920028031.do" target="_blank"><img src="/images/mongodb_guide.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="MongoDB:_The_Definitive_Guide,_2nd_Edition">MongoDB: The Definitive Guide, 2nd Edition</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.   </li>
+<li>Level Adv.</li>
+</ul>
+<p>This is a good book for middle to advanced level of reading. Still reading it.</p>
+<hr>
+<p><a href="http://www.amazon.ca/Tableau-Your-Data-Analysis-Software/dp/1118612043" target="_blank"><img src="/images/tableau_your_data.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Tableau_Your_Data">Tableau Your Data</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>This is a good Tableau guide for data visualization based on the latest version of the software. It is detail oritented. It covers lots of details especially on the server deployment and security. The case study charpter is also good reference.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<hr>
+<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="DBDWBI" scheme="http://www.sparkera.ca/categories/Reviews/DBDWBI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hive Get the Max/Min Value Rows]]></title>
+    <link href="http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/"/>
+    <id>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</id>
+    <published>2014-12-23T05:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/maxmin.jpg" alt=""></p>
+<p>Most of time, we need to find the max or min value of particular columns as well as other columns. For example, we have following employee table.</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">&gt; SELECT name,sex_age.sex AS sex,sex_age.age AS age FROM employee;</span><br><span class="line">+----------+---------+------+</span></span><br><span class="line"><span class="header">|   name   |   sex   | age  |</span><br><span class="line">+----------+---------+------+</span></span><br><span class="line">| Michael  | Male    | 30   |</span><br><span class="line">| Will     | Male    | 35   |</span><br><span class="line">| Shelley  | Female  | 27   |</span><br><span class="line">| Lucy     | Female  | 57   |</span><br><span class="line"><span class="header">| Steven   | Male    | 30   |</span><br><span class="line">+----------+---------+------+</span></span><br><span class="line">5 rows selected (75.887 seconds)</span><br></pre></td></tr></table></figure>
+<p>We want to know <strong>Who is oldest of males or females?</strong> There are three solutions available.</p>
+<h4 id="Solution_1">Solution 1</h4><p>The most frequent way of doing it is to to firstly find the MAX of age in each SEX group and do SELF JOIN by matching SEX and the MAX age as follows. This will create two stages of jobs and <strong>NOT</strong> efficient.</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT employee.sex<span class="emphasis">_age.sex, employee.sex_</span>age.age, name </span><br><span class="line">&gt; FROM</span><br><span class="line">&gt; employee JOIN </span><br><span class="line">&gt; (</span><br><span class="line">&gt; SELECT </span><br><span class="line">&gt; max(sex<span class="emphasis">_age.age) as max_</span>age, sex<span class="emphasis">_age.sex as sex  </span><br><span class="line">&gt; FROM employee</span><br><span class="line">&gt; GROUP BY sex_</span>age.sex</span><br><span class="line">&gt; ) maxage</span><br><span class="line">&gt; ON employee.sex<span class="emphasis">_age.age = maxage.max_</span>age</span><br><span class="line"><span class="header">&gt; AND employee.sex_age.sex = maxage.sex;</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line"><span class="header">| sex_age.sex  | age  | name  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">| Female       | 57   | Lucy  |</span><br><span class="line"><span class="header">| Male         | 35   | Will  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">2 rows selected (94.043 seconds)</span><br></pre></td></tr></table></figure>
+<h4 id="Solution_2">Solution 2</h4><p>Once Hive 0.11.0 introduced analytics functions, we can use ROW_NUMBER to solve the problem as well, but only trigger one MapReduce job.</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT sex, age, name</span><br><span class="line">&gt; FROM</span><br><span class="line">&gt; (</span><br><span class="line">&gt; SELECT sex<span class="emphasis">_age.sex AS sex,</span><br><span class="line">&gt; ROW_</span>NUMBER() OVER (PARTITION BY sex<span class="emphasis">_age.sex ORDER BY sex_</span>age.age DESC) AS row<span class="emphasis">_num, </span><br><span class="line">&gt; sex_</span>age.age as age,name</span><br><span class="line">&gt; FROM employee</span><br><span class="line"><span class="header">&gt; ) t WHERE row_num = 1;</span><br><span class="line">+---------+------+-------+</span></span><br><span class="line"><span class="header">|   sex   | age  | name  |</span><br><span class="line">+---------+------+-------+</span></span><br><span class="line">| Female  | 57   | Lucy  |</span><br><span class="line"><span class="header">| Male    | 35   | Will  |</span><br><span class="line">+---------+------+-------+</span></span><br><span class="line">2 rows selected (61.655 seconds)</span><br></pre></td></tr></table></figure>
+<h4 id="Solution_3">Solution 3</h4><p>Actually, there is a better way of doing it as follows through <strong><em>MAX/MIN STRUCT</em></strong> function added by <strong><a href="https://issues.apache.org/jira/browse/HIVE-1128" target="_blank" rel="external">Hive-1128</a></strong> since Hive 0.6.0, although it is not documented anywhere in the Hive Wiki.</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT sex<span class="emphasis">_age.sex, </span><br><span class="line">&gt; max(struct(sex_</span>age.age, name)).col1 as age,</span><br><span class="line">&gt; max(struct(sex<span class="emphasis">_age.age, name)).col2 as name</span><br><span class="line">&gt; FROM employee</span><br><span class="line">&gt; GROUP BY sex_</span>age.sex;</span><br><span class="line"><span class="code">+--------------+</span>------<span class="code">+-------+</span></span><br><span class="line"><span class="header">| sex_age.sex  | age  | name  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">| Female       | 57   | Lucy  |</span><br><span class="line"><span class="header">| Male         | 35   | Will  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">2 rows selected (47.659 seconds)</span><br></pre></td></tr></table></figure>
+<p>The above job only trigger one MapReduce job. We still need to use the <em>Group By</em> clause. However, we can use <strong><em>MAX/MIN STRUCT</em></strong> function to show all other columns in the same line of <em>MAX/MIN</em> value. By default, <em>Group By</em> clause does not allow columns shown in the <em>SELECT</em> list if it is not <em>Group By</em> column.</p>
+<h4 id="Summary">Summary</h4><p>The solution 3 is better in terms of performance, query complexity, and version supports.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/maxmin.jpg" alt=""></p>
+<p>Most of time, we need to find the max or min value of particular columns as well as other co]]>
+    </summary>
+    
+      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Moving to the Spark]]></title>
+    <link href="http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/"/>
+    <id>http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/</id>
+    <published>2014-11-23T05:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p>It has been a while that the blog is now updated since 2014 is a ready busy year. After I almost completed my first book recently, I think it is the right time to start new journey in big data for real time processing.</p>
+<p>Big data ecosystem has great changes over the past two years. The speed of big data processing becomes the hot topic over the past year. When Hadoop enter the area of Yarn, it becomes more like a distribute computing infrastructure. Lots of computing frameworks which are better designed and faster than MapReduce start adaption on top of Yarn and catch more attentions on their improvements over MapReduce computing. Two stars of real time big data processing are storm and spark.</p>
+<p><a href="https://storm.apache.org/" target="_blank"><img src="/images/storm_logo.png" width="350" height="400" alt="avatar" align="left"></a><a href="http://spark.apache.org/" target="_blank"><img src="/images/spark_logo.png" width="350" height="400" alt="avatar" align="right"></a></p>
+<p>Big data ecosystem has great changes over the past two years. The speed of big data processing becomes the hot topic over the past year. When Hadoop enter the area of YARN, it becomes more like a distribute computing infrastructure. Lots of computing frameworks which are better designed and faster than MapReduce start adaption on top of Yarn and catch more attentions on their improvements over MapReduce computing. Two star of real time big data processing is Storm and Spark.</p>
+<p>Comparing to Spark, Storm has longer history and sub-seconds latency, while Spark has offered feature for both real-time streaming and batching. Even the streaming feature is only production aware since 2013, it did catch lots of attention. As for me, I’ll go for Spark next for the following 3 reasons.</p>
+<ul>
+<li><p>Ecosystem<br>Spark has wide support on the big data infrastructure on Yarn. That is very important since lots of big data projects start from Hadoop. There is <a href="https://github.com/yahoo/storm-yarn" target="_blank" rel="external">Storm Over Yarn</a>, which is still in progress. To switch to a new platform is not easier than adaption and migration. Spark now also has formed its ecosystem with a stack of high-level tools including Spark SQL, MLlib for machine learning, GraphX, and Spark Streaming. You can combine these libraries seamlessly in the same application.</p>
+</li>
+<li><p>Scala and SQL<br>Compare with Storm, Spark is built on Scala, which is more interested to me than Clojure used to write Storm. In addition, Spark SQL and Hive Over Spark are avaliable as SQL interface for Spark. This will attract lots of SQL and Hive users. But, Storm has no such support natively.<br>There is a commerical product called <a href="http://www.sqlstream.com/downloads/" target="_blank" rel="external">sqlstream</a> and an open source <a href="https://github.com/epfldata/squall/wiki" target="_blank" rel="external">Squall</a> from EPFL DATA.</p>
+</li>
+<li><p>Supporting<br>Storm is the streaming solution in the Hortonworks Hadoop Data Platform. Spark Streaming is in both MapR’s distribution and Cloudera’s Enterprise data platform. In addition, Databricks is a company that provides support for the Spark.</p>
+</li>
+</ul>
+<p>Here is a fair <a href="http://xinhstechblog.blogspot.ca/2014/06/storm-vs-spark-streaming-side-by-side.html" target="_blank" rel="external">blog post</a> to compare the two.</p>
+<p>Will Spark十Tachyon十HDFS十YARN be the future??</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>It has been a while that the blog is now updated since 2014 is a ready busy year. After I almost completed my first book recently, I thin]]>
+    </summary>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+    
+      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Steps to setup EC2 cluster for Hadoop]]></title>
+    <link href="http://www.sparkera.ca/2014/04/05/Install-CDH-In-AWS/"/>
+    <id>http://www.sparkera.ca/2014/04/05/Install-CDH-In-AWS/</id>
+    <published>2014-04-05T04:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/ec2.jpg" alt=""></p>
+<ol>
+<li><p>Get the <code>Access Key ID</code> and <code>Secret Access Key</code> and store it in a notepad. The keys will be used when creating EC2 instances. If not there, then generate a new set of keys.</p>
+</li>
+<li><p>Go to the PVC Management console to create VPC with proper subnet since Hadoop nodes need to be in one LAN</p>
+</li>
+<li><p>Go to the EC2 Management console and create a new Key Pair. While creating the keys, the user will be prompted to store a pem key file. This file will be used to login to the EC2 instance later to install the Cloudera Manager.</p>
+</li>
+<li><p>In the same screen, go to Instances and click on <code>Launch Instance</code> to select an EC2 instance to launch. We chose Ubuntu TLS 12 Linux, 2 c3.xlarge nodes with 50G EBS and 1 c3.4xlarge with 100G EBS. (<strong>Note</strong>, EBS has better performance but additonal payment is needed)</p>
+</li>
+<li><p>Select <code>Create a new Security Group</code> and open up the minimum ports as follows</p>
+<pre><code>TCP    <span class="number">22</span>      SSH
+TCP    <span class="number">7180</span>    Cloudera Manager web console
+TCP    <span class="number">7182</span>    Agent heartbeat
+TCP    <span class="number">7183</span>    (optional, Cloudera Manager web console with TLS)
+TCP    <span class="number">7432</span>    Embedded PostgreSQL
+ICMP   ALL     Ping echo
+TCP    <span class="number">9000</span>    Host inspector
+TCP    <span class="number">8020</span>    Hive
+TCP    <span class="number">50010</span>   Datanodes
+TCP    <span class="number">50020</span>   Datanodes
+</code></pre></li>
+<li><p>Make sure all the setting are proper and click on <code>Launch</code>.</p>
+</li>
+<li><p>It will take a couple of minutes for the EC2 instance to start. The status of the instance should change to <code>running</code>. Select the instance and copy the public hostname of the instance which we created.</p>
+</li>
+<li><p>Use the key which has been downloaded earlier and the public hostname to login to the instance which was created. Password shouldn’t be prompted for logging into the instance.</p>
+</li>
+<li><p>Download the Cloudera Manager installation binaries, change the permissions. Execute the binary to start the installation of Cloudera Manager using sudo.</p>
+</li>
+<li><p>Click on Three <code>Next</code>. The installation will take a couple of minutes.</p>
+</li>
+<li><p>Once the installation of the Cloudera Manager is complete, the following screen will appear. Click on <code>OK</code>.</p>
+</li>
+<li><p>Start Firefox and go to the hostname: 7180 (the hostname has to be replaced) and login to the Cloudera Manager using username/password as admin/admin. Noticed that it takes a couple of seconds the Cloudera Manager for the initialization, so the login page might not appear immediately.</p>
+</li>
+<li><p>Select Classic Wizard and Click on <code>Continue</code>.</p>
+</li>
+<li><p>Search for private IP address of all nodes and select as cluster nodes, click <code>Continue</code>.</p>
+</li>
+<li><p>Select other user (Ubuntu) and proper private keys before <code>Continue</code>.</p>
+</li>
+<li><p>The install will start from download to installation and follow by the verification</p>
+</li>
+<li><p>Now the different services will start automatically. Again, this will take a couple of minutes.</p>
+</li>
+<li><p>Click on the <code>Services</code> tab and all the services should be in a Good Health status. From this screen either the individual or all the services can stopped/started.</p>
+</li>
+<li><p>Click on the Hosts tab to get the list of nodes and their status which should be in Good.</p>
+</li>
+</ol>
+<p><strong>Note</strong>:</p>
+<ul>
+<li><p>Need to set the hadoop dfs folder and temp folder to permnant storage in the EC2 so that when you stop and start the Hadoop, the data and configuration are still there</p>
+</li>
+<li><p>Proverly configure the firewall ports roles to make install scussfully (You can allow specific local address in VNC and your own public IP to access for all ports)</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/ec2.jpg" alt=""></p>
+<ol>
+<li><p>Get the <code>Access Key ID</code> and <code>Secret Access Key</code> and store it in ]]>
+    </summary>
+    
+      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hive Composite Data Type]]></title>
+    <link href="http://www.sparkera.ca/2013/09/29/Hive-Composite-Data-Type/"/>
+    <id>http://www.sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</id>
+    <published>2013-09-29T04:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/hive_fun.jpg" width="960" height="710" align="center"></p>
+<p>For now, hive supports following composite data type：</p>
+<ul>
+<li><strong>map</strong>: (key1, value1, key2, value2, …). Creates a map with the given key/value pairs</li>
+<li><strong>struct</strong>: (val1, val2, val3, …). Creates a struct with the given field values. Struct field names will be col1, col2, …</li>
+<li><strong>named_struct</strong>: (name1, val1, name2, val2, …). Creates a struct with the given field names and values. (as of Hive 0.8.0)</li>
+<li><strong>array</strong>: (val1, val2, …). Creates an array with the given elements</li>
+<li><strong>create_union</strong>:(tag, val1, val2, …). Creates a union type with the value that is being pointed to by the tag parameter</li>
+</ul>
+<p>Here, I list some difference between map and struct</p>
+<ul>
+<li>For map, the type of key and values is unified. Struct are more flexible</li>
+<li>To access map using array like access [‘key’]; struct use “.” access</li>
+<li>Struct is more like a table while map is more like a array with customized index</li>
+</ul>
+<p>Below are samples of their usage</p>
+<h5 id="1-_Array">1. Array</h5><p>Create table using array data type</p>
+<pre><code>01. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span>  person(<span class="keyword">name</span> <span class="keyword">string</span>,work_locations <span class="built_in">array</span>&lt;<span class="keyword">string</span>&gt;)
+<span class="number">02.</span> <span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span>
+<span class="number">03.</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\t'</span>
+<span class="number">04.</span> COLLECTION ITEMS <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span>;</span>
+</code></pre><p>Prepared data as follows</p>
+<pre><code>01. cat <span class="keyword">person</span>.txt
+02. biansutao beijing,shanghai,tianjin,hangzhou
+03. linan changchu,chengdu,wuhan
+</code></pre><p>Load data</p>
+<pre><code>01. LOAD DATA LOCAL INPATH '/home/hadoop/<span class="keyword">person</span>.txt' OVERWRITE INTO TABLE <span class="keyword">person</span>;
+</code></pre><p>Query the table</p>
+<pre><code>01. hive&gt; select * from <span class="keyword">person</span>;
+02. biansutao       <span class="comment">["beijing","shanghai","tianjin","hangzhou"]</span>
+03. linan           <span class="comment">["changchu","chengdu","wuhan"]</span>
+04. Time taken: 0.355 seconds
+
+05. hive&gt; select name from <span class="keyword">person</span>;
+06. linan
+07. biansutao
+08. Time taken: 12.397 seconds
+
+09. hive&gt; select work_locations<span class="comment">[0]</span> from <span class="keyword">person</span>;
+10. changchu
+11. beijing
+12. Time taken: 13.214 seconds
+
+13. hive&gt; select work_locations from <span class="keyword">person</span>;  
+14. <span class="comment">["changchu","chengdu","wuhan"]</span>
+15. <span class="comment">["beijing","shanghai","tianjin","hangzhou"]</span>
+16. Time taken: 13.755 seconds
+
+17. hive&gt; select work_locations<span class="comment">[3]</span> from <span class="keyword">person</span>;
+18. NULL
+19. hangzhou
+20. Time taken: 12.722 seconds
+
+21. hive&gt; select work_locations<span class="comment">[4]</span> from <span class="keyword">person</span>;
+22. NULL
+23. NULL
+24. Time taken: 15.958 seconds
+</code></pre><h5 id="2-_Map">2. Map</h5><p>Create table using array data type</p>
+<pre><code>01. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> score(<span class="keyword">name</span> <span class="keyword">string</span>, score <span class="keyword">map</span>&lt;<span class="keyword">string</span>,<span class="built_in">int</span>&gt;)
+<span class="number">02.</span> <span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span>
+<span class="number">03.</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\t'</span>
+<span class="number">04.</span> COLLECTION ITEMS <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span>
+<span class="number">05.</span> <span class="keyword">MAP</span> <span class="keyword">KEYS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">':'</span>;</span>
+</code></pre><p>Prepared data as follows</p>
+<pre><code><span class="number">01</span>. cat score<span class="class">.txt</span>
+<span class="number">02</span>. biansutao <span class="string">'math'</span>:<span class="number">80</span>,<span class="string">'chinese'</span>:<span class="number">89</span>,<span class="string">'english'</span>:<span class="number">95</span>
+<span class="number">03</span>. jobs      <span class="string">'chinese'</span>:<span class="number">60</span>,<span class="string">'math'</span>:<span class="number">80</span>,<span class="string">'english'</span>:<span class="number">99</span>
+</code></pre><p>Load data</p>
+<pre><code>01. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/score.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> score;</span>
+</code></pre><p>Query the table</p>
+<pre><code><span class="number">01.</span> hive&gt; <span class="keyword">select</span> * <span class="keyword">from</span> score;
+<span class="number">02.</span> biansutao       {<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"chinese"</span>:<span class="number">89</span>,<span class="string">"english"</span>:<span class="number">95</span>}
+<span class="number">03.</span> jobs            {<span class="string">"chinese"</span>:<span class="number">60</span>,<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"english"</span>:<span class="number">99</span>}
+<span class="number">04.</span> Time taken: <span class="number">0.665</span> seconds
+
+<span class="number">05.</span> hive&gt; <span class="keyword">select</span> name <span class="keyword">from</span> score;
+<span class="number">06.</span> jobs
+<span class="number">07.</span> biansutao
+<span class="number">08.</span> Time taken: <span class="number">19.778</span> seconds
+
+<span class="number">09.</span> hive&gt; <span class="keyword">select</span> t.score <span class="keyword">from</span> score t;
+<span class="number">10.</span> {<span class="string">"chinese"</span>:<span class="number">60</span>,<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"english"</span>:<span class="number">99</span>}
+<span class="number">11.</span> {<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"chinese"</span>:<span class="number">89</span>,<span class="string">"english"</span>:<span class="number">95</span>}
+<span class="number">12.</span> Time taken: <span class="number">19.353</span> seconds
+
+<span class="number">13.</span> hive&gt; <span class="keyword">select</span> t.score[<span class="string">'chinese'</span>] <span class="keyword">from</span> score t;
+<span class="number">14.</span> <span class="number">2660</span>
+<span class="number">15.</span> <span class="number">2789</span>
+<span class="number">16.</span> Time taken: <span class="number">13.054</span> seconds
+
+<span class="number">17.</span> hive&gt; <span class="keyword">select</span> t.score[<span class="string">'english'</span>] <span class="keyword">from</span> score t;
+<span class="number">18.</span> <span class="number">3099</span>
+<span class="number">19.</span> <span class="number">3195</span>
+<span class="number">20.</span> Time taken: <span class="number">13.769</span> seconds
+</code></pre><h5 id="3-_Struct">3. Struct</h5><p>Create table using array data type</p>
+<pre><code>01. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">test</span>(<span class="keyword">id</span> <span class="built_in">int</span>,course <span class="keyword">struct</span>&lt;course:<span class="keyword">string</span>,score:<span class="built_in">int</span>&gt;)
+<span class="number">02.</span> <span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span>
+<span class="number">03.</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\t'</span>
+<span class="number">04.</span> COLLECTION ITEMS <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span>;</span>
+</code></pre><p>Prepared data as follows</p>
+<pre><code><span class="number">01.</span> cat test.txt
+<span class="number">02.</span> <span class="number">1</span> english,<span class="number">80</span>
+<span class="number">03.</span> <span class="number">2</span> math,<span class="number">89</span>
+<span class="number">04.</span> <span class="number">3</span> chinese,<span class="number">95</span>
+</code></pre><p>Load data</p>
+<pre><code>01. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/test.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> <span class="keyword">test</span>;</span>
+</code></pre><p>Query the table</p>
+<pre><code><span class="number">01.</span> hive&gt; select * from test;
+<span class="number">02.</span> OK
+<span class="number">03.</span> <span class="number">1</span>       {<span class="string">"course"</span>:<span class="string">"english"</span>,<span class="string">"score"</span>:<span class="number">80</span>}
+<span class="number">04.</span> <span class="number">2</span>       {<span class="string">"course"</span>:<span class="string">"math"</span>,<span class="string">"score"</span>:<span class="number">89</span>}
+<span class="number">05.</span> <span class="number">3</span>       {<span class="string">"course"</span>:<span class="string">"chinese"</span>,<span class="string">"score"</span>:<span class="number">95</span>}
+<span class="number">06.</span> Time taken: <span class="number">0.275</span> seconds
+
+<span class="number">07.</span> hive&gt; select course from test;
+<span class="number">08.</span> {<span class="string">"course"</span>:<span class="string">"english"</span>,<span class="string">"score"</span>:<span class="number">80</span>}
+<span class="number">09.</span> {<span class="string">"course"</span>:<span class="string">"math"</span>,<span class="string">"score"</span>:<span class="number">89</span>}
+<span class="number">10.</span> {<span class="string">"course"</span>:<span class="string">"chinese"</span>,<span class="string">"score"</span>:<span class="number">95</span>}
+<span class="number">11.</span> Time taken: <span class="number">44.968</span> seconds
+
+<span class="number">12.</span> select t.course.course from test t;
+<span class="number">13.</span> english
+<span class="number">14.</span> math
+<span class="number">15.</span> chinese
+<span class="number">16.</span> Time taken: <span class="number">15.827</span> seconds
+
+<span class="number">17.</span>hive&gt; select t.course.score from test t;
+<span class="number">18.</span> <span class="number">3080</span>
+<span class="number">19.</span> <span class="number">3189</span>
+<span class="number">20.</span> <span class="number">3295</span>
+<span class="number">21.</span> Time taken: <span class="number">13.235</span> seconds  
+</code></pre><h5 id="4-_Composite">4. Composite</h5><pre><code>1. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/test.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> <span class="keyword">test</span>;</span>
+2. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> test1(<span class="keyword">id</span> <span class="built_in">int</span>,a <span class="keyword">MAP</span>&lt;<span class="keyword">STRING</span>,<span class="built_in">ARRAY</span>&lt;<span class="keyword">STRING</span>&gt;&gt;)
+<span class="number">3.</span> <span class="keyword">row</span> <span class="keyword">format</span> <span class="keyword">delimited</span> <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">'\t'</span>
+<span class="number">4.</span> collection items <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">','</span>
+<span class="number">5.</span> <span class="keyword">MAP</span> <span class="keyword">KEYS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">':'</span>;</span>
+6. 1 english:80,90,70
+7. 2 math:89,78,86
+8. 3 chinese:99,100,82
+9. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/test1.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> test1;</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/hive_fun.jpg" width="960" height="710" align="center"></p>
+<p>For now, hive supports following composite data type：</p>]]>
+    </summary>
+    
+      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SQL in MySQL and Pig Comparision]]></title>
+    <link href="http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/"/>
+    <id>http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</id>
+    <published>2013-08-21T04:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/pigmysql.png" align="center"></p>
+<p>Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as follows. </p>
+<h5 id="00-Prepared_Files">00.Prepared Files</h5><p>cat /tmp/data_file_1</p>
+<pre><code>zhangsan      <span class="number">23</span>  <span class="number">1</span> 
+lisi          <span class="number">24</span>  <span class="number">1</span> 
+wangmazi      <span class="number">30</span>  <span class="number">1</span> 
+meinv         <span class="number">18</span>  <span class="number">0</span> 
+dama          <span class="number">55</span>  <span class="number">0</span> 
+</code></pre><p>cat /tmp/data_file_2 </p>
+<pre><code><span class="number">1</span>      a
+<span class="number">23</span>     bb
+<span class="number">50</span>     ccc
+<span class="number">30</span>     dddd
+<span class="number">66</span>     eeeee 
+</code></pre><h5 id="01-Load_Files">01.Load Files</h5><pre><code>1)Mysql (Need to <span class="operator"><span class="keyword">create</span> the <span class="keyword">table</span> <span class="keyword">first</span>).
+   <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TMP_TABLE(<span class="keyword">USER</span> <span class="built_in">VARCHAR</span>(<span class="number">32</span>),AGE <span class="built_in">INT</span>,IS_MALE <span class="built_in">BOOLEAN</span>);</span>
+   <span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TMP_TABLE_2(AGE <span class="built_in">INT</span>,OPTIONS <span class="built_in">VARCHAR</span>(<span class="number">50</span>));</span>   <span class="comment">-- 用于Join</span>
+   <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/data_file_1'</span>  <span class="keyword">INTO</span> <span class="keyword">TABLE</span> TMP_TABLE ;</span>
+   <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/data_file_2'</span>  <span class="keyword">INTO</span> <span class="keyword">TABLE</span> TMP_TABLE_2;</span>
+
+2)Pig
+   tmp_table = <span class="operator"><span class="keyword">LOAD</span> <span class="string">'/tmp/data_file_1'</span> <span class="keyword">USING</span> PigStorage(<span class="string">'\t'</span>) 
+   <span class="keyword">AS</span> (<span class="keyword">user</span>:chararray, age:<span class="built_in">int</span>,is_male:<span class="built_in">int</span>);</span>
+   tmp_table_2= <span class="operator"><span class="keyword">LOAD</span> <span class="string">'/tmp/data_file_2'</span> <span class="keyword">USING</span> PigStorage(<span class="string">'\t'</span>) 
+   <span class="keyword">AS</span> (age:<span class="built_in">int</span>,options:chararray);</span>
+</code></pre><h5 id="02-Select_WHole_Table">02.Select WHole Table</h5><pre><code><span class="number">1</span>)Mysql
+  SELECT * FROM TMP_TABLE;
+
+<span class="number">2</span>)Pig
+  DUMP tmp_table;
+</code></pre><h5 id="03-Select_Top_N">03.Select Top N</h5><pre><code><span class="number">1</span>)Mysql
+  SELECT * FROM TMP_TABLE LIMIT <span class="number">50</span>;
+
+<span class="number">2</span>)Pig
+   tmp_table_limit = LIMIT tmp_table <span class="number">50</span>;
+   DUMP tmp_table_limit;
+</code></pre><h5 id="04-Select_Specific">04.Select Specific</h5><pre><code>1)Mysql
+   SELECT USER FROM TMP_TABLE<span class="comment">;</span>
+
+2)Pig
+   tmp_table_user = FOREACH tmp_table GENERATE user<span class="comment">;</span>
+   DUMP tmp_table_user<span class="comment">;</span>
+</code></pre><h5 id="05-Alias">05.Alias</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> USER <span class="keyword">AS</span> USER_NAME,AGE <span class="keyword">AS</span> USER_AGE <span class="keyword">FROM</span> TMP_TABLE;
+
+<span class="number">2</span>)Pig
+   tmp_table_column_alias = FOREACH tmp_table GENERATE user <span class="keyword">AS</span> user_name,age <span class="keyword">AS</span> user_age;
+   DUMP tmp_table_column_alias;
+</code></pre><h5 id="06-Ordering">06.Ordering</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">ORDER</span> <span class="keyword">BY</span> AGE;
+
+<span class="number">2</span>)Pig
+    tmp_table_order = <span class="keyword">ORDER</span> tmp_table <span class="keyword">BY</span> age <span class="keyword">ASC</span>;
+    DUMP tmp_table_order;
+</code></pre><h5 id="07-Condition">07.Condition</h5><pre><code><span class="number">1</span>) Mysql
+    SELECT * FROM TMP_TABLE WHERE AGE&gt;<span class="number">20</span>;
+
+<span class="number">2</span>) Pig
+    tmp_table_where = FILTER tmp_table by age &gt; <span class="number">20</span>;
+    DUMP tmp_table_where;
+</code></pre><h5 id="08-Inner_Join">08.Inner Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+    tmp_table_inner_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age, tmp_table_2 <span class="keyword">BY</span> age;
+    DUMP tmp_table_inner_join;
+</code></pre><h5 id="09-Left_Join">09.Left Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A LEFT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+  tmp_table_left_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age LEFT OUTER, tmp_table_2 <span class="keyword">BY</span> age;
+  DUMP tmp_table_left_join;
+</code></pre><h5 id="10-Right_Join">10.Right Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A RIGHT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+   tmp_table_right_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age RIGHT OUTER,tmp_table_2 <span class="keyword">BY</span> age;
+   DUMP tmp_table_right_join;
+</code></pre><h5 id="11-Full_Join">11.Full Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A  <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE
+   <span class="keyword">UNION</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A LEFT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE
+   <span class="keyword">UNION</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A RIGHT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+   tmp_table_full_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age FULL OUTER,tmp_table_2 <span class="keyword">BY</span> age;
+   DUMP tmp_table_full_join;
+</code></pre><h5 id="12-Cross_Join">12.Cross Join</h5><pre><code>1)Mysql
+   SELECT * FROM TMP_TABLE,TMP_TABLE_2<span class="comment">;</span>
+
+2)Pig
+   tmp_table_cross = CROSS tmp_table,tmp_table_2<span class="comment">;</span>
+   DUMP tmp_table_cross<span class="comment">;</span>
+</code></pre><h5 id="13-GROUP">13.GROUP</h5><pre><code><span class="number">1</span>)Mysql
+  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">GROUP</span> <span class="keyword">BY</span> IS_MALE;
+
+<span class="number">2</span>)Pig
+  tmp_table_group = <span class="keyword">GROUP</span> tmp_table <span class="keyword">BY</span> is_male;
+  DUMP tmp_table_group;
+</code></pre><h5 id="14-Counting_by_group">14.Counting by group</h5><pre><code><span class="number">1</span>)Mysql
+  SELECT IS_MALE,<span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">GROUP</span> BY IS_MALE;
+
+<span class="number">2</span>)Pig
+   tmp_table_group_count = <span class="keyword">GROUP</span> tmp_table BY is_male;
+   tmp_table_group_count = FOREACH tmp_table_group_count GENERATE <span class="keyword">group</span>,<span class="keyword">COUNT</span>($<span class="number">1</span>);
+   <span class="keyword">DUMP</span> tmp_table_group_count;
+</code></pre><h5 id="15-DISTINCT">15.DISTINCT</h5><pre><code>1)MYSQL
+   SELECT DISTINCT IS_MALE FROM TMP_TABLE<span class="comment">;</span>
+
+2)Pig
+   tmp_table_distinct = FOREACH tmp_table GENERATE is_male<span class="comment">;</span>
+   tmp_table_distinct = DISTINCT tmp_table_distinct<span class="comment">;</span>
+   DUMP  tmp_table_distinct<span class="comment">;</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/pigmysql.png" align="center"></p>
+<p>Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as ]]>
+    </summary>
+    
+      <category term="pig" scheme="http://www.sparkera.ca/tags/pig/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Disable Major Compaction in HBase Cluster]]></title>
+    <link href="http://www.sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/"/>
+    <id>http://www.sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</id>
+    <published>2013-07-06T04:00:00.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/hbase.png" align="center"></p>
+<p>HBase consists of multiple regions. While a region may have several Stores, each holds a single column family. An edit first writes to the hosting region store’s in-memory space, which is called MemStore. When the size of MemStore reaches a threshold, it is flushed to StoreFiles on HDFS.</p>
+<p>As data increases, there may be many StoreFiles on HDFS, which is not good for its performance. Thus, HBase will automatically pick up a couple of the smaller StoreFiles and rewrite them into a bigger one. This process is called minor compaction. For certain situations, or when triggered by a configured interval (once a day by default), major compaction runs automatically. Major compaction will drop the deleted or expired cells and rewrite all the StoreFiles in the Store into a single StoreFile; this usually improves the performance.</p>
+<p>However, as major compaction rewrites all of the Stores’ data, lots of disk I/O and network traffic might occur during the process. This is not acceptable on a heavy load system. You might want to run it at a lower load time of your system.</p>
+<p>The following steps describe how to disable automatic major compaction:</p>
+<ol>
+<li><p>Add the following to hbase-site.xml file:</p>
+<pre><code>$ vi <span class="variable">$HBASE_HOME</span>/conf/hbase-site.xml
+
+<span class="variable">&lt;property&gt;</span>
+    <span class="variable">&lt;name&gt;</span>hbase.hregion.majorcompaction<span class="variable">&lt;/name&gt;</span>
+    <span class="variable">&lt;value&gt;</span><span class="number">0</span><span class="variable">&lt;/value&gt;</span>
+<span class="variable">&lt;/property&gt;</span>
+</code></pre></li>
+<li><p>Sync the changes across the cluster and restart HBase.</p>
+</li>
+<li><p>With the aforementioned setting, automatic major compaction will be disabled; you will now need to run it explicitly.</p>
+</li>
+<li><p>In order to manually run a major compaction on a particular region through HBase Shell, run the following command:</p>
+<pre><code>$ echo <span class="string">"major_compact 'hly_temp,,1327118470453.5ef67f6d2a792fb0bd7
+37863dc00b6a7.'"</span> | <span class="variable">$HBASE</span>_HOME/bin/hbase shell
+
+HBase Shell; enter <span class="string">'help&lt;RETURN&gt;'</span> <span class="keyword">for</span> list <span class="keyword">of</span> supported commands.
+Type <span class="string">"exit&lt;RETURN&gt;"</span> <span class="keyword">to</span> leave the HBase Shell
+Version <span class="number">0</span>.<span class="number">92.0</span>, r1231986, Tue Jan <span class="number">17</span> <span class="number">02</span>:<span class="number">30</span>:<span class="number">24</span> UTC <span class="number">2012</span>
+major_compact <span class="string">'hly_temp,,1327118470453.5ef67f6d2a792fb0bd737863dc00b6a7.'</span>
+<span class="number">0</span> row(s) <span class="keyword">in</span> <span class="number">1.7070</span> seconds
+</code></pre></li>
+</ol>
+<p><strong>Note</strong>: Another approach to invoke major compaction is to use the majorCompact API provided by the org.apache.hadoop.hbase.client.HBaseAdmin class. It is easy to call this API in Java, thus you can manage complex major compaction scheduling from Java.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/hbase.png" align="center"></p>
+<p>HBase consists of multiple regions. While a region may have several Stores, each hold]]>
+    </summary>
+    
+      <category term="hbase" scheme="http://www.sparkera.ca/tags/hbase/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
+  <meta charset="utf-8">
+  
+  <title>GIT Tips At Weekend - Saturday | SparkEra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="####Infogit reflog
+Use this to recover from major fuck ups! It’s basically a log of thelast few actions and you might have luck and find old commits thathave been lost by doing a complex merge.
+git di">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GIT Tips At Weekend - Saturday">
+<meta property="og:url" content="http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/index.html">
+<meta property="og:site_name" content="SparkEra">
+<meta property="og:description" content="####Infogit reflog
+Use this to recover from major fuck ups! It’s basically a log of thelast few actions and you might have luck and find old commits thathave been lost by doing a complex merge.
+git di">
+<meta property="og:image" content="http://kandishengcdn.sinaapp.com/wp-content/uploads/2012/05/687474703a2f2f6769746875622e73332e616d617a6f6e6177732e636f6d2f626c6f672f7265642d706f6c6f2e6a7067.jpg">
+<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GIT Tips At Weekend - Saturday">
+<meta name="twitter:description" content="####Infogit reflog
+Use this to recover from major fuck ups! It’s basically a log of thelast few actions and you might have luck and find old commits thathave been lost by doing a complex merge.
+git di">
+  
+  
+    <link rel="icon" href="/image/favicon.ico">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+
+
+  
+
+  
+    <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+            <h2 class="subtitle-wrap">
+              <p class="subtitle">Big Data Big Insight</p>
+            </h2>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/">Blog</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/">Reviews</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/Big-Data/">Big Data</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/Coding/">Coding</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/DBDWBI/">DBDWBI</a></li></ul></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://www.sparkera.ca"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/Blog/">Blog</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-GIT-Tips-Weekend-Saturday" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      GIT Tips At Weekend - Saturday
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2013/05/18/GIT-Tips-Weekend-Saturday/" class="article-date">
+  <time datetime="2013-05-18T04:00:00.000Z" itemprop="datePublished">2013-05-18</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="####Info">####Info</h2><pre><code><span class="title">git</span> reflog
+</code></pre><p>Use this to recover from <strong><em>major</em></strong> fuck ups! It’s basically a log of the<br>last few actions and you might have luck and find old commits that<br>have been lost by doing a complex merge.</p>
+<pre><code><span class="title">git</span> diff
+</code></pre><p>Show a diff of the changes made since your last commit<br>to diff one file: <code>git diff -- \&lt;filename&gt;</code><br>to show a diff between staging area and HEAD: <code>git diff --cached</code></p>
+<pre><code>git <span class="keyword">status</span>
+</code></pre><p>Show files added to the staging area, files with changes, and untracked files</p>
+<pre><code>git <span class="command">log</span>
+</code></pre><p>Show recent commits, most recent on top. Useful options:</p>
+<ul>
+<li>–color with color</li>
+<li>–graph with an ASCII-art commit graph on the left</li>
+<li>–decorate with branch and tag names on appropriate commits</li>
+<li>–stat with stats (files changed, insertions, and deletions)</li>
+<li>-p with full diffs</li>
+<li>–author=foo only by a certain author</li>
+<li>–after=”MMM DD YYYY” ex. (“Jun 20 2008”) only commits after a certain date</li>
+<li>–before=”MMM DD YYYY” only commits that occur before a certain date</li>
+<li>–merge only the commits involved in the current merge conflicts</li>
+</ul>
+<p><br><br>    git log <ref>..<ref><br>Show commits between the specified range. </ref></ref></p>
+<pre><code>git <span class="command">log</span> HEAD..origin/master <span class="comment"># </span>
+</code></pre><p>Useful for seeing changes from remotes after git remote update</p>
+<pre><code>git show <span class="tag">&lt;<span class="title">rev</span>&gt;</span>
+</code></pre><p>Show the changeset (diff) of a commit specified by \<rev>, which can be any<br>SHA1 commit ID, branch name, or tag (shows the last commit (HEAD) by default)</rev></p>
+<pre><code>git show --<span class="keyword">name</span>-<span class="keyword">only</span> &lt;rev&gt;
+</code></pre><p>Show only the names of the files that changed, no diff information.</p>
+<pre><code>git blame &lt;<span class="type">file</span>&gt;
+</code></pre><p>Show who authored each line in “file”</p>
+<pre><code>git blame <span class="tag">&lt;<span class="title">file</span>&gt;</span> <span class="tag">&lt;<span class="title">rev</span>&gt;</span>
+</code></pre><p>Show who authored each line in \<file> as of \<rev> (allows blame to go back in<br>time)</rev></file></p>
+<pre><code><span class="title">git</span> gui blame
+</code></pre><p>Really nice GUI interface to git blame</p>
+<pre><code>git whatchanged &lt;<span class="type">file</span>&gt;
+</code></pre><p>Show only the commits which affected \<file> listing the most recent first<br>E.g. view all changes made to a file on a branch:<br>    git whatchanged <branch> <file> | grep commit | colrm 1 7 | xargs -I % git show % <file><br>This could be combined with git remote show \<remote> to find all changes on<br>all branches to a particular file.</remote></file></file></branch></file></p>
+<pre><code>git diff <span class="variable">&lt;commit&gt;</span> head path/<span class="keyword">to</span>/fubar
+</code></pre><p>Show the diff between a file on the current branch and potentially another<br>branch</p>
+<pre><code>git diff head <span class="comment">-- &lt;file&gt;</span>
+</code></pre><p>Use this form when doing git diff on cherry-pick’ed (but not committed) changes somehow changes are not shown when using just git diff.</p>
+<pre><code>git <span class="keyword">ls</span>-<span class="keyword">files</span>
+</code></pre><p>List all files in the index and under version control.</p>
+<pre><code><span class="keyword">git</span> ls-remote &lt;remote&gt;<span class="sqbracket"> [HEAD]</span>
+</code></pre><p>Show the current version on the remote repo. This can be used to check whether<br>a local is required by comparing the local head revision.</p>
+<p><br><br><br></p>
+<h2 id="####Adding_/_Deleting">####Adding / Deleting</h2><pre><code>git add <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+</code></pre><p>Add \<file1>, \<file2>, etc… to the project</file2></file1></p>
+<pre><code><span class="label">git</span> <span class="keyword">add </span>&lt;dir&gt;
+</code></pre><p>Add all files under directory \<dir> to the project, including subdirectories</dir></p>
+<pre><code><span class="label">git</span> <span class="keyword">add </span>.
+</code></pre><p>Add all files under the current directory to the project<br><em>WARNING</em>: including untracked files.</p>
+<pre><code>git rm <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+</code></pre><p>Remove \<file1>, \<file2>, etc… from the project</file2></file1></p>
+<pre><code>git rm $(git ls-<span class="built_in">files</span> <span class="comment">--deleted)</span>
+</code></pre><p>Remove all deleted files from the project</p>
+<pre><code>git rm --cached <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+</code></pre><p>Commits absence of \<file1>, \<file2>, etc… from the project<br><br><br><br></file2></file1></p>
+<h2 id="####Ignoring">####Ignoring</h2><ul>
+<li><p><strong>Option 1</strong>: Edit $GIT_DIR/info/exclude. See Environment Variables below for explanation on<br>$GIT_DIR.</p>
+</li>
+<li><p><strong>Option 2</strong>: Add a file .gitignore to the root of your project. This file will be checked in.</p>
+</li>
+</ul>
+<p>Either way you need to add patterns to exclude to these files.<br><br><br><br></p>
+<h2 id="####Staging">####Staging</h2><pre><code>git add <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+git stage <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+</code></pre><p>Add changes in \<file1>, \<file2> … to the staging area to be included in the next commit</file2></file1></p>
+<pre><code>git <span class="built_in">add</span> -p
+git stage <span class="comment">--patch</span>
+</code></pre><p>Interactively walk through the current changes (hunks) in the working tree, and decide which changes to add to the staging area.</p>
+<pre><code>git <span class="built_in">add</span> -i
+git stage <span class="comment">--interactive</span>
+</code></pre><p>Interactively add files/changes to the staging area. For a simpler mode (no menu), try <code>git add --patch</code> (above)<br><br><br><br></p>
+<h2 id="####Unstaging">####Unstaging</h2><pre><code>git reset HEAD <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+</code></pre><p>Remove the specified files from the next commit<br><br><br><br></p>
+<h2 id="####Committing">####Committing</h2><pre><code>git commit <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ... [-m <span class="tag">&lt;<span class="title">msg</span>&gt;</span>]
+</code></pre><p>Commit \<file1>, \<file2>, etc…, optionally using commit message \<msg>, otherwise opening your editor to let you type a commit message</msg></file2></file1></p>
+<pre><code>git commit -<span class="literal">a</span>
+</code></pre><p>Commit all files changed since your last commit<br>(does not include new (untracked) files)</p>
+<pre><code><span class="title">git</span> commit -v
+</code></pre><p>Commit verbosely, i.e. includes the diff of the contents being committed in the commit message screen</p>
+<pre><code>git <span class="operator"><span class="keyword">commit</span> <span class="comment">--amend</span></span>
+</code></pre><p>Edit the commit message of the most recent commit</p>
+<pre><code>git commit --amend <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+</code></pre><p>Redo previous commit, including changes made to \<file1>, <file2>, etc…<br><br><br><br></file2></file1></p>
+<h2 id="####Branching">####Branching</h2><pre><code><span class="title">git</span> branch
+</code></pre><p>List all local branches</p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>-r
+</code></pre><p>List all remote branches</p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>-a
+</code></pre><p>List all local and remote branches</p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>&lt;<span class="keyword">branch&gt;</span>
+</code></pre><p>Create a new branch named \<branch>, referencing the same point in history as the current branch</branch></p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>&lt;<span class="keyword">branch&gt; </span>&lt;start-point&gt;
+</code></pre><p>Create a new branch named \<branch>, referencing \<start-point>, which may be<br>specified any way you like, including using a branch name or a tag name</start-point></branch></p>
+<pre><code>git push &lt;repo&gt; &lt;start-point&gt;<span class="symbol">:refs/heads/&lt;branch&gt;</span>
+</code></pre><p>Create a new remote branch named <branch>, referencing <start-point> on the<br>remote.<br><br>Example: <code>git push origin origin:refs/heads/branch-1</code><br><br>Example: <code>git push origin origin/branch-1:refs/heads/branch-2</code></start-point></branch></p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>--track &lt;<span class="keyword">branch&gt; </span>&lt;remote-<span class="keyword">branch&gt;</span>
+</code></pre><p>Create a tracking branch. Will push/pull changes to/from another repository.<br><br>Example: <code>git branch --track experimental origin/experimental</code></p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>-d &lt;<span class="keyword">branch&gt;</span>
+</code></pre><p>Delete the branch \<branch>; if the branch you are deleting points to a<br>commit which is not reachable from the current branch, this command<br>will fail with a warning.</branch></p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>-r -d &lt;remote-<span class="keyword">branch&gt;</span>
+</code></pre><p>Delete a remote-tracking branch.<br>Example: <code>git branch -r -d wycats/master</code></p>
+<pre><code><span class="label">git</span> <span class="keyword">branch </span>-D &lt;<span class="keyword">branch&gt;</span>
+</code></pre><p>Even if the branch points to a commit not reachable from the current branch,<br>you may know that that commit is still reachable from some other branch or<br>tag. In that case it is safe to use this command to force git to delete the<br>branch.</p>
+<pre><code>git checkout <span class="tag">&lt;<span class="title">branch</span>&gt;</span>
+</code></pre><p>Make the current branch \<branch>, updating the working directory to reflect<br>the version referenced by \<branch></branch></branch></p>
+<pre><code>git checkout -b <span class="tag">&lt;<span class="title">new</span>&gt;</span> <span class="tag">&lt;<span class="title">start-point</span>&gt;</span>
+</code></pre><p>Create a new branch <new> referencing \<start-point>, and check it out.</start-point></new></p>
+<pre><code>git push &lt;repository&gt; <span class="symbol">:&lt;branch&gt;</span>
+</code></pre><p>Removes a branch from a remote repository.<br><br>Example: <code>git push origin :old_branch_to_be_deleted</code></p>
+<pre><code>git <span class="keyword">co</span> &lt;branch&gt; &lt;path <span class="keyword">to</span> <span class="keyword">new</span> <span class="keyword">file</span>&gt;
+</code></pre><p>Checkout a file from another branch and add it to this branch. File<br>will still need to be added to the git branch, but it’s present.<br><br>Eg. <code>git co remote_at_origin__tick702_antifraud_blocking
+…./...nt_elements_for_iframe_blocked_page.rb</code></p>
+<pre><code>git show &lt;branch&gt; -- &lt;path <span class="keyword">to</span> <span class="keyword">file</span> that does <span class="keyword">not</span> exist&gt;
+</code></pre><p>Eg. <code>git show remote_tick702 -- path/to/fubar.txt</code><br><br>Show the contents of a file that was created on another branch and that<br>does not exist on the current branch.</p>
+<pre><code>git <span class="operator"><span class="keyword">show</span> &lt;rev&gt;:&lt;repo <span class="keyword">path</span> <span class="keyword">to</span> <span class="keyword">file</span>&gt;</span>
+</code></pre><p>Show the contents of a file at the specific revision. </p>
+<p><strong>Note</strong>: path has to be absolute within the repo.<br><br><br><br></p>
+<h2 id="####Merging">####Merging</h2><pre><code>git merge <span class="tag">&lt;<span class="title">branch</span>&gt;</span>
+</code></pre><p>Merge branch \<branch> into the current branch; this command is idempotent<br>and can be run as many times as needed to keep the current branch<br>up-to-date with changes in <branch></branch></branch></p>
+<pre><code>git <span class="built_in">merge</span> &lt;branch&gt; <span class="comment">--no-commit</span>
+</code></pre><p>Merge branch \<branch> into the current branch, but do not autocommit the<br>result; allows you to make further tweaks</branch></p>
+<pre><code><span class="label">git</span> merge &lt;<span class="keyword">branch&gt; </span>-s ours
+</code></pre><p>Merge branch \<branch> into the current branch, but drops any changes in<br>\<branch>, using the current tree as the new tree<br><br><br><br><br><img src="http://kandishengcdn.sinaapp.com/wp-content/uploads/2012/05/687474703a2f2f6769746875622e73332e616d617a6f6e6177732e636f6d2f626c6f672f7265642d706f6c6f2e6a7067.jpg" alt=""></branch></branch></p>
+
+      </div>
+	  <div class="addthis_native_toolbox">
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ccd80609fffe5a" async="async">
+  </script>
+  </div>
+      <footer class="article-footer">
+        <a data-url="http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/" data-id="cidmg8dl4003dmsx63pgcjoz0" class="article-share-link">Share</a>
+        
+          <a href="http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/#comments" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+      </footer>
+    </div>
+  
+  </article>
+  
+  
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </section>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>follow:</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/willdu8" target="_blank"><i class="icon fa fa-twitter"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/will.du.7545" target="_blank"><i class="icon fa fa-facebook"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="http://github.com/willddy" target="_blank"><i class="icon fa fa-github"></i></a></li>
+      
+        <li><a class="social-tooltip" title="rss" href="/atom.xml" target="_blank"><i class="icon fa fa-rss"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/05/19/GIT-Tips-Weekend-Sunday/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <p class="article-nav-title">
+        
+          GIT Tips At Weekend - Sunday
+        
+      </p>
+      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2013/05/17/GIT-Tips-Weekend-Friday/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">GIT Tips At Weekend - Friday</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/" class="thumbnail">
+  
+    <span style="background-image:url(/images/gettingStartedGit.jpg
+)" alt="Get Git Modified But Untracked Content Checked In" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/" class="title">Get Git Modified But Untracked Content Checked In</a></p>
+              <p class="item-date"><time datetime="2015-08-21T15:27:57.000Z" itemprop="datePublished">2015-08-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/06/21/Hadoop Streaming/" class="thumbnail">
+  
+    <span style="background-image:url(/images/hadoopstream.jpg
+)" alt="Hadoop Streaming" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/06/21/Hadoop Streaming/" class="title">Hadoop Streaming</a></p>
+              <p class="item-date"><time datetime="2015-06-21T04:00:00.000Z" itemprop="datePublished">2015-06-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/04/20/Scala and Java Constructors/" class="thumbnail">
+  
+    <span style="background-image:url(/images/scala-vs-java.png
+)" alt="Scala Constructor vs. Java Constructor" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/04/20/Scala and Java Constructors/" class="title">Scala Constructor vs. Java Constructor</a></p>
+              <p class="item-date"><time datetime="2015-04-20T04:00:00.000Z" itemprop="datePublished">2015-04-20</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/03/15/Apache Hive Essentials Published/" class="thumbnail">
+  
+    <span style="background-image:url(/images/hivebooks.jpg
+)" alt="Apache Hive Essentials Published" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/03/15/Apache Hive Essentials Published/" class="title">Apache Hive Essentials Published</a></p>
+              <p class="item-date"><time datetime="2015-03-15T04:00:00.000Z" itemprop="datePublished">2015-03-15</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/02/12/Hive and Hadoop Exceptions/" class="thumbnail">
+  
+    <span style="background-image:url(/images/exceptions.png
+)" alt="Hive and Hadoop Exceptions" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/02/12/Hive and Hadoop Exceptions/" class="title">Hive and Hadoop Exceptions</a></p>
+              <p class="item-date"><time datetime="2015-02-12T05:00:00.000Z" itemprop="datePublished">2015-02-12</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">tagcloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/linux/" style="font-size: 13px; color: #90f">linux</a> <a href="/tags/git/" style="font-size: 20.14px; color: #e20049">git</a> <a href="/tags/scala/" style="font-size: 14.43px; color: #a800db">scala</a> <a href="/tags/hive/" style="font-size: 21.57px; color: #f00024">hive</a> <a href="/tags/bigdata/" style="font-size: 17.29px; color: #c50092">bigdata</a> <a href="/tags/spark/" style="font-size: 15.86px; color: #b600b6">spark</a> <a href="/tags/books/" style="font-size: 18.71px; color: #d3006d">books</a> <a href="/tags/data-science/" style="font-size: 13px; color: #90f">data science</a> <a href="/tags/hadoop/" style="font-size: 23px; color: #f00">hadoop</a> <a href="/tags/pig/" style="font-size: 14.43px; color: #a800db">pig</a> <a href="/tags/hbase/" style="font-size: 15.86px; color: #b600b6">hbase</a> <a href="/tags/maven/" style="font-size: 13px; color: #90f">maven</a> <a href="/tags/jekyll/" style="font-size: 13px; color: #90f">jekyll</a> <a href="/tags/mapred/" style="font-size: 14.43px; color: #a800db">mapred</a> <a href="/tags/scrum/" style="font-size: 13px; color: #90f">scrum</a> <a href="/tags/datamining/" style="font-size: 13px; color: #90f">datamining</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Will</p>
+		<p><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="busuanzi_container_site_pv"> You are the No. <span id="busuanzi_value_site_pv"></span> visits</span>
+		</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice.</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+<script>
+  var disqus_shortname = 'sparkera';
+  
+  var disqus_url = 'http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

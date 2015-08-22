@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
+  <meta charset="utf-8">
+  
+  <title>SQL in MySQL and Pig Comparision | SparkEra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as follows. 
+00.Prepared Filescat /tmp/data_file_1
+zhangsan      23  1 
+lisi          24  1 
+wangmazi      30  1 
+meinv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL in MySQL and Pig Comparision">
+<meta property="og:url" content="http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/index.html">
+<meta property="og:site_name" content="SparkEra">
+<meta property="og:description" content="Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as follows. 
+00.Prepared Filescat /tmp/data_file_1
+zhangsan      23  1 
+lisi          24  1 
+wangmazi      30  1 
+meinv">
+<meta property="og:image" content="http://www.sparkera.ca/images/pigmysql.png">
+<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL in MySQL and Pig Comparision">
+<meta name="twitter:description" content="Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as follows. 
+00.Prepared Filescat /tmp/data_file_1
+zhangsan      23  1 
+lisi          24  1 
+wangmazi      30  1 
+meinv">
+  
+  
+    <link rel="icon" href="/image/favicon.ico">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+
+
+  
+
+  
+    <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+            <h2 class="subtitle-wrap">
+              <p class="subtitle">Big Data Big Insight</p>
+            </h2>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/">Blog</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/">Reviews</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/Big-Data/">Big Data</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/Coding/">Coding</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Reviews/DBDWBI/">DBDWBI</a></li></ul></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://www.sparkera.ca"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/Blog/">Blog</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-SQL-In-MySQL-and-PIG" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      SQL in MySQL and Pig Comparision
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2013/08/21/SQL-In-MySQL-and-PIG/" class="article-date">
+  <time datetime="2013-08-21T04:00:00.000Z" itemprop="datePublished">2013-08-21</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/images/pigmysql.png" align="center"></p>
+<p>Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as follows. </p>
+<h5 id="00-Prepared_Files">00.Prepared Files</h5><p>cat /tmp/data_file_1</p>
+<pre><code>zhangsan      <span class="number">23</span>  <span class="number">1</span> 
+lisi          <span class="number">24</span>  <span class="number">1</span> 
+wangmazi      <span class="number">30</span>  <span class="number">1</span> 
+meinv         <span class="number">18</span>  <span class="number">0</span> 
+dama          <span class="number">55</span>  <span class="number">0</span> 
+</code></pre><p>cat /tmp/data_file_2 </p>
+<pre><code><span class="number">1</span>      a
+<span class="number">23</span>     bb
+<span class="number">50</span>     ccc
+<span class="number">30</span>     dddd
+<span class="number">66</span>     eeeee 
+</code></pre><h5 id="01-Load_Files">01.Load Files</h5><pre><code>1)Mysql (Need to <span class="operator"><span class="keyword">create</span> the <span class="keyword">table</span> <span class="keyword">first</span>).
+   <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TMP_TABLE(<span class="keyword">USER</span> <span class="built_in">VARCHAR</span>(<span class="number">32</span>),AGE <span class="built_in">INT</span>,IS_MALE <span class="built_in">BOOLEAN</span>);</span>
+   <span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TMP_TABLE_2(AGE <span class="built_in">INT</span>,OPTIONS <span class="built_in">VARCHAR</span>(<span class="number">50</span>));</span>   <span class="comment">-- 用于Join</span>
+   <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/data_file_1'</span>  <span class="keyword">INTO</span> <span class="keyword">TABLE</span> TMP_TABLE ;</span>
+   <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/data_file_2'</span>  <span class="keyword">INTO</span> <span class="keyword">TABLE</span> TMP_TABLE_2;</span>
+
+2)Pig
+   tmp_table = <span class="operator"><span class="keyword">LOAD</span> <span class="string">'/tmp/data_file_1'</span> <span class="keyword">USING</span> PigStorage(<span class="string">'\t'</span>) 
+   <span class="keyword">AS</span> (<span class="keyword">user</span>:chararray, age:<span class="built_in">int</span>,is_male:<span class="built_in">int</span>);</span>
+   tmp_table_2= <span class="operator"><span class="keyword">LOAD</span> <span class="string">'/tmp/data_file_2'</span> <span class="keyword">USING</span> PigStorage(<span class="string">'\t'</span>) 
+   <span class="keyword">AS</span> (age:<span class="built_in">int</span>,options:chararray);</span>
+</code></pre><h5 id="02-Select_WHole_Table">02.Select WHole Table</h5><pre><code><span class="number">1</span>)Mysql
+  SELECT * FROM TMP_TABLE;
+
+<span class="number">2</span>)Pig
+  DUMP tmp_table;
+</code></pre><h5 id="03-Select_Top_N">03.Select Top N</h5><pre><code><span class="number">1</span>)Mysql
+  SELECT * FROM TMP_TABLE LIMIT <span class="number">50</span>;
+
+<span class="number">2</span>)Pig
+   tmp_table_limit = LIMIT tmp_table <span class="number">50</span>;
+   DUMP tmp_table_limit;
+</code></pre><h5 id="04-Select_Specific">04.Select Specific</h5><pre><code>1)Mysql
+   SELECT USER FROM TMP_TABLE<span class="comment">;</span>
+
+2)Pig
+   tmp_table_user = FOREACH tmp_table GENERATE user<span class="comment">;</span>
+   DUMP tmp_table_user<span class="comment">;</span>
+</code></pre><h5 id="05-Alias">05.Alias</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> USER <span class="keyword">AS</span> USER_NAME,AGE <span class="keyword">AS</span> USER_AGE <span class="keyword">FROM</span> TMP_TABLE;
+
+<span class="number">2</span>)Pig
+   tmp_table_column_alias = FOREACH tmp_table GENERATE user <span class="keyword">AS</span> user_name,age <span class="keyword">AS</span> user_age;
+   DUMP tmp_table_column_alias;
+</code></pre><h5 id="06-Ordering">06.Ordering</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">ORDER</span> <span class="keyword">BY</span> AGE;
+
+<span class="number">2</span>)Pig
+    tmp_table_order = <span class="keyword">ORDER</span> tmp_table <span class="keyword">BY</span> age <span class="keyword">ASC</span>;
+    DUMP tmp_table_order;
+</code></pre><h5 id="07-Condition">07.Condition</h5><pre><code><span class="number">1</span>) Mysql
+    SELECT * FROM TMP_TABLE WHERE AGE&gt;<span class="number">20</span>;
+
+<span class="number">2</span>) Pig
+    tmp_table_where = FILTER tmp_table by age &gt; <span class="number">20</span>;
+    DUMP tmp_table_where;
+</code></pre><h5 id="08-Inner_Join">08.Inner Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+    tmp_table_inner_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age, tmp_table_2 <span class="keyword">BY</span> age;
+    DUMP tmp_table_inner_join;
+</code></pre><h5 id="09-Left_Join">09.Left Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A LEFT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+  tmp_table_left_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age LEFT OUTER, tmp_table_2 <span class="keyword">BY</span> age;
+  DUMP tmp_table_left_join;
+</code></pre><h5 id="10-Right_Join">10.Right Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A RIGHT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+   tmp_table_right_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age RIGHT OUTER,tmp_table_2 <span class="keyword">BY</span> age;
+   DUMP tmp_table_right_join;
+</code></pre><h5 id="11-Full_Join">11.Full Join</h5><pre><code><span class="number">1</span>)Mysql
+   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A  <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE
+   <span class="keyword">UNION</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A LEFT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE
+   <span class="keyword">UNION</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A RIGHT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
+
+<span class="number">2</span>)Pig
+   tmp_table_full_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age FULL OUTER,tmp_table_2 <span class="keyword">BY</span> age;
+   DUMP tmp_table_full_join;
+</code></pre><h5 id="12-Cross_Join">12.Cross Join</h5><pre><code>1)Mysql
+   SELECT * FROM TMP_TABLE,TMP_TABLE_2<span class="comment">;</span>
+
+2)Pig
+   tmp_table_cross = CROSS tmp_table,tmp_table_2<span class="comment">;</span>
+   DUMP tmp_table_cross<span class="comment">;</span>
+</code></pre><h5 id="13-GROUP">13.GROUP</h5><pre><code><span class="number">1</span>)Mysql
+  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">GROUP</span> <span class="keyword">BY</span> IS_MALE;
+
+<span class="number">2</span>)Pig
+  tmp_table_group = <span class="keyword">GROUP</span> tmp_table <span class="keyword">BY</span> is_male;
+  DUMP tmp_table_group;
+</code></pre><h5 id="14-Counting_by_group">14.Counting by group</h5><pre><code><span class="number">1</span>)Mysql
+  SELECT IS_MALE,<span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">GROUP</span> BY IS_MALE;
+
+<span class="number">2</span>)Pig
+   tmp_table_group_count = <span class="keyword">GROUP</span> tmp_table BY is_male;
+   tmp_table_group_count = FOREACH tmp_table_group_count GENERATE <span class="keyword">group</span>,<span class="keyword">COUNT</span>($<span class="number">1</span>);
+   <span class="keyword">DUMP</span> tmp_table_group_count;
+</code></pre><h5 id="15-DISTINCT">15.DISTINCT</h5><pre><code>1)MYSQL
+   SELECT DISTINCT IS_MALE FROM TMP_TABLE<span class="comment">;</span>
+
+2)Pig
+   tmp_table_distinct = FOREACH tmp_table GENERATE is_male<span class="comment">;</span>
+   tmp_table_distinct = DISTINCT tmp_table_distinct<span class="comment">;</span>
+   DUMP  tmp_table_distinct<span class="comment">;</span>
+</code></pre>
+      </div>
+	  <div class="addthis_native_toolbox">
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ccd80609fffe5a" async="async">
+  </script>
+  </div>
+      <footer class="article-footer">
+        <a data-url="http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/" data-id="cidmg8di1002fmsx6yyixtdlf" class="article-share-link">Share</a>
+        
+          <a href="http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/#comments" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pig/">pig</a></li></ul>
+
+      </footer>
+    </div>
+  
+  </article>
+  
+  
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </section>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>follow:</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/willdu8" target="_blank"><i class="icon fa fa-twitter"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/will.du.7545" target="_blank"><i class="icon fa fa-facebook"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="http://github.com/willddy" target="_blank"><i class="icon fa fa-github"></i></a></li>
+      
+        <li><a class="social-tooltip" title="rss" href="/atom.xml" target="_blank"><i class="icon fa fa-rss"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/09/29/Hive-Composite-Data-Type/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <p class="article-nav-title">
+        
+          Hive Composite Data Type
+        
+      </p>
+      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2013/07/06/HBase-Disable-Major-Compaction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">Disable Major Compaction in HBase Cluster</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/" class="thumbnail">
+  
+    <span style="background-image:url(/images/gettingStartedGit.jpg
+)" alt="Get Git Modified But Untracked Content Checked In" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/" class="title">Get Git Modified But Untracked Content Checked In</a></p>
+              <p class="item-date"><time datetime="2015-08-21T15:27:57.000Z" itemprop="datePublished">2015-08-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/06/21/Hadoop Streaming/" class="thumbnail">
+  
+    <span style="background-image:url(/images/hadoopstream.jpg
+)" alt="Hadoop Streaming" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/06/21/Hadoop Streaming/" class="title">Hadoop Streaming</a></p>
+              <p class="item-date"><time datetime="2015-06-21T04:00:00.000Z" itemprop="datePublished">2015-06-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/04/20/Scala and Java Constructors/" class="thumbnail">
+  
+    <span style="background-image:url(/images/scala-vs-java.png
+)" alt="Scala Constructor vs. Java Constructor" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/04/20/Scala and Java Constructors/" class="title">Scala Constructor vs. Java Constructor</a></p>
+              <p class="item-date"><time datetime="2015-04-20T04:00:00.000Z" itemprop="datePublished">2015-04-20</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/03/15/Apache Hive Essentials Published/" class="thumbnail">
+  
+    <span style="background-image:url(/images/hivebooks.jpg
+)" alt="Apache Hive Essentials Published" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/03/15/Apache Hive Essentials Published/" class="title">Apache Hive Essentials Published</a></p>
+              <p class="item-date"><time datetime="2015-03-15T04:00:00.000Z" itemprop="datePublished">2015-03-15</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/02/12/Hive and Hadoop Exceptions/" class="thumbnail">
+  
+    <span style="background-image:url(/images/exceptions.png
+)" alt="Hive and Hadoop Exceptions" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+              <p class="item-title"><a href="/2015/02/12/Hive and Hadoop Exceptions/" class="title">Hive and Hadoop Exceptions</a></p>
+              <p class="item-date"><time datetime="2015-02-12T05:00:00.000Z" itemprop="datePublished">2015-02-12</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">tagcloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/linux/" style="font-size: 13px; color: #90f">linux</a> <a href="/tags/git/" style="font-size: 20.14px; color: #e20049">git</a> <a href="/tags/scala/" style="font-size: 14.43px; color: #a800db">scala</a> <a href="/tags/hive/" style="font-size: 21.57px; color: #f00024">hive</a> <a href="/tags/bigdata/" style="font-size: 17.29px; color: #c50092">bigdata</a> <a href="/tags/spark/" style="font-size: 15.86px; color: #b600b6">spark</a> <a href="/tags/books/" style="font-size: 18.71px; color: #d3006d">books</a> <a href="/tags/data-science/" style="font-size: 13px; color: #90f">data science</a> <a href="/tags/hadoop/" style="font-size: 23px; color: #f00">hadoop</a> <a href="/tags/pig/" style="font-size: 14.43px; color: #a800db">pig</a> <a href="/tags/hbase/" style="font-size: 15.86px; color: #b600b6">hbase</a> <a href="/tags/maven/" style="font-size: 13px; color: #90f">maven</a> <a href="/tags/jekyll/" style="font-size: 13px; color: #90f">jekyll</a> <a href="/tags/mapred/" style="font-size: 14.43px; color: #a800db">mapred</a> <a href="/tags/scrum/" style="font-size: 13px; color: #90f">scrum</a> <a href="/tags/datamining/" style="font-size: 13px; color: #90f">datamining</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Will</p>
+		<p><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="busuanzi_container_site_pv"> You are the No. <span id="busuanzi_value_site_pv"></span> visits</span>
+		</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice.</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+<script>
+  var disqus_shortname = 'sparkera';
+  
+  var disqus_url = 'http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
