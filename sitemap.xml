@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.sparkera.ca/2013/05/17/GIT-Tips-Weekend-Friday/</loc>
+    <lastmod>2015-08-23T21:02:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/</loc>
+    <lastmod>2015-08-23T21:02:45.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2013/05/19/GIT-Tips-Weekend-Sunday/</loc>
+    <lastmod>2015-08-23T21:02:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2013/05/21/GIT-Catchup-Changes/</loc>
+    <lastmod>2015-08-23T20:59:52.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2013/06/03/Hadoop-Counter/</loc>
+    <lastmod>2015-08-23T20:58:00.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/</loc>
     <lastmod>2015-08-22T18:11:54.000Z</lastmod>
   </url>
@@ -12,32 +37,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/04/20/Scala%20and%20Java%20Constructors/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/02/06/Data-Analysis/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <loc>http://www.sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -117,7 +117,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/06/03/Hadoop-Counter/</loc>
+    <loc>http://www.sparkera.ca/2015/02/06/Data-Analysis/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -132,12 +132,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/21/GIT-Catchup-Changes/</loc>
+    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/19/GIT-Tips-Weekend-Sunday/</loc>
+    <loc>http://www.sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -147,7 +147,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/17/GIT-Tips-Weekend-Friday/</loc>
+    <loc>http://www.sparkera.ca/2015/04/20/Scala%20and%20Java%20Constructors/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -157,7 +157,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/</loc>
+    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -272,12 +272,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/about/index.html</loc>
+    <loc>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/</loc>
+    <loc>http://www.sparkera.ca/about/index.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

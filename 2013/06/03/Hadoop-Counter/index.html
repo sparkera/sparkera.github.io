@@ -12,7 +12,8 @@
 <meta property="og:url" content="http://www.sparkera.ca/2013/06/03/Hadoop-Counter/index.html">
 <meta property="og:site_name" content="SparkEra">
 <meta property="og:description" content="hadoop counter is to help developers and users to have overall status of running jobs. There are three type of counters, MapReduce related, File systems related, and job related. The details can be se">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:image" content="http://www.sparkera.ca/images/hcounter.png">
+<meta property="og:updated_time" content="2015-08-23T20:58:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop Counter">
 <meta name="twitter:description" content="hadoop counter is to help developers and users to have overall status of running jobs. There are three type of counters, MapReduce related, File systems related, and job related. The details can be se">
@@ -109,14 +110,14 @@
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>hadoop counter is to help developers and users to have overall status of running jobs. There are three type of counters, MapReduce related, File systems related, and job related. The details can be seen from <a href="http://master:50030/jobdetails.jsp" target="_blank" rel="external">http://master:50030/jobdetails.jsp</a></p>
+        <p><img src="/images/hcounter.png" alt=""></p>
+<p>hadoop counter is to help developers and users to have overall status of running jobs. There are three type of counters, MapReduce related, File systems related, and job related. The details can be seen from <a href="http://master:50030/jobdetails.jsp" target="_blank" rel="external">http://master:50030/jobdetails.jsp</a></p>
 <p>Except internal counters, hadoop also offers customize counters. There are two ways to do that.</p>
 <h4 id="1-_Static_Definition">1. Static Definition</h4><p>You can use enumiate classs to create counters</p>
 <pre><code>Context context...  
 //<span class="keyword">Enum</span> <span class="keyword">class</span> refers to groupName，<span class="keyword">Enum</span> <span class="keyword">class</span> <span class="keyword">type</span> refers to counterName  
 context.getCounter(<span class="keyword">Enum</span> <span class="keyword">enum</span>)  
-</code></pre><p><br></p>
-<h4 id="2-_Dynamic_Definition">2. Dynamic Definition</h4><pre><code><span class="keyword">Context</span> <span class="keyword">context</span>...  
+</code></pre><h4 id="2-_Dynamic_Definition">2. Dynamic Definition</h4><pre><code><span class="keyword">Context</span> <span class="keyword">context</span>...  
 //Pass groupName <span class="keyword">and</span> counterName dynamically. 
 //__Hadoop will create it <span class="keyword">if</span> there <span class="keyword">is</span> no such counter.__  
 <span class="keyword">context</span>.getCounter(<span class="typename">String</span> groupName,<span class="typename">String</span> counterName)  
@@ -127,8 +128,7 @@ job.waitForCompletion<span class="params">(<span class="literal">true</span>)</s
 Counters counters=job.getCounters<span class="params">()</span>;  
 Counter counter=counters.findCounter<span class="params">(Enum enum)</span>;<span class="comment">//Search Counter  </span>
 long value=counter.getValue<span class="params">()</span>;<span class="comment">//Fetch Counter </span>
-</code></pre><p><br></p>
-<h4 id="3-_Example">3. Example</h4><p>Below is an example, class WordCountMap: </p>
+</code></pre><h4 id="3-_Example">3. Example</h4><p>Below is an example, class WordCountMap: </p>
 <pre><code><span class="keyword">public</span> <span class="keyword">static</span> class TokenizerMapper   
    extends Mapper&lt;<span class="keyword">Object</span>, Text, Text, IntWritable&gt;{  
 
@@ -161,7 +161,7 @@ long value=counter.getValue<span class="params">()</span>;<span class="comment">
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.ca/2013/06/03/Hadoop-Counter/" data-id="cidndvah2002xu0x6ha27pbua" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.ca/2013/06/03/Hadoop-Counter/" data-id="cidozfnll002x8wx6u79v6ls5" class="article-share-link">Share</a>
         
           <a href="http://www.sparkera.ca/2013/06/03/Hadoop-Counter/#comments" class="article-comment-link">Comments</a>
         

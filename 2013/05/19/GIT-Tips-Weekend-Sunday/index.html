@@ -6,20 +6,23 @@
   
   <title>GIT Tips At Weekend - Sunday | SparkEra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####Cherry-Pickinggit cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] &amp;lt;commit&amp;gt;
-Selectively merge a single commit from another local branchExample: git cherry-pick 7300a6130d9447e18a931e89">
+  <meta name="description" content="Cherry-Picking
+git cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] &amp;lt;commit&amp;gt;
+Selectively merge a single commit from another local branchExample: git cherry-pick 7300a6130d9447e18a931e898b6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT Tips At Weekend - Sunday">
 <meta property="og:url" content="http://www.sparkera.ca/2013/05/19/GIT-Tips-Weekend-Sunday/index.html">
 <meta property="og:site_name" content="SparkEra">
-<meta property="og:description" content="####Cherry-Pickinggit cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] &amp;lt;commit&amp;gt;
-Selectively merge a single commit from another local branchExample: git cherry-pick 7300a6130d9447e18a931e89">
-<meta property="og:image" content="http://kandishengcdn.sinaapp.com/wp-content/uploads/2012/05/687474703a2f2f6769746875622e73332e616d617a6f6e6177732e636f6d2f626c6f672f7265642d706f6c6f2e6a7067.jpg">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:description" content="Cherry-Picking
+git cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] &amp;lt;commit&amp;gt;
+Selectively merge a single commit from another local branchExample: git cherry-pick 7300a6130d9447e18a931e898b6">
+<meta property="og:image" content="http://www.sparkera.ca/images/gitwk.jpg">
+<meta property="og:updated_time" content="2015-08-23T21:02:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT Tips At Weekend - Sunday">
-<meta name="twitter:description" content="####Cherry-Pickinggit cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] &amp;lt;commit&amp;gt;
-Selectively merge a single commit from another local branchExample: git cherry-pick 7300a6130d9447e18a931e89">
+<meta name="twitter:description" content="Cherry-Picking
+git cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] &amp;lt;commit&amp;gt;
+Selectively merge a single commit from another local branchExample: git cherry-pick 7300a6130d9447e18a931e898b6">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -113,17 +116,22 @@ Selectively merge a single commit from another local branchExample: git cherry-p
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <h2 id="####Cherry-Picking">####Cherry-Picking</h2><pre><code><span class="tag">git</span> <span class="tag">cherry-pick</span> <span class="attr_selector">[--edit]</span> <span class="attr_selector">[-n]</span> <span class="attr_selector">[-m parent-number]</span> <span class="attr_selector">[-s]</span> <span class="attr_selector">[-x]</span> &lt;<span class="tag">commit</span>&gt;
+        <p><img src="/images/gitwk.jpg" alt=""></p>
+<h4 id="Cherry-Picking">Cherry-Picking</h4><hr>
+<pre><code><span class="tag">git</span> <span class="tag">cherry-pick</span> <span class="attr_selector">[--edit]</span> <span class="attr_selector">[-n]</span> <span class="attr_selector">[-m parent-number]</span> <span class="attr_selector">[-s]</span> <span class="attr_selector">[-x]</span> &lt;<span class="tag">commit</span>&gt;
 </code></pre><p>Selectively merge a single commit from another local branch<br><br>Example: <code>git cherry-pick 7300a6130d9447e18a931e898b64eefedea19544</code><br><br><br><br></p>
-<h2 id="####Squashing">####Squashing</h2><p><em>WARNING</em>: “git rebase” changes history. Be careful. Google it.</p>
+<h4 id="Squashing">Squashing</h4><hr>
+<p><em>WARNING</em>: “git rebase” changes history. Be careful. Google it.</p>
 <pre><code>git rebase <span class="comment">--interactive HEAD~10</span>
 </code></pre><p>(then change all but the first “pick” to “squash”)<br>squash the last 10 commits into one big commit</p>
 <p><br><br><br></p>
-<h2 id="####Conflicts">####Conflicts</h2><pre><code><span class="title">git</span> mergetool
+<h4 id="Conflicts">Conflicts</h4><hr>
+<pre><code><span class="title">git</span> mergetool
 </code></pre><p>Work through conflicted files by opening them in your mergetool (opendiff,<br>kdiff3, etc.) and choosing left/right chunks. The merged result is staged for<br>commit.</p>
 <p>For binary files or if mergetool won’t do, resolve the conflict(s) manually<br>and then do:<code>git add &lt;file1&gt; [&lt;file2&gt; …]</code> Once all conflicts are resolved and staged, commit the pending merge with: <code>git commit</code></p>
 <p><br><br><br></p>
-<h2 id="####Sharing">####Sharing</h2><pre><code>git fetch <span class="tag">&lt;<span class="title">remote</span>&gt;</span>
+<h4 id="Sharing">Sharing</h4><hr>
+<pre><code>git fetch <span class="tag">&lt;<span class="title">remote</span>&gt;</span>
 </code></pre><p>Update the remote-tracking branches for \<remote> (defaults to “origin”).<br>Does not initiate a merge into the current branch (see “git pull” below).</remote></p>
 <pre><code><span class="title">git</span> pull
 </code></pre><p>Fetch changes from the server, and merge them into the current branch.<br>Note: .git/config must have a [branch “some_name”] section for the current<br>branch, to know which remote-tracking branch to merge into the current<br>branch. Git 1.5.3 and above adds this automatically.</p>
@@ -134,13 +142,15 @@ Selectively merge a single commit from another local branchExample: git cherry-p
 <pre><code>git push origin &lt;branch&gt;<span class="symbol">:refs/heads/&lt;branch&gt;</span>
 </code></pre><p>E.g. git push origin twitter-experiment:refs/heads/twitter-experiment<br>Which, in fact, is the same as <code>git push origin &lt;branch&gt;</code> but a little<br>more obvious what is happening.</p>
 <p><br><br><br></p>
-<h2 id="####Reverting">####Reverting</h2><pre><code><span class="label">git</span> <span class="keyword">revert </span>&lt;<span class="keyword">rev&gt;</span>
+<h4 id="Reverting">Reverting</h4><hr>
+<pre><code><span class="label">git</span> <span class="keyword">revert </span>&lt;<span class="keyword">rev&gt;</span>
 </code></pre><p>Reverse commit specified by \<rev> and commit the result. This does <em>not</em> do<br>the same thing as similarly named commands in other VCS’s such as “svn<br>revert” or “bzr revert”, see below</rev></p>
 <pre><code>git checkout &lt;<span class="type">file</span>&gt;
 </code></pre><p>Re-checkout \<file>, overwriting any local changes</file></p>
 <pre><code>git checkout .
 </code></pre><p>Re-checkout all files, overwriting any local changes. This is most similar<br>to “svn revert” if you’re used to Subversion commands<br><br><br><br></p>
-<h2 id="####Fix_Mistakes_/_Undo">####Fix Mistakes / Undo</h2><pre><code>git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard</span></span>
+<h4 id="Fix_Mistakes_/_Undo">Fix Mistakes / Undo</h4><hr>
+<pre><code>git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard</span></span>
 </code></pre><p>Abandon everything since your last commit; this command can be DANGEROUS.<br>If merging has resulted in conflicts and you’d like to just forget about<br>the merge, this command will do that.</p>
 <pre><code>git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard ORIG_HEAD</span></span>
 </code></pre><p>Undo your most recent <em>successful</em> merge <em>and</em> any changes that occurred<br>after. Useful for forgetting about the merge you just did. If there are<br>conflicts (the merge was not successful), use <code>git reset --hard</code> (above)<br>instead.</p>
@@ -148,9 +158,11 @@ Selectively merge a single commit from another local branchExample: git cherry-p
 </code></pre><p>Forgot something in your last commit? That’s easy to fix. Undo your last<br>commit, but keep the changes in the staging area for editing.</p>
 <pre><code>git <span class="operator"><span class="keyword">commit</span> <span class="comment">--amend</span></span>
 </code></pre><p>Redo previous commit, including changes you’ve staged in the meantime.<br>Also used to edit commit message of previous commit.<br><br><br><br></p>
-<h2 id="####Plumbing">####Plumbing</h2><pre><code>test <span class="tag">&lt;<span class="title">sha1-A</span>&gt;</span> = $(git merge-base <span class="tag">&lt;<span class="title">sha1-A</span>&gt;</span> <span class="tag">&lt;<span class="title">sha1-B</span>&gt;</span>)
+<h4 id="Plumbing">Plumbing</h4><hr>
+<pre><code>test <span class="tag">&lt;<span class="title">sha1-A</span>&gt;</span> = $(git merge-base <span class="tag">&lt;<span class="title">sha1-A</span>&gt;</span> <span class="tag">&lt;<span class="title">sha1-B</span>&gt;</span>)
 </code></pre><p>Determine if merging sha1-B into sha1-A is achievable as a fast forward;<br>non-zero exit status is false.<br><br><br><br></p>
-<h2 id="####Stashing">####Stashing</h2><pre><code>git stash
+<h4 id="Stashing">Stashing</h4><hr>
+<pre><code>git stash
 git stash <span class="keyword">save</span> &lt;<span class="type">optional</span>-<span class="keyword">name</span>&gt;
 </code></pre><p>Save your local modifications to a new stash (so you can for example<br>“git svn rebase” or “git pull”)</p>
 <pre><code><span class="title">git</span> stash apply
@@ -165,7 +177,8 @@ git stash <span class="keyword">save</span> &lt;<span class="type">optional</spa
 </code></pre><p>Delete the stash</p>
 <pre><code>git stash <span class="built_in">clear</span>
 </code></pre><p>Delete all current stashes<br><br><br><br></p>
-<h2 id="####Remotes">####Remotes</h2><pre><code>git remote add <span class="tag">&lt;<span class="title">remote</span>&gt;</span> <span class="tag">&lt;<span class="title">remote_URL</span>&gt;</span>
+<h4 id="Remotes">Remotes</h4><hr>
+<pre><code>git remote add <span class="tag">&lt;<span class="title">remote</span>&gt;</span> <span class="tag">&lt;<span class="title">remote_URL</span>&gt;</span>
 </code></pre><p>Adds a remote repository to your git config. Can be then fetched locally.<br><br>Example:<br>    git remote add coreteam git://github.com/wycats/merb-plugins.git<br>    git fetch coreteam</p>
 <pre><code>git push &lt;remote&gt; <span class="symbol">:refs/heads/&lt;branch&gt;</span>
 </code></pre><p>Delete a branch in a remote repository</p>
@@ -187,7 +200,8 @@ git push
 <pre><code>git fetch <span class="tag">&lt;<span class="title">remote</span>&gt;</span>
 </code></pre><p>Retrieves all branches from the remote repository. After<br>this <code>git branch --track ...</code> can be used to track a branch<br>from the new remote.</p>
 <p><br><br><br></p>
-<h2 id="####Submodules">####Submodules</h2><pre><code><span class="label">git</span> <span class="keyword">submodule </span><span class="keyword">add </span>&lt;remote_repository&gt; &lt;path/to/<span class="keyword">submodule&gt;</span>
+<h4 id="Submodules">Submodules</h4><hr>
+<pre><code><span class="label">git</span> <span class="keyword">submodule </span><span class="keyword">add </span>&lt;remote_repository&gt; &lt;path/to/<span class="keyword">submodule&gt;</span>
 </code></pre><p>Add the given repository at the given path. The addition will be part of the<br>next commit.</p>
 <pre><code>git submodule <span class="operator"><span class="keyword">update</span> [<span class="comment">--init]</span></span>
 </code></pre><p>Update the registered submodules (clone missing submodules, and checkout<br>the commit specified by the super-repo). –init is needed the first time.</p>
@@ -209,7 +223,8 @@ git push
 <li>check that the submodule has the correct version<br><br><code>git submodule status</code><br><br>If the update in the submodule is not committed in the<br>main repository, it is lost and doing git submodule<br>update will revert to the previous version.</li>
 </ol>
 <p><br><br><br></p>
-<h2 id="####Patches">####Patches</h2><pre><code>git <span class="built_in">format</span>-patch HEAD^
+<h4 id="Patches">Patches</h4><hr>
+<pre><code>git <span class="built_in">format</span>-patch HEAD^
 </code></pre><p>Generate the last commit as a patch that can be applied on another<br>clone (or branch) using ‘git am’. Format patch can also generate a<br>patch for all commits using ‘git format-patch HEAD^ HEAD’<br>All page files will be enumerated with a prefix, e.g. 0001 is the<br>first patch.</p>
 <pre><code>git format-patch <span class="tag">&lt;<span class="title">Revision</span>&gt;</span>^..<span class="tag">&lt;<span class="title">Revision</span>&gt;</span>
 </code></pre><p>Generate a patch for a single commit. E.g.<br>git format-patch d8efce43099^..d8efce43099<br>Revision does not need to be fully specified.</p>
@@ -218,12 +233,14 @@ git push
 <pre><code><span class="title">git</span> diff --<span class="built_in">no</span>-prefix &gt; patchfile
 </code></pre><p>Generates a patch file that can be applied using patch:<br>    patch -p0 &lt; patchfile<br>Useful for sharing changes without generating a git commit.</p>
 <p><br><br><br></p>
-<h2 id="####Tags">####Tags</h2><pre><code>git tag <span class="operator">-l</span>
+<h4 id="Tags">Tags</h4><hr>
+<pre><code>git tag <span class="operator">-l</span>
 </code></pre><p>Will list all tags defined in the repository.</p>
 <pre><code>git co <span class="tag">&lt;<span class="title">tag_name</span>&gt;</span>
 </code></pre><p>Will checkout the code for a particular tag. After this you’ll<br>probably want to do: <code>git co -b &lt;some branch name&gt;</code> to define<br>a branch. Any changes you now make can be committed to that<br>branch and later merged.</p>
 <p><br><br><br></p>
-<h2 id="####Git_Instaweb">####Git Instaweb</h2><pre><code><span class="comment">git</span> <span class="comment">instaweb</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">httpd=webrick</span> <span class="title">[</span><span class="literal">-</span><span class="literal">-</span><span class="comment">start</span> <span class="comment">|</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">stop</span> <span class="comment">|</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">restart</span><span class="title">]</span>
+<h4 id="Git_Instaweb">Git Instaweb</h4><hr>
+<pre><code><span class="comment">git</span> <span class="comment">instaweb</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">httpd=webrick</span> <span class="title">[</span><span class="literal">-</span><span class="literal">-</span><span class="comment">start</span> <span class="comment">|</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">stop</span> <span class="comment">|</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">restart</span><span class="title">]</span>
 </code></pre><p><br><br><br></p>
 <h2 id="####Environment_Variables">####Environment Variables</h2><pre><code>GIT_AUTHOR_NAME, GIT_COMMITTER_NAME
 </code></pre><p>Your full name to be recorded in any newly created commits. Overrides<br>user.name in .git/config</p>
@@ -232,7 +249,7 @@ git push
 <pre><code>GIT_DIR
 </code></pre><p>Location of the repository to use (for out of working directory repositories)</p>
 <pre><code>GIT_WORKING_TREE
-</code></pre><p>Location of the Working Directory - use with GIT_DIR to specifiy the working<br>directory root<br>or to work without being in the working directory at all.<br><br><br><br><br><img src="http://kandishengcdn.sinaapp.com/wp-content/uploads/2012/05/687474703a2f2f6769746875622e73332e616d617a6f6e6177732e636f6d2f626c6f672f7265642d706f6c6f2e6a7067.jpg" alt=""></p>
+</code></pre><p>Location of the Working Directory - use with GIT_DIR to specifiy the working<br>directory root<br>or to work without being in the working directory at all.</p>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -243,7 +260,7 @@ git push
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.ca/2013/05/19/GIT-Tips-Weekend-Sunday/" data-id="cidndvaio003au0x6inxk1tu2" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.ca/2013/05/19/GIT-Tips-Weekend-Sunday/" data-id="cidozfnmd003a8wx6slw5z9p7" class="article-share-link">Share</a>
         
           <a href="http://www.sparkera.ca/2013/05/19/GIT-Tips-Weekend-Sunday/#comments" class="article-comment-link">Comments</a>
         

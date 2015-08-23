@@ -6,23 +6,27 @@
   
   <title>GIT Tips At Weekend - Saturday | SparkEra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####Infogit reflog
+  <meta name="description" content="Info
+git reflog
 Use this to recover from major fuck ups! It’s basically a log of thelast few actions and you might have luck and find old commits thathave been lost by doing a complex merge.
-git di">
+git diff">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT Tips At Weekend - Saturday">
 <meta property="og:url" content="http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/index.html">
 <meta property="og:site_name" content="SparkEra">
-<meta property="og:description" content="####Infogit reflog
+<meta property="og:description" content="Info
+git reflog
 Use this to recover from major fuck ups! It’s basically a log of thelast few actions and you might have luck and find old commits thathave been lost by doing a complex merge.
-git di">
+git diff">
+<meta property="og:image" content="http://www.sparkera.ca/images/gitwk.jpg">
 <meta property="og:image" content="http://kandishengcdn.sinaapp.com/wp-content/uploads/2012/05/687474703a2f2f6769746875622e73332e616d617a6f6e6177732e636f6d2f626c6f672f7265642d706f6c6f2e6a7067.jpg">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:updated_time" content="2015-08-23T21:02:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT Tips At Weekend - Saturday">
-<meta name="twitter:description" content="####Infogit reflog
+<meta name="twitter:description" content="Info
+git reflog
 Use this to recover from major fuck ups! It’s basically a log of thelast few actions and you might have luck and find old commits thathave been lost by doing a complex merge.
-git di">
+git diff">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -116,7 +120,9 @@ git di">
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <h2 id="####Info">####Info</h2><pre><code><span class="title">git</span> reflog
+        <p><img src="/images/gitwk.jpg" alt=""></p>
+<h4 id="Info">Info</h4><hr>
+<pre><code><span class="title">git</span> reflog
 </code></pre><p>Use this to recover from <strong><em>major</em></strong> fuck ups! It’s basically a log of the<br>last few actions and you might have luck and find old commits that<br>have been lost by doing a complex merge.</p>
 <pre><code><span class="title">git</span> diff
 </code></pre><p>Show a diff of the changes made since your last commit<br>to diff one file: <code>git diff -- \&lt;filename&gt;</code><br>to show a diff between staging area and HEAD: <code>git diff --cached</code></p>
@@ -159,7 +165,8 @@ git di">
 <pre><code><span class="keyword">git</span> ls-remote &lt;remote&gt;<span class="sqbracket"> [HEAD]</span>
 </code></pre><p>Show the current version on the remote repo. This can be used to check whether<br>a local is required by comparing the local head revision.</p>
 <p><br><br><br></p>
-<h2 id="####Adding_/_Deleting">####Adding / Deleting</h2><pre><code>git add <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+<h4 id="Adding_/_Deleting">Adding / Deleting</h4><hr>
+<pre><code>git add <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
 </code></pre><p>Add \<file1>, \<file2>, etc… to the project</file2></file1></p>
 <pre><code><span class="label">git</span> <span class="keyword">add </span>&lt;dir&gt;
 </code></pre><p>Add all files under directory \<dir> to the project, including subdirectories</dir></p>
@@ -171,14 +178,16 @@ git di">
 </code></pre><p>Remove all deleted files from the project</p>
 <pre><code>git rm --cached <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
 </code></pre><p>Commits absence of \<file1>, \<file2>, etc… from the project<br><br><br><br></file2></file1></p>
-<h2 id="####Ignoring">####Ignoring</h2><ul>
+<h4 id="Ignoring">Ignoring</h4><hr>
+<ul>
 <li><p><strong>Option 1</strong>: Edit $GIT_DIR/info/exclude. See Environment Variables below for explanation on<br>$GIT_DIR.</p>
 </li>
 <li><p><strong>Option 2</strong>: Add a file .gitignore to the root of your project. This file will be checked in.</p>
 </li>
 </ul>
 <p>Either way you need to add patterns to exclude to these files.<br><br><br><br></p>
-<h2 id="####Staging">####Staging</h2><pre><code>git add <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+<h4 id="Staging">Staging</h4><hr>
+<pre><code>git add <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
 git stage <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
 </code></pre><p>Add changes in \<file1>, \<file2> … to the staging area to be included in the next commit</file2></file1></p>
 <pre><code>git <span class="built_in">add</span> -p
@@ -187,9 +196,11 @@ git stage <span class="comment">--patch</span>
 <pre><code>git <span class="built_in">add</span> -i
 git stage <span class="comment">--interactive</span>
 </code></pre><p>Interactively add files/changes to the staging area. For a simpler mode (no menu), try <code>git add --patch</code> (above)<br><br><br><br></p>
-<h2 id="####Unstaging">####Unstaging</h2><pre><code>git reset HEAD <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
+<h4 id="Unstaging">Unstaging</h4><hr>
+<pre><code>git reset HEAD <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
 </code></pre><p>Remove the specified files from the next commit<br><br><br><br></p>
-<h2 id="####Committing">####Committing</h2><pre><code>git commit <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ... [-m <span class="tag">&lt;<span class="title">msg</span>&gt;</span>]
+<h4 id="Committing">Committing</h4><hr>
+<pre><code>git commit <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ... [-m <span class="tag">&lt;<span class="title">msg</span>&gt;</span>]
 </code></pre><p>Commit \<file1>, \<file2>, etc…, optionally using commit message \<msg>, otherwise opening your editor to let you type a commit message</msg></file2></file1></p>
 <pre><code>git commit -<span class="literal">a</span>
 </code></pre><p>Commit all files changed since your last commit<br>(does not include new (untracked) files)</p>
@@ -199,7 +210,8 @@ git stage <span class="comment">--interactive</span>
 </code></pre><p>Edit the commit message of the most recent commit</p>
 <pre><code>git commit --amend <span class="tag">&lt;<span class="title">file1</span>&gt;</span> <span class="tag">&lt;<span class="title">file2</span>&gt;</span> ...
 </code></pre><p>Redo previous commit, including changes made to \<file1>, <file2>, etc…<br><br><br><br></file2></file1></p>
-<h2 id="####Branching">####Branching</h2><pre><code><span class="title">git</span> branch
+<h4 id="Branching">Branching</h4><hr>
+<pre><code><span class="title">git</span> branch
 </code></pre><p>List all local branches</p>
 <pre><code><span class="label">git</span> <span class="keyword">branch </span>-r
 </code></pre><p>List all remote branches</p>
@@ -233,7 +245,8 @@ git stage <span class="comment">--interactive</span>
 <pre><code>git <span class="operator"><span class="keyword">show</span> &lt;rev&gt;:&lt;repo <span class="keyword">path</span> <span class="keyword">to</span> <span class="keyword">file</span>&gt;</span>
 </code></pre><p>Show the contents of a file at the specific revision. </p>
 <p><strong>Note</strong>: path has to be absolute within the repo.<br><br><br><br></p>
-<h2 id="####Merging">####Merging</h2><pre><code>git merge <span class="tag">&lt;<span class="title">branch</span>&gt;</span>
+<h4 id="Merging">Merging</h4><hr>
+<pre><code>git merge <span class="tag">&lt;<span class="title">branch</span>&gt;</span>
 </code></pre><p>Merge branch \<branch> into the current branch; this command is idempotent<br>and can be run as many times as needed to keep the current branch<br>up-to-date with changes in <branch></branch></branch></p>
 <pre><code>git <span class="built_in">merge</span> &lt;branch&gt; <span class="comment">--no-commit</span>
 </code></pre><p>Merge branch \<branch> into the current branch, but do not autocommit the<br>result; allows you to make further tweaks</branch></p>
@@ -249,7 +262,7 @@ git stage <span class="comment">--interactive</span>
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/" data-id="cidndvajl003du0x64f8jayfo" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/" data-id="cidozfnn2003d8wx634hy6v96" class="article-share-link">Share</a>
         
           <a href="http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/#comments" class="article-comment-link">Comments</a>
         
