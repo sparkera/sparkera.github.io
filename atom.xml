@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[SparkEra]]></title>
-  <subtitle><![CDATA[Big Data Big Insight]]></subtitle>
+  <title><![CDATA[Sparkera]]></title>
+  
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
   <updated>2015-08-22T18:11:54.000Z</updated>
