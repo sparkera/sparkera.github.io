@@ -2,282 +2,287 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/17/GIT-Tips-Weekend-Friday/</loc>
+    <loc>http://www.sparkera.net/2015/01/01/reviews-spark/</loc>
+    <lastmod>2015-09-23T23:47:13.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.net/2015/01/01/reviews-scala-programming/</loc>
+    <lastmod>2015-09-23T23:46:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.net/2015/01/01/reviews-dw-bi/</loc>
+    <lastmod>2015-09-23T23:46:18.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.net/2014/06/01/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <lastmod>2015-09-23T23:45:39.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.net/2015/02/06/Data-Analysis/</loc>
+    <lastmod>2015-09-23T23:45:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.net/2015/04/20/Scala%20and%20Java%20Constructors/</loc>
+    <lastmod>2015-09-23T23:44:52.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.net/2013/05/17/GIT-Tips-Weekend-Friday/</loc>
     <lastmod>2015-08-23T21:02:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/18/GIT-Tips-Weekend-Saturday/</loc>
+    <loc>http://www.sparkera.net/2013/05/18/GIT-Tips-Weekend-Saturday/</loc>
     <lastmod>2015-08-23T21:02:45.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/19/GIT-Tips-Weekend-Sunday/</loc>
+    <loc>http://www.sparkera.net/2013/05/19/GIT-Tips-Weekend-Sunday/</loc>
     <lastmod>2015-08-23T21:02:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/21/GIT-Catchup-Changes/</loc>
+    <loc>http://www.sparkera.net/2013/05/21/GIT-Catchup-Changes/</loc>
     <lastmod>2015-08-23T20:59:52.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/06/03/Hadoop-Counter/</loc>
+    <loc>http://www.sparkera.net/2013/06/03/Hadoop-Counter/</loc>
     <lastmod>2015-08-23T20:58:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/</loc>
+    <loc>http://www.sparkera.net/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/</loc>
     <lastmod>2015-08-22T18:11:54.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/%E2%80%9C404%E2%80%9D/index.html</loc>
+    <loc>http://www.sparkera.net/%E2%80%9C404%E2%80%9D/index.html</loc>
     <lastmod>2015-08-22T02:27:12.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/</loc>
+    <loc>http://www.sparkera.net/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-spark/</loc>
+    <loc>http://www.sparkera.net/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-scala-programming/</loc>
+    <loc>http://www.sparkera.net/2014/11/23/Move-To-The-Spark/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-dw-bi/</loc>
+    <loc>http://www.sparkera.net/2015/01/01/reviews-data-science/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-data-science/</loc>
+    <loc>http://www.sparkera.net/2014/04/05/Install-CDH-In-AWS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <loc>http://www.sparkera.net/2013/09/29/Hive-Composite-Data-Type/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-big-data/</loc>
+    <loc>http://www.sparkera.net/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
+    <loc>http://www.sparkera.net/2013/07/06/HBase-Disable-Major-Compaction/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
+    <loc>http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
+    <loc>http://www.sparkera.net/2013/06/18/Big-Data-Platform/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</loc>
+    <loc>http://www.sparkera.net/2013/06/12/Commonly-Used-Maven-Plugins/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
+    <loc>http://www.sparkera.net/2015/01/23/Setup-Spark-In-MAC/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
+    <loc>http://www.sparkera.net/2013/05/28/Hadoop-DistributedCache/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
+    <loc>http://www.sparkera.net/2013/05/27/Install-Jekyll-in-MacOS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
+    <loc>http://www.sparkera.net/2015/02/02/Data-Lake-Stages/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/06/12/Commonly-Used-Maven-Plugins/</loc>
+    <loc>http://www.sparkera.net/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/02/06/Data-Analysis/</loc>
+    <loc>http://www.sparkera.net/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
+    <loc>http://www.sparkera.net/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
+    <loc>http://www.sparkera.net/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://www.sparkera.net/2013/05/07/Hadoop-Customize-Data-Type/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
+    <loc>http://www.sparkera.net/2013/05/03/Hadoop-Balancer/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
+    <loc>http://www.sparkera.net/2015/01/01/reviews-big-data/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/04/20/Scala%20and%20Java%20Constructors/</loc>
+    <loc>http://www.sparkera.net/2013/04/29/Useful-Hadoop-ToolRunner/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
+    <loc>http://www.sparkera.net/2013/04/24/Hive-vs-Pig/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <loc>http://www.sparkera.net/2013/04/22//posts/115/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/03/Hadoop-Balancer/</loc>
+    <loc>http://www.sparkera.net/2013/04/19//posts/114/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
+    <loc>http://www.sparkera.net/2013/03/01//posts/109/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/04/29/Useful-Hadoop-ToolRunner/</loc>
+    <loc>http://www.sparkera.net/2013/02/08/Sorting-of-Big-Data/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/04/24/Hive-vs-Pig/</loc>
+    <loc>http://www.sparkera.net/2013/01/25//posts/112/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/04/22//posts/115/index.html/</loc>
+    <loc>http://www.sparkera.net/2013/01/18/GIT-Cheat-Sheet/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/04/19//posts/114/index.html/</loc>
+    <loc>http://www.sparkera.net/2012/12/23//posts/116/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/03/01//posts/109/index.html/</loc>
+    <loc>http://www.sparkera.net/2012/11/10/Hadoop-Job-Patterns/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/02/08/Sorting-of-Big-Data/</loc>
+    <loc>http://www.sparkera.net/2012/10/13/A-Tiny-Scrum-Overview/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/01/25//posts/112/index.html/</loc>
+    <loc>http://www.sparkera.net/2012/09/08//posts/102/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/01/18/GIT-Cheat-Sheet/</loc>
+    <loc>http://www.sparkera.net/2012/08/25/Hadoop-Split-and-Block/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/12/23//posts/116/index.html/</loc>
+    <loc>http://www.sparkera.net/2012/07/06/Hadoop-Serialization-Framework/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/11/10/Hadoop-Job-Patterns/</loc>
+    <loc>http://www.sparkera.net/2012/07/02/Rsync-Deployment/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/10/13/A-Tiny-Scrum-Overview/</loc>
+    <loc>http://www.sparkera.net/2012/06/20/Hive-Performance-Tuning/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/09/08//posts/102/index.html/</loc>
+    <loc>http://www.sparkera.net/2012/06/18//posts/111/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/08/25/Hadoop-Split-and-Block/</loc>
+    <loc>http://www.sparkera.net/2012/05/30//posts/120/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/07/06/Hadoop-Serialization-Framework/</loc>
+    <loc>http://www.sparkera.net/2012/05/11/What-is-predictive-analytics/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
+    <loc>http://www.sparkera.net/404.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/06/20/Hive-Performance-Tuning/</loc>
+    <loc>http://www.sparkera.net/2015/01/01/reviews-build-and-shell/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2012/06/18//posts/111/index.html/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2012/05/30//posts/120/index.html/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2012/05/11/What-is-predictive-analytics/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/404.html</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/about/index.html</loc>
+    <loc>http://www.sparkera.net/about/index.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

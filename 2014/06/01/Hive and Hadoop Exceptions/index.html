@@ -4,25 +4,25 @@
   <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
   <meta charset="utf-8">
   
-  <title>Hive Sorting and Ordering | Sparkera</title>
+  <title>Hive and Hadoop Exceptions | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There are following key words used in Hive to sort data with following difference:
-
-ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted order is maintained across all of the">
+  <meta name="description" content="I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions
+1org.apache.hadoop.hive.ql.metadata.HiveException:java.io.IOException:Filesystem closed
+Accord">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hive Sorting and Ordering">
-<meta property="og:url" content="http://www.sparkera.net/2013/03/01//posts/109/index.html/index.html">
+<meta property="og:title" content="Hive and Hadoop Exceptions">
+<meta property="og:url" content="http://www.sparkera.net/2014/06/01/Hive and Hadoop Exceptions/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="There are following key words used in Hive to sort data with following difference:
-
-ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted order is maintained across all of the">
-<meta property="og:image" content="http://www.sparkera.net/images/hive_sort.jpg">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:description" content="I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions
+1org.apache.hadoop.hive.ql.metadata.HiveException:java.io.IOException:Filesystem closed
+Accord">
+<meta property="og:image" content="http://www.sparkera.net/images/exceptions.png">
+<meta property="og:updated_time" content="2015-09-23T23:45:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hive Sorting and Ordering">
-<meta name="twitter:description" content="There are following key words used in Hive to sort data with following difference:
-
-ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted order is maintained across all of the">
+<meta name="twitter:title" content="Hive and Hadoop Exceptions">
+<meta name="twitter:description" content="I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions
+1org.apache.hadoop.hive.ql.metadata.HiveException:java.io.IOException:Filesystem closed
+Accord">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -96,7 +96,7 @@ ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted or
             </div>
             <div class="main-body-content">
               
-  <article id="post-/posts/109/index.html" class="article article-single article-type-post" itemscope itemprop="blogPost">
+  <article id="post-Hive and Hadoop Exceptions" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -104,30 +104,30 @@ ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted or
           
   
     <h1 class="article-title" itemprop="name">
-      Hive Sorting and Ordering
+      Hive and Hadoop Exceptions
     </h1>
   
 
         </header>
       
       <p class="article-byline">
-        <a href="/2013/03/01//posts/109/index.html/" class="article-date">
-  <time datetime="2013-03-01T05:00:00.000Z" itemprop="datePublished">2013-03-01</time>
+        <a href="/2014/06/01/Hive and Hadoop Exceptions/" class="article-date">
+  <time datetime="2014-06-01T04:00:00.000Z" itemprop="datePublished">2014-06-01</time>
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="/images/hive_sort.jpg" alt=""><br>There are following key words used in Hive to sort data with following difference:</p>
+        <p><img src="/images/exceptions.png" alt=""></p>
+<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.hadoop.hive.ql.metadata.HiveException:java.io.IOException:Filesystem <span class="keyword">closed</span></span><br></pre></td></tr></table></figure>
+<p>According to the search <a href="http://mail-archives.apache.org/mod_mbox/hadoop-common-user/201207.mbox/%3CCAL=yAAE1mM-JRb=eJGkAtxWQ7AJ3e7WJCT9BhgWq7XDTNxrwfw@mail.gmail.com%3E" target="_blank" rel="external">here</a>, the mainly reason for this is that when multiple nodes read HFDS files if one node is offline, it will throw such exception when the other nodes are still reading the data cached. There are two ways to resolve this.</p>
 <ul>
-<li><p><strong>ORDER BY (ASC|DESC)</strong> : This is similar to the traditional SQL operator. Sorted order is maintained across all of the output from every reducer. It performs the global sort using only one reducer, so it takes long time to return result.  The Usage with LIMIT is strongly recommended for order by. When hive.mapred.mode = strict and you do not specify “limit”, there are error out. </p>
-</li>
-<li><p><strong>SORT BY  (ASC|DESC)</strong> : This dictates which columns to sort by when ordering reducer input records. That means it complete sort before data sending to reducer. “Sort by” does not perform global sort and only make sure locally sorted in each reducer unless you set mapred.reduce.tasks=1. In this case, it is equal to result of “order by”</p>
-</li>
-<li><p><strong>DISTRIBUTE BY</strong> : Rows with matching column values will partition to the same reducer. When used alone, it does not guarantee sorted input to the reducer.</p>
-</li>
-<li><p><strong>CLUSTER BY</strong>: This is a shorthand operator to perform = SORT BY + DISTRIBUTE BY operations on a group of columns. And, it is sorted locally in reducer.</p>
-</li>
+<li>Turn off JVM reuse</li>
 </ul>
-
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapred.job.reuse.jvm.num.tasks<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>-1<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Disable caches</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.hdfs.impl.disable.cache<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>true<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
       </div>
 	  <div class="addthis_native_toolbox">
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -137,12 +137,12 @@ ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted or
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.net/2013/03/01//posts/109/index.html/" data-id="ciexfxs23004debx66mk4od20" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.net/2014/06/01/Hive and Hadoop Exceptions/" data-id="ciexfxrwc0029ebx6coh55env" class="article-share-link">Share</a>
         
-          <a href="http://www.sparkera.net/2013/03/01//posts/109/index.html/#comments" class="article-comment-link">Comments</a>
+          <a href="http://www.sparkera.net/2014/06/01/Hive and Hadoop Exceptions/#comments" class="article-comment-link">Comments</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hive/">hive</a></li></ul>
 
       </footer>
     </div>
@@ -182,20 +182,20 @@ ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted or
     
 <nav id="article-nav">
   
-    <a href="/2013/04/19//posts/114/index.html/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/11/23/Move-To-The-Spark/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">newer</strong>
       <p class="article-nav-title">
         
-          MRUnit for Now
+          Moving to the Spark
         
       </p>
       <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
   
   
-    <a href="/2013/02/08/Sorting-of-Big-Data/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/04/05/Install-CDH-In-AWS/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">older</strong>
-      <p class="article-nav-title">Sorting of Big Data</p>
+      <p class="article-nav-title">Steps to setup EC2 cluster for Hadoop</p>
       <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
     </a>
   
@@ -376,7 +376,7 @@ ORDER BY (ASC|DESC) : This is similar to the traditional SQL operator. Sorted or
 <script>
   var disqus_shortname = 'sparkera';
   
-  var disqus_url = 'http://www.sparkera.net/2013/03/01//posts/109/index.html/';
+  var disqus_url = 'http://www.sparkera.net/2014/06/01/Hive and Hadoop Exceptions/';
   
   (function(){
     var dsq = document.createElement('script');

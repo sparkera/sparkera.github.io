@@ -3,12 +3,12 @@
   <title><![CDATA[Sparkera]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://www.sparkera.ca/"/>
+  <link href="http://www.sparkera.net/"/>
   <updated>2015-08-22T18:11:54.000Z</updated>
-  <id>http://www.sparkera.ca/</id>
+  <id>http://www.sparkera.net/</id>
   
   <author>
-    <name><![CDATA[Will]]></name>
+    <name><![CDATA[Sparkera]]></name>
     
   </author>
   
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Get Git Modified But Untracked Content Checked In]]></title>
-    <link href="http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/"/>
-    <id>http://www.sparkera.ca/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/</id>
+    <link href="http://www.sparkera.net/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/"/>
+    <id>http://www.sparkera.net/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/</id>
     <published>2015-08-21T15:27:57.000Z</published>
     <updated>2015-08-22T18:11:54.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/gettingStartedGit.jpg" alt=""><br>Recently, I migrate this site to Hexo. I download the theme from github to the Hexo project folder. I also keep the source code in the github in case I lost the source code. However, when I run the <code>git add .</code> and <code>git status</code>. It shows below error messages saying the theme folder is not tracked content. Most time, I did not check the git status - bad habit. I only realize that I miss the theme files when I try to rebuild the Hexo site from home.<br><img src="/images/gituntracked.png" alt=""><br>After searching a while form Google, I got my issues resolved and share the steps below for reference.</p>
@@ -32,16 +32,16 @@
     <![CDATA[<p><img src="/images/gettingStartedGit.jpg" alt=""><br>Recently, I migrate this site to Hexo. I download the theme from github to the Hexo p]]>
     </summary>
     
-      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
+      <category term="git" scheme="http://www.sparkera.net/tags/git/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hadoop Streaming]]></title>
-    <link href="http://www.sparkera.ca/2015/06/21/Hadoop%20Streaming/"/>
-    <id>http://www.sparkera.ca/2015/06/21/Hadoop Streaming/</id>
+    <link href="http://www.sparkera.net/2015/06/21/Hadoop%20Streaming/"/>
+    <id>http://www.sparkera.net/2015/06/21/Hadoop Streaming/</id>
     <published>2015-06-21T04:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/hadoopstream.jpg" alt=""></p>
@@ -87,18 +87,18 @@
 <h4 id="1-_Streaming_Overview">1. Streaming Overview</h4><p>Hadoop Streaming is a generic]]>
     </summary>
     
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+      <category term="hadoop" scheme="http://www.sparkera.net/tags/hadoop/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Scala Constructor vs. Java Constructor]]></title>
-    <link href="http://www.sparkera.ca/2015/04/20/Scala%20and%20Java%20Constructors/"/>
-    <id>http://www.sparkera.ca/2015/04/20/Scala and Java Constructors/</id>
+    <link href="http://www.sparkera.net/2015/04/20/Scala%20and%20Java%20Constructors/"/>
+    <id>http://www.sparkera.net/2015/04/20/Scala and Java Constructors/</id>
     <published>2015-04-20T04:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
+    <updated>2015-09-23T23:44:52.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/scala-vs-java.png" alt=""></p>
 <h4 id="1-_Constructor_With_Parameters">1. Constructor With Parameters</h4><p><strong>Java Code</strong>  </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">   <span class="keyword">public</span> Bar bar;  </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Foo</span><span class="params">(Bar bar)</span> </span>&#123;  </span><br><span class="line">       <span class="keyword">this</span>.bar = bar;  </span><br><span class="line">   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -132,16 +132,16 @@
 <h4 id="1-_Constructor_With_Parameters">1. Constructor With Parameters</h4><p><strong>Ja]]>
     </summary>
     
-      <category term="scala" scheme="http://www.sparkera.ca/tags/scala/"/>
+      <category term="scala" scheme="http://www.sparkera.net/tags/scala/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Apache Hive Essentials Published]]></title>
-    <link href="http://www.sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/"/>
-    <id>http://www.sparkera.ca/2015/03/15/Apache Hive Essentials Published/</id>
+    <link href="http://www.sparkera.net/2015/03/15/Apache%20Hive%20Essentials%20Published/"/>
+    <id>http://www.sparkera.net/2015/03/15/Apache Hive Essentials Published/</id>
     <published>2015-03-15T04:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p>Finally, I made it. I got it published after working for 6 monthes.</p>
@@ -158,18 +158,18 @@
 <]]>
     </summary>
     
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+      <category term="hadoop" scheme="http://www.sparkera.net/tags/hadoop/"/>
     
-      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+      <category term="hive" scheme="http://www.sparkera.net/tags/hive/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hive and Hadoop Exceptions]]></title>
-    <link href="http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/"/>
-    <id>http://www.sparkera.ca/2015/02/12/Hive and Hadoop Exceptions/</id>
+    <link href="http://www.sparkera.net/2015/02/12/Hive%20and%20Hadoop%20Exceptions/"/>
+    <id>http://www.sparkera.net/2015/02/12/Hive and Hadoop Exceptions/</id>
     <published>2015-02-12T05:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
@@ -189,20 +189,20 @@
 <p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports fol]]>
     </summary>
     
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+      <category term="hadoop" scheme="http://www.sparkera.net/tags/hadoop/"/>
     
-      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+      <category term="hive" scheme="http://www.sparkera.net/tags/hive/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Data Analysis]]></title>
-    <link href="http://www.sparkera.ca/2015/02/06/Data-Analysis/"/>
-    <id>http://www.sparkera.ca/2015/02/06/Data-Analysis/</id>
+    <link href="http://www.sparkera.net/2015/02/06/Data-Analysis/"/>
+    <id>http://www.sparkera.net/2015/02/06/Data-Analysis/</id>
     <published>2015-02-06T05:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
+    <updated>2015-09-23T23:45:21.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/Data-Analysis.jpg" alt=""></p>
 <p>A friend of mine asked me what is data analysis. This is a simple but difficult question. It is simple because we talk about data analysis all the time and everywhere. It is difficult because there are so many ways of explaining it at different time. In the ear of big data, I think data analysis have three following areas.</p>
 <ul>
@@ -219,16 +219,16 @@
 <p>A friend of mine asked me what is data analysis. This is a simple but difficult quest]]>
     </summary>
     
-      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+      <category term="bigdata" scheme="http://www.sparkera.net/tags/bigdata/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Data Lake Stages]]></title>
-    <link href="http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/"/>
-    <id>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</id>
+    <link href="http://www.sparkera.net/2015/02/02/Data-Lake-Stages/"/>
+    <id>http://www.sparkera.net/2015/02/02/Data-Lake-Stages/</id>
     <published>2015-02-02T05:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/datalake.png" align="left"> <br><br><br>Edd has post a very impressive <a href="http://www.forbes.com/sites/edddumbill/2014/01/14/the-data-lake-dream/" target="_blank" rel="external">blog</a> about how Hadoop ecosystem influence the data lake in enterprise recently. It discussed about the four following stages when enterprise’s data evolution  to the dream of data lake. I also share some of mine as addition.</p>
@@ -294,18 +294,18 @@
     <![CDATA[<p><img src="/images/datalake.png" align="left"> <br><br><br>Edd has post a very impressive <a href="http://www.forbes.com/sites/edddumbill/]]>
     </summary>
     
-      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+      <category term="bigdata" scheme="http://www.sparkera.net/tags/bigdata/"/>
     
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+      <category term="hadoop" scheme="http://www.sparkera.net/tags/hadoop/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Setup Spark in MAC]]></title>
-    <link href="http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/"/>
-    <id>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</id>
+    <link href="http://www.sparkera.net/2015/01/23/Setup-Spark-In-MAC/"/>
+    <id>http://www.sparkera.net/2015/01/23/Setup-Spark-In-MAC/</id>
     <published>2015-01-23T05:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/sparkmac.jpg" alt=""><br>It is great to see that Brew supports install Spark. It makes installation of Spark quite easier in Mac. I just follow few steps to get my spark instance installed locally.</p>
@@ -320,18 +320,18 @@
     <![CDATA[<p><img src="/images/sparkmac.jpg" alt=""><br>It is great to see that Brew supports install Spark. It makes installation of Spark quite easi]]>
     </summary>
     
-      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+      <category term="spark" scheme="http://www.sparkera.net/tags/spark/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Apache Spark Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-spark/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-spark/</id>
     <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
+    <updated>2015-09-23T23:47:13.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images/learningspark.png" width="150" height="200" align="right"></a></p>
 <h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
 <ul>
@@ -346,22 +346,22 @@
     <![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images]]>
     </summary>
     
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
     
-      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+      <category term="spark" scheme="http://www.sparkera.net/tags/spark/"/>
     
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
-      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+      <category term="Big Data" scheme="http://www.sparkera.net/categories/Reviews/Big-Data/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Scala Programming Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-scala-programming/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-scala-programming/</id>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-scala-programming/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-scala-programming/</id>
     <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
+    <updated>2015-09-23T23:46:47.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank"><img src="/images/beginscala.jpg" width="150" height="200" align="right"></a></p>
 <h3 id="Begining_Scala_2nd_ed">Begining Scala 2nd ed</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
 <ul>
@@ -401,20 +401,20 @@
     <![CDATA[<p><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank"><img src="/images/beginscala.jpg" width="150" height="2]]>
     </summary>
     
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
     
-      <category term="scala" scheme="http://www.sparkera.ca/tags/scala/"/>
+      <category term="scala" scheme="http://www.sparkera.net/tags/scala/"/>
     
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
-      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
+      <category term="Coding" scheme="http://www.sparkera.net/categories/Reviews/Coding/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Data Science and Data Mining Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-data-science/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-data-science/</id>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-data-science/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-data-science/</id>
     <published>2015-01-01T13:00:11.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_blank"><img src="/images/AgileDataScience.jpg" width="150" height="200" align="right"></a></p>
@@ -439,20 +439,20 @@
     <![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_b]]>
     </summary>
     
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
     
-      <category term="data science" scheme="http://www.sparkera.ca/tags/data-science/"/>
+      <category term="data science" scheme="http://www.sparkera.net/tags/data-science/"/>
     
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
-      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+      <category term="Big Data" scheme="http://www.sparkera.net/categories/Reviews/Big-Data/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Build Tools and Shell Program Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</id>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-build-and-shell/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-build-and-shell/</id>
     <published>2015-01-01T13:00:11.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" height="200" align="right"></a></p>
@@ -492,22 +492,22 @@
     <![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" heig]]>
     </summary>
     
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
     
-      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
+      <category term="git" scheme="http://www.sparkera.net/tags/git/"/>
     
-      <category term="linux" scheme="http://www.sparkera.ca/tags/linux/"/>
+      <category term="linux" scheme="http://www.sparkera.net/tags/linux/"/>
     
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
-      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
+      <category term="Coding" scheme="http://www.sparkera.net/categories/Reviews/Coding/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Big Data Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-big-data/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-big-data/</id>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-big-data/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-big-data/</id>
     <published>2015-01-01T13:00:11.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/bookreview3.png" alt=""></p>
@@ -622,20 +622,20 @@
 <p><a href="http://www.amazon.com/Hadoop-Definitive-Guide-Tom-White/dp/1449311520/ref=sr_1]]>
     </summary>
     
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
     
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
-      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+      <category term="Big Data" scheme="http://www.sparkera.net/categories/Reviews/Big-Data/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Data Warehouse and Business Intelligence Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-dw-bi/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-dw-bi/</id>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-dw-bi/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-dw-bi/</id>
     <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
+    <updated>2015-09-23T23:46:18.000Z</updated>
     <content type="html"><![CDATA[<hr>
 <p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="right"></a></p>
 <h3 id="Oracle_PL/SQL_Receipts">Oracle PL/SQL Receipts</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
@@ -667,18 +667,18 @@
 <p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="]]>
     </summary>
     
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
     
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
-      <category term="DBDWBI" scheme="http://www.sparkera.ca/categories/Reviews/DBDWBI/"/>
+      <category term="DBDWBI" scheme="http://www.sparkera.net/categories/Reviews/DBDWBI/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hive Get the Max/Min Value Rows]]></title>
-    <link href="http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/"/>
-    <id>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</id>
+    <link href="http://www.sparkera.net/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/"/>
+    <id>http://www.sparkera.net/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</id>
     <published>2014-12-23T05:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/maxmin.jpg" alt=""></p>
@@ -699,16 +699,16 @@
 <p>Most of time, we need to find the max or min value of particular columns as well as other co]]>
     </summary>
     
-      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+      <category term="hive" scheme="http://www.sparkera.net/tags/hive/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Moving to the Spark]]></title>
-    <link href="http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/"/>
-    <id>http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/</id>
+    <link href="http://www.sparkera.net/2014/11/23/Move-To-The-Spark/"/>
+    <id>http://www.sparkera.net/2014/11/23/Move-To-The-Spark/</id>
     <published>2014-11-23T05:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p>It has been a while that the blog is now updated since 2014 is a ready busy year. After I almost completed my first book recently, I think it is the right time to start new journey in big data for real time processing.</p>
@@ -731,20 +731,51 @@
     <![CDATA[<p>It has been a while that the blog is now updated since 2014 is a ready busy year. After I almost completed my first book recently, I thin]]>
     </summary>
     
-      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+      <category term="bigdata" scheme="http://www.sparkera.net/tags/bigdata/"/>
     
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+      <category term="hadoop" scheme="http://www.sparkera.net/tags/hadoop/"/>
     
-      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+      <category term="spark" scheme="http://www.sparkera.net/tags/spark/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hive and Hadoop Exceptions]]></title>
+    <link href="http://www.sparkera.net/2014/06/01/Hive%20and%20Hadoop%20Exceptions/"/>
+    <id>http://www.sparkera.net/2014/06/01/Hive and Hadoop Exceptions/</id>
+    <published>2014-06-01T04:00:00.000Z</published>
+    <updated>2015-09-23T23:45:39.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
+<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.hadoop.hive.ql.metadata.HiveException:java.io.IOException:Filesystem <span class="keyword">closed</span></span><br></pre></td></tr></table></figure>
+<p>According to the search <a href="http://mail-archives.apache.org/mod_mbox/hadoop-common-user/201207.mbox/%3CCAL=yAAE1mM-JRb=eJGkAtxWQ7AJ3e7WJCT9BhgWq7XDTNxrwfw@mail.gmail.com%3E" target="_blank" rel="external">here</a>, the mainly reason for this is that when multiple nodes read HFDS files if one node is offline, it will throw such exception when the other nodes are still reading the data cached. There are two ways to resolve this.</p>
+<ul>
+<li>Turn off JVM reuse</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapred.job.reuse.jvm.num.tasks<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>-1<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Disable caches</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.hdfs.impl.disable.cache<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>true<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
+<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports fol]]>
+    </summary>
+    
+      <category term="hadoop" scheme="http://www.sparkera.net/tags/hadoop/"/>
+    
+      <category term="hive" scheme="http://www.sparkera.net/tags/hive/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Steps to setup EC2 cluster for Hadoop]]></title>
-    <link href="http://www.sparkera.ca/2014/04/05/Install-CDH-In-AWS/"/>
-    <id>http://www.sparkera.ca/2014/04/05/Install-CDH-In-AWS/</id>
+    <link href="http://www.sparkera.net/2014/04/05/Install-CDH-In-AWS/"/>
+    <id>http://www.sparkera.net/2014/04/05/Install-CDH-In-AWS/</id>
     <published>2014-04-05T04:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/ec2.jpg" alt=""></p>
@@ -812,16 +843,16 @@ TCP    <span class="number">50020</span>   Datanodes
 <li><p>Get the <code>Access Key ID</code> and <code>Secret Access Key</code> and store it in ]]>
     </summary>
     
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+      <category term="hadoop" scheme="http://www.sparkera.net/tags/hadoop/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hive Composite Data Type]]></title>
-    <link href="http://www.sparkera.ca/2013/09/29/Hive-Composite-Data-Type/"/>
-    <id>http://www.sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</id>
+    <link href="http://www.sparkera.net/2013/09/29/Hive-Composite-Data-Type/"/>
+    <id>http://www.sparkera.net/2013/09/29/Hive-Composite-Data-Type/</id>
     <published>2013-09-29T04:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/hive_fun.jpg" width="960" height="710" align="center"></p>
@@ -970,16 +1001,16 @@ TCP    <span class="number">50020</span>   Datanodes
 <p>For now, hive supports following composite data type：</p>]]>
     </summary>
     
-      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+      <category term="hive" scheme="http://www.sparkera.net/tags/hive/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[SQL in MySQL and Pig Comparision]]></title>
-    <link href="http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/"/>
-    <id>http://www.sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</id>
+    <link href="http://www.sparkera.net/2013/08/21/SQL-In-MySQL-and-PIG/"/>
+    <id>http://www.sparkera.net/2013/08/21/SQL-In-MySQL-and-PIG/</id>
     <published>2013-08-21T04:00:00.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/pigmysql.png" align="center"></p>
@@ -1100,57 +1131,9 @@ dama          <span class="number">55</span>  <span class="number">0</span>
 <p>Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as ]]>
     </summary>
     
-      <category term="pig" scheme="http://www.sparkera.ca/tags/pig/"/>
+      <category term="pig" scheme="http://www.sparkera.net/tags/pig/"/>
     
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Disable Major Compaction in HBase Cluster]]></title>
-    <link href="http://www.sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/"/>
-    <id>http://www.sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</id>
-    <published>2013-07-06T04:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/hbase.png" align="center"></p>
-<p>HBase consists of multiple regions. While a region may have several Stores, each holds a single column family. An edit first writes to the hosting region store’s in-memory space, which is called MemStore. When the size of MemStore reaches a threshold, it is flushed to StoreFiles on HDFS.</p>
-<p>As data increases, there may be many StoreFiles on HDFS, which is not good for its performance. Thus, HBase will automatically pick up a couple of the smaller StoreFiles and rewrite them into a bigger one. This process is called minor compaction. For certain situations, or when triggered by a configured interval (once a day by default), major compaction runs automatically. Major compaction will drop the deleted or expired cells and rewrite all the StoreFiles in the Store into a single StoreFile; this usually improves the performance.</p>
-<p>However, as major compaction rewrites all of the Stores’ data, lots of disk I/O and network traffic might occur during the process. This is not acceptable on a heavy load system. You might want to run it at a lower load time of your system.</p>
-<p>The following steps describe how to disable automatic major compaction:</p>
-<ol>
-<li><p>Add the following to hbase-site.xml file:</p>
-<pre><code>$ vi <span class="variable">$HBASE_HOME</span>/conf/hbase-site.xml
-
-<span class="variable">&lt;property&gt;</span>
-    <span class="variable">&lt;name&gt;</span>hbase.hregion.majorcompaction<span class="variable">&lt;/name&gt;</span>
-    <span class="variable">&lt;value&gt;</span><span class="number">0</span><span class="variable">&lt;/value&gt;</span>
-<span class="variable">&lt;/property&gt;</span>
-</code></pre></li>
-<li><p>Sync the changes across the cluster and restart HBase.</p>
-</li>
-<li><p>With the aforementioned setting, automatic major compaction will be disabled; you will now need to run it explicitly.</p>
-</li>
-<li><p>In order to manually run a major compaction on a particular region through HBase Shell, run the following command:</p>
-<pre><code>$ echo <span class="string">"major_compact 'hly_temp,,1327118470453.5ef67f6d2a792fb0bd7
-37863dc00b6a7.'"</span> | <span class="variable">$HBASE</span>_HOME/bin/hbase shell
-
-HBase Shell; enter <span class="string">'help&lt;RETURN&gt;'</span> <span class="keyword">for</span> list <span class="keyword">of</span> supported commands.
-Type <span class="string">"exit&lt;RETURN&gt;"</span> <span class="keyword">to</span> leave the HBase Shell
-Version <span class="number">0</span>.<span class="number">92.0</span>, r1231986, Tue Jan <span class="number">17</span> <span class="number">02</span>:<span class="number">30</span>:<span class="number">24</span> UTC <span class="number">2012</span>
-major_compact <span class="string">'hly_temp,,1327118470453.5ef67f6d2a792fb0bd737863dc00b6a7.'</span>
-<span class="number">0</span> row(s) <span class="keyword">in</span> <span class="number">1.7070</span> seconds
-</code></pre></li>
-</ol>
-<p><strong>Note</strong>: Another approach to invoke major compaction is to use the majorCompact API provided by the org.apache.hadoop.hbase.client.HBaseAdmin class. It is easy to call this API in Java, thus you can manage complex major compaction scheduling from Java.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/hbase.png" align="center"></p>
-<p>HBase consists of multiple regions. While a region may have several Stores, each hold]]>
-    </summary>
-    
-      <category term="hbase" scheme="http://www.sparkera.ca/tags/hbase/"/>
-    
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
   </entry>
   
