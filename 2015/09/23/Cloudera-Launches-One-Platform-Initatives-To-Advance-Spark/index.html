@@ -4,28 +4,19 @@
   <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
   <meta charset="utf-8">
   
-  <title>Add Backup Master Node in HBase Cluster | Sparkera</title>
+  <title>Cloudera Launches One Platform Initatives To Advance Spark | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="How to add a backup master node to the cluster? There are two ways of doing that.
-In One Way
-Start the HBase master daemon on the backup master node:
-hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
+  <meta name="description" content="In the early of this September, the Chief Strategy Offer of Cloudera Mike Olson has announced that the next important initiatives for Couldera - One Platform to advance their investment on Apache Spar">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Add Backup Master Node in HBase Cluster">
-<meta property="og:url" content="http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/index.html">
+<meta property="og:title" content="Cloudera Launches One Platform Initatives To Advance Spark">
+<meta property="og:url" content="http://www.sparkera.net/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="How to add a backup master node to the cluster? There are two ways of doing that.
-In One Way
-Start the HBase master daemon on the backup master node:
-hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
-<meta property="og:image" content="http://www.sparkera.net/images/hbase.png">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:description" content="In the early of this September, the Chief Strategy Offer of Cloudera Mike Olson has announced that the next important initiatives for Couldera - One Platform to advance their investment on Apache Spar">
+<meta property="og:image" content="http://www.sparkera.net/images/onep.png">
+<meta property="og:updated_time" content="2015-09-24T02:56:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Add Backup Master Node in HBase Cluster">
-<meta name="twitter:description" content="How to add a backup master node to the cluster? There are two ways of doing that.
-In One Way
-Start the HBase master daemon on the backup master node:
-hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
+<meta name="twitter:title" content="Cloudera Launches One Platform Initatives To Advance Spark">
+<meta name="twitter:description" content="In the early of this September, the Chief Strategy Offer of Cloudera Mike Olson has announced that the next important initiatives for Couldera - One Platform to advance their investment on Apache Spar">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -99,7 +90,7 @@ hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
             </div>
             <div class="main-body-content">
               
-  <article id="post-HBase-Add-Backup-Master-Node" class="article article-single article-type-post" itemscope itemprop="blogPost">
+  <article id="post-Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -107,67 +98,21 @@ hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
           
   
     <h1 class="article-title" itemprop="name">
-      Add Backup Master Node in HBase Cluster
+      Cloudera Launches One Platform Initatives To Advance Spark
     </h1>
   
 
         </header>
       
       <p class="article-byline">
-        <a href="/2013/07/02/HBase-Add-Backup-Master-Node/" class="article-date">
-  <time datetime="2013-07-02T04:00:00.000Z" itemprop="datePublished">2013-07-02</time>
+        <a href="/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/" class="article-date">
+  <time datetime="2015-09-23T15:27:57.000Z" itemprop="datePublished">2015-09-23</time>
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="/images/hbase.png" align="center"><br>How to add a backup master node to the cluster? There are two ways of doing that.</p>
-<h4 id="In_One_Way">In One Way</h4><ol>
-<li><p>Start the HBase master daemon on the backup master node:</p>
-<pre><code>hadoop@master2$ <span class="variable">$HBASE</span>_HOME/bin/hbase-daemon.sh <span class="keyword">start</span> master
-</code></pre><p>From the master log, you will find that the newly started master is waiting to become the next active master:<br></p>
-<pre><code>&gt;org.apache.hadoop.hbase.master.ActiveMasterManager: Another master is the active
-&gt;master, ip-<span class="number">10</span>-<span class="number">176</span>-<span class="number">201</span>-<span class="number">128.u</span>s-west-<span class="number">1.</span>compute.internal,
-&gt;<span class="number">60000</span>,<span class="number">1328878644330</span>; waiting to become the next active master
-</code></pre></li>
-<li><p>Add the new region server’s hostname into the regionservers file, under the $HBASE_HOME/conf directory. For example, to add “slave4” to the cluster, we invoke the following command:</p>
-<pre><code>hadoop<span class="variable">@master1</span><span class="variable">$ </span>echo <span class="string">"slave4"</span> <span class="prompt">&gt;&gt; </span><span class="variable">$HBASE_HOME</span>/conf/regionservers
-</code></pre></li>
-<li><p>Sync the modified regionservers file across the cluster.</p>
-</li>
-<li><p>Log in to the new server and start the region server daemon there:</p>
-<pre><code>hadoop@slave4$ <span class="variable">$HBASE</span>_HOME/bin/hbase-daemon.sh <span class="keyword">start</span> regionserver
-</code></pre><p>5.Optionally, trigger a load balancer manually from HBase Shell to move some regions to the new region server. You can also wait for the next run of the balancer, which runs every five minutes by default.</p>
-<pre><code>hbase&gt; balance_switch <span class="literal">true</span>
-hbase&gt; balance
-</code></pre><p><br></p>
-</li>
-</ol>
-<h4 id="In_The_Other_Way">In The Other Way</h4><ol>
-<li><p>Add backup master nodes to the conf/backup-masters file:</p>
-<pre><code>hadoop@master1$ echo <span class="string">"master2"</span> &gt;&gt; <span class="variable">$HBASE</span>_HOME/conf/backup-masters`
-</code></pre></li>
-<li><p>Sync the backup-masters file across the cluster.</p>
-</li>
-<li><p>Start HBase normally; you will find that a backup HBase master will be started at the backup master node:</p>
-<pre><code>hadoop<span class="annotation">@master</span>1$ $HBASE_HOME<span class="regexp">/bin/</span>start-hbase.sh`&lt;br&gt;
-&gt;starting master, 
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-master-master1.out
-&gt;<span class="string">slave2:</span>starting regionserver,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-regionserver-slave2.out
-&gt;<span class="string">slave1:</span>starting regionserver,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-regionserver-slave1.out 
-&gt;<span class="string">slave3:</span>starting regionserver,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-regionserver-slave3.out
-&gt;<span class="string">master2:</span>starting master,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-master-master2.out
-</code></pre></li>
-<li><p>The master log on the backup master indicates that it is a backup master: </p>
-<pre><code>hadoop@master2$ tail /usr/local/hbase/logs/hbase-hadoop-master-master2.<span class="built_in">log</span>
-&gt;<span class="number">2012</span>-<span class="number">02</span>-<span class="number">10</span> <span class="number">23</span>:<span class="number">12</span>:<span class="number">07</span>,<span class="number">016</span> INFO
-&gt;org.apache.hadoop.hbase.master.ActiveMasterManager: Another master is the active
-&gt;master, ip-<span class="number">10</span>-<span class="number">176</span>-<span class="number">201</span>-<span class="number">128.u</span>s-west-<span class="number">1.</span>compute.internal, 
-&gt;<span class="number">60000</span>,<span class="number">1328883123244</span>; waiting to become the next active master
-</code></pre></li>
-</ol>
+        <p><img src="/images/onep.png" alt=""><br>In the early of this September, the Chief Strategy Offer of Cloudera Mike Olson has announced that the next important initiatives for Couldera - One Platform to advance their investment on Apache Spark.</p>
+<p>The Spark is originally invented by few guys who started up the <a href="https://databricks.com/" target="_blank" rel="external">Databrick</a>. Later, Spark catches most attention from big data communities and companies by its high-performance in-memory computing framework, which can run on top of Hadoop Yarn. As a result, more and more companies start switching their MapReduce jobs to Spark and few of them already have big cluster deployed in production. Few months earlier, IBM has claimed that they would have 5000+ developers working in Apache Spark to make it better (It is heard that the core DB2 development force are reassigned to this new mission inside the IBM, not sure.). Clearly, the One Platform initiative is an echo for IBM’s saying from Cloudera who always believe itself a leader in the domain in big data. Cloudera is not likely to leave IBM alone to take this delicious fruit - Spark. We are waiting for more actions from other company, such as Hortonworks, MapR. I do not believe they just keep silent. Or maybe there is the underlying discussion to acquire the Databrick, who knows.</p>
+<p>The One Platform initiative has covers four areas of efforts including security, scale, management, streaming. For more information regarding the One Platform initiative, please refer to the <a href="http://vision.cloudera.com/one-platform/" target="_blank" rel="external">Cloudera post</a>.</p>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -178,12 +123,12 @@ hbase&gt; balance
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/" data-id="ciexmp4mk002u18x6r78u2kwy" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.net/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/" data-id="ciexmp4eu000318x6zfdvckta" class="article-share-link">Share</a>
         
-          <a href="http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/#comments" class="article-comment-link">Comments</a>
+          <a href="http://www.sparkera.net/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/#comments" class="article-comment-link">Comments</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li></ul>
 
       </footer>
     </div>
@@ -223,20 +168,10 @@ hbase&gt; balance
     
 <nav id="article-nav">
   
-    <a href="/2013/07/06/HBase-Disable-Major-Compaction/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">newer</strong>
-      <p class="article-nav-title">
-        
-          Disable Major Compaction in HBase Cluster
-        
-      </p>
-      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
   
-  
-    <a href="/2013/06/18/Big-Data-Platform/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/08/21/Get-Git-Modified-But-Untracked-Content-Checked-In/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">older</strong>
-      <p class="article-nav-title">Big Data Platform</p>
+      <p class="article-nav-title">Get Git Modified But Untracked Content Checked In</p>
       <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
     </a>
   
@@ -417,7 +352,7 @@ hbase&gt; balance
 <script>
   var disqus_shortname = 'sparkera';
   
-  var disqus_url = 'http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/';
+  var disqus_url = 'http://www.sparkera.net/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/';
   
   (function(){
     var dsq = document.createElement('script');

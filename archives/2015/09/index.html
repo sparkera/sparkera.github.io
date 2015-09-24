@@ -4,28 +4,17 @@
   <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
   <meta charset="utf-8">
   
-  <title>Add Backup Master Node in HBase Cluster | Sparkera</title>
+  <title>Archives: 2015/9 | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="How to add a backup master node to the cluster? There are two ways of doing that.
-In One Way
-Start the HBase master daemon on the backup master node:
-hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Add Backup Master Node in HBase Cluster">
-<meta property="og:url" content="http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/index.html">
+  <meta name="description" content="A blog for big data, hadoop, spark, data mining, dw, bi, cloud computing, visulization.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sparkera">
+<meta property="og:url" content="http://www.sparkera.net/archives/2015/09/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="How to add a backup master node to the cluster? There are two ways of doing that.
-In One Way
-Start the HBase master daemon on the backup master node:
-hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
-<meta property="og:image" content="http://www.sparkera.net/images/hbase.png">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:description" content="A blog for big data, hadoop, spark, data mining, dw, bi, cloud computing, visulization.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Add Backup Master Node in HBase Cluster">
-<meta name="twitter:description" content="How to add a backup master node to the cluster? There are two ways of doing that.
-In One Way
-Start the HBase master daemon on the backup master node:
-hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
+<meta name="twitter:title" content="Sparkera">
+<meta name="twitter:description" content="A blog for big data, hadoop, spark, data mining, dw, bi, cloud computing, visulization.">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -95,109 +84,60 @@ hadoop@master2$ $HBASE_HOME/bin/hbase-daemon.sh st">
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><a class="page-title-link" href="/categories/Blog/">Blog</a></h1>
+              <h1 class="header"><i class="icon fa fa-archive"></i>archive: 2015/9</h1>
             </div>
             <div class="main-body-content">
               
-  <article id="post-HBase-Add-Backup-Master-Node" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-      <!--  -->
-      
-        <header class="article-header">
-          
   
-    <h1 class="article-title" itemprop="name">
-      Add Backup Master Node in HBase Cluster
-    </h1>
   
-
-        </header>
+    
+    
       
-      <p class="article-byline">
-        <a href="/2013/07/02/HBase-Add-Backup-Master-Node/" class="article-date">
-  <time datetime="2013-07-02T04:00:00.000Z" itemprop="datePublished">2013-07-02</time>
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year"><i class="icon fa fa-calendar-o"></i>2015</a>
+        </div>
+        <div class="archives">
+    
+    
+    
+      <div class="article-row">
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+<a href="/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/" class="thumbnail">
+  
+    <span style="background-image:url(/images/onep.png
+)" alt="Cloudera Launches One Platform Initatives To Advance Spark" class="thumbnail-image"></span>
+  
 </a>
+
+      <div class="article-meta">
+        <p class="category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+        <p class="date"><time datetime="2015-09-23T15:27:57.000Z" itemprop="datePublished">2015-09-23</time></p>
+      </div>
+      <h2 class="article-title">
+        <a href="/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/" class="title">Cloudera Launches One Platform Initatives To Advance Spark</a>
+      </h2>
+      <p class="article-excerpt">
+        
+        In the early of this September, the Chief Strategy Offer of Cloudera Mike Olson has announced that the next important initiatives for Couldera - One Platform to advance their investment on Apache Spar
       </p>
-      <div class="article-entry" itemprop="articleBody">
-        <p><img src="/images/hbase.png" align="center"><br>How to add a backup master node to the cluster? There are two ways of doing that.</p>
-<h4 id="In_One_Way">In One Way</h4><ol>
-<li><p>Start the HBase master daemon on the backup master node:</p>
-<pre><code>hadoop@master2$ <span class="variable">$HBASE</span>_HOME/bin/hbase-daemon.sh <span class="keyword">start</span> master
-</code></pre><p>From the master log, you will find that the newly started master is waiting to become the next active master:<br></p>
-<pre><code>&gt;org.apache.hadoop.hbase.master.ActiveMasterManager: Another master is the active
-&gt;master, ip-<span class="number">10</span>-<span class="number">176</span>-<span class="number">201</span>-<span class="number">128.u</span>s-west-<span class="number">1.</span>compute.internal,
-&gt;<span class="number">60000</span>,<span class="number">1328878644330</span>; waiting to become the next active master
-</code></pre></li>
-<li><p>Add the new region server’s hostname into the regionservers file, under the $HBASE_HOME/conf directory. For example, to add “slave4” to the cluster, we invoke the following command:</p>
-<pre><code>hadoop<span class="variable">@master1</span><span class="variable">$ </span>echo <span class="string">"slave4"</span> <span class="prompt">&gt;&gt; </span><span class="variable">$HBASE_HOME</span>/conf/regionservers
-</code></pre></li>
-<li><p>Sync the modified regionservers file across the cluster.</p>
-</li>
-<li><p>Log in to the new server and start the region server daemon there:</p>
-<pre><code>hadoop@slave4$ <span class="variable">$HBASE</span>_HOME/bin/hbase-daemon.sh <span class="keyword">start</span> regionserver
-</code></pre><p>5.Optionally, trigger a load balancer manually from HBase Shell to move some regions to the new region server. You can also wait for the next run of the balancer, which runs every five minutes by default.</p>
-<pre><code>hbase&gt; balance_switch <span class="literal">true</span>
-hbase&gt; balance
-</code></pre><p><br></p>
-</li>
-</ol>
-<h4 id="In_The_Other_Way">In The Other Way</h4><ol>
-<li><p>Add backup master nodes to the conf/backup-masters file:</p>
-<pre><code>hadoop@master1$ echo <span class="string">"master2"</span> &gt;&gt; <span class="variable">$HBASE</span>_HOME/conf/backup-masters`
-</code></pre></li>
-<li><p>Sync the backup-masters file across the cluster.</p>
-</li>
-<li><p>Start HBase normally; you will find that a backup HBase master will be started at the backup master node:</p>
-<pre><code>hadoop<span class="annotation">@master</span>1$ $HBASE_HOME<span class="regexp">/bin/</span>start-hbase.sh`&lt;br&gt;
-&gt;starting master, 
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-master-master1.out
-&gt;<span class="string">slave2:</span>starting regionserver,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-regionserver-slave2.out
-&gt;<span class="string">slave1:</span>starting regionserver,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-regionserver-slave1.out 
-&gt;<span class="string">slave3:</span>starting regionserver,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-regionserver-slave3.out
-&gt;<span class="string">master2:</span>starting master,
-&gt;logging to <span class="regexp">/usr/</span>local<span class="regexp">/hbase/</span>logs/hbase-hadoop-master-master2.out
-</code></pre></li>
-<li><p>The master log on the backup master indicates that it is a backup master: </p>
-<pre><code>hadoop@master2$ tail /usr/local/hbase/logs/hbase-hadoop-master-master2.<span class="built_in">log</span>
-&gt;<span class="number">2012</span>-<span class="number">02</span>-<span class="number">10</span> <span class="number">23</span>:<span class="number">12</span>:<span class="number">07</span>,<span class="number">016</span> INFO
-&gt;org.apache.hadoop.hbase.master.ActiveMasterManager: Another master is the active
-&gt;master, ip-<span class="number">10</span>-<span class="number">176</span>-<span class="number">201</span>-<span class="number">128.u</span>s-west-<span class="number">1.</span>compute.internal, 
-&gt;<span class="number">60000</span>,<span class="number">1328883123244</span>; waiting to become the next active master
-</code></pre></li>
-</ol>
-
-      </div>
-	  <div class="addthis_native_toolbox">
-  <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ccd80609fffe5a" async="async">
-  </script>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ccd80609fffe5a" async="async">
-  </script>
-  </div>
-      <footer class="article-footer">
-        <a data-url="http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/" data-id="ciexmp4mk002u18x6r78u2kwy" class="article-share-link">Share</a>
-        
-          <a href="http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/#comments" class="article-comment-link">Comments</a>
-        
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li></ul>
-
-      </footer>
     </div>
-  
   </article>
-  
-  
-    <section id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
       </div>
-    </section>
+    
   
   
+    </div></section>
+  
+  
+
 
             </div>
           </section>
@@ -219,29 +159,6 @@ hbase&gt; balance
       
     </ul>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2013/07/06/HBase-Disable-Major-Compaction/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">newer</strong>
-      <p class="article-nav-title">
-        
-          Disable Major Compaction in HBase Cluster
-        
-      </p>
-      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-  
-  
-    <a href="/2013/06/18/Big-Data-Platform/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">older</strong>
-      <p class="article-nav-title">Big Data Platform</p>
-      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-    </a>
-  
-</nav>
-
   
   <div class="widgets-container">
     
@@ -417,13 +334,11 @@ hbase&gt; balance
 <script>
   var disqus_shortname = 'sparkera';
   
-  var disqus_url = 'http://www.sparkera.net/2013/07/02/HBase-Add-Backup-Master-Node/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

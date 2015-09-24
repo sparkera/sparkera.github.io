@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.net/"/>
-  <updated>2015-08-22T18:11:54.000Z</updated>
+  <updated>2015-09-24T02:56:23.000Z</updated>
   <id>http://www.sparkera.net/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Cloudera Launches One Platform Initatives To Advance Spark]]></title>
+    <link href="http://www.sparkera.net/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/"/>
+    <id>http://www.sparkera.net/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/</id>
+    <published>2015-09-23T15:27:57.000Z</published>
+    <updated>2015-09-24T02:56:23.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/onep.png" alt=""><br>In the early of this September, the Chief Strategy Offer of Cloudera Mike Olson has announced that the next important initiatives for Couldera - One Platform to advance their investment on Apache Spark.</p>
+<p>The Spark is originally invented by few guys who started up the <a href="https://databricks.com/" target="_blank" rel="external">Databrick</a>. Later, Spark catches most attention from big data communities and companies by its high-performance in-memory computing framework, which can run on top of Hadoop Yarn. As a result, more and more companies start switching their MapReduce jobs to Spark and few of them already have big cluster deployed in production. Few months earlier, IBM has claimed that they would have 5000+ developers working in Apache Spark to make it better (It is heard that the core DB2 development force are reassigned to this new mission inside the IBM, not sure.). Clearly, the One Platform initiative is an echo for IBM’s saying from Cloudera who always believe itself a leader in the domain in big data. Cloudera is not likely to leave IBM alone to take this delicious fruit - Spark. We are waiting for more actions from other company, such as Hortonworks, MapR. I do not believe they just keep silent. Or maybe there is the underlying discussion to acquire the Databrick, who knows.</p>
+<p>The One Platform initiative has covers four areas of efforts including security, scale, management, streaming. For more information regarding the One Platform initiative, please refer to the <a href="http://vision.cloudera.com/one-platform/" target="_blank" rel="external">Cloudera post</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/onep.png" alt=""><br>In the early of this September, the Chief Strategy Offer of Cloudera Mike Olson has announced that]]>
+    </summary>
+    
+      <category term="spark" scheme="http://www.sparkera.net/tags/spark/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Get Git Modified But Untracked Content Checked In]]></title>
@@ -327,36 +347,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Apache Spark Books Reviews]]></title>
-    <link href="http://www.sparkera.net/2015/01/01/reviews-spark/"/>
-    <id>http://www.sparkera.net/2015/01/01/reviews-spark/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-09-23T23:47:13.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images/learningspark.png" width="150" height="200" align="right"></a></p>
-<h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.   </li>
-<li>Level Mid.   </li>
-<li>Level Adv. </li>
-</ul>
-<p>Start reading it.</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
-    
-      <category term="spark" scheme="http://www.sparkera.net/tags/spark/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
-    
-      <category term="Big Data" scheme="http://www.sparkera.net/categories/Reviews/Big-Data/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Scala Programming Books Reviews]]></title>
     <link href="http://www.sparkera.net/2015/01/01/reviews-scala-programming/"/>
     <id>http://www.sparkera.net/2015/01/01/reviews-scala-programming/</id>
@@ -408,6 +398,51 @@
       <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
       <category term="Coding" scheme="http://www.sparkera.net/categories/Reviews/Coding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Data Warehouse and Business Intelligence Books Reviews]]></title>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-dw-bi/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-dw-bi/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-09-23T23:46:18.000Z</updated>
+    <content type="html"><![CDATA[<hr>
+<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Oracle_PL/SQL_Receipts">Oracle PL/SQL Receipts</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+<li>Level Adv.</li>
+</ul>
+<p>This is a good PL/SQL book for all level of reading. It uses different small tables with solutions to cover every corner of PL/SQL in Oracle 11g. This is a good cook book. It is easy to learn and to read.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920028031.do" target="_blank"><img src="/images/mongodb_guide.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="MongoDB:_The_Definitive_Guide,_2nd_Edition">MongoDB: The Definitive Guide, 2nd Edition</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.   </li>
+<li>Level Adv.</li>
+</ul>
+<p>This is a good book for middle to advanced level of reading. Still reading it.</p>
+<hr>
+<p><a href="http://www.amazon.ca/Tableau-Your-Data-Analysis-Software/dp/1118612043" target="_blank"><img src="/images/tableau_your_data.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Tableau_Your_Data">Tableau Your Data</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>This is a good Tableau guide for data visualization based on the latest version of the software. It is detail oritented. It covers lots of details especially on the server deployment and security. The case study charpter is also good reference.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<hr>
+<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
+    
+      <category term="DBDWBI" scheme="http://www.sparkera.net/categories/Reviews/DBDWBI/"/>
     
   </entry>
   
@@ -631,47 +666,32 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Data Warehouse and Business Intelligence Books Reviews]]></title>
-    <link href="http://www.sparkera.net/2015/01/01/reviews-dw-bi/"/>
-    <id>http://www.sparkera.net/2015/01/01/reviews-dw-bi/</id>
+    <title><![CDATA[Apache Spark Books Reviews]]></title>
+    <link href="http://www.sparkera.net/2015/01/01/reviews-spark/"/>
+    <id>http://www.sparkera.net/2015/01/01/reviews-spark/</id>
     <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-09-23T23:46:18.000Z</updated>
-    <content type="html"><![CDATA[<hr>
-<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Oracle_PL/SQL_Receipts">Oracle PL/SQL Receipts</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+    <updated>2015-09-23T23:47:13.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images/learningspark.png" width="150" height="200" align="right"></a></p>
+<h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
 <ul>
-<li>Level Ent. </li>
+<li>Level Ent.   </li>
 <li>Level Mid.   </li>
-<li>Level Adv.</li>
+<li>Level Adv. </li>
 </ul>
-<p>This is a good PL/SQL book for all level of reading. It uses different small tables with solutions to cover every corner of PL/SQL in Oracle 11g. This is a good cook book. It is easy to learn and to read.</p>
+<p>Start reading it.</p>
 <hr>
-<p><a href="http://shop.oreilly.com/product/0636920028031.do" target="_blank"><img src="/images/mongodb_guide.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="MongoDB:_The_Definitive_Guide,_2nd_Edition">MongoDB: The Definitive Guide, 2nd Edition</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid.   </li>
-<li>Level Adv.</li>
-</ul>
-<p>This is a good book for middle to advanced level of reading. Still reading it.</p>
-<hr>
-<p><a href="http://www.amazon.ca/Tableau-Your-Data-Analysis-Software/dp/1118612043" target="_blank"><img src="/images/tableau_your_data.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Tableau_Your_Data">Tableau Your Data</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>This is a good Tableau guide for data visualization based on the latest version of the software. It is detail oritented. It covers lots of details especially on the server deployment and security. The case study charpter is also good reference.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<hr>
-<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="]]>
+    <![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images]]>
     </summary>
     
       <category term="books" scheme="http://www.sparkera.net/tags/books/"/>
     
+      <category term="spark" scheme="http://www.sparkera.net/tags/spark/"/>
+    
       <category term="Reviews" scheme="http://www.sparkera.net/categories/Reviews/"/>
     
-      <category term="DBDWBI" scheme="http://www.sparkera.net/categories/Reviews/DBDWBI/"/>
+      <category term="Big Data" scheme="http://www.sparkera.net/categories/Reviews/Big-Data/"/>
     
   </entry>
   
@@ -1002,136 +1022,6 @@ TCP    <span class="number">50020</span>   Datanodes
     </summary>
     
       <category term="hive" scheme="http://www.sparkera.net/tags/hive/"/>
-    
-      <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[SQL in MySQL and Pig Comparision]]></title>
-    <link href="http://www.sparkera.net/2013/08/21/SQL-In-MySQL-and-PIG/"/>
-    <id>http://www.sparkera.net/2013/08/21/SQL-In-MySQL-and-PIG/</id>
-    <published>2013-08-21T04:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/pigmysql.png" align="center"></p>
-<p>Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as follows. </p>
-<h5 id="00-Prepared_Files">00.Prepared Files</h5><p>cat /tmp/data_file_1</p>
-<pre><code>zhangsan      <span class="number">23</span>  <span class="number">1</span> 
-lisi          <span class="number">24</span>  <span class="number">1</span> 
-wangmazi      <span class="number">30</span>  <span class="number">1</span> 
-meinv         <span class="number">18</span>  <span class="number">0</span> 
-dama          <span class="number">55</span>  <span class="number">0</span> 
-</code></pre><p>cat /tmp/data_file_2 </p>
-<pre><code><span class="number">1</span>      a
-<span class="number">23</span>     bb
-<span class="number">50</span>     ccc
-<span class="number">30</span>     dddd
-<span class="number">66</span>     eeeee 
-</code></pre><h5 id="01-Load_Files">01.Load Files</h5><pre><code>1)Mysql (Need to <span class="operator"><span class="keyword">create</span> the <span class="keyword">table</span> <span class="keyword">first</span>).
-   <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TMP_TABLE(<span class="keyword">USER</span> <span class="built_in">VARCHAR</span>(<span class="number">32</span>),AGE <span class="built_in">INT</span>,IS_MALE <span class="built_in">BOOLEAN</span>);</span>
-   <span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TMP_TABLE_2(AGE <span class="built_in">INT</span>,OPTIONS <span class="built_in">VARCHAR</span>(<span class="number">50</span>));</span>   <span class="comment">-- 用于Join</span>
-   <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/data_file_1'</span>  <span class="keyword">INTO</span> <span class="keyword">TABLE</span> TMP_TABLE ;</span>
-   <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/data_file_2'</span>  <span class="keyword">INTO</span> <span class="keyword">TABLE</span> TMP_TABLE_2;</span>
-
-2)Pig
-   tmp_table = <span class="operator"><span class="keyword">LOAD</span> <span class="string">'/tmp/data_file_1'</span> <span class="keyword">USING</span> PigStorage(<span class="string">'\t'</span>) 
-   <span class="keyword">AS</span> (<span class="keyword">user</span>:chararray, age:<span class="built_in">int</span>,is_male:<span class="built_in">int</span>);</span>
-   tmp_table_2= <span class="operator"><span class="keyword">LOAD</span> <span class="string">'/tmp/data_file_2'</span> <span class="keyword">USING</span> PigStorage(<span class="string">'\t'</span>) 
-   <span class="keyword">AS</span> (age:<span class="built_in">int</span>,options:chararray);</span>
-</code></pre><h5 id="02-Select_WHole_Table">02.Select WHole Table</h5><pre><code><span class="number">1</span>)Mysql
-  SELECT * FROM TMP_TABLE;
-
-<span class="number">2</span>)Pig
-  DUMP tmp_table;
-</code></pre><h5 id="03-Select_Top_N">03.Select Top N</h5><pre><code><span class="number">1</span>)Mysql
-  SELECT * FROM TMP_TABLE LIMIT <span class="number">50</span>;
-
-<span class="number">2</span>)Pig
-   tmp_table_limit = LIMIT tmp_table <span class="number">50</span>;
-   DUMP tmp_table_limit;
-</code></pre><h5 id="04-Select_Specific">04.Select Specific</h5><pre><code>1)Mysql
-   SELECT USER FROM TMP_TABLE<span class="comment">;</span>
-
-2)Pig
-   tmp_table_user = FOREACH tmp_table GENERATE user<span class="comment">;</span>
-   DUMP tmp_table_user<span class="comment">;</span>
-</code></pre><h5 id="05-Alias">05.Alias</h5><pre><code><span class="number">1</span>)Mysql
-   <span class="keyword">SELECT</span> USER <span class="keyword">AS</span> USER_NAME,AGE <span class="keyword">AS</span> USER_AGE <span class="keyword">FROM</span> TMP_TABLE;
-
-<span class="number">2</span>)Pig
-   tmp_table_column_alias = FOREACH tmp_table GENERATE user <span class="keyword">AS</span> user_name,age <span class="keyword">AS</span> user_age;
-   DUMP tmp_table_column_alias;
-</code></pre><h5 id="06-Ordering">06.Ordering</h5><pre><code><span class="number">1</span>)Mysql
-   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">ORDER</span> <span class="keyword">BY</span> AGE;
-
-<span class="number">2</span>)Pig
-    tmp_table_order = <span class="keyword">ORDER</span> tmp_table <span class="keyword">BY</span> age <span class="keyword">ASC</span>;
-    DUMP tmp_table_order;
-</code></pre><h5 id="07-Condition">07.Condition</h5><pre><code><span class="number">1</span>) Mysql
-    SELECT * FROM TMP_TABLE WHERE AGE&gt;<span class="number">20</span>;
-
-<span class="number">2</span>) Pig
-    tmp_table_where = FILTER tmp_table by age &gt; <span class="number">20</span>;
-    DUMP tmp_table_where;
-</code></pre><h5 id="08-Inner_Join">08.Inner Join</h5><pre><code><span class="number">1</span>)Mysql
-   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
-
-<span class="number">2</span>)Pig
-    tmp_table_inner_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age, tmp_table_2 <span class="keyword">BY</span> age;
-    DUMP tmp_table_inner_join;
-</code></pre><h5 id="09-Left_Join">09.Left Join</h5><pre><code><span class="number">1</span>)Mysql
-   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A LEFT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
-
-<span class="number">2</span>)Pig
-  tmp_table_left_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age LEFT OUTER, tmp_table_2 <span class="keyword">BY</span> age;
-  DUMP tmp_table_left_join;
-</code></pre><h5 id="10-Right_Join">10.Right Join</h5><pre><code><span class="number">1</span>)Mysql
-   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A RIGHT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
-
-<span class="number">2</span>)Pig
-   tmp_table_right_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age RIGHT OUTER,tmp_table_2 <span class="keyword">BY</span> age;
-   DUMP tmp_table_right_join;
-</code></pre><h5 id="11-Full_Join">11.Full Join</h5><pre><code><span class="number">1</span>)Mysql
-   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A  <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE
-   <span class="keyword">UNION</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A LEFT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE
-   <span class="keyword">UNION</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE A RIGHT <span class="keyword">JOIN</span> TMP_TABLE_2 B <span class="keyword">ON</span> A.AGE=B.AGE;
-
-<span class="number">2</span>)Pig
-   tmp_table_full_join = <span class="keyword">JOIN</span> tmp_table <span class="keyword">BY</span> age FULL OUTER,tmp_table_2 <span class="keyword">BY</span> age;
-   DUMP tmp_table_full_join;
-</code></pre><h5 id="12-Cross_Join">12.Cross Join</h5><pre><code>1)Mysql
-   SELECT * FROM TMP_TABLE,TMP_TABLE_2<span class="comment">;</span>
-
-2)Pig
-   tmp_table_cross = CROSS tmp_table,tmp_table_2<span class="comment">;</span>
-   DUMP tmp_table_cross<span class="comment">;</span>
-</code></pre><h5 id="13-GROUP">13.GROUP</h5><pre><code><span class="number">1</span>)Mysql
-  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">GROUP</span> <span class="keyword">BY</span> IS_MALE;
-
-<span class="number">2</span>)Pig
-  tmp_table_group = <span class="keyword">GROUP</span> tmp_table <span class="keyword">BY</span> is_male;
-  DUMP tmp_table_group;
-</code></pre><h5 id="14-Counting_by_group">14.Counting by group</h5><pre><code><span class="number">1</span>)Mysql
-  SELECT IS_MALE,<span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> TMP_TABLE <span class="keyword">GROUP</span> BY IS_MALE;
-
-<span class="number">2</span>)Pig
-   tmp_table_group_count = <span class="keyword">GROUP</span> tmp_table BY is_male;
-   tmp_table_group_count = FOREACH tmp_table_group_count GENERATE <span class="keyword">group</span>,<span class="keyword">COUNT</span>($<span class="number">1</span>);
-   <span class="keyword">DUMP</span> tmp_table_group_count;
-</code></pre><h5 id="15-DISTINCT">15.DISTINCT</h5><pre><code>1)MYSQL
-   SELECT DISTINCT IS_MALE FROM TMP_TABLE<span class="comment">;</span>
-
-2)Pig
-   tmp_table_distinct = FOREACH tmp_table GENERATE is_male<span class="comment">;</span>
-   tmp_table_distinct = DISTINCT tmp_table_distinct<span class="comment">;</span>
-   DUMP  tmp_table_distinct<span class="comment">;</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/pigmysql.png" align="center"></p>
-<p>Here, it is using Mysql 5.1.x and Pig 0.8 as sample. Two sample files are used as ]]>
-    </summary>
-    
-      <category term="pig" scheme="http://www.sparkera.net/tags/pig/"/>
     
       <category term="Blog" scheme="http://www.sparkera.net/categories/Blog/"/>
     
