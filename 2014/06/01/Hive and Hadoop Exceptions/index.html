@@ -118,7 +118,7 @@ Accord">
       <div class="article-entry" itemprop="articleBody">
         <p><img src="/images/exceptions.png" alt=""></p>
 <p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.hadoop.hive.ql.metadata.HiveException:java.io.IOException:Filesystem <span class="keyword">closed</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.apache</span><span class="class">.hadoop</span><span class="class">.hive</span><span class="class">.ql</span><span class="class">.metadata</span><span class="class">.HiveException</span>:java<span class="class">.io</span><span class="class">.IOException</span>:Filesystem closed</span><br></pre></td></tr></table></figure>
 <p>According to the search <a href="http://mail-archives.apache.org/mod_mbox/hadoop-common-user/201207.mbox/%3CCAL=yAAE1mM-JRb=eJGkAtxWQ7AJ3e7WJCT9BhgWq7XDTNxrwfw@mail.gmail.com%3E" target="_blank" rel="external">here</a>, the mainly reason for this is that when multiple nodes read HFDS files if one node is offline, it will throw such exception when the other nodes are still reading the data cached. There are two ways to resolve this.</p>
 <ul>
 <li>Turn off JVM reuse</li>
@@ -137,7 +137,7 @@ Accord">
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.ca/2014/06/01/Hive and Hadoop Exceptions/" data-id="cieyumir3002c5xx6eawv52o0" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.ca/2014/06/01/Hive and Hadoop Exceptions/" data-id="cifbdyqpj002cqgv1lry2c10z" class="article-share-link">Share</a>
         
           <a href="http://www.sparkera.ca/2014/06/01/Hive and Hadoop Exceptions/#comments" class="article-comment-link">Comments</a>
         
