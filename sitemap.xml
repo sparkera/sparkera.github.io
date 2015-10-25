@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/</loc>
+    <lastmod>2015-10-25T03:10:48.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.sparkera.ca/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/</loc>
     <lastmod>2015-09-24T02:56:23.000Z</lastmod>
   </url>
@@ -87,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -142,12 +147,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-data-science/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -162,6 +162,11 @@
   </url>
   
   <url>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -172,7 +177,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-data-science/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

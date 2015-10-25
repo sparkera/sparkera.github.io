@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-09-24T02:56:23.000Z</updated>
+  <updated>2015-10-25T03:10:48.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Informatica in Big Data]]></title>
+    <link href="http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/"/>
+    <id>http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/</id>
+    <published>2015-10-25T03:04:58.000Z</published>
+    <updated>2015-10-25T03:10:48.000Z</updated>
+    <content type="html"><![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/LQnShEqBTdAqvj" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-01-informatica-54334595" title="Ten tools for ten big data areas 01 informatica " target="_blank">Ten tools for ten big data areas 01 informatica </a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
+<p>Above presentation is the first topic I’ll cover for series of talks about the ten tools for ten big data areas. I came up this series of topics from ten artifacts from ancient China when people are honored to get one of the ten artifacts.</p>
+<p>In terms of data integrations of big data, I pick up Informatica, which is used to be a public company in NASDAQ as INFA. In the middle of this year, Informatica announced the successful completion of its acquisition by a company controlled by the Permira funds and Canada Pension Plan Investment Board (CPPIB). Additionally Informatica announced that Microsoft Corporation and Salesforce Ventures have agreed to become strategic investors in the company alongside the Permira funds and CPPIB. The acquisition is valued at approximately $5.3 billion, with Informatica stockholders receiving $48.75 in cash per share.</p>
+<p>Especially in big data area, Informatica has leading product called Informatica big data edition - developer. This is brand new tool in the Informatica family. It has new user interface based on Eclipse. It is single tool including development all ETL job components.<br>In Informatica developer, this is no more session. For instead, there is no concept called application. We can add mapping or workflow in the application to deploy and run the bulk of ETL jobs as an application.</p>
+<p>The main advantage of Informatica developer is that it converts the ETL logic/mapping into Hive query and execute it on top of Hadoop cluster. For example, you can even push a none-Hadoop related jobs running on top of Hadoop. This advantage not only make ETL job leverages the power of computing resource of Hadoop but also get rid of additional budget for a dedicated ETL server cluster like what’s in the Informatica PowerCenter period. In addition, this design has lots of potential when Hive evolves in the big data ecosystem, such as Hive over Spark. In future, Informatica developer will be able to leverage more distributed computing framework beyond of Hadoop, such as Spark for better performance.</p>
+<p>However, there are still limitations for this tool which is still new in the Informatica family. Below are some limitations I come across recently.</p>
+<ul>
+<li>Does not support Hive table in complex formats, such as Avro, etc</li>
+<li>Does not support write into buckets tables</li>
+<li>Does not support using parameters in row level, complex data objects path.</li>
+<li>Does not support to return target successful or failed rows from mapping</li>
+<li>Cannot run the workflow or application straightforward in the developer tool</li>
+<li>None of errors and exceptions are reported at run time when running in Hive mode</li>
+<li>Overall reliability need to be improved, such as OOM, exception on data adapters</li>
+</ul>
+<p>Alternatives, there are also other ETL tools for choice. Talend and Pentaho all provide big data version of tools. But, their big data version almost the same to the regular one except having common big data tool connector shipped. Therefore, these tools can read or write data between Hadoop rather than running on top of Hadoop.</p>
+<p>There is another new data flow tool which people may pay attention, <a href="https://nifi.apache.org/" target="_blank" rel="external">Apache NiFi</a>, which supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. The company behind this too is called Onyara is Hortonworks, an early-stage startup acquired by Hontonworks in Auguest of 2015.  </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/LQnShEqBTdAqvj" width="425" height="355" frameborder="0" marginwidth="0" margi]]>
+    </summary>
+    
+      <category term="10t10a" scheme="http://www.sparkera.ca/tags/10t10a/"/>
+    
+      <category term="informatica" scheme="http://www.sparkera.ca/tags/informatica/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Cloudera Launches One Platform Initatives To Advance Spark]]></title>
@@ -864,164 +900,6 @@ TCP    <span class="number">50020</span>   Datanodes
     </summary>
     
       <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
-    
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hive Composite Data Type]]></title>
-    <link href="http://www.sparkera.ca/2013/09/29/Hive-Composite-Data-Type/"/>
-    <id>http://www.sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</id>
-    <published>2013-09-29T04:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/hive_fun.jpg" width="960" height="710" align="center"></p>
-<p>For now, hive supports following composite data type：</p>
-<ul>
-<li><strong>map</strong>: (key1, value1, key2, value2, …). Creates a map with the given key/value pairs</li>
-<li><strong>struct</strong>: (val1, val2, val3, …). Creates a struct with the given field values. Struct field names will be col1, col2, …</li>
-<li><strong>named_struct</strong>: (name1, val1, name2, val2, …). Creates a struct with the given field names and values. (as of Hive 0.8.0)</li>
-<li><strong>array</strong>: (val1, val2, …). Creates an array with the given elements</li>
-<li><strong>create_union</strong>:(tag, val1, val2, …). Creates a union type with the value that is being pointed to by the tag parameter</li>
-</ul>
-<p>Here, I list some difference between map and struct</p>
-<ul>
-<li>For map, the type of key and values is unified. Struct are more flexible</li>
-<li>To access map using array like access [‘key’]; struct use “.” access</li>
-<li>Struct is more like a table while map is more like a array with customized index</li>
-</ul>
-<p>Below are samples of their usage</p>
-<h5 id="1-_Array">1. Array</h5><p>Create table using array data type</p>
-<pre><code>01. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span>  person(<span class="keyword">name</span> <span class="keyword">string</span>,work_locations <span class="built_in">array</span>&lt;<span class="keyword">string</span>&gt;)
-<span class="number">02.</span> <span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span>
-<span class="number">03.</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\t'</span>
-<span class="number">04.</span> COLLECTION ITEMS <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span>;</span>
-</code></pre><p>Prepared data as follows</p>
-<pre><code>01. cat <span class="keyword">person</span>.txt
-02. biansutao beijing,shanghai,tianjin,hangzhou
-03. linan changchu,chengdu,wuhan
-</code></pre><p>Load data</p>
-<pre><code>01. LOAD DATA LOCAL INPATH '/home/hadoop/<span class="keyword">person</span>.txt' OVERWRITE INTO TABLE <span class="keyword">person</span>;
-</code></pre><p>Query the table</p>
-<pre><code>01. hive&gt; select * from <span class="keyword">person</span>;
-02. biansutao       <span class="comment">["beijing","shanghai","tianjin","hangzhou"]</span>
-03. linan           <span class="comment">["changchu","chengdu","wuhan"]</span>
-04. Time taken: 0.355 seconds
-
-05. hive&gt; select name from <span class="keyword">person</span>;
-06. linan
-07. biansutao
-08. Time taken: 12.397 seconds
-
-09. hive&gt; select work_locations<span class="comment">[0]</span> from <span class="keyword">person</span>;
-10. changchu
-11. beijing
-12. Time taken: 13.214 seconds
-
-13. hive&gt; select work_locations from <span class="keyword">person</span>;  
-14. <span class="comment">["changchu","chengdu","wuhan"]</span>
-15. <span class="comment">["beijing","shanghai","tianjin","hangzhou"]</span>
-16. Time taken: 13.755 seconds
-
-17. hive&gt; select work_locations<span class="comment">[3]</span> from <span class="keyword">person</span>;
-18. NULL
-19. hangzhou
-20. Time taken: 12.722 seconds
-
-21. hive&gt; select work_locations<span class="comment">[4]</span> from <span class="keyword">person</span>;
-22. NULL
-23. NULL
-24. Time taken: 15.958 seconds
-</code></pre><h5 id="2-_Map">2. Map</h5><p>Create table using array data type</p>
-<pre><code>01. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> score(<span class="keyword">name</span> <span class="keyword">string</span>, score <span class="keyword">map</span>&lt;<span class="keyword">string</span>,<span class="built_in">int</span>&gt;)
-<span class="number">02.</span> <span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span>
-<span class="number">03.</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\t'</span>
-<span class="number">04.</span> COLLECTION ITEMS <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span>
-<span class="number">05.</span> <span class="keyword">MAP</span> <span class="keyword">KEYS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">':'</span>;</span>
-</code></pre><p>Prepared data as follows</p>
-<pre><code><span class="number">01</span>. cat score<span class="class">.txt</span>
-<span class="number">02</span>. biansutao <span class="string">'math'</span>:<span class="number">80</span>,<span class="string">'chinese'</span>:<span class="number">89</span>,<span class="string">'english'</span>:<span class="number">95</span>
-<span class="number">03</span>. jobs      <span class="string">'chinese'</span>:<span class="number">60</span>,<span class="string">'math'</span>:<span class="number">80</span>,<span class="string">'english'</span>:<span class="number">99</span>
-</code></pre><p>Load data</p>
-<pre><code>01. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/score.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> score;</span>
-</code></pre><p>Query the table</p>
-<pre><code><span class="number">01.</span> hive&gt; <span class="keyword">select</span> * <span class="keyword">from</span> score;
-<span class="number">02.</span> biansutao       {<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"chinese"</span>:<span class="number">89</span>,<span class="string">"english"</span>:<span class="number">95</span>}
-<span class="number">03.</span> jobs            {<span class="string">"chinese"</span>:<span class="number">60</span>,<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"english"</span>:<span class="number">99</span>}
-<span class="number">04.</span> Time taken: <span class="number">0.665</span> seconds
-
-<span class="number">05.</span> hive&gt; <span class="keyword">select</span> name <span class="keyword">from</span> score;
-<span class="number">06.</span> jobs
-<span class="number">07.</span> biansutao
-<span class="number">08.</span> Time taken: <span class="number">19.778</span> seconds
-
-<span class="number">09.</span> hive&gt; <span class="keyword">select</span> t.score <span class="keyword">from</span> score t;
-<span class="number">10.</span> {<span class="string">"chinese"</span>:<span class="number">60</span>,<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"english"</span>:<span class="number">99</span>}
-<span class="number">11.</span> {<span class="string">"math"</span>:<span class="number">80</span>,<span class="string">"chinese"</span>:<span class="number">89</span>,<span class="string">"english"</span>:<span class="number">95</span>}
-<span class="number">12.</span> Time taken: <span class="number">19.353</span> seconds
-
-<span class="number">13.</span> hive&gt; <span class="keyword">select</span> t.score[<span class="string">'chinese'</span>] <span class="keyword">from</span> score t;
-<span class="number">14.</span> <span class="number">2660</span>
-<span class="number">15.</span> <span class="number">2789</span>
-<span class="number">16.</span> Time taken: <span class="number">13.054</span> seconds
-
-<span class="number">17.</span> hive&gt; <span class="keyword">select</span> t.score[<span class="string">'english'</span>] <span class="keyword">from</span> score t;
-<span class="number">18.</span> <span class="number">3099</span>
-<span class="number">19.</span> <span class="number">3195</span>
-<span class="number">20.</span> Time taken: <span class="number">13.769</span> seconds
-</code></pre><h5 id="3-_Struct">3. Struct</h5><p>Create table using array data type</p>
-<pre><code>01. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">test</span>(<span class="keyword">id</span> <span class="built_in">int</span>,course <span class="keyword">struct</span>&lt;course:<span class="keyword">string</span>,score:<span class="built_in">int</span>&gt;)
-<span class="number">02.</span> <span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span>
-<span class="number">03.</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\t'</span>
-<span class="number">04.</span> COLLECTION ITEMS <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span>;</span>
-</code></pre><p>Prepared data as follows</p>
-<pre><code><span class="number">01.</span> cat test.txt
-<span class="number">02.</span> <span class="number">1</span> english,<span class="number">80</span>
-<span class="number">03.</span> <span class="number">2</span> math,<span class="number">89</span>
-<span class="number">04.</span> <span class="number">3</span> chinese,<span class="number">95</span>
-</code></pre><p>Load data</p>
-<pre><code>01. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/test.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> <span class="keyword">test</span>;</span>
-</code></pre><p>Query the table</p>
-<pre><code><span class="number">01.</span> hive&gt; select * from test;
-<span class="number">02.</span> OK
-<span class="number">03.</span> <span class="number">1</span>       {<span class="string">"course"</span>:<span class="string">"english"</span>,<span class="string">"score"</span>:<span class="number">80</span>}
-<span class="number">04.</span> <span class="number">2</span>       {<span class="string">"course"</span>:<span class="string">"math"</span>,<span class="string">"score"</span>:<span class="number">89</span>}
-<span class="number">05.</span> <span class="number">3</span>       {<span class="string">"course"</span>:<span class="string">"chinese"</span>,<span class="string">"score"</span>:<span class="number">95</span>}
-<span class="number">06.</span> Time taken: <span class="number">0.275</span> seconds
-
-<span class="number">07.</span> hive&gt; select course from test;
-<span class="number">08.</span> {<span class="string">"course"</span>:<span class="string">"english"</span>,<span class="string">"score"</span>:<span class="number">80</span>}
-<span class="number">09.</span> {<span class="string">"course"</span>:<span class="string">"math"</span>,<span class="string">"score"</span>:<span class="number">89</span>}
-<span class="number">10.</span> {<span class="string">"course"</span>:<span class="string">"chinese"</span>,<span class="string">"score"</span>:<span class="number">95</span>}
-<span class="number">11.</span> Time taken: <span class="number">44.968</span> seconds
-
-<span class="number">12.</span> select t.course.course from test t;
-<span class="number">13.</span> english
-<span class="number">14.</span> math
-<span class="number">15.</span> chinese
-<span class="number">16.</span> Time taken: <span class="number">15.827</span> seconds
-
-<span class="number">17.</span>hive&gt; select t.course.score from test t;
-<span class="number">18.</span> <span class="number">3080</span>
-<span class="number">19.</span> <span class="number">3189</span>
-<span class="number">20.</span> <span class="number">3295</span>
-<span class="number">21.</span> Time taken: <span class="number">13.235</span> seconds  
-</code></pre><h5 id="4-_Composite">4. Composite</h5><pre><code>1. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/test.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> <span class="keyword">test</span>;</span>
-2. <span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> test1(<span class="keyword">id</span> <span class="built_in">int</span>,a <span class="keyword">MAP</span>&lt;<span class="keyword">STRING</span>,<span class="built_in">ARRAY</span>&lt;<span class="keyword">STRING</span>&gt;&gt;)
-<span class="number">3.</span> <span class="keyword">row</span> <span class="keyword">format</span> <span class="keyword">delimited</span> <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">'\t'</span>
-<span class="number">4.</span> collection items <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">','</span>
-<span class="number">5.</span> <span class="keyword">MAP</span> <span class="keyword">KEYS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">':'</span>;</span>
-6. 1 english:80,90,70
-7. 2 math:89,78,86
-8. 3 chinese:99,100,82
-9. <span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/home/hadoop/test1.txt'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> test1;</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/hive_fun.jpg" width="960" height="710" align="center"></p>
-<p>For now, hive supports following composite data type：</p>]]>
-    </summary>
-    
-      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
     
       <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
     
