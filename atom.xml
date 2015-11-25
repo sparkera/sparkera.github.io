@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-11-25T02:43:08.000Z</updated>
+  <updated>2015-11-25T02:45:08.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/"/>
     <id>http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/</id>
     <published>2015-10-25T03:04:58.000Z</published>
-    <updated>2015-11-25T02:43:08.000Z</updated>
+    <updated>2015-11-25T02:45:08.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/bde.png" alt=""></p>
 <p><iframe src="//www.slideshare.net/slideshow/embed_code/key/LQnShEqBTdAqvj" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-01-informatica-54334595" title="Ten tools for ten big data areas 01 informatica " target="_blank">Ten tools for ten big data areas 01 informatica </a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
 <p>Above presentation is the first topic I’ll cover for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. I came up this series of topics from ten artifacts from ancient China when people are honored to get one of the ten artifacts.</p>
@@ -37,7 +37,7 @@
 <li>Overall reliability need to be improved, such as OOM, exception on data adapters</li>
 </ul>
 <p>Alternatives, there are also other ETL tools for choice. <a href="https://www.talend.com/" target="_blank" rel="external">Talend</a> and <a href="http://www.pentaho.com/" target="_blank" rel="external">Pentaho</a> all provide big data version of tools. But, their big data version almost the same to the regular one except having common big data tool connector shipped. Therefore, these tools can read or write data between Hadoop rather than running on top of Hadoop.</p>
-<p>There is another new data flow tool which people may pay attention, <a href="https://nifi.apache.org/" target="_blank" rel="external">Apache NiFi</a>, which supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. The company behind this tool is called Onyara is Hortonworks, an early-stage startup acquired by Hontonworks in Auguest of 2015.  </p>
+<p>There is another new data flow tool which people may pay attention, <a href="https://nifi.apache.org/" target="_blank" rel="external">Apache NiFi</a>, which supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. The company behind this tool is called Onyara, an early-stage startup acquired by Hontonworks in Auguest of 2015.  </p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><img src="/images/bde.png" alt=""></p>
