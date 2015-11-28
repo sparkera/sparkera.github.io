@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-11-25T02:45:08.000Z</updated>
+  <updated>2015-11-28T22:32:05.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Ten Tools for Ten Big Data Areas]]></title>
+    <link href="http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/"/>
+    <id>http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/</id>
+    <published>2015-11-28T21:04:58.000Z</published>
+    <updated>2015-11-28T22:32:05.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/10tools.png" alt=""></p>
+<p>In the ancient of China, it is said there are ten legend weapons. Each of them has special magic and power. Anyone who can own one of these weapons could become a master or leader who is not undefeatable.<br><img src="/images/10weapons.png" alt=""></p>
+<p>Nowadays, the big data ecosystem becomes bigger and bigger. There are thousands of players in the big data landscape actively paying right now by creating thousands of tools, framework, solution, etc. However, I believe the legend are always among few of them. I choose 10 of the greatest tools as my recommendation for people really want to learn or use big data (see headline picture). </p>
+<p>I have started the journey to introduce each of them which are free or not, but I guarantee the best from my experience. There will be a series of presentations called <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. Let’s look forward … </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/10tools.png" alt=""></p>
+<p>In the ancient of China, it is said there are ten legend weapons. Each of them has special ]]>
+    </summary>
+    
+      <category term="10t10a" scheme="http://www.sparkera.ca/tags/10t10a/"/>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Informatica in Big Data]]></title>
@@ -578,6 +602,36 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Apache Spark Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-09-23T23:47:13.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images/learningspark.png" width="150" height="200" align="right"></a></p>
+<h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.   </li>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>Start reading it.</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Big Data Books Reviews]]></title>
     <link href="http://www.sparkera.ca/2015/01/01/reviews-big-data/"/>
     <id>http://www.sparkera.ca/2015/01/01/reviews-big-data/</id>
@@ -704,36 +758,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Apache Spark Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-09-23T23:47:13.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images/learningspark.png" width="150" height="200" align="right"></a></p>
-<h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.   </li>
-<li>Level Mid.   </li>
-<li>Level Adv. </li>
-</ul>
-<p>Start reading it.</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Hive Get the Max/Min Value Rows]]></title>
     <link href="http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/"/>
     <id>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</id>
@@ -825,83 +849,6 @@
       <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
     
       <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
-    
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Steps to setup EC2 cluster for Hadoop]]></title>
-    <link href="http://www.sparkera.ca/2014/04/05/Install-CDH-In-AWS/"/>
-    <id>http://www.sparkera.ca/2014/04/05/Install-CDH-In-AWS/</id>
-    <published>2014-04-05T04:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/ec2.jpg" alt=""></p>
-<ol>
-<li><p>Get the <code>Access Key ID</code> and <code>Secret Access Key</code> and store it in a notepad. The keys will be used when creating EC2 instances. If not there, then generate a new set of keys.</p>
-</li>
-<li><p>Go to the PVC Management console to create VPC with proper subnet since Hadoop nodes need to be in one LAN</p>
-</li>
-<li><p>Go to the EC2 Management console and create a new Key Pair. While creating the keys, the user will be prompted to store a pem key file. This file will be used to login to the EC2 instance later to install the Cloudera Manager.</p>
-</li>
-<li><p>In the same screen, go to Instances and click on <code>Launch Instance</code> to select an EC2 instance to launch. We chose Ubuntu TLS 12 Linux, 2 c3.xlarge nodes with 50G EBS and 1 c3.4xlarge with 100G EBS. (<strong>Note</strong>, EBS has better performance but additonal payment is needed)</p>
-</li>
-<li><p>Select <code>Create a new Security Group</code> and open up the minimum ports as follows</p>
-<pre><code>TCP    <span class="number">22</span>      SSH
-TCP    <span class="number">7180</span>    Cloudera Manager web console
-TCP    <span class="number">7182</span>    Agent heartbeat
-TCP    <span class="number">7183</span>    (optional, Cloudera Manager web console with TLS)
-TCP    <span class="number">7432</span>    Embedded PostgreSQL
-ICMP   ALL     Ping echo
-TCP    <span class="number">9000</span>    Host inspector
-TCP    <span class="number">8020</span>    Hive
-TCP    <span class="number">50010</span>   Datanodes
-TCP    <span class="number">50020</span>   Datanodes
-</code></pre></li>
-<li><p>Make sure all the setting are proper and click on <code>Launch</code>.</p>
-</li>
-<li><p>It will take a couple of minutes for the EC2 instance to start. The status of the instance should change to <code>running</code>. Select the instance and copy the public hostname of the instance which we created.</p>
-</li>
-<li><p>Use the key which has been downloaded earlier and the public hostname to login to the instance which was created. Password shouldn’t be prompted for logging into the instance.</p>
-</li>
-<li><p>Download the Cloudera Manager installation binaries, change the permissions. Execute the binary to start the installation of Cloudera Manager using sudo.</p>
-</li>
-<li><p>Click on Three <code>Next</code>. The installation will take a couple of minutes.</p>
-</li>
-<li><p>Once the installation of the Cloudera Manager is complete, the following screen will appear. Click on <code>OK</code>.</p>
-</li>
-<li><p>Start Firefox and go to the hostname: 7180 (the hostname has to be replaced) and login to the Cloudera Manager using username/password as admin/admin. Noticed that it takes a couple of seconds the Cloudera Manager for the initialization, so the login page might not appear immediately.</p>
-</li>
-<li><p>Select Classic Wizard and Click on <code>Continue</code>.</p>
-</li>
-<li><p>Search for private IP address of all nodes and select as cluster nodes, click <code>Continue</code>.</p>
-</li>
-<li><p>Select other user (Ubuntu) and proper private keys before <code>Continue</code>.</p>
-</li>
-<li><p>The install will start from download to installation and follow by the verification</p>
-</li>
-<li><p>Now the different services will start automatically. Again, this will take a couple of minutes.</p>
-</li>
-<li><p>Click on the <code>Services</code> tab and all the services should be in a Good Health status. From this screen either the individual or all the services can stopped/started.</p>
-</li>
-<li><p>Click on the Hosts tab to get the list of nodes and their status which should be in Good.</p>
-</li>
-</ol>
-<p><strong>Note</strong>:</p>
-<ul>
-<li><p>Need to set the hadoop dfs folder and temp folder to permnant storage in the EC2 so that when you stop and start the Hadoop, the data and configuration are still there</p>
-</li>
-<li><p>Proverly configure the firewall ports roles to make install scussfully (You can allow specific local address in VNC and your own public IP to access for all ports)</p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/ec2.jpg" alt=""></p>
-<ol>
-<li><p>Get the <code>Access Key ID</code> and <code>Secret Access Key</code> and store it in ]]>
-    </summary>
-    
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
     
       <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
     
