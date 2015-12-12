@@ -4,18 +4,28 @@
   <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
   <meta charset="utf-8">
   
-  <title>Hadoop Customize Input Output Format | Sparkera</title>
+  <title>Apache Spark Memo | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hadoop">
+  <meta name="description" content="Apache Spark Memo
+Here, I am collecting the memo while I am learning the spark so that people like me can benefit fot this collection.
+1. Spark Core
+The stage creation rule is based on the idea to pip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop Customize Input Output Format">
-<meta property="og:url" content="http://www.sparkera.ca/2012/09/08//posts/102/index.html/index.html">
+<meta property="og:title" content="Apache Spark Memo">
+<meta property="og:url" content="http://www.sparkera.ca/2015/12/12/Apache-Spark-Memo/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="hadoop">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:description" content="Apache Spark Memo
+Here, I am collecting the memo while I am learning the spark so that people like me can benefit fot this collection.
+1. Spark Core
+The stage creation rule is based on the idea to pip">
+<meta property="og:image" content="http://www.sparkera.ca/images/sparkmemo.jpg">
+<meta property="og:updated_time" content="2015-12-12T02:37:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop Customize Input Output Format">
-<meta name="twitter:description" content="hadoop">
+<meta name="twitter:title" content="Apache Spark Memo">
+<meta name="twitter:description" content="Apache Spark Memo
+Here, I am collecting the memo while I am learning the spark so that people like me can benefit fot this collection.
+1. Spark Core
+The stage creation rule is based on the idea to pip">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -89,7 +99,7 @@
             </div>
             <div class="main-body-content">
               
-  <article id="post-/posts/102/index.html" class="article article-single article-type-post" itemscope itemprop="blogPost">
+  <article id="post-Apache-Spark-Memo" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -97,35 +107,48 @@
           
   
     <h1 class="article-title" itemprop="name">
-      Hadoop Customize Input Output Format
+      Apache Spark Memo
     </h1>
   
 
         </header>
       
       <p class="article-byline">
-        <a href="/2012/09/08//posts/102/index.html/" class="article-date">
-  <time datetime="2012-09-08T04:00:00.000Z" itemprop="datePublished">2012-09-08</time>
+        <a href="/2015/12/12/Apache-Spark-Memo/" class="article-date">
+  <time datetime="2015-12-12T14:04:58.000Z" itemprop="datePublished">2015-12-12</time>
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>To customize inputformat, we need to do following</p>
-<ul>
-<li>Create customized *InputFormat class by extending Hadoop inputformat with your own type of class, such as <span style="text-decoration: underline">public class LogFileInputFormat extends FileInputFormat&lt;LongWritable, LogWritable&gt;{…}</span></li>
-<li>In above class, override “<span style="text-decoration: underline">public RecordReader&lt;T, T&gt; createRecordReader(InputSplit arg0, TaskAttemptContext arg1) throws IOException, InterruptedException {…}”</span>, which returns customized RecordReader class.</li>
-<li>In above class, override following one or all if you want to deal with splitable records<span style="text-decoration: underline">List&lt;InputSplit&gt; getSplits(JobContext job)</span> which generate the list of files and make them into FileSplits.<br><span style="text-decoration: underline">protected boolean isSplitable(JobContext context, Path filename) </span>which decides if or when records are splitable.</li>
-<li>Create customized RecordReader class by extending Hadoop RecordReader class, such as, <span style="text-decoration: underline">public class LogFileRecordReader extends RecordReader&lt;LongWritable, LogWritable&gt;{…}</span></li>
-<li>In above class override proper methods, such as</li>
-</ul>
-<p><span style="text-decoration: underline">public boolean nextKeyValue() throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public LongWritable getCurrentKey() throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public LogWritable getCurrentValue() throws IOException,InterruptedException {…}</span><br><span style="text-decoration: underline"> public float getProgress() throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public void close() throws IOException {…}</span></p>
-<p>To customize Outputformat, we need to do following</p>
-<ul>
-<li>Create customized *OutputFormat class by extending Hadoop inputformat with your own type of class, such as <span style="text-decoration: underline">public class LogFileOutputFormat extends FileOutputFormat&lt;LongWritable, LogWritable&gt;{…}</span></li>
-<li>In above class, override “<span style="text-decoration: underline">public RecordWriter getRecordWriter(TaskAttemptContext job) throws IOException, InterruptedException {…}</span>“</li>
-<li>Create customized RecordWriter class by extending Hadoop RecordReader class, such as, extends RecordWriter&lt;T, T&gt;{…}</li>
-<li>In above class override proper methods, such as</li>
-</ul>
-<p><span style="text-decoration: underline">public void write(TextArrayWritable key, NullWritable value) throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public synchronized void close(TaskAttemptContext context) throws IOException {…}</span></p>
+        <p><img src="/images/sparkmemo.jpg" alt=""><br>Apache Spark Memo</p>
+<p>Here, I am collecting the memo while I am learning the spark so that people like me can benefit fot this collection.</p>
+<h3 id="1-_Spark_Core">1. Spark Core</h3><ol>
+<li><p>The stage creation rule is based on the idea to pipeline as many narrow transformations as possible. Once stages are figured out, spark will generate tasks from stages. The first stage will create ShuffleMapTasks and the last stage will create ResultTasks because in the last stage, one action operation is included to produce results.</p>
+</li>
+<li><p>The number of tasks to be generated depends on how your files are distributed. Suppose that you have 3 three different files in three different nodes, the first stage will generate 3 tasks : one task per partition. Therefore, you should not map your steps to tasks directly. A task belongs to a stage, and is related to a partition.</p>
+</li>
+<li><p>At high level, there are two transformations that can be applied onto the RDDs, namely narrow transformation and wide transformation. Wide transformations basically result in stage boundaries. <strong>Narrow transformation</strong> - doesn’t require the data to be shuffled across the partitions. for example, Map, filter and etc.. <strong>Wide transformation</strong> - requires the data to be shuffled for example, reduceByKey and etc..</p>
+</li>
+<li><p><strong>Partition</strong> - all the data you work with in Spark is split into partitions. What a single partition is and how is it determined? Partition size completely depends on the data source you use. For most of the methods to read the data in Spark you can specify the amount of partitions you want to have in your RDD. When you read a file from HDFS, you use Hadoop’s InputFormat to make it. By default each input split returned by InputFormat is mapped to a single partition in RDD. For most of the files on HDFS single input split is generated for a single block of data stored on HDFS, which equals to approximately 64MB of 128MB of data. Approximately, because the data in HDFS is split on exact block boundaries in bytes, but when it is processed it is split on the record splits. For text file the splitting character is the newline char, for sequence file it is the block end and so on. The only exception of this rule is compressed files – if you have the whole text file compressed, then it cannot be split into records and the whole file would become a single input split and thus a single partition in Spark and you have to manually repartition it.</p>
+</li>
+<li><p>Spark’s basic abstraction is the Resilient Distributed Dataset, or RDD. The RDD is how Spark simplifies complex operations like join or groupBy and hides the fact that under the hood, you’re dealing with fragmented data. That fragmentation is what enables Spark to execute in parallel, and the level of fragmentation is a function of the number of partitions of your RDD. The number of partitions is important because a stage in Spark will operate on one partition at a time (and load the data in that partition into memory). Consequently, if you have fewer partitions than active stages, you will wind up under-utilizing your cluster. Furthermore, since with fewer partitions there’s more data in each partition, you increase the memory pressure on your program. On the flip side, with too many partitions, your performance may degrade as you take a greater hit from network and disk I/O. Ultimately this concept ties into Spark’s notion of parallelism and how you can tune it (see the discussion of tuning parallelism here) to optimize performance.</p>
+</li>
+<li><p>The property <strong>spark.cleaner.ttl</strong> parameter to trigger automatic cleanups.</p>
+</li>
+<li><p>Keep in mind that repartitioning your data is a fairly expensive operation. Spark also has an optimized version of repartition() called coalesce() that allows minimum the data movement, but only if you are decreasing the number of RDD partitions.</p>
+</li>
+<li><p>In a typical Spark node，40% of the memory is used for computing while 60% is used for storing the data.</p>
+</li>
+<li><p><strong>cache()/persist()</strong> is also lays operation. However, unpersist() is non-lazy operation.</p>
+</li>
+</ol>
+<h3 id="2-_Spark_SQL">2. Spark SQL</h3><ol>
+<li><p>When working with a HiveContext, DataFrames can also be saved as persistent tables using the saveAsTable command. Unlike the registerTempTable command, saveAsTable will materialize the contents of the dataframe and create a pointer to the data in the HiveMetastore. Persistent tables will still exist even after your Spark program has restarted, as long as you maintain your connection to the same metastore. A DataFrame for a persistent table can be created by calling the table method on a SQLContext with the name of the table.</p>
+</li>
+<li><p>By default saveAsTable will create a “managed table”, meaning that the location of the data will be controlled by the metastore. Managed tables will also have their data deleted automatically when a table is dropped. However, Spark can also create temp table from data frame using rdd.registerTempTable(“table_name”). These tables are out of control by hive.</p>
+</li>
+<li><p>Spark SQL also supports reading and writing data stored in Apache Hive. However, since Hive has a large number of dependencies, it is not included in the default Spark assembly. Hive support is enabled by adding the -Phive and -Phive-thriftserver flags to Spark’s build. This command builds a new assembly jar that includes Hive. Note that this Hive assembly jar must also be present on all of the worker nodes, as they will need access to the Hive serialization and deserialization libraries (SerDes) in order to access data stored in Hive.</p>
+</li>
+</ol>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -136,12 +159,12 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.ca/2012/09/08//posts/102/index.html/" data-id="cii2hslrz005ntfv1su3876o7" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.ca/2015/12/12/Apache-Spark-Memo/" data-id="cii2hslnz0003tfv144glk0b5" class="article-share-link">Share</a>
         
-          <a href="http://www.sparkera.ca/2012/09/08//posts/102/index.html/#comments" class="article-comment-link">Comments</a>
+          <a href="http://www.sparkera.ca/2015/12/12/Apache-Spark-Memo/#comments" class="article-comment-link">Comments</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li></ul>
 
       </footer>
     </div>
@@ -181,20 +204,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2012/10/13/A-Tiny-Scrum-Overview/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">newer</strong>
-      <p class="article-nav-title">
-        
-          A Tiny Scrum Overview
-        
-      </p>
-      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
   
-  
-    <a href="/2012/08/25/Hadoop-Split-and-Block/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/12/11/Tableau-Your-Big-Data/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">older</strong>
-      <p class="article-nav-title">Hadoop Split and Block</p>
+      <p class="article-nav-title">Tableau Your Big Data</p>
       <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
     </a>
   
@@ -375,7 +388,7 @@
 <script>
   var disqus_shortname = 'sparkera';
   
-  var disqus_url = 'http://www.sparkera.ca/2012/09/08//posts/102/index.html/';
+  var disqus_url = 'http://www.sparkera.ca/2015/12/12/Apache-Spark-Memo/';
   
   (function(){
     var dsq = document.createElement('script');

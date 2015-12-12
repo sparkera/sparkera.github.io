@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-12-12T01:00:31.000Z</updated>
+  <updated>2015-12-12T02:37:05.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Apache Spark Memo]]></title>
+    <link href="http://www.sparkera.ca/2015/12/12/Apache-Spark-Memo/"/>
+    <id>http://www.sparkera.ca/2015/12/12/Apache-Spark-Memo/</id>
+    <published>2015-12-12T14:04:58.000Z</published>
+    <updated>2015-12-12T02:37:05.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/sparkmemo.jpg" alt=""><br>Apache Spark Memo</p>
+<p>Here, I am collecting the memo while I am learning the spark so that people like me can benefit fot this collection.</p>
+<h3 id="1-_Spark_Core">1. Spark Core</h3><ol>
+<li><p>The stage creation rule is based on the idea to pipeline as many narrow transformations as possible. Once stages are figured out, spark will generate tasks from stages. The first stage will create ShuffleMapTasks and the last stage will create ResultTasks because in the last stage, one action operation is included to produce results.</p>
+</li>
+<li><p>The number of tasks to be generated depends on how your files are distributed. Suppose that you have 3 three different files in three different nodes, the first stage will generate 3 tasks : one task per partition. Therefore, you should not map your steps to tasks directly. A task belongs to a stage, and is related to a partition.</p>
+</li>
+<li><p>At high level, there are two transformations that can be applied onto the RDDs, namely narrow transformation and wide transformation. Wide transformations basically result in stage boundaries. <strong>Narrow transformation</strong> - doesn’t require the data to be shuffled across the partitions. for example, Map, filter and etc.. <strong>Wide transformation</strong> - requires the data to be shuffled for example, reduceByKey and etc..</p>
+</li>
+<li><p><strong>Partition</strong> - all the data you work with in Spark is split into partitions. What a single partition is and how is it determined? Partition size completely depends on the data source you use. For most of the methods to read the data in Spark you can specify the amount of partitions you want to have in your RDD. When you read a file from HDFS, you use Hadoop’s InputFormat to make it. By default each input split returned by InputFormat is mapped to a single partition in RDD. For most of the files on HDFS single input split is generated for a single block of data stored on HDFS, which equals to approximately 64MB of 128MB of data. Approximately, because the data in HDFS is split on exact block boundaries in bytes, but when it is processed it is split on the record splits. For text file the splitting character is the newline char, for sequence file it is the block end and so on. The only exception of this rule is compressed files – if you have the whole text file compressed, then it cannot be split into records and the whole file would become a single input split and thus a single partition in Spark and you have to manually repartition it.</p>
+</li>
+<li><p>Spark’s basic abstraction is the Resilient Distributed Dataset, or RDD. The RDD is how Spark simplifies complex operations like join or groupBy and hides the fact that under the hood, you’re dealing with fragmented data. That fragmentation is what enables Spark to execute in parallel, and the level of fragmentation is a function of the number of partitions of your RDD. The number of partitions is important because a stage in Spark will operate on one partition at a time (and load the data in that partition into memory). Consequently, if you have fewer partitions than active stages, you will wind up under-utilizing your cluster. Furthermore, since with fewer partitions there’s more data in each partition, you increase the memory pressure on your program. On the flip side, with too many partitions, your performance may degrade as you take a greater hit from network and disk I/O. Ultimately this concept ties into Spark’s notion of parallelism and how you can tune it (see the discussion of tuning parallelism here) to optimize performance.</p>
+</li>
+<li><p>The property <strong>spark.cleaner.ttl</strong> parameter to trigger automatic cleanups.</p>
+</li>
+<li><p>Keep in mind that repartitioning your data is a fairly expensive operation. Spark also has an optimized version of repartition() called coalesce() that allows minimum the data movement, but only if you are decreasing the number of RDD partitions.</p>
+</li>
+<li><p>In a typical Spark node，40% of the memory is used for computing while 60% is used for storing the data.</p>
+</li>
+<li><p><strong>cache()/persist()</strong> is also lays operation. However, unpersist() is non-lazy operation.</p>
+</li>
+</ol>
+<h3 id="2-_Spark_SQL">2. Spark SQL</h3><ol>
+<li><p>When working with a HiveContext, DataFrames can also be saved as persistent tables using the saveAsTable command. Unlike the registerTempTable command, saveAsTable will materialize the contents of the dataframe and create a pointer to the data in the HiveMetastore. Persistent tables will still exist even after your Spark program has restarted, as long as you maintain your connection to the same metastore. A DataFrame for a persistent table can be created by calling the table method on a SQLContext with the name of the table.</p>
+</li>
+<li><p>By default saveAsTable will create a “managed table”, meaning that the location of the data will be controlled by the metastore. Managed tables will also have their data deleted automatically when a table is dropped. However, Spark can also create temp table from data frame using rdd.registerTempTable(“table_name”). These tables are out of control by hive.</p>
+</li>
+<li><p>Spark SQL also supports reading and writing data stored in Apache Hive. However, since Hive has a large number of dependencies, it is not included in the default Spark assembly. Hive support is enabled by adding the -Phive and -Phive-thriftserver flags to Spark’s build. This command builds a new assembly jar that includes Hive. Note that this Hive assembly jar must also be present on all of the worker nodes, as they will need access to the Hive serialization and deserialization libraries (SerDes) in order to access data stored in Hive.</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/sparkmemo.jpg" alt=""><br>Apache Spark Memo</p>
+<p>Here, I am collecting the memo while I am learning the spark so that]]>
+    </summary>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Tableau Your Big Data]]></title>
@@ -536,44 +586,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Data Science and Data Mining Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-data-science/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-data-science/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_blank"><img src="/images/AgileDataScience.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Agile_Data_Science_-_Building_Data_Analytics_Applications_with_Hadoop">Agile Data Science - Building Data Analytics Applications with Hadoop</h3><p><img src="/images/2.5star.png" width="150" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid.   </li>
-<li>Level Adv. </li>
-</ul>
-<p>The book looks like a case study from beginning to the end. It has lots of code covering implementation of one big data project. It requires coding skills of Python.</p>
-<hr>
-<p><a href="http://shop.oreilly.com/product/0636920028529.do" target="_blank"><img src="/images/doingdatascience.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Doing_Data_Science_-_Start_Talking_From_Frontline">Doing Data Science - Start Talking From Frontline</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.   </li>
-<li>Level Mid.   </li>
-<li>Level Adv. </li>
-</ul>
-<p>Prepare to read it</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_b]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="data science" scheme="http://www.sparkera.ca/tags/data-science/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Apache Spark Books Reviews]]></title>
     <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
     <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
@@ -600,6 +612,61 @@
       <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
     
       <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Build Tools and Shell Program Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Geting_Good_with_GIT">Geting Good with GIT</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+</ul>
+<p>This is a tiny book for Git. It is good because it is short and simple. It covers basic usage of Git and a little about GitHub. It is particular good for people who want to learn Git from Zero. The is another link about GitHub call <a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a>, which is also recommended reading after this. The only pity is that it does not cover any advanced topics. Here is my <a href="https://www.evernote.com/shard/s36/sh/f2cf70fa-6f1c-483b-9eab-23e52462f09e/4a50f05a3852edeb5a5fca7d03ed8d87" target="_blank" rel="external">my book note</a></p>
+<hr>
+<p><a href="http://www.packtpub.com/git-version-control-for-everyone/book" target="_blank"><img src="/images/gitversioncontrolforeveryone.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Git:_Version_Control_for_Everyone">Git: Version Control for Everyone</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+</ul>
+<p>This is a complete beginner’s workflow for version control of common documents and content. It has examples used are from non-techie, day to day computing activities for Git enter and middle level. It covers basic usage of Git and a little about Bitbucket in chapter 4. This book has very dtail of git command in terms of command output and how to run it in both git GUI and CLI.</p>
+<hr>
+<p><a href="http://www.amazon.cn/gp/product/B004CLZ7BA" target="_blank"><img src="/images/maven3inaction.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Maven_3_In_Action">Maven 3 In Action</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>This is a few books having details about Maven 3, which is am excellent Java project management tools. This book not only cover the basic knowledge of maven, but also introduce related tools, like Hudson. In addition, there are more good maven readings such as, <a href="http://books.sonatype.com/mvnref-book/reference/index.html" target="_blank" rel="external">Maven Complete Reference</a>, and <a href="http://www.tutorialspoint.com/maven/" target="_blank" rel="external">Maven Tutorial</a></p>
+<hr>
+<p><a href="http://linuxcommand.org/tlcl.php" target="_blank"><img src="/images/thelinuxcmdline.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="The_Linux_Command_Line">The Linux Command Line</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>This is a good begining guide for fresh people in linux programming. It is also a good quick review book. I never learn linux form books but from using experence and system manuals. This is a a free book which is recommanded to read to learn Linux in systematic way.</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" heig]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
+    
+      <category term="linux" scheme="http://www.sparkera.ca/tags/linux/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
     
   </entry>
   
@@ -730,57 +797,40 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Build Tools and Shell Program Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</id>
+    <title><![CDATA[Data Science and Data Mining Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-data-science/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-data-science/</id>
     <published>2015-01-01T13:00:11.000Z</published>
     <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Geting_Good_with_GIT">Geting Good with GIT</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+    <content type="html"><![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_blank"><img src="/images/AgileDataScience.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Agile_Data_Science_-_Building_Data_Analytics_Applications_with_Hadoop">Agile Data Science - Building Data Analytics Applications with Hadoop</h3><p><img src="/images/2.5star.png" width="150" height="50" align="left"><br></p>
 <ul>
-<li>Level Ent. </li>
-</ul>
-<p>This is a tiny book for Git. It is good because it is short and simple. It covers basic usage of Git and a little about GitHub. It is particular good for people who want to learn Git from Zero. The is another link about GitHub call <a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a>, which is also recommended reading after this. The only pity is that it does not cover any advanced topics. Here is my <a href="https://www.evernote.com/shard/s36/sh/f2cf70fa-6f1c-483b-9eab-23e52462f09e/4a50f05a3852edeb5a5fca7d03ed8d87" target="_blank" rel="external">my book note</a></p>
-<hr>
-<p><a href="http://www.packtpub.com/git-version-control-for-everyone/book" target="_blank"><img src="/images/gitversioncontrolforeveryone.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Git:_Version_Control_for_Everyone">Git: Version Control for Everyone</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-</ul>
-<p>This is a complete beginner’s workflow for version control of common documents and content. It has examples used are from non-techie, day to day computing activities for Git enter and middle level. It covers basic usage of Git and a little about Bitbucket in chapter 4. This book has very dtail of git command in terms of command output and how to run it in both git GUI and CLI.</p>
-<hr>
-<p><a href="http://www.amazon.cn/gp/product/B004CLZ7BA" target="_blank"><img src="/images/maven3inaction.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Maven_3_In_Action">Maven 3 In Action</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>This is a few books having details about Maven 3, which is am excellent Java project management tools. This book not only cover the basic knowledge of maven, but also introduce related tools, like Hudson. In addition, there are more good maven readings such as, <a href="http://books.sonatype.com/mvnref-book/reference/index.html" target="_blank" rel="external">Maven Complete Reference</a>, and <a href="http://www.tutorialspoint.com/maven/" target="_blank" rel="external">Maven Tutorial</a></p>
-<hr>
-<p><a href="http://linuxcommand.org/tlcl.php" target="_blank"><img src="/images/thelinuxcmdline.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="The_Linux_Command_Line">The Linux Command Line</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
 <li>Level Mid.   </li>
+<li>Level Adv. </li>
 </ul>
-<p>This is a good begining guide for fresh people in linux programming. It is also a good quick review book. I never learn linux form books but from using experence and system manuals. This is a a free book which is recommanded to read to learn Linux in systematic way.</p>
+<p>The book looks like a case study from beginning to the end. It has lots of code covering implementation of one big data project. It requires coding skills of Python.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920028529.do" target="_blank"><img src="/images/doingdatascience.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Doing_Data_Science_-_Start_Talking_From_Frontline">Doing Data Science - Start Talking From Frontline</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.   </li>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>Prepare to read it</p>
 <hr>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" heig]]>
+    <![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_b]]>
     </summary>
     
       <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
     
-      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
-    
-      <category term="linux" scheme="http://www.sparkera.ca/tags/linux/"/>
+      <category term="data science" scheme="http://www.sparkera.ca/tags/data-science/"/>
     
       <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
     
-      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
+      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
     
   </entry>
   
@@ -809,42 +859,6 @@
     </summary>
     
       <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
-    
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Moving to the Spark]]></title>
-    <link href="http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/"/>
-    <id>http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/</id>
-    <published>2014-11-23T05:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p>It has been a while that the blog is now updated since 2014 is a ready busy year. After I almost completed my first book recently, I think it is the right time to start new journey in big data for real time processing.</p>
-<p>Big data ecosystem has great changes over the past two years. The speed of big data processing becomes the hot topic over the past year. When Hadoop enter the area of Yarn, it becomes more like a distribute computing infrastructure. Lots of computing frameworks which are better designed and faster than MapReduce start adaption on top of Yarn and catch more attentions on their improvements over MapReduce computing. Two stars of real time big data processing are storm and spark.</p>
-<p><a href="https://storm.apache.org/" target="_blank"><img src="/images/storm_logo.png" width="350" height="400" alt="avatar" align="left"></a><a href="http://spark.apache.org/" target="_blank"><img src="/images/spark_logo.png" width="350" height="400" alt="avatar" align="right"></a></p>
-<p>Big data ecosystem has great changes over the past two years. The speed of big data processing becomes the hot topic over the past year. When Hadoop enter the area of YARN, it becomes more like a distribute computing infrastructure. Lots of computing frameworks which are better designed and faster than MapReduce start adaption on top of Yarn and catch more attentions on their improvements over MapReduce computing. Two star of real time big data processing is Storm and Spark.</p>
-<p>Comparing to Spark, Storm has longer history and sub-seconds latency, while Spark has offered feature for both real-time streaming and batching. Even the streaming feature is only production aware since 2013, it did catch lots of attention. As for me, I’ll go for Spark next for the following 3 reasons.</p>
-<ul>
-<li><p>Ecosystem<br>Spark has wide support on the big data infrastructure on Yarn. That is very important since lots of big data projects start from Hadoop. There is <a href="https://github.com/yahoo/storm-yarn" target="_blank" rel="external">Storm Over Yarn</a>, which is still in progress. To switch to a new platform is not easier than adaption and migration. Spark now also has formed its ecosystem with a stack of high-level tools including Spark SQL, MLlib for machine learning, GraphX, and Spark Streaming. You can combine these libraries seamlessly in the same application.</p>
-</li>
-<li><p>Scala and SQL<br>Compare with Storm, Spark is built on Scala, which is more interested to me than Clojure used to write Storm. In addition, Spark SQL and Hive Over Spark are avaliable as SQL interface for Spark. This will attract lots of SQL and Hive users. But, Storm has no such support natively.<br>There is a commerical product called <a href="http://www.sqlstream.com/downloads/" target="_blank" rel="external">sqlstream</a> and an open source <a href="https://github.com/epfldata/squall/wiki" target="_blank" rel="external">Squall</a> from EPFL DATA.</p>
-</li>
-<li><p>Supporting<br>Storm is the streaming solution in the Hortonworks Hadoop Data Platform. Spark Streaming is in both MapR’s distribution and Cloudera’s Enterprise data platform. In addition, Databricks is a company that provides support for the Spark.</p>
-</li>
-</ul>
-<p>Here is a fair <a href="http://xinhstechblog.blogspot.ca/2014/06/storm-vs-spark-streaming-side-by-side.html" target="_blank" rel="external">blog post</a> to compare the two.</p>
-<p>Will Spark十Tachyon十HDFS十YARN be the future??</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>It has been a while that the blog is now updated since 2014 is a ready busy year. After I almost completed my first book recently, I thin]]>
-    </summary>
-    
-      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
-    
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
-    
-      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
     
       <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
     
