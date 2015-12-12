@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.sparkera.ca/2015/12/11/Tableau-Your-Big-Data/</loc>
+    <lastmod>2015-12-12T00:54:03.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/</loc>
     <lastmod>2015-11-28T22:32:05.000Z</lastmod>
   </url>
@@ -82,7 +87,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/03/Hadoop-Balancer/</loc>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-big-data/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -97,7 +102,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
+    <loc>http://www.sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -137,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <loc>http://www.sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -147,12 +152,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
+    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://www.sparkera.ca/about/index.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -162,12 +167,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
+    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-data-science/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -182,7 +187,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-data-science/</loc>
+    <loc>http://www.sparkera.ca/2013/05/03/Hadoop-Balancer/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -292,12 +297,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-big-data/</loc>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/about/index.html</loc>
+    <loc>http://www.sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

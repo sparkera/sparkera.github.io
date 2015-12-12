@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-11-28T22:32:05.000Z</updated>
+  <updated>2015-12-12T00:54:03.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Tableau Your Big Data]]></title>
+    <link href="http://www.sparkera.ca/2015/12/11/Tableau-Your-Big-Data/"/>
+    <id>http://www.sparkera.ca/2015/12/11/Tableau-Your-Big-Data/</id>
+    <published>2015-12-12T02:04:58.000Z</published>
+    <updated>2015-12-12T00:54:03.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/bde.png" alt=""></p>
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/yPkuirrxzGekWG" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-02tableau" title="Ten tools for ten big data areas 02_Tableau" target="_blank">Ten tools for ten big data areas 02_Tableau</a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
+<p>Above presentation is the second topic I have covered for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. <a href="http://www.tableau.com" target="_blank" rel="external">Tableau</a> is one of few commercial soft that I have to recommend in the visualization area for big data.</p>
+<p>The term visualization becomes very popular when tableau software comes into the picture. As I remember, It was four or five years ago. When we first time to see how business intelligence can be like this and how data visualization looks like. Tableau software comes up the concept of self BI or BI without developers. This really scares me as I am a developer. But later, I have said it is correct. With the help of tableau, people can more focus on the meaning of data instead the old ways we deal with reporting. In addition, it is amazing fast speed and user experience makes it top notch in the data visualization domain and business intelligence. In recent years, we can see lots of traditional BI company start doing what was tableau doing, but it is clear it is far more away in terms of performance and sense of experience.</p>
+<p>Tableau is very first few of tools which provide connectors for big data from Hadoop Hive connector, impala, to Spark SQL. Tableau also announced new direct-connection capabilities with InfoSphere BigInsights from IBM, along with new beta connectors for Amazon Elastic MapReduce from Amazon Web Services Inc.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/bde.png" alt=""></p>
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/yPkuirrxzGekWG" width="595" height="]]>
+    </summary>
+    
+      <category term="10t10a" scheme="http://www.sparkera.ca/tags/10t10a/"/>
+    
+      <category term="tableau" scheme="http://www.sparkera.ca/tags/tableau/"/>
+    
+      <category term="visualization" scheme="http://www.sparkera.ca/tags/visualization/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Ten Tools for Ten Big Data Areas]]></title>
@@ -547,61 +574,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Build Tools and Shell Program Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Geting_Good_with_GIT">Geting Good with GIT</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-</ul>
-<p>This is a tiny book for Git. It is good because it is short and simple. It covers basic usage of Git and a little about GitHub. It is particular good for people who want to learn Git from Zero. The is another link about GitHub call <a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a>, which is also recommended reading after this. The only pity is that it does not cover any advanced topics. Here is my <a href="https://www.evernote.com/shard/s36/sh/f2cf70fa-6f1c-483b-9eab-23e52462f09e/4a50f05a3852edeb5a5fca7d03ed8d87" target="_blank" rel="external">my book note</a></p>
-<hr>
-<p><a href="http://www.packtpub.com/git-version-control-for-everyone/book" target="_blank"><img src="/images/gitversioncontrolforeveryone.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Git:_Version_Control_for_Everyone">Git: Version Control for Everyone</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-</ul>
-<p>This is a complete beginner’s workflow for version control of common documents and content. It has examples used are from non-techie, day to day computing activities for Git enter and middle level. It covers basic usage of Git and a little about Bitbucket in chapter 4. This book has very dtail of git command in terms of command output and how to run it in both git GUI and CLI.</p>
-<hr>
-<p><a href="http://www.amazon.cn/gp/product/B004CLZ7BA" target="_blank"><img src="/images/maven3inaction.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Maven_3_In_Action">Maven 3 In Action</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>This is a few books having details about Maven 3, which is am excellent Java project management tools. This book not only cover the basic knowledge of maven, but also introduce related tools, like Hudson. In addition, there are more good maven readings such as, <a href="http://books.sonatype.com/mvnref-book/reference/index.html" target="_blank" rel="external">Maven Complete Reference</a>, and <a href="http://www.tutorialspoint.com/maven/" target="_blank" rel="external">Maven Tutorial</a></p>
-<hr>
-<p><a href="http://linuxcommand.org/tlcl.php" target="_blank"><img src="/images/thelinuxcmdline.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="The_Linux_Command_Line">The Linux Command Line</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>This is a good begining guide for fresh people in linux programming. It is also a good quick review book. I never learn linux form books but from using experence and system manuals. This is a a free book which is recommanded to read to learn Linux in systematic way.</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" heig]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
-    
-      <category term="linux" scheme="http://www.sparkera.ca/tags/linux/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Apache Spark Books Reviews]]></title>
     <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
     <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
@@ -758,6 +730,61 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Build Tools and Shell Program Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Geting_Good_with_GIT">Geting Good with GIT</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+</ul>
+<p>This is a tiny book for Git. It is good because it is short and simple. It covers basic usage of Git and a little about GitHub. It is particular good for people who want to learn Git from Zero. The is another link about GitHub call <a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub</a>, which is also recommended reading after this. The only pity is that it does not cover any advanced topics. Here is my <a href="https://www.evernote.com/shard/s36/sh/f2cf70fa-6f1c-483b-9eab-23e52462f09e/4a50f05a3852edeb5a5fca7d03ed8d87" target="_blank" rel="external">my book note</a></p>
+<hr>
+<p><a href="http://www.packtpub.com/git-version-control-for-everyone/book" target="_blank"><img src="/images/gitversioncontrolforeveryone.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Git:_Version_Control_for_Everyone">Git: Version Control for Everyone</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+</ul>
+<p>This is a complete beginner’s workflow for version control of common documents and content. It has examples used are from non-techie, day to day computing activities for Git enter and middle level. It covers basic usage of Git and a little about Bitbucket in chapter 4. This book has very dtail of git command in terms of command output and how to run it in both git GUI and CLI.</p>
+<hr>
+<p><a href="http://www.amazon.cn/gp/product/B004CLZ7BA" target="_blank"><img src="/images/maven3inaction.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Maven_3_In_Action">Maven 3 In Action</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.  </li>
+<li>Level Adv.  </li>
+</ul>
+<p>This is a few books having details about Maven 3, which is am excellent Java project management tools. This book not only cover the basic knowledge of maven, but also introduce related tools, like Hudson. In addition, there are more good maven readings such as, <a href="http://books.sonatype.com/mvnref-book/reference/index.html" target="_blank" rel="external">Maven Complete Reference</a>, and <a href="http://www.tutorialspoint.com/maven/" target="_blank" rel="external">Maven Tutorial</a></p>
+<hr>
+<p><a href="http://linuxcommand.org/tlcl.php" target="_blank"><img src="/images/thelinuxcmdline.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="The_Linux_Command_Line">The Linux Command Line</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>This is a good begining guide for fresh people in linux programming. It is also a good quick review book. I never learn linux form books but from using experence and system manuals. This is a a free book which is recommanded to read to learn Linux in systematic way.</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://rockablepress.com/books/getting-good-with-git" target="_blank"><img src="/images/gettinggoodwithgit.jpg" width="150" heig]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="git" scheme="http://www.sparkera.ca/tags/git/"/>
+    
+      <category term="linux" scheme="http://www.sparkera.ca/tags/linux/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Hive Get the Max/Min Value Rows]]></title>
     <link href="http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/"/>
     <id>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</id>
@@ -818,37 +845,6 @@
       <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
     
       <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
-    
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hive and Hadoop Exceptions]]></title>
-    <link href="http://www.sparkera.ca/2014/06/01/Hive%20and%20Hadoop%20Exceptions/"/>
-    <id>http://www.sparkera.ca/2014/06/01/Hive and Hadoop Exceptions/</id>
-    <published>2014-06-01T04:00:00.000Z</published>
-    <updated>2015-09-23T23:45:39.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
-<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.apache</span><span class="class">.hadoop</span><span class="class">.hive</span><span class="class">.ql</span><span class="class">.metadata</span><span class="class">.HiveException</span>:java<span class="class">.io</span><span class="class">.IOException</span>:Filesystem closed</span><br></pre></td></tr></table></figure>
-<p>According to the search <a href="http://mail-archives.apache.org/mod_mbox/hadoop-common-user/201207.mbox/%3CCAL=yAAE1mM-JRb=eJGkAtxWQ7AJ3e7WJCT9BhgWq7XDTNxrwfw@mail.gmail.com%3E" target="_blank" rel="external">here</a>, the mainly reason for this is that when multiple nodes read HFDS files if one node is offline, it will throw such exception when the other nodes are still reading the data cached. There are two ways to resolve this.</p>
-<ul>
-<li>Turn off JVM reuse</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapred.job.reuse.jvm.num.tasks<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>-1<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Disable caches</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.hdfs.impl.disable.cache<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>true<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
-<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports fol]]>
-    </summary>
-    
-      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
-    
-      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
     
       <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
     
