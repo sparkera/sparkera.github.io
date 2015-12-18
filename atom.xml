@@ -588,15 +588,24 @@
     <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
     <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
     <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-09-23T23:47:13.000Z</updated>
+    <updated>2015-12-18T01:53:38.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/spark-book.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920028512.do" target="_blank"><img src="/images/learningspark.png" width="150" height="200" align="right"></a></p>
-<h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<h3 id="Learning_Spark_-_Lightning-Fast_Big_Data_Analysis">Learning Spark - Lightning-Fast Big Data Analysis</h3><p><img src="/images/4star.png" width="250" height="50" align="left"><br></p>
 <ul>
 <li>Level Ent.   </li>
 <li>Level Mid.   </li>
 <li>Level Adv. </li>
 </ul>
 <p>Start reading it.</p>
+<hr>
+<p><a href="https://www.packtpub.com/big-data-and-business-intelligence/spark-cookbook" target="_blank"><img src="/images/sparkcookbook.png" width="150" height="200" align="right"></a></p>
+<h3 id="Apache_Spark_Cookbook">Apache Spark Cookbook</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.   </li>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>I have completed the reading of this book. This is really a great a book of learning Apache Spark. It does not spend too many words on theory as well as the explanation. It introduces the code directly in front of you, simple and accurate. The way of learning from this book is very straightforward and efficient than other books. In addition, the book has a good focus on various areas of Apache Spark, especially on machine learning and graphic tops. Even it is a little bit rush, but it is ok as it is a cookbook. If you are a user who wants to start to learn Spark immediatelly and quickly, this is the book you should definatelly go for.</p>
 <hr>
 ]]></content>
     <summary type="html">
