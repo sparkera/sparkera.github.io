@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-12-12T02:39:36.000Z</updated>
+  <updated>2015-12-19T01:03:41.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Light Big Data With Apache Spark]]></title>
+    <link href="http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/"/>
+    <id>http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/</id>
+    <published>2015-12-20T02:10:58.000Z</published>
+    <updated>2015-12-19T01:03:41.000Z</updated>
+    <content type="html"><![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/vSpgCYWEwBsJc7" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-03apache-spark" title="Ten tools for ten big data areas 03_Apache Spark" target="_blank">Ten tools for ten big data areas 03_Apache Spark</a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
+<p>Above presentation is the third topic I have covered for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. <a href="http://spark.apache.org" target="_blank" rel="external">Apache Spark</a> is one of the most great big data open source project. </p>
+<p>to be added soon</p>
+<p><img src="/images/apachespark.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/vSpgCYWEwBsJc7" width="595" height="485" frameborder="0" marginwidth="0" margi]]>
+    </summary>
+    
+      <category term="10t10a" scheme="http://www.sparkera.ca/tags/10t10a/"/>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Apache Spark Memo]]></title>
@@ -116,9 +141,8 @@
     <link href="http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/"/>
     <id>http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/</id>
     <published>2015-10-25T03:04:58.000Z</published>
-    <updated>2015-11-25T02:45:08.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/bde.png" alt=""></p>
-<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/LQnShEqBTdAqvj" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-01-informatica-54334595" title="Ten tools for ten big data areas 01 informatica " target="_blank">Ten tools for ten big data areas 01 informatica </a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
+    <updated>2015-12-19T00:47:40.000Z</updated>
+    <content type="html"><![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/LQnShEqBTdAqvj" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-01-informatica-54334595" title="Ten tools for ten big data areas 01 informatica " target="_blank">Ten tools for ten big data areas 01 informatica </a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
 <p>Above presentation is the first topic I’ll cover for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. I came up this series of topics from ten artifacts from ancient China when people are honored to get one of the ten artifacts.</p>
 <p>In terms of data integrations of big data, I pick up Informatica, which is used to be a public company in NASDAQ as INFA. In the middle of this year, Informatica announced the successful completion of its acquisition by a company controlled by the Permira funds and Canada Pension Plan Investment Board (CPPIB). Additionally Informatica announced that Microsoft Corporation and Salesforce Ventures have agreed to become strategic investors in the company alongside the Permira funds and CPPIB. The acquisition is valued at approximately $5.3 billion, with Informatica stockholders receiving $48.75 in cash per share.</p>
 <p>Especially in big data area, Informatica has leading product called Informatica big data edition - developer. This is brand new tool in the Informatica family. It has new user interface based on Eclipse. It is single tool including development all ETL job components. In Informatica developer, this is no more session. For instead, there is no concept called application. We can add mapping or workflow in the application to deploy and run the bulk of ETL jobs as an application.</p>
@@ -134,11 +158,10 @@
 <li>Overall reliability need to be improved, such as OOM, exception on data adapters</li>
 </ul>
 <p>Alternatives, there are also other ETL tools for choice. <a href="https://www.talend.com/" target="_blank" rel="external">Talend</a> and <a href="http://www.pentaho.com/" target="_blank" rel="external">Pentaho</a> all provide big data version of tools. But, their big data version almost the same to the regular one except having common big data tool connector shipped. Therefore, these tools can read or write data between Hadoop rather than running on top of Hadoop.</p>
-<p>There is another new data flow tool which people may pay attention, <a href="https://nifi.apache.org/" target="_blank" rel="external">Apache NiFi</a>, which supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. The company behind this tool is called Onyara, an early-stage startup acquired by Hontonworks in Auguest of 2015.  </p>
+<p>There is another new data flow tool which people may pay attention, <a href="https://nifi.apache.org/" target="_blank" rel="external">Apache NiFi</a>, which supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. The company behind this tool is called Onyara, an early-stage startup acquired by Hontonworks in Auguest of 2015.<br><img src="/images/bde.png" alt=""></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="/images/bde.png" alt=""></p>
-<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/LQnShEqBTdAqvj" width="425" height="]]>
+    <![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/LQnShEqBTdAqvj" width="425" height="355" frameborder="0" marginwidth="0" margi]]>
     </summary>
     
       <category term="10t10a" scheme="http://www.sparkera.ca/tags/10t10a/"/>
@@ -837,36 +860,6 @@
       <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
     
       <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hive Get the Max/Min Value Rows]]></title>
-    <link href="http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/"/>
-    <id>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</id>
-    <published>2014-12-23T05:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/maxmin.jpg" alt=""></p>
-<p>Most of time, we need to find the max or min value of particular columns as well as other columns. For example, we have following employee table.</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">&gt; SELECT name,sex_age.sex AS sex,sex_age.age AS age FROM employee;</span><br><span class="line">+----------+---------+------+</span></span><br><span class="line"><span class="header">|   name   |   sex   | age  |</span><br><span class="line">+----------+---------+------+</span></span><br><span class="line">| Michael  | Male    | 30   |</span><br><span class="line">| Will     | Male    | 35   |</span><br><span class="line">| Shelley  | Female  | 27   |</span><br><span class="line">| Lucy     | Female  | 57   |</span><br><span class="line"><span class="header">| Steven   | Male    | 30   |</span><br><span class="line">+----------+---------+------+</span></span><br><span class="line">5 rows selected (75.887 seconds)</span><br></pre></td></tr></table></figure>
-<p>We want to know <strong>Who is oldest of males or females?</strong> There are three solutions available.</p>
-<h4 id="Solution_1">Solution 1</h4><p>The most frequent way of doing it is to to firstly find the MAX of age in each SEX group and do SELF JOIN by matching SEX and the MAX age as follows. This will create two stages of jobs and <strong>NOT</strong> efficient.</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT employee.sex<span class="emphasis">_age.sex, employee.sex_</span>age.age, name </span><br><span class="line">&gt; FROM</span><br><span class="line">&gt; employee JOIN </span><br><span class="line">&gt; (</span><br><span class="line">&gt; SELECT </span><br><span class="line">&gt; max(sex<span class="emphasis">_age.age) as max_</span>age, sex<span class="emphasis">_age.sex as sex  </span><br><span class="line">&gt; FROM employee</span><br><span class="line">&gt; GROUP BY sex_</span>age.sex</span><br><span class="line">&gt; ) maxage</span><br><span class="line">&gt; ON employee.sex<span class="emphasis">_age.age = maxage.max_</span>age</span><br><span class="line"><span class="header">&gt; AND employee.sex_age.sex = maxage.sex;</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line"><span class="header">| sex_age.sex  | age  | name  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">| Female       | 57   | Lucy  |</span><br><span class="line"><span class="header">| Male         | 35   | Will  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">2 rows selected (94.043 seconds)</span><br></pre></td></tr></table></figure>
-<h4 id="Solution_2">Solution 2</h4><p>Once Hive 0.11.0 introduced analytics functions, we can use ROW_NUMBER to solve the problem as well, but only trigger one MapReduce job.</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT sex, age, name</span><br><span class="line">&gt; FROM</span><br><span class="line">&gt; (</span><br><span class="line">&gt; SELECT sex<span class="emphasis">_age.sex AS sex,</span><br><span class="line">&gt; ROW_</span>NUMBER() OVER (PARTITION BY sex<span class="emphasis">_age.sex ORDER BY sex_</span>age.age DESC) AS row<span class="emphasis">_num, </span><br><span class="line">&gt; sex_</span>age.age as age,name</span><br><span class="line">&gt; FROM employee</span><br><span class="line"><span class="header">&gt; ) t WHERE row_num = 1;</span><br><span class="line">+---------+------+-------+</span></span><br><span class="line"><span class="header">|   sex   | age  | name  |</span><br><span class="line">+---------+------+-------+</span></span><br><span class="line">| Female  | 57   | Lucy  |</span><br><span class="line"><span class="header">| Male    | 35   | Will  |</span><br><span class="line">+---------+------+-------+</span></span><br><span class="line">2 rows selected (61.655 seconds)</span><br></pre></td></tr></table></figure>
-<h4 id="Solution_3">Solution 3</h4><p>Actually, there is a better way of doing it as follows through <strong><em>MAX/MIN STRUCT</em></strong> function added by <strong><a href="https://issues.apache.org/jira/browse/HIVE-1128" target="_blank" rel="external">Hive-1128</a></strong> since Hive 0.6.0, although it is not documented anywhere in the Hive Wiki.</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT sex<span class="emphasis">_age.sex, </span><br><span class="line">&gt; max(struct(sex_</span>age.age, name)).col1 as age,</span><br><span class="line">&gt; max(struct(sex<span class="emphasis">_age.age, name)).col2 as name</span><br><span class="line">&gt; FROM employee</span><br><span class="line">&gt; GROUP BY sex_</span>age.sex;</span><br><span class="line"><span class="code">+--------------+</span>------<span class="code">+-------+</span></span><br><span class="line"><span class="header">| sex_age.sex  | age  | name  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">| Female       | 57   | Lucy  |</span><br><span class="line"><span class="header">| Male         | 35   | Will  |</span><br><span class="line">+--------------+------+-------+</span></span><br><span class="line">2 rows selected (47.659 seconds)</span><br></pre></td></tr></table></figure>
-<p>The above job only trigger one MapReduce job. We still need to use the <em>Group By</em> clause. However, we can use <strong><em>MAX/MIN STRUCT</em></strong> function to show all other columns in the same line of <em>MAX/MIN</em> value. By default, <em>Group By</em> clause does not allow columns shown in the <em>SELECT</em> list if it is not <em>Group By</em> column.</p>
-<h4 id="Summary">Summary</h4><p>The solution 3 is better in terms of performance, query complexity, and version supports.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/maxmin.jpg" alt=""></p>
-<p>Most of time, we need to find the max or min value of particular columns as well as other co]]>
-    </summary>
-    
-      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
-    
-      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
     
   </entry>
   

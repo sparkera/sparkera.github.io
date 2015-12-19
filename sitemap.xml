@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/</loc>
+    <lastmod>2015-12-19T01:03:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/</loc>
+    <lastmod>2015-12-19T00:47:40.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.sparkera.ca/2015/12/11/Tableau-Your-Big-Data/</loc>
     <lastmod>2015-12-19T00:38:11.000Z</lastmod>
   </url>
@@ -19,11 +29,6 @@
   <url>
     <loc>http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/</loc>
     <lastmod>2015-11-28T22:32:05.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/10/24/Informatica-in-Big-Data/</loc>
-    <lastmod>2015-11-25T02:45:08.000Z</lastmod>
   </url>
   
   <url>
@@ -152,12 +157,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
+    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <loc>http://www.sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -307,7 +312,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
+    <loc>http://www.sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
