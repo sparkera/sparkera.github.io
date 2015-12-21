@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-12-21T01:09:20.000Z</updated>
+  <updated>2015-12-21T01:27:21.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[Build Big Data Warehouse With Apache Hive]]></title>
-    <link href="http://www.sparkera.ca/2015/12/19/Build-Big-Data-Warehousing-With-Hive/"/>
-    <id>http://www.sparkera.ca/2015/12/19/Build-Big-Data-Warehousing-With-Hive/</id>
-    <published>2015-12-20T02:10:58.000Z</published>
-    <updated>2015-12-21T01:09:20.000Z</updated>
+    <link href="http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/"/>
+    <id>http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/</id>
+    <published>2015-12-21T01:50:58.000Z</published>
+    <updated>2015-12-21T01:27:21.000Z</updated>
     <content type="html"><![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/ADqZ9PRgLL4NgB" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-04apache-hive" title="Ten tools for ten big data areas 04_Apache Hive" target="_blank">Ten tools for ten big data areas 04_Apache Hive</a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
 <p>Above presentation is the fourth topic I have covered for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. <a href="http://hive.apache.org" target="_blank" rel="external">Apache Hive</a> is one of the most great big data open source project which impacts people how to look at the big data. </p>
 <p>to be added soon</p>
