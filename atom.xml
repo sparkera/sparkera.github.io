@@ -142,12 +142,18 @@
     <link href="http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/"/>
     <id>http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/</id>
     <published>2015-11-28T21:04:58.000Z</published>
-    <updated>2015-12-21T01:21:11.000Z</updated>
+    <updated>2015-12-21T01:25:25.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/10tools.png" alt=""></p>
 <p>In the ancient of China, it is said there are ten legend weapons. Each of them has special magic and power. Anyone who can own one of these weapons could become a master or leader who is not undefeatable.<br><img src="/images/10weapons.png" alt=""></p>
 <p>Nowadays, the big data ecosystem becomes bigger and bigger. There are thousands of players in the big data landscape actively paying right now by creating thousands of tools, framework, solution, etc. However, I believe the legend are always among few of them. I choose 10 of the greatest tools as my recommendation for people really want to learn or use big data (see headline picture). </p>
-<p>I have started the journey to introduce each of them which are free or not, but I guarantee the best from my experience. There will be a series of presentations called <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. Let’s look forward …</p>
-<h1 id="Informatica_in_Big_Data"><a href="http://sparkera.ca/2015/10/24/Informatica-in-Big-Data/" target="_blank" rel="external">Informatica in Big Data</a></h1><h1 id="Tableau_Your_Big_Daya"><a href="http://sparkera.ca/2015/12/11/Tableau-Your-Big-Data/" target="_blank" rel="external">Tableau Your Big Daya</a></h1><h1 id="Light_Big_Data_with_Apache_Spark"><a href="http://sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/" target="_blank" rel="external">Light Big Data with Apache Spark</a></h1><h1 id="Build_Big_Data_Warehouse_with_Apache_Hive"><a href="http://sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/" target="_blank" rel="external">Build Big Data Warehouse with Apache Hive</a></h1>]]></content>
+<p>I have started the journey to introduce each of them which are free or not, but I guarantee the best from my experience. Here is the tag <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a> for this series of presentations as well as direct link for each of them. Let’s look forward all of them in future…</p>
+<ol>
+<li><a href="http://sparkera.ca/2015/10/24/Informatica-in-Big-Data/" target="_blank" rel="external">Informatica in Big Data</a></li>
+<li><a href="http://sparkera.ca/2015/12/11/Tableau-Your-Big-Data/" target="_blank" rel="external">Tableau Your Big Daya</a></li>
+<li><a href="http://sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/" target="_blank" rel="external">Light Big Data with Apache Spark</a></li>
+<li><a href="http://sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/" target="_blank" rel="external">Build Big Data Warehouse with Apache Hive</a></li>
+</ol>
+]]></content>
     <summary type="html">
     <![CDATA[<p><img src="/images/10tools.png" alt=""></p>
 <p>In the ancient of China, it is said there are ten legend weapons. Each of them has special ]]>
