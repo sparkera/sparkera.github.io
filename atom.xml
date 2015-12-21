@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-12-19T01:03:41.000Z</updated>
+  <updated>2015-12-21T01:09:20.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Build Big Data Warehouse With Apache Hive]]></title>
+    <link href="http://www.sparkera.ca/2015/12/19/Build-Big-Data-Warehousing-With-Hive/"/>
+    <id>http://www.sparkera.ca/2015/12/19/Build-Big-Data-Warehousing-With-Hive/</id>
+    <published>2015-12-20T02:10:58.000Z</published>
+    <updated>2015-12-21T01:09:20.000Z</updated>
+    <content type="html"><![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/ADqZ9PRgLL4NgB" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-04apache-hive" title="Ten tools for ten big data areas 04_Apache Hive" target="_blank">Ten tools for ten big data areas 04_Apache Hive</a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
+<p>Above presentation is the fourth topic I have covered for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. <a href="http://hive.apache.org" target="_blank" rel="external">Apache Hive</a> is one of the most great big data open source project which impacts people how to look at the big data. </p>
+<p>to be added soon</p>
+<p><img src="/images/apachehive.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/ADqZ9PRgLL4NgB" width="595" height="485" frameborder="0" marginwidth="0" margi]]>
+    </summary>
+    
+      <category term="10t10a" scheme="http://www.sparkera.ca/tags/10t10a/"/>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Light Big Data With Apache Spark]]></title>
@@ -117,12 +142,12 @@
     <link href="http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/"/>
     <id>http://www.sparkera.ca/2015/11/28/Ten-Tools-for-Ten-Big-Data-Areas/</id>
     <published>2015-11-28T21:04:58.000Z</published>
-    <updated>2015-11-28T22:32:05.000Z</updated>
+    <updated>2015-12-21T01:21:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/10tools.png" alt=""></p>
 <p>In the ancient of China, it is said there are ten legend weapons. Each of them has special magic and power. Anyone who can own one of these weapons could become a master or leader who is not undefeatable.<br><img src="/images/10weapons.png" alt=""></p>
 <p>Nowadays, the big data ecosystem becomes bigger and bigger. There are thousands of players in the big data landscape actively paying right now by creating thousands of tools, framework, solution, etc. However, I believe the legend are always among few of them. I choose 10 of the greatest tools as my recommendation for people really want to learn or use big data (see headline picture). </p>
-<p>I have started the journey to introduce each of them which are free or not, but I guarantee the best from my experience. There will be a series of presentations called <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. Let’s look forward … </p>
-]]></content>
+<p>I have started the journey to introduce each of them which are free or not, but I guarantee the best from my experience. There will be a series of presentations called <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. Let’s look forward …</p>
+<h1 id="Informatica_in_Big_Data"><a href="http://sparkera.ca/2015/10/24/Informatica-in-Big-Data/" target="_blank" rel="external">Informatica in Big Data</a></h1><h1 id="Tableau_Your_Big_Daya"><a href="http://sparkera.ca/2015/12/11/Tableau-Your-Big-Data/" target="_blank" rel="external">Tableau Your Big Daya</a></h1><h1 id="Light_Big_Data_with_Apache_Spark"><a href="http://sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/" target="_blank" rel="external">Light Big Data with Apache Spark</a></h1><h1 id="Build_Big_Data_Warehouse_with_Apache_Hive"><a href="http://sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/" target="_blank" rel="external">Build Big Data Warehouse with Apache Hive</a></h1>]]></content>
     <summary type="html">
     <![CDATA[<p><img src="/images/10tools.png" alt=""></p>
 <p>In the ancient of China, it is said there are ten legend weapons. Each of them has special ]]>
@@ -560,51 +585,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Data Warehouse and Business Intelligence Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-dw-bi/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-dw-bi/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-09-23T23:46:18.000Z</updated>
-    <content type="html"><![CDATA[<hr>
-<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Oracle_PL/SQL_Receipts">Oracle PL/SQL Receipts</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-<li>Level Adv.</li>
-</ul>
-<p>This is a good PL/SQL book for all level of reading. It uses different small tables with solutions to cover every corner of PL/SQL in Oracle 11g. This is a good cook book. It is easy to learn and to read.</p>
-<hr>
-<p><a href="http://shop.oreilly.com/product/0636920028031.do" target="_blank"><img src="/images/mongodb_guide.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="MongoDB:_The_Definitive_Guide,_2nd_Edition">MongoDB: The Definitive Guide, 2nd Edition</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid.   </li>
-<li>Level Adv.</li>
-</ul>
-<p>This is a good book for middle to advanced level of reading. Still reading it.</p>
-<hr>
-<p><a href="http://www.amazon.ca/Tableau-Your-Data-Analysis-Software/dp/1118612043" target="_blank"><img src="/images/tableau_your_data.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Tableau_Your_Data">Tableau Your Data</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>This is a good Tableau guide for data visualization based on the latest version of the software. It is detail oritented. It covers lots of details especially on the server deployment and security. The case study charpter is also good reference.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<hr>
-<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
-    
-      <category term="DBDWBI" scheme="http://www.sparkera.ca/categories/Reviews/DBDWBI/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Apache Spark Books Reviews]]></title>
     <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
     <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
@@ -637,6 +617,44 @@
       <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
     
       <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Data Science and Data Mining Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-data-science/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-data-science/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-08-22T02:27:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_blank"><img src="/images/AgileDataScience.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Agile_Data_Science_-_Building_Data_Analytics_Applications_with_Hadoop">Agile Data Science - Building Data Analytics Applications with Hadoop</h3><p><img src="/images/2.5star.png" width="150" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>The book looks like a case study from beginning to the end. It has lots of code covering implementation of one big data project. It requires coding skills of Python.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920028529.do" target="_blank"><img src="/images/doingdatascience.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Doing_Data_Science_-_Start_Talking_From_Frontline">Doing Data Science - Start Talking From Frontline</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent.   </li>
+<li>Level Mid.   </li>
+<li>Level Adv. </li>
+</ul>
+<p>Prepare to read it</p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_b]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="data science" scheme="http://www.sparkera.ca/tags/data-science/"/>
     
       <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
     
@@ -818,44 +836,6 @@
     </summary>
     
       <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Data Science and Data Mining Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-data-science/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-data-science/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_blank"><img src="/images/AgileDataScience.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Agile_Data_Science_-_Building_Data_Analytics_Applications_with_Hadoop">Agile Data Science - Building Data Analytics Applications with Hadoop</h3><p><img src="/images/2.5star.png" width="150" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid.   </li>
-<li>Level Adv. </li>
-</ul>
-<p>The book looks like a case study from beginning to the end. It has lots of code covering implementation of one big data project. It requires coding skills of Python.</p>
-<hr>
-<p><a href="http://shop.oreilly.com/product/0636920028529.do" target="_blank"><img src="/images/doingdatascience.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Doing_Data_Science_-_Start_Talking_From_Frontline">Doing Data Science - Start Talking From Frontline</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.   </li>
-<li>Level Mid.   </li>
-<li>Level Adv. </li>
-</ul>
-<p>Prepare to read it</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/Data-Scientist.jpg" alt=""><br><a href="http://shop.oreilly.com/product/0636920025054.do?sortby=bestSellers" target="_b]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="data science" scheme="http://www.sparkera.ca/tags/data-science/"/>
     
       <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
     
