@@ -44,7 +44,7 @@
     <link href="http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/"/>
     <id>http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/</id>
     <published>2015-12-20T02:10:58.000Z</published>
-    <updated>2015-12-23T01:54:14.000Z</updated>
+    <updated>2015-12-23T22:20:18.000Z</updated>
     <content type="html"><![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/vSpgCYWEwBsJc7" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-03apache-spark" title="Ten tools for ten big data areas 03_Apache Spark" target="_blank">Ten tools for ten big data areas 03_Apache Spark</a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
 <p>Above presentation is the third topic I have covered for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. <a href="http://spark.apache.org" target="_blank" rel="external">Apache Spark</a> is one of the greatest big data open source projects in nowadays. </p>
 <p>There are so many articles, reports about how great the Apache Spark it is. I also heard lots of people keep saying that Spark will replace Hadoop and do everything in big data. As for me, I agree on some of them by saying Spark does a great job on some areas. However, I do disagree some saying about spark and I’ll talk about this today as most people do not realise there Spark may not work very well in some areas. </p>
@@ -53,7 +53,7 @@
 <ul>
 <li><p>Spark has to rely on HDFS or other file systems to store data. It is a mainly computing engine. Spark is based on RDD, which is the immutable dataset. As a result, Spark does not fit for the use case where you need to modify the data. </p>
 </li>
-<li><p>Spark uses lots of micro-batch execution model to simulate data streaming. As a result, it has a limitation when the stream interval less than 0.5 seconds. For instead, you may need other truly real-time streaming framework, such as Apache <a href="storm.apache.org">Storm</a> or <a href="flink.apache.org">Flink</a>. </p>
+<li><p>Spark uses lots of micro-batch execution model to simulate data streaming. As a result, it has a limitation when the stream interval less than 0.5 seconds. For instead, you may need other truly real-time streaming framework, such as Apache <a href="http://storm.apache.org" target="_blank" rel="external">Storm</a> or <a href="http://flink.apache.org" target="_blank" rel="external">Flink</a>. </p>
 </li>
 <li><p>Spark runs on the JVM and leverages Java’s garbage collector. As JVM is designed for its general purpose, it lacks flexibility, good user experience, as well as efficient memory usage. Spark team has realised about this and comes up the Project Tungsten, which starts to build Spark’s own memory management system in the recent release. </p>
 </li>
