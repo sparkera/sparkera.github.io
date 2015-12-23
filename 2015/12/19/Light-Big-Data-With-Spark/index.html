@@ -15,7 +15,7 @@ Above presentation is the third topic I have covered for series of talks about t
 <meta property="og:description" content="Ten tools for ten big data areas 03_Apache Spark  from Will Du 
 Above presentation is the third topic I have covered for series of talks about the Ten Tools for Ten Big Data Areas. Apache Spark is one">
 <meta property="og:image" content="http://www.sparkera.ca/images/apachespark.png">
-<meta property="og:updated_time" content="2015-12-19T01:03:41.000Z">
+<meta property="og:updated_time" content="2015-12-23T01:26:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Light Big Data With Apache Spark">
 <meta name="twitter:description" content="Ten tools for ten big data areas 03_Apache Spark  from Will Du 
@@ -114,8 +114,19 @@ Above presentation is the third topic I have covered for series of talks about t
       </p>
       <div class="article-entry" itemprop="articleBody">
         <p><iframe src="//www.slideshare.net/slideshow/embed_code/key/vSpgCYWEwBsJc7" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-03apache-spark" title="Ten tools for ten big data areas 03_Apache Spark" target="_blank">Ten tools for ten big data areas 03_Apache Spark</a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
-<p>Above presentation is the third topic I have covered for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. <a href="http://spark.apache.org" target="_blank" rel="external">Apache Spark</a> is one of the most great big data open source project. </p>
-<p>to be added soon</p>
+<p>Above presentation is the third topic I have covered for series of talks about the <a href="http://sparkera.ca/tags/10t10a/" target="_blank" rel="external">Ten Tools for Ten Big Data Areas</a>. <a href="http://spark.apache.org" target="_blank" rel="external">Apache Spark</a> is one of the greatest big data open source projects in nowadays. </p>
+<p>There are so many articles, reports about how great the Apache Spark it is. I also heard lots of people keep saying that Spark will replace Hadoop and do everything in big data. As for me, I agree on some of them by saying Spark does a great job on some areas. However, I do disagree some saying about spark and I’ll talk about this today as most people do not realise there Spark may not work very well in some areas. </p>
+<p>First, Spark is not going to replace Hadoop. Hadoop is a big data platform while Spark is an application. For another saying in terms of IPhone ecosystem, it is a relationship between IOS and Apps. Even Spark is powerful enough to do lots of things in big data, it cannot “rules all”. We still have used cases which require other applications. Hadoop, especially Yarn, gradually become more and more important in the role of a platform by providing a multi-purpose universal platform for run various of big data applications.</p>
+<p>Second, Spark is not good for everything. Below are some areas that I think we have other better options than using Apache Spark.</p>
+<ul>
+<li>Spark has to rely on HDFS or other to store data. It is a mainly computing engine. Spark is based on RDD, which is the immuable data set. As a result, Spark does not fit for the use case when you need to modify the data. </li>
+<li>Spark uses micro-batch execution model to offer streaming function. As a result, it has a limitation when the stream interval as low as 0.5 seconds. Therefore, it is not a good option for real-time streaming scenario. </li>
+<li>Spark runs on the JVM and leverages Java’s garbage collector. As JVM is designed for its general purpose, it lacks flexiablilty, good user experience, as well as memory usage overhead. Spark team has realised about this and comes up the Project Tungsten, which creates Spark its own memory management system. </li>
+<li>For data ETL (extract, transformation, and load), you may not need Spark’s speed, but more focus on the reliability as well as failure recovery. In this case, MapReduce’s processing style can be just fine as stable batch-mode processing. </li>
+<li>Spark aims to replace MapReduce, but it does not provide any way to back compatible with old MapReduce jobs. However, there are legacy MapReduce jobs we cannot get rid of immediately.<br><em>Machine learning library still needs improvement by supporting more algorithm as well as accuracy
+</em>GrapX is still not mature (comparing (Apache Giraph)[<a href="http://giraph.apache.org/" target="_blank" rel="external">http://giraph.apache.org/</a>]) and some functions are only available in Scala API.</li>
+</ul>
+<p>Although some improvement areas are listed above, there is no doubt Apache Spark is greatest and hot big data application stack for now. I do believe it has good future.</p>
 <p><img src="/images/apachespark.png" alt=""></p>
 
       </div>
@@ -127,7 +138,7 @@ Above presentation is the third topic I have covered for series of talks about t
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/" data-id="ciifa96wg000cyiv1y2tdhfma" class="article-share-link">Share</a>
+        <a data-url="http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/" data-id="ciii53xxg000cezv1ykjaymia" class="article-share-link">Share</a>
         
           <a href="http://www.sparkera.ca/2015/12/19/Light-Big-Data-With-Spark/#comments" class="article-comment-link">Comments</a>
         
