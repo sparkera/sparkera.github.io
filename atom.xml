@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2016-01-01T04:14:25.000Z</updated>
+  <updated>2016-01-01T04:15:57.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Build Big Data Warehouse With Apache Hive]]></title>
+    <title><![CDATA[Happy New Year 2016]]></title>
     <link href="http://www.sparkera.ca/2016/01/01/Happy-New-Year-2016/"/>
     <id>http://www.sparkera.ca/2016/01/01/Happy-New-Year-2016/</id>
     <published>2016-01-01T05:00:00.000Z</published>
-    <updated>2016-01-01T04:14:25.000Z</updated>
+    <updated>2016-01-01T04:15:57.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/happy2016.jpg" alt=""><br>It is the end of 2015 and HAPPY NEW YEAR - 2016. It is time to wrap up my writing calendar with some summary on Sparkera, myself, and Big Data ecosystem.</p>
 <p>In past 2015, I have published 21 articles in this blog, which finally got its name as SPARKERA - an era when a little spark can lead big fires. In this year, I also successfully migrated this blog from Jekyll to Hexo and renovate it with new UI and domain name. I also have my first book on Apache Hive published and start my career as an independent consultant for more challenge and exciting moment. In addition, I got more chances to share and teach my experience with many other people through various of courses, meetings, and talks. The year of 2015 is not easy but not regretful.</p>
 <p>In 2015, there are also greats ideas and projects we cannot neglect in the big data ecosystem as follows.</p>
