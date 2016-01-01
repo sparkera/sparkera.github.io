@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.sparkera.ca/"/>
-  <updated>2015-12-31T02:49:48.000Z</updated>
+  <updated>2016-01-01T04:14:25.000Z</updated>
   <id>http://www.sparkera.ca/</id>
   
   <author>
@@ -16,8 +16,47 @@
   
   <entry>
     <title><![CDATA[Build Big Data Warehouse With Apache Hive]]></title>
-    <link href="http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/"/>
-    <id>http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/</id>
+    <link href="http://www.sparkera.ca/2016/01/01/Happy-New-Year-2016/"/>
+    <id>http://www.sparkera.ca/2016/01/01/Happy-New-Year-2016/</id>
+    <published>2016-01-01T05:00:00.000Z</published>
+    <updated>2016-01-01T04:14:25.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/happy2016.jpg" alt=""><br>It is the end of 2015 and HAPPY NEW YEAR - 2016. It is time to wrap up my writing calendar with some summary on Sparkera, myself, and Big Data ecosystem.</p>
+<p>In past 2015, I have published 21 articles in this blog, which finally got its name as SPARKERA - an era when a little spark can lead big fires. In this year, I also successfully migrated this blog from Jekyll to Hexo and renovate it with new UI and domain name. I also have my first book on Apache Hive published and start my career as an independent consultant for more challenge and exciting moment. In addition, I got more chances to share and teach my experience with many other people through various of courses, meetings, and talks. The year of 2015 is not easy but not regretful.</p>
+<p>In 2015, there are also greats ideas and projects we cannot neglect in the big data ecosystem as follows.</p>
+<ul>
+<li><a href="http://kylin.apache.org/" target="_blank" rel="external">Apache Kylin</a> - is really an innovative idea by providing SQL interface and multi-dimensional analysis (OLAP) on Hadoop and HBase. This tool has more use cases for enterprise users and it is a better solution when the enterprise wants to build a data warehouse on top of Hadoop ecosystem.</li>
+<li><a href="http://kafka.apache.org/" target="_blank" rel="external">Apache Kafaka</a> - a high-throughput distributed messaging system build for great scalability, high availability, ease of usage, as well as big data friendly.</li>
+<li><a href="http://getkudu.io/" target="_blank" rel="external">Apache Kudu</a> - this is a smart solution by providing a super fast columnar storage having access pattern between HDFS and HBase. Kudu can well integrate with the Hadoop Ecosystem. Kudu is suitable for Data warehouse environment and interesting to see how it performs on columnar storage formats like Parquet, and ORC format.</li>
+<li><a href="https://nifi.apache.org/" target="_blank" rel="external">Apache NiFi</a> - this is an easy to use, powerful, and reliable dataflow system. It has combined functionality between Apache Flume and ETL tools. HDP has integrated this tool in its latest distribution called Hortonworks Data Flow.</li>
+<li>Apache HDFS <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/CentralizedCacheManagement.html" target="_blank" rel="external">Cache</a> and <a href="https://issues.apache.org/jira/browse/HDFS-3107" target="_blank" rel="external">Truncate</a> - These two new features are expected for a long time to foresee Hadoop’s future strength as the core component in the big data ecosystem.</li>
+<li>Apache YARN - new features supporting management label, long running jobs, and dock support</li>
+<li><a href="https://spark.apache.org/docs/latest/sql-programming-guide.html" target="_blank" rel="external">Spark SQL and DataFrame</a> - Spark SQL brings Spark more closed to enterprise use case by leveraging the dataframe having schema and optimization on regular RDD. According to the benchmark, dataframe have great performance boost than regular RDD.</li>
+<li><a href="https://cwiki.apache.org/confluence/display/Hive/Hive+on+Spark%3A+Getting+Started" target="_blank" rel="external">Hive Over Spark</a> - makes Hive users/application to leverage powerful in-memory couting engine of Apache Spark.</li>
+<li><a href="http://geode.incubator.apache.org/" target="_blank" rel="external">GemFire</a> and <a href="http://hawq.incubator.apache.org/" target="_blank" rel="external">HAWQ</a> - Very few enterprise would like to open source their leading products, but Pivotal did it and did for all its big data products. This is a great time to see the gap between enterprise ready products and open source softwares. This will also bring challenge and competitions for solutions, such as Impala, Hive, Spark SQL, HBase.</li>
+<li><a href="https://zeppelin.incubator.apache.org/" target="_blank" rel="external">Apache Zeppelin</a> - There is very few open source visulization tools avaliable, especially which supporting many framework or system. Its native supports Apache Spark and interactive code-to-result expereince attracting lots of community users.</li>
+</ul>
+<p>Well, again at the end, look forward a mazing and betutiful year of 2016 for me and you!</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/happy2016.jpg" alt=""><br>It is the end of 2015 and HAPPY NEW YEAR - 2016. It is time to wrap up my writing calendar wi]]>
+    </summary>
+    
+      <category term="bigdata" scheme="http://www.sparkera.ca/tags/bigdata/"/>
+    
+      <category term="hadoop" scheme="http://www.sparkera.ca/tags/hadoop/"/>
+    
+      <category term="hive" scheme="http://www.sparkera.ca/tags/hive/"/>
+    
+      <category term="spark" scheme="http://www.sparkera.ca/tags/spark/"/>
+    
+      <category term="Blog" scheme="http://www.sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Build Big Data Warehouse With Apache Hive]]></title>
+    <link href="http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive%20copy/"/>
+    <id>http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive copy/</id>
     <published>2015-12-21T01:50:58.000Z</published>
     <updated>2015-12-31T02:49:48.000Z</updated>
     <content type="html"><![CDATA[<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/ADqZ9PRgLL4NgB" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WillDu1/ten-tools-for-ten-big-data-areas-04apache-hive" title="Ten tools for ten big data areas 04_Apache Hive" target="_blank">Ten tools for ten big data areas 04_Apache Hive</a> </strong> from <strong><a href="//www.slideshare.net/WillDu1" target="_blank">Will Du</a></strong> </div></p>
@@ -564,61 +603,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Scala Programming Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-scala-programming/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-scala-programming/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-09-23T23:46:47.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank"><img src="/images/beginscala.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Begining_Scala_2nd_ed">Begining Scala 2nd ed</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>This book has very quick style of explaining scala with many detail examples. Even some examples has code defect and typo, it is easy to find out. The last part about scala best practice is really a valueable chapter. The other part is ok and cover everthing well enough but not deep enough.</p>
-<hr>
-<p><a href="http://shop.oreilly.com/product/0636920030287.do?sortby=publicationDate" target="_blank"><img src="http://akamaicovers.oreilly.com/images/0636920030287/lrg.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Learning_Scala_Practical_Functional_Programming_for_the_JVM">Learning Scala Practical Functional Programming for the JVM</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>The book is my 1st book read about scala. It introduces the basic concet of scala as well as advanced topics. The last few chapters are little hard to read, but overall it is a great scala book having latest of scala features covered.</p>
-<hr>
-<p><a href="http://shop.oreilly.com/product/0636920026914.do" target="_blank"><img src="http://akamaicovers.oreilly.com/images/0636920026914/lrg.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Scala_Cookbook">Scala Cookbook</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>The book is my 2nd book read about scala. This book is full of examples. It is more easier to learn thaning reading long chapters. I start reading it right now.</p>
-<hr>
-<p><a href="http://scalapuzzlers.com/" target="_blank"><img src="http://www.artima.com/images/puzzlersCover185x240.gif" width="150" height="200" align="right"></a></p>
-<h3 id="Scala_Puzzlers">Scala Puzzlers</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>The book is my 3rd book read about scala. It is a free book in github and it is a fun book about scala. I start reading it right now.</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank"><img src="/images/beginscala.jpg" width="150" height="2]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="scala" scheme="http://www.sparkera.ca/tags/scala/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Apache Spark Books Reviews]]></title>
     <link href="http://www.sparkera.ca/2015/01/01/reviews-spark/"/>
     <id>http://www.sparkera.ca/2015/01/01/reviews-spark/</id>
@@ -655,6 +639,51 @@
       <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
     
       <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Data Warehouse and Business Intelligence Books Reviews]]></title>
+    <link href="http://www.sparkera.ca/2015/01/01/reviews-dw-bi/"/>
+    <id>http://www.sparkera.ca/2015/01/01/reviews-dw-bi/</id>
+    <published>2015-01-01T13:00:11.000Z</published>
+    <updated>2015-09-23T23:46:18.000Z</updated>
+    <content type="html"><![CDATA[<hr>
+<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Oracle_PL/SQL_Receipts">Oracle PL/SQL Receipts</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+<li>Level Adv.</li>
+</ul>
+<p>This is a good PL/SQL book for all level of reading. It uses different small tables with solutions to cover every corner of PL/SQL in Oracle 11g. This is a good cook book. It is easy to learn and to read.</p>
+<hr>
+<p><a href="http://shop.oreilly.com/product/0636920028031.do" target="_blank"><img src="/images/mongodb_guide.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="MongoDB:_The_Definitive_Guide,_2nd_Edition">MongoDB: The Definitive Guide, 2nd Edition</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Mid.   </li>
+<li>Level Adv.</li>
+</ul>
+<p>This is a good book for middle to advanced level of reading. Still reading it.</p>
+<hr>
+<p><a href="http://www.amazon.ca/Tableau-Your-Data-Analysis-Software/dp/1118612043" target="_blank"><img src="/images/tableau_your_data.jpg" width="150" height="200" align="right"></a></p>
+<h3 id="Tableau_Your_Data">Tableau Your Data</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
+<ul>
+<li>Level Ent. </li>
+<li>Level Mid.   </li>
+</ul>
+<p>This is a good Tableau guide for data visualization based on the latest version of the software. It is detail oritented. It covers lots of details especially on the server deployment and security. The case study charpter is also good reference.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<hr>
+<p><a href="http://www.apress.com/9781430232070" target="_blank"><img src="/images/pro_oracle_sql.jpg" width="150" height="200" align="]]>
+    </summary>
+    
+      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
+    
+      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
+    
+      <category term="DBDWBI" scheme="http://www.sparkera.ca/categories/Reviews/DBDWBI/"/>
     
   </entry>
   
@@ -748,132 +777,6 @@
       <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
     
       <category term="Coding" scheme="http://www.sparkera.ca/categories/Reviews/Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Big Data Books Reviews]]></title>
-    <link href="http://www.sparkera.ca/2015/01/01/reviews-big-data/"/>
-    <id>http://www.sparkera.ca/2015/01/01/reviews-big-data/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/bookreview3.png" alt=""></p>
-<p><a href="http://www.amazon.com/Hadoop-Definitive-Guide-Tom-White/dp/1449311520/ref=sr_1_1?ie=UTF8&qid=1368752048&sr=8-1&keywords=hadoop" target="_blank"><img src="/images/hadoopdefinitiveguide.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Hadoop:_The_Definitive_Guide">Hadoop: The Definitive Guide</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.</li>
-<li>Level Mid. </li>
-<li>Level Adv. </li>
-</ul>
-<p>This is a really a good Hadoop book to recommend. I have read both 2nd and 3rd edition. The latest 3rd edition is based on the Hadoop 1.0. It covers almost everything on the Hadoop including Yarn. The author also has <a href="https://github.com/tomwhite/hadoop-book/" target="_blank"> github site </a> to share the code. Here is my <a href="https://www.evernote.com/shard/s36/sh/79d59799-3254-43a8-a316-e38e4760e3c8/a721c419a7cab4dd2592de6bc16203d4" target="_blank" rel="external">book note</a></p>
-<hr>
-<p><a href="http://www.amazon.com/Hadoop-Practice-Alex-Holmes/dp/1617290238/ref=sr_1_1?s=books&ie=UTF8&qid=1368753609&sr=1-1&keywords=hadoop+in+practice" target="_blank"><img src="/images/hadoopinpractice.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Hadoop_In_Practice">Hadoop In Practice</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>This is pretty good book, especially in the data science chapter. The hive part is a little bit old than other latest Hadoop book. The reading experience is also good. I like the way it provides number of “TECHNIQUE”. It touches some new tool of big data that other books do not cover, such as Cloudera Crunch. There are no comments in the source code (request by publication), but there are enough comments added inline in the book.</p>
-<hr>
-<p><a href="http://www.amazon.com/Hadoop-Real-World-Solutions-Cookbook/dp/1849519129/ref=sr_1_1?s=books&ie=UTF8&qid=1366441101&sr=1-1" target="_blank"><img src="/images/hadooprealworld.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Hadoop_Real_World_Solution_Cookbook">Hadoop Real World Solution Cookbook</h3><p><img src="/images/4.5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid. </li>
-<li>Level Adv.</li>
-</ul>
-<p>The code has no comments with explanation below. The way is really not I like. If put the comments in code, the book may have less pages to read. In addition, there are logic mistakes in the book because copy &amp; paste error I think at least three – five time after I read 100s of pages, eg. p143 “hashset” should be “hashmap”. The charpter 7 starts looking good and deep which requires your knowledge on data mining and graph processing. This is a good tool reference book anyway</p>
-<hr>
-<p><a href="http://www.amazon.cn/gp/product/B009X25AI8/ref=s9_simh_gw_p14_d0_i2?pf_rd_m=A1AJ19PSB66TGU&pf_rd_s=center-2&pf_rd_r=1TNX5AHP1FEA00R1XW0B&pf_rd_t=101&pf_rd_p=58223152&pf_rd_i=899254051" target="_blank"><img src="/images/hadoopinactionchi.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Hadoop_实战">Hadoop 实战</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid. </li>
-</ul>
-<p>This book is a Chinese book which has same name to below but with totally different. It covers majority Hadoop components and reading friendly. I only read the 1st edition, so the things are a little out of date. The 2ed is also on the shelf right now. Generally, it is just introduction and lacks of details and high skills.</p>
-<hr>
-<p><a href="http://www.manning.com/lam/" target="_blank"><img src="/images/hadoopinaction.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Hadoop_In_Action">Hadoop In Action</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.</li>
-<li>Level Mid. </li>
-</ul>
-<p>I got hard copy of this. This book is a little bit old based on Hadoop 0.19. It covers majority Hadoop components. It also has Chinese version.</p>
-<hr>
-<p><a href="http://packtlib.packtpub.com/hadoop-mapreduce-cookbook/book" target="_blank"><img src="/images/hadoopmrcookbook.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Hadoop_MapReduce_Cookbook">Hadoop MapReduce Cookbook</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.</li>
-<li>Level Mid. </li>
-<li>Level Adv. </li>
-</ul>
-<p>Some sample Hadoop commands lack of necessary space between command/parameters. In Ch8, it provide some data analytics implementation using Java and MapReduce, which I did not see details like this in other books. It it worthy more time of reading this part.</p>
-<hr>
-<p><a href="http://www.amazon.com/MapReduce-Design-Patterns-Effective-Algorithms/dp/1449327176" target="_blank"><img src="/images/hadoopmrdp.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="MapReduce_Design_Patterns">MapReduce Design Patterns</h3><p><img src="/images/3star.png" width="150" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>The topic is really focus. The pattern is not that exciting comparing with Java’s in description. There is small values if you already read below other books. There are typos and mistakes. I cannot find the source code either.</p>
-<hr>
-<p><a href="http://ofps.oreilly.com/titles/9781449302641/" target="_blank"><img src="/images/programmingpig.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Programming_Pig">Programming Pig</h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>This is a tiny book about pig, around 200 pages. It covers everything. The extension of UDF parts lacks of enough examples. Also, these parts are a little bit hard for reading. I have also read the translation one, which is so so. You cannot find more examples of Pig than anywhere else. However, I expect there is another book I believe that could/should cover more practical examples and hands on scripts.</p>
-<hr>
-<p><a href="http://www.amazon.cn/Hadoop%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95-%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90MapReduce%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86-%E8%91%A3%E8%A5%BF%E6%88%90/dp/B00CJ367IU/ref=sr_1_1?ie=UTF8&qid=1369267204&sr=8-1&keywords=hadoop%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95+%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90mapreduce%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86" target="_blank"><img src="/images/hadoopmapreduceinternals.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Hadoop_Mapreduce_Internals">Hadoop Mapreduce Internals</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Adv.   </li>
-</ul>
-<p>This book tells how map and reduce are implemented in source code level. It covers lots of detail that other book never mentioned. It can help reading the source code. This is kind of book helping uderstanding instead of practicing something. There are less code samples with book. The picture and comparing form in this book are really good for reading and undersanding.</p>
-<hr>
-<p><a href="http://www.packtpub.com/hbase-administration-for-optimum-database-performance-cookbook/book" target="_blank"><img src="/images/hbasecookbook.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="HBase_Administration_Cookbook">HBase Administration Cookbook</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Mid. </li>
-<li>Level Adv. </li>
-</ul>
-<p>This book is for HBase administrators, developers, and will even help Hadoop administrators. You are not required to have HBase experience, but are expected to have a basic understanding of Hadoop and MapReduce. This is very practical tookit book for HBase admin. It does not talk more about API and focus on administration only.</p>
-<hr>
-<p><a href="http://shop.oreilly.com/product/0636920014348.do?sortby=publicationDate" target="_blank"><img src="/images/hbasedefinitiveguide.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="HBase:_The_Definitive_Guide">HBase: The Definitive Guide</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent.</li>
-<li>Level Mid. </li>
-<li>Level Adv. </li>
-</ul>
-<p>This is a really a good HBase book to recommend. This is the 1st edition and shows you how Apache HBase can fulfill your needs. As the open source implementation of Google’s BigTable architecture, HBase scales to billions of rows and millions of columns, while ensuring that write and read performance remain constant. The author also has <a href="https://github.com/larsgeorge/hbase-book" target="_blank"> github site </a> to share the code. I am still in reading for now and it is a little bit hard. </p>
-<hr>
-<p><a href="http://www.amazon.com/Big-Data-Revolution-Transform-Think/dp/0544002695/ref=sr_1_1?ie=UTF8&qid=1367466814&sr=8-1&keywords=Big+Date%3AA+Revolution+That+Will+Transform+How+We+Live%2C+Work%2C+and+Think" target="_blank"><img src="/images/bigdataera.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Big_Data:_A_Revolution_That_Will_Transform_How_We_Live,_Work,_and_Think">Big Data: A Revolution That Will Transform How We Live, Work, and Think</h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-</ul>
-<p>It is one of few books of big data using real example to tell what’s revolution brought by big data. The signatures of big data it describes are really impressive. This book motives readers to explore the value behind of big data. It is a good book to encourage people to explore the big data area.</p>
-<hr>
-<p><a href="http://www.packtpub.com/apache-hive-essentials-how-to/book" target="_blank"><img src="/images/instantapachehiveessentials.jpg" width="150" height="200" align="right"></a></p>
-<h3 id="Instant_Apache_Hive_Essentials_How-to">Instant Apache Hive Essentials How-to</h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>The book creates fast way to query data using hive in few hours. This is great than searching the apache confluence to see the breaked help documents especially for new hive users. The book has few pages to read and easier to understand. The author also gives level of complex for each chapters so that different level of users could quickly pick up what he/she needs.</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/bookreview3.png" alt=""></p>
-<p><a href="http://www.amazon.com/Hadoop-Definitive-Guide-Tom-White/dp/1449311520/ref=sr_1]]>
-    </summary>
-    
-      <category term="books" scheme="http://www.sparkera.ca/tags/books/"/>
-    
-      <category term="Reviews" scheme="http://www.sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Big Data" scheme="http://www.sparkera.ca/categories/Reviews/Big-Data/"/>
     
   </entry>
   

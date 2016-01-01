@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive/</loc>
+    <loc>http://www.sparkera.ca/2016/01/01/Happy-New-Year-2016/</loc>
+    <lastmod>2016-01-01T04:14:25.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2015/12/20/Build-Big-Data-Warehousing-With-Hive%20copy/</loc>
     <lastmod>2015-12-31T02:49:48.000Z</lastmod>
   </url>
   
@@ -102,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-big-data/</loc>
+    <loc>http://www.sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -117,7 +122,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
+    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -162,7 +167,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <loc>http://www.sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -172,7 +177,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/about/index.html</loc>
+    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -182,7 +187,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://www.sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -207,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -312,12 +317,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-big-data/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
+    <loc>http://www.sparkera.ca/about/index.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
