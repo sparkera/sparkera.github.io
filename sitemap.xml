@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-dw-bi/</loc>
+    <lastmod>2016-01-04T02:22:55.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-data-science/</loc>
+    <lastmod>2016-01-04T02:21:58.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <lastmod>2016-01-04T02:21:15.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.sparkera.ca/2015/01/01/reviews-big-data/</loc>
-    <lastmod>2016-01-04T02:08:31.000Z</lastmod>
+    <lastmod>2016-01-04T02:19:53.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-spark/</loc>
+    <lastmod>2016-01-04T02:19:15.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sparkera.ca/2015/01/01/reviews-scala-programming/</loc>
+    <lastmod>2016-01-04T02:18:17.000Z</lastmod>
   </url>
   
   <url>
@@ -37,11 +62,6 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-spark/</loc>
-    <lastmod>2015-12-18T02:03:47.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.sparkera.ca/2015/12/12/Apache-Spark-Memo/</loc>
     <lastmod>2015-12-12T02:39:36.000Z</lastmod>
   </url>
@@ -49,16 +69,6 @@
   <url>
     <loc>http://www.sparkera.ca/2015/09/23/Cloudera-Launches-One-Platform-Initatives-To-Advance-Spark/</loc>
     <lastmod>2015-09-24T02:56:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-scala-programming/</loc>
-    <lastmod>2015-09-23T23:46:47.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-dw-bi/</loc>
-    <lastmod>2015-09-23T23:46:18.000Z</lastmod>
   </url>
   
   <url>
@@ -112,17 +122,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <loc>http://www.sparkera.ca/2013/04/29/Useful-Hadoop-ToolRunner/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -192,7 +192,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <loc>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -212,12 +212,12 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2015/01/01/reviews-data-science/</loc>
+    <loc>http://www.sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2013/04/29/Useful-Hadoop-ToolRunner/</loc>
+    <loc>http://www.sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://www.sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
+    <loc>http://www.sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
