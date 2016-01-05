@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://sparkera.ca/2015/01/01/reviews-dw-bi/</loc>
-    <lastmod>2016-01-04T02:22:55.000Z</lastmod>
+    <loc>http://sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
+    <lastmod>2016-01-05T00:15:02.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://sparkera.ca/2015/01/01/reviews-data-science/</loc>
-    <lastmod>2016-01-04T02:21:58.000Z</lastmod>
+    <lastmod>2016-01-05T00:14:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/01/01/reviews-build-and-shell/</loc>
-    <lastmod>2016-01-04T02:21:15.000Z</lastmod>
+    <loc>http://sparkera.ca/2015/01/01/reviews-dw-bi/</loc>
+    <lastmod>2016-01-05T00:13:44.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2015/01/01/reviews-scala-programming/</loc>
+    <lastmod>2016-01-05T00:13:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2015/01/01/reviews-spark/</loc>
+    <lastmod>2016-01-05T00:11:38.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://sparkera.ca/2015/01/01/reviews-big-data/</loc>
     <lastmod>2016-01-04T02:19:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2015/01/01/reviews-spark/</loc>
-    <lastmod>2016-01-04T02:19:15.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2015/01/01/reviews-scala-programming/</loc>
-    <lastmod>2016-01-04T02:18:17.000Z</lastmod>
   </url>
   
   <url>
