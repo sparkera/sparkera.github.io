@@ -4,19 +4,20 @@
   <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
   <meta charset="utf-8">
   
-  <title>Data Analysis | Sparkera</title>
+  <title>Use UDF in Spark DataFrame | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A friend of mine asked me what is data analysis. This is a simple but difficult question. It is simple because we talk about data analysis all the time and everywhere. It is difficult because there ar">
+  <meta name="description" content="It is quite convenient to create, register, and use user define functions with data. In addition, the recent release of Apache Spark also supports writing user-defined aggregation functions UDAF. Belo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Data Analysis">
-<meta property="og:url" content="http://sparkera.ca/2015/02/06/Data-Analysis/index.html">
+<meta property="og:title" content="Use UDF in Spark DataFrame">
+<meta property="og:url" content="http://sparkera.ca/2016/01/17/Use-UDF-Spark-DF/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="A friend of mine asked me what is data analysis. This is a simple but difficult question. It is simple because we talk about data analysis all the time and everywhere. It is difficult because there ar">
-<meta property="og:image" content="http://sparkera.ca/images/Data-Analysis.jpg">
-<meta property="og:updated_time" content="2015-09-23T23:45:21.000Z">
+<meta property="og:description" content="It is quite convenient to create, register, and use user define functions with data. In addition, the recent release of Apache Spark also supports writing user-defined aggregation functions UDAF. Belo">
+<meta property="og:image" content="http://sparkera.ca/images/spark_func.png">
+<meta property="og:image" content="http://sparkera.ca/images/spark_func_output.png">
+<meta property="og:updated_time" content="2016-01-17T17:29:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Data Analysis">
-<meta name="twitter:description" content="A friend of mine asked me what is data analysis. This is a simple but difficult question. It is simple because we talk about data analysis all the time and everywhere. It is difficult because there ar">
+<meta name="twitter:title" content="Use UDF in Spark DataFrame">
+<meta name="twitter:description" content="It is quite convenient to create, register, and use user define functions with data. In addition, the recent release of Apache Spark also supports writing user-defined aggregation functions UDAF. Belo">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -90,7 +91,7 @@
             </div>
             <div class="main-body-content">
               
-  <article id="post-Data-Analysis" class="article article-single article-type-post" itemscope itemprop="blogPost">
+  <article id="post-Use-UDF-Spark-DF" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -98,28 +99,22 @@
           
   
     <h1 class="article-title" itemprop="name">
-      Data Analysis
+      Use UDF in Spark DataFrame
     </h1>
   
 
         </header>
       
       <p class="article-byline">
-        <a href="/2015/02/06/Data-Analysis/" class="article-date">
-  <time datetime="2015-02-06T05:00:00.000Z" itemprop="datePublished">2015-02-06</time>
+        <a href="/2016/01/17/Use-UDF-Spark-DF/" class="article-date">
+  <time datetime="2016-01-17T05:00:00.000Z" itemprop="datePublished">2016-01-17</time>
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="/images/Data-Analysis.jpg" alt=""></p>
-<p>A friend of mine asked me what is data analysis. This is a simple but difficult question. It is simple because we talk about data analysis all the time and everywhere. It is difficult because there are so many ways of explaining it at different time. In the ear of big data, I think data analysis have three following areas.</p>
-<ul>
-<li><p>Flatten Analysis: Analysis is performed on the static data set from single dimentional view. Most analysis are simple enough focusing on the fixed scope of data. It is more or less like statistics, such as total, average, standard devidations, etc. Simple SQL or Excel tools can be used to do flatten data analysis.</p>
-</li>
-<li><p>Dimentional Analysis</p>
-</li>
-<li><p>Iterational Analysis</p>
-</li>
-</ul>
+        <p><img src="/images/spark_func.png" alt=""></p>
+<p>It is quite convenient to create, register, and use user define functions with data. In addition, the recent release of Apache Spark also supports writing user-defined aggregation functions <a href="https://issues.apache.org/jira/browse/SPARK-3947" target="_blank" rel="external">UDAF</a>. Below is a short piece of code to demonstrate this. It is quite often that data engineers massage the data and create necessary toolkit functions. The data analyst or business analyst start using them through either Hive over spark, Spark SQL, or other BI tools.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//<span class="operator"><span class="keyword">Create</span> a <span class="keyword">case</span> <span class="keyword">class</span> struncture <span class="keyword">to</span> hold the <span class="keyword">data</span> <span class="keyword">for</span> demo. </span><br><span class="line">//You can also directly <span class="keyword">convert</span> Hive <span class="keyword">table</span> <span class="keyword">into</span> DF, such <span class="keyword">as</span> sqlContext.<span class="keyword">table</span>(<span class="string">"hive_table_name"</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">class</span> StockPrice(symbol:<span class="keyword">String</span>, price:Seq[<span class="keyword">Double</span>])</span><br><span class="line"></span><br><span class="line">//<span class="keyword">create</span> the demo <span class="keyword">data</span></span><br><span class="line">val <span class="keyword">data</span>=sc.parallelize(</span><br><span class="line">Seq(</span><br><span class="line">StockPrice(<span class="string">"APPL"</span>, Seq(<span class="number">93.5</span>, <span class="number">95.6</span>, <span class="number">102.7</span>)),</span><br><span class="line">StockPrice(<span class="string">"GOOG"</span>, Seq(<span class="number">604.5</span>, <span class="number">603.7</span>, <span class="number">614.1</span>)),</span><br><span class="line">StockPrice(<span class="string">"BABA"</span>, Seq(<span class="number">64.8</span>, <span class="number">95.2</span>, <span class="number">96.0</span>))</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">//<span class="keyword">Convert</span> the <span class="keyword">data</span> <span class="keyword">to</span> a DataFrame</span><br><span class="line">val df=<span class="keyword">data</span>.toDF(<span class="string">"symbol"</span>, <span class="string">"price"</span>)</span><br><span class="line"></span><br><span class="line">//<span class="keyword">Register</span> the results <span class="keyword">to</span> a temp <span class="keyword">table</span></span><br><span class="line">//Alternativelly, you can materilize the <span class="keyword">data</span> <span class="keyword">in</span> Hive <span class="keyword">by</span> df.saveAsTable(<span class="string">"stock_price"</span>)</span><br><span class="line">df.registerTempTable(<span class="string">"stock_price"</span>)</span><br><span class="line"></span><br><span class="line">//<span class="keyword">Create</span> a <span class="keyword">function</span> that <span class="keyword">get</span><span class="string">'s the average race time</span><br><span class="line">def avgStockPrice(price:Double*) = &#123;</span><br><span class="line">var totalPriec=0.0</span><br><span class="line">price.foreach(x =&gt; totalPriec+=x)</span><br><span class="line">totalPriec/price.size</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//Register that function with the SQLContext'</span>s UDF Registry</span><br><span class="line">//- means <span class="keyword">to</span> <span class="keyword">register</span> <span class="keyword">as</span> partital applied <span class="keyword">function</span></span><br><span class="line">sqlContext.udf.<span class="keyword">register</span>(<span class="string">"avgStockPrice"</span>, avgStockPrice _)</span><br><span class="line"></span><br><span class="line">//<span class="keyword">Use</span> the UDF <span class="keyword">in</span> a <span class="keyword">Query</span></span><br><span class="line">sqlContext.<span class="keyword">sql</span>(<span class="string">"select symbol, avgStockPrice(price) avg_stock_price from stock_price"</span>).<span class="keyword">collect</span>().foreach(println)</span></span><br></pre></td></tr></table></figure>
+<p>The result is as follows.<br><img src="/images/spark_func_output.png" alt=""></p>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -130,12 +125,12 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2015/02/06/Data-Analysis/" data-id="cijitimkf001z1yv1uogodkfx" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2016/01/17/Use-UDF-Spark-DF/" data-id="cijitimj200031yv1x3qddfv7" class="article-share-link">Share</a>
         
-          <a href="http://sparkera.ca/2015/02/06/Data-Analysis/#comments" class="article-comment-link">Comments</a>
+          <a href="http://sparkera.ca/2016/01/17/Use-UDF-Spark-DF/#comments" class="article-comment-link">Comments</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bigdata/">bigdata</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scala/">scala</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li></ul>
 
       </footer>
     </div>
@@ -175,20 +170,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/02/12/Hive and Hadoop Exceptions/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">newer</strong>
-      <p class="article-nav-title">
-        
-          Hive and Hadoop Exceptions
-        
-      </p>
-      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
   
-  
-    <a href="/2015/02/02/Data-Lake-Stages/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/01/Happy-New-Year-2016/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">older</strong>
-      <p class="article-nav-title">Data Lake Stages</p>
+      <p class="article-nav-title">Happy New Year 2016</p>
       <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
     </a>
   
@@ -373,7 +358,7 @@
 <script>
   var disqus_shortname = 'sparkera';
   
-  var disqus_url = 'http://sparkera.ca/2015/02/06/Data-Analysis/';
+  var disqus_url = 'http://sparkera.ca/2016/01/17/Use-UDF-Spark-DF/';
   
   (function(){
     var dsq = document.createElement('script');
