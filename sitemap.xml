@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/</loc>
+    <lastmod>2016-01-24T21:07:53.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2013/02/08/Sorting-of-Big-Data/</loc>
+    <lastmod>2016-01-24T21:05:18.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2012/12/23//posts/116/index.html/</loc>
+    <lastmod>2016-01-24T21:03:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2012/09/08//posts/102/index.html/</loc>
+    <lastmod>2016-01-24T20:59:44.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2012/05/30//posts/120/index.html/</loc>
     <lastmod>2016-01-24T20:37:38.000Z</lastmod>
   </url>
@@ -137,26 +157,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/</loc>
+    <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/02/08/Sorting-of-Big-Data/</loc>
+    <loc>http://sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/12/23//posts/116/index.html/</loc>
+    <loc>http://sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/09/08//posts/102/index.html/</loc>
+    <loc>http://sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -312,7 +312,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
+    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -327,7 +327,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
+    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

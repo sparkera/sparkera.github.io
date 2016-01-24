@@ -12,7 +12,8 @@
 <meta property="og:url" content="http://sparkera.ca/2012/09/08//posts/102/index.html/index.html">
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="hadoop">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:image" content="https://groups.etown.edu/caap/files/2012/02/Input-Output-Event-Logo.jpg">
+<meta property="og:updated_time" content="2016-01-24T20:59:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop Customize Input Output Format">
 <meta name="twitter:description" content="hadoop">
@@ -109,7 +110,8 @@
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>To customize inputformat, we need to do following</p>
+        <p><img src="https://groups.etown.edu/caap/files/2012/02/Input-Output-Event-Logo.jpg" alt=""></p>
+<p>To customize inputformat, we need to do following</p>
 <ul>
 <li>Create customized *InputFormat class by extending Hadoop inputformat with your own type of class, such as <span style="text-decoration: underline">public class LogFileInputFormat extends FileInputFormat&lt;LongWritable, LogWritable&gt;{…}</span></li>
 <li>In above class, override “<span style="text-decoration: underline">public RecordReader&lt;T, T&gt; createRecordReader(InputSplit arg0, TaskAttemptContext arg1) throws IOException, InterruptedException {…}”</span>, which returns customized RecordReader class.</li>
@@ -136,7 +138,7 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2012/09/08//posts/102/index.html/" data-id="cijt0bgqr006d65v17e25fnml" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2012/09/08//posts/102/index.html/" data-id="cijt1e7mi006d9dv1s9k2ae3x" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2012/09/08//posts/102/index.html/#comments" class="article-comment-link">Comments</a>
         
