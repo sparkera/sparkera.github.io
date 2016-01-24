@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="Customize Data Type - As ValueTo create a customized data type used as a value, the data type must implement the org.apache.hadoop.io.Writable interface which consists of the two methods, readFields()">
 <meta property="og:image" content="http://www.enterrasolutions.com/media/Big-Data-Hadoop-Cog-Computing.png">
-<meta property="og:updated_time" content="2016-01-24T21:12:07.000Z">
+<meta property="og:updated_time" content="2016-01-24T21:16:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop Customize Data Type">
 <meta name="twitter:description" content="Customize Data Type - As ValueTo create a customized data type used as a value, the data type must implement the org.apache.hadoop.io.Writable interface which consists of the two methods, readFields()">
@@ -110,27 +110,25 @@
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="http://www.enterrasolutions.com/media/Big-Data-Hadoop-Cog-Computing.png" width="300" height="300" align="left"><br><br></p>
+        <p><img src="http://www.enterrasolutions.com/media/Big-Data-Hadoop-Cog-Computing.png" width="300" height="300" align="left"><br><br><br><br></p>
 <h4 id="Customize_Data_Type_-_As_Value">Customize Data Type - As Value</h4><p>To create a customized data type used as a <strong>value</strong>, the data type must implement the org.apache.hadoop.io.Writable interface which consists of the two methods, readFields() and write()</p>
 <ul>
 <li><a href="http://hadoop.apache.org/docs/current/api/org/apache/hadoop/io/Writable.html#readFields(java.io.DataInput" target="_blank" rel="external">void readFields(DataInput in)</a>) : Deserialize the fields of this object from in.</li>
-<li><a href="http://hadoop.apache.org/docs/current/api/org/apache/hadoop/io/Writable.html#write(java.io.DataOutput" target="_blank" rel="external">void write(DataOutput out)</a> : Serialize the fields of this object to <code>out</code>.</li>
+<li><a href="http://hadoop.apache.org/docs/current/api/org/apache/hadoop/io/Writable.html#write(java.io.DataOutput" target="_blank" rel="external">void write(DataOutput out)</a> : Serialize the fields of this object to ‘out’.</li>
 </ul>
 <p><strong>Note</strong>:</p>
 <ul>
 <li>In case you are adding a custom constructor to your custom Writable class, make sure to retain the default empty constructor.</li>
 <li><strong>TextOutputFormat</strong> uses the toString() method to serialize the key and value types. In case you are using the TextOutputFormat to serialize instances of your custom Writable type, make sure to have a meaningful toString() implementation for your custom Writable data type.</li>
-<li>While reading the input data, Hadoop may reuse an instance of the Writable class <span style="font-size: 13px;line-height: 19px">repeatedly. You should not rely on the existing state of the object when populating it inside the <strong>readFields()</strong> method.</span></li>
+<li>While reading the input data, Hadoop may reuse an instance of the Writable class repeatedly. You should not rely on the existing state of the object when populating it inside the <strong>readFields()</strong> method.</li>
 </ul>
-<p><br></p>
-<h4 id="Customize_Data_Type_-_As_Key">Customize Data Type - As Key</h4><p>To create a customized data type used as a <strong>key</strong>, we need to implement the org.apache.hadoop.io.WritableComparable&lt;T&gt; interface and override following methods.</p>
+<h4 id="Customize_Data_Type_-_As_Key">Customize Data Type - As Key</h4><p>To create a customized data type used as a <strong>key</strong>, we need to implement the org.apache.hadoop.io.WritableComparable<t>; interface and override following methods.</t></p>
 <ul>
-<li><a href="http://download.oracle.com/javase/6/docs/api/java/io/DataInput.html?is-external=true" title="class or interface in java.io" target="_blank" rel="external">void readFields(DataInput in)</a> : Deserialize the fields of this object from <code>in</code></li>
-<li><a href="http://download.oracle.com/javase/6/docs/api/java/io/DataOutput.html?is-external=true" title="class or interface in java.io" target="_blank" rel="external">void write(DataOutput out)</a> : Serialize the fields of this object to <code>out</code></li>
+<li><a href="http://download.oracle.com/javase/6/docs/api/java/io/DataInput.html?is-external=true" title="class or interface in java.io" target="_blank" rel="external">void readFields(DataInput in)</a> : Deserialize the fields of this object from ‘in’</li>
+<li><a href="http://download.oracle.com/javase/6/docs/api/java/io/DataOutput.html?is-external=true" title="class or interface in java.io" target="_blank" rel="external">void write(DataOutput out)</a> : Serialize the fields of this object to ‘out’</li>
 <li><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html#compareTo(T" target="_blank" rel="external">int compareTo(T o)</a>) : Compares this object with the specified object for order.</li>
 <li>int hashCode() : Used by Partitioner to decide which reducer to send the keys</li>
 </ul>
-<p><br></p>
 <h4 id="Customize_Data_Type_-_As_Value_With_Different_Data_Types">Customize Data Type - As Value With Different Data Types</h4><p>To create a customized data type wrapping different types of data together used as a <strong>value</strong>, we need to implement the org.apache.hadoop.io.GenericWritable interface and override following methods</p>
 <ul>
 <li>protected Class[] getTypes() : Return warped list of Hadoop type classes</li>
@@ -145,7 +143,7 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/" data-id="cijt1jmvx0054a5v1jk3efj5t" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/" data-id="cijt1ovmp0054amv1wilsikgo" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/#comments" class="article-comment-link">Comments</a>
         
