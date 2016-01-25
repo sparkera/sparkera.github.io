@@ -359,7 +359,8 @@ Create a cluster-deploy.sh script, shown as follows: $ vi cluster-deploy.sh
       
 <a href="/2012/06/20/Hive-Performance-Tuning/" class="thumbnail">
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <span style="background-image:url(http://3sxautomotive.com/The-Performance-Factory-Logo-WhiteBG-600.jpg
+)" alt="Hive Performance Tuning - No. of MapReduce" class="thumbnail-image"></span>
   
 </a>
 
@@ -372,11 +373,12 @@ Create a cluster-deploy.sh script, shown as follows: $ vi cluster-deploy.sh
       </h2>
       <p class="article-excerpt">
         
-        ###1. Set proper number of map 
+        
+###1. Set proper number of map 
 
 通常情况下，作业会通过input的目录产生一个或者多个map任务。主要的决定因素有： input的文件总个数，input的文件大小，集群设置的文件块大小(目前为128M, 可在hive中通过set dfs.block.size;命令查看到，该参数不能自定义修改)；
 
-举例： a) 假设input目录下有1个文件a,大小为780M,那
+举例： a) 假设input目录下有1个文件a,大小为780M,
       </p>
     </div>
   </article>
@@ -397,7 +399,8 @@ Create a cluster-deploy.sh script, shown as follows: $ vi cluster-deploy.sh
       
 <a href="/2012/06/18//posts/111/index.html/" class="thumbnail">
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <span style="background-image:url(http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/07/1404558208Fotolia_42842783_XS-300x200.jpg
+)" alt="Hive SerDe" class="thumbnail-image"></span>
   
 </a>
 
@@ -410,7 +413,8 @@ Create a cluster-deploy.sh script, shown as follows: $ vi cluster-deploy.sh
       </h2>
       <p class="article-excerpt">
         
-        Unless there are no way to user internal parser, I do not recommend write user defined SerDe. Do not forget that Hive comes with a contrib RegexSerDeclass, which can tokenize your logs/files to resolv
+        
+Unless there are no way to user internal parser, I do not recommend write user defined SerDe. Do not forget that Hive comes with a contrib RegexSerDeclass, which can tokenize your logs/files to resol
       </p>
     </div>
   </article>

@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2013/04/22//posts/115/index.html/</loc>
+    <lastmod>2016-01-25T01:40:14.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/</loc>
+    <lastmod>2016-01-25T01:34:25.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2012/06/18//posts/111/index.html/</loc>
+    <lastmod>2016-01-25T01:32:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
     <lastmod>2016-01-25T01:29:54.000Z</lastmod>
   </url>
@@ -172,21 +187,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -237,7 +237,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/04/22//posts/115/index.html/</loc>
+    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
+    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
+    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
+    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -302,17 +302,17 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/</loc>
+    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/06/18//posts/111/index.html/</loc>
+    <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
+    <loc>http://sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -327,7 +327,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

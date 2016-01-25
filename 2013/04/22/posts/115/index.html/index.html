@@ -6,22 +6,20 @@
   
   <title>When to Disable Speculative Execution | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##Backgrounds
-This is the link from WikiMedia about what’s Speculative Execution. In Hadoop, the following parameters string are for this settings. And, they are true by default.
-mapred.map.tasks.spec">
+  <meta name="description" content="BackgroundsThis is the link from WikiMedia about what’s Speculative Execution. In Hadoop, the following parameters string are for this settings. And, they are true by default.
+mapred.map.tasks.specula">
 <meta property="og:type" content="article">
 <meta property="og:title" content="When to Disable Speculative Execution">
 <meta property="og:url" content="http://sparkera.ca/2013/04/22//posts/115/index.html/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="##Backgrounds
-This is the link from WikiMedia about what’s Speculative Execution. In Hadoop, the following parameters string are for this settings. And, they are true by default.
-mapred.map.tasks.spec">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:description" content="BackgroundsThis is the link from WikiMedia about what’s Speculative Execution. In Hadoop, the following parameters string are for this settings. And, they are true by default.
+mapred.map.tasks.specula">
+<meta property="og:image" content="http://2.bp.blogspot.com/-69O03LzTy4I/Vbauu4DO1PI/AAAAAAAAA6Y/qSOqkXVPtXk/s1600/SWU480x240.jpg">
+<meta property="og:updated_time" content="2016-01-25T01:40:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="When to Disable Speculative Execution">
-<meta name="twitter:description" content="##Backgrounds
-This is the link from WikiMedia about what’s Speculative Execution. In Hadoop, the following parameters string are for this settings. And, they are true by default.
-mapred.map.tasks.spec">
+<meta name="twitter:description" content="BackgroundsThis is the link from WikiMedia about what’s Speculative Execution. In Hadoop, the following parameters string are for this settings. And, they are true by default.
+mapred.map.tasks.specula">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -115,11 +113,11 @@ mapred.map.tasks.spec">
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>##Backgrounds</p>
-<p>This is the link from WikiMedia about what’s <strong><a href="http://en.wikipedia.org/wiki/Speculative_execution" target="_blank" rel="external">Speculative Execution</a></strong>. In Hadoop, the following parameters string are for this settings. And, they are true by default.</p>
+        <p><img src="http://2.bp.blogspot.com/-69O03LzTy4I/Vbauu4DO1PI/AAAAAAAAA6Y/qSOqkXVPtXk/s1600/SWU480x240.jpg" alt=""></p>
+<h2 id="Backgrounds">Backgrounds</h2><p>This is the link from WikiMedia about what’s <strong><a href="http://en.wikipedia.org/wiki/Speculative_execution" target="_blank" rel="external">Speculative Execution</a></strong>. In Hadoop, the following parameters string are for this settings. And, they are true by default.</p>
 <pre><code>mapred<span class="class">.map</span><span class="class">.tasks</span><span class="class">.speculative</span><span class="class">.execution</span>
 mapred<span class="class">.reduce</span><span class="class">.tasks</span><span class="class">.speculative</span><span class="class">.execution</span>
-</code></pre><p>##When to Disable<br>Most time, it helps. However, I am here to collect some scenario when we do not need it.</p>
+</code></pre><h2 id="When_to_Disable">When to Disable</h2><p>Most time, it helps. However, I am here to collect some scenario when we do not need it.</p>
 <ul>
 <li>Of course, when ever your cluster really in shortage of resource or for the purpose of experiment, we can disable them by setting them to false since “SE” really a big resource consumer</li>
 <li>It is generally advisable to turn off ”SE” for mapred jobs that use HBase as a source. Especially for longer running jobs, speculative execution will create duplicate map-tasks which will double-write your data to HBase; this is probably not what you want. In addition, its local data has high priority when you mapred running against resource in HBase. That is to say every task in tasktracker stays closer to the regionserver in the same physical server. The “SE” will create new jobs to access data which may not local. As result, it will make your regionserver overloaded by wasting IO and network resource.</li>
@@ -149,7 +147,7 @@ mapred<span class="class">.reduce</span><span class="class">.tasks</span><span c
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2013/04/22//posts/115/index.html/" data-id="cijtarbwl005kj1v1fcktfq4e" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2013/04/22//posts/115/index.html/" data-id="cijtb4g4k005kkfv1d4sjo6jl" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2013/04/22//posts/115/index.html/#comments" class="article-comment-link">Comments</a>
         
