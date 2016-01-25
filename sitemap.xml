@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
+    <lastmod>2016-01-25T01:29:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2013/04/29/Useful-Hadoop-ToolRunner/</loc>
+    <lastmod>2016-01-25T01:27:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2013/05/03/Hadoop-Balancer/</loc>
+    <lastmod>2016-01-25T01:20:27.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/</loc>
     <lastmod>2016-01-24T21:17:44.000Z</lastmod>
   </url>
@@ -157,21 +172,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -207,17 +207,17 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/05/03/Hadoop-Balancer/</loc>
+    <loc>http://sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/04/29/Useful-Hadoop-ToolRunner/</loc>
+    <loc>http://sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
+    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
+    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</loc>
+    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -312,7 +312,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
+    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -327,7 +327,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
+    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
