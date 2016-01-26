@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2013/04/24/Hive-vs-Pig/</loc>
+    <lastmod>2016-01-26T03:04:15.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/02/08/Sorting-of-Big-Data/</loc>
     <lastmod>2016-01-26T02:26:09.000Z</lastmod>
   </url>
@@ -202,11 +207,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -232,12 +232,12 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/04/24/Hive-vs-Pig/</loc>
+    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/08/21/SQL-In-MySQL-and-PIG/</loc>
+    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
+    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
+    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -282,11 +282,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -297,12 +292,12 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
+    <loc>http://sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
+    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -322,12 +317,17 @@
   </url>
   
   <url>
+    <loc>http://sparkera.ca/about/index.html</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/404.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/about/index.html</loc>
+    <loc>http://sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

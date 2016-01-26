@@ -6,27 +6,21 @@
   
   <title>Hive vs. Pig | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference.
-Below is picture I found (I cannot find the original link, but there is mirror here)
-
-In additio">
+  <meta name="description" content="Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference. Below is picture I found (I cannot find the original link, but there is mirror here
+In addition,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hive vs. Pig">
 <meta property="og:url" content="http://sparkera.ca/2013/04/24/Hive-vs-Pig/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference.
-Below is picture I found (I cannot find the original link, but there is mirror here)
-
-In additio">
+<meta property="og:description" content="Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference. Below is picture I found (I cannot find the original link, but there is mirror here
+In addition,">
 <meta property="og:image" content="http://i.imgur.com/GVXCO1t.jpg">
-<meta property="og:image" content="http://a7l8ig.bay.livefilestore.com/y1pUGvyQ6NonRUzOsJyLxonhejIlKFoCz2SbjlVONqcAk2AU51BuRSTkPWBFBDsw0hpgmfbBwGsLC-WQeBmTA4XAeKPqKul-n9s/pig-vs-hive.png?psid=1">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:image" content="http://sparkera.ca/images/hivevspig.png">
+<meta property="og:updated_time" content="2016-01-26T03:04:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hive vs. Pig">
-<meta name="twitter:description" content="Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference.
-Below is picture I found (I cannot find the original link, but there is mirror here)
-
-In additio">
+<meta name="twitter:description" content="Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference. Below is picture I found (I cannot find the original link, but there is mirror here
+In addition,">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -120,24 +114,25 @@ In additio">
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="http://i.imgur.com/GVXCO1t.jpg" alt=""></p>
-<p></p><p>Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference.</p><p></p>
-<p></p><p>Below is picture I found (I cannot find the original link, but there is mirror <a href="http://blog.csdn.net/sony315/article/details/7173835" target="_blank" rel="external">here</a>)</p><p></p>
-<p></p><p><img src="http://a7l8ig.bay.livefilestore.com/y1pUGvyQ6NonRUzOsJyLxonhejIlKFoCz2SbjlVONqcAk2AU51BuRSTkPWBFBDsw0hpgmfbBwGsLC-WQeBmTA4XAeKPqKul-n9s/pig-vs-hive.png?psid=1" alt=""></p><p></p>
-<p></p><p>In addition, I am here to share some more difference. To be honest, I prefer pig more. Mapred, Hive, and pig are like Java, ruby, and python.</p><p></p>
-<p></p><p>Pig</p><p></p>
-<p><ul></ul></p>
-<p><li>It is more easy to install pig than hive. Of course, it is mostly on shell interaction.</li></p>
-<p><li>Pig is more easy to do ETL jobs. For example, you do not need to write separate “Create table” scripts to hold data.</li></p>
-<p><li>Piggy banks and facebook lib bring more functions.</li></p>
-<p><li>The “illustrate” function is very good by offering sample data for each steps and each scenario. However, Hive does not support this.</li></p>
-<p><li>Pig’s order by support global sort by multiple reducer. Hive does not. Hive uses only one reducer.</li></p>
-<p><li>Pig’s skew join can handle skewed data easily by lunching 2 mapred (one for sampling, the other one is for reduce side join. to enable, add (using ‘skewed’) in the end of join statement. Hive does not support this now and working on it.</li></p>
-<p><li>Pig supports Avro. Hive does not, but will be soon <a href="https://issues.apache.org/jira/browse/HIVE-895" target="_blank" rel="external">here</a></li></p>
-<p><li>pig -x local has better performance for unit test since it only runs a localjobrunner (local mapreduce)</li></p>
-<p><li>Pig’s user group: <span style="font-size: 13px;line-height: 19px">Yahoo! 90% of MapReduce is done by pig, </span><span style="font-size: 13px;line-height: 19px">Twitter (80%), </span><span style="font-size: 13px;line-height: 19px">Linkedin, </span><span style="font-size: 13px;line-height: 19px">Salesforce, Nokia, AOL</span></li><br></p>
-<div>Hive</div><br><div><br><ul><br><li>It is SQL like. The learning curve for SQL developer is almost none.</li><br><li>It is supported by Hue which does make it more popular.</li><br><li>Hive has provided more powerful statistics function</li><br><li>Hive can integrate with HBase. You can query HBase data by it. Pig cannot, but can use HBaseStorage() to load data from HBase</li><br><li>Hive’s user group: Facebook, CNET, Digg, Last.fm</li><br></ul><br></div>
-
+        <p><img src="http://i.imgur.com/GVXCO1t.jpg" alt=""><br>Both projects are top Apache projects to process data in Hadoop. Here, I try to compare the difference. Below is picture I found (I cannot find the original link, but there is mirror <a href="http://blog.csdn.net/sony315/article/details/7173835" target="_blank" rel="external">here</a><br><img src="/images/hivevspig.png" alt=""></p>
+<p>In addition, I am here to share some more difference. To be honest, I prefer Hive more. Mapred, Hive, and pig are like Java, ruby, and python.</p>
+<h4 id="Pig">Pig</h4><ul>
+<li>It is more easy to install pig than hive. Of course, it is mostly on shell interaction. </li>
+<li>Pig is more easy to do ETL jobs. For example, you do not need to write separate “Create table” scripts to hold data. Piggy banks and facebook lib bring more functions.</li>
+<li>The “illustrate” function is very good by offering sample data for each steps and each scenario. However, Hive does not support this.</li>
+<li>Pig’s order by support global sort by multiple reducer. Hive does not. Hive uses only one reducer.</li>
+<li>Pig’s skew join can handle skewed data easily by lunching 2 mapred (one for sampling, the other one is for reduce side join. to enable, add (using ‘skewed’) in the end of join statement. Hive does not support this now and working on it.</li>
+<li>Pig supports Avro. Hive does not, but will be soon <a href="https://issues.apache.org/jira/browse/HIVE-895" target="_blank" rel="external">here</a></li>
+<li>pig -x local has better performance for unit test since it only runs a localjobrunner (local mapreduce)</li>
+<li>Pig’s user group: Yahoo! 90% of MapReduce is done by pig. Twitter (80%), Linkedin, Salesforce, Nokia, AOL</li>
+</ul>
+<h4 id="Hive">Hive</h4><ul>
+<li>It is SQL like. The learning curve for SQL developer is almost none.</li>
+<li>It is supported by Hue which does make it more popular.</li>
+<li>Hive has provided more powerful statistics function</li>
+<li>Hive can integrate with HBase. You can query HBase data by it. Pig cannot, but can use HBaseStorage() to load data from HBase</li>
+<li>Hive’s user group: Facebook, CNET, Digg, Last.fm</li>
+</ul>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -148,7 +143,7 @@ In additio">
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2013/04/24/Hive-vs-Pig/" data-id="cijurkz9j005g1fv12vg8dgv7" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2013/04/24/Hive-vs-Pig/" data-id="cijutke9y005g4mv14q5dark6" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2013/04/24/Hive-vs-Pig/#comments" class="article-comment-link">Comments</a>
         
