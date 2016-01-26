@@ -6,29 +6,20 @@
   
   <title>Hive Performance Tuning - No. of MapReduce | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###1. Set proper number of map 
-
-通常情况下，作业会通过input的目录产生一个或者多个map任务。主要的决定因素有： input的文件总个数，input的文件大小，集群设置的文件块大小(目前为128M, 可在hive中通过set dfs.block.size;命令查看到，该参数不能自定义修改)；
-
-举例： a) 假设input目录下有1个文件a,大小为780M,那">
+  <meta name="description" content="1. Set proper number of map
+Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hive Performance Tuning - No. of MapReduce">
 <meta property="og:url" content="http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="###1. Set proper number of map 
-
-通常情况下，作业会通过input的目录产生一个或者多个map任务。主要的决定因素有： input的文件总个数，input的文件大小，集群设置的文件块大小(目前为128M, 可在hive中通过set dfs.block.size;命令查看到，该参数不能自定义修改)；
-
-举例： a) 假设input目录下有1个文件a,大小为780M,那">
+<meta property="og:description" content="1. Set proper number of map
+Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files,">
 <meta property="og:image" content="http://3sxautomotive.com/The-Performance-Factory-Logo-WhiteBG-600.jpg">
-<meta property="og:updated_time" content="2016-01-25T01:34:25.000Z">
+<meta property="og:updated_time" content="2016-01-26T01:12:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hive Performance Tuning - No. of MapReduce">
-<meta name="twitter:description" content="###1. Set proper number of map 
-
-通常情况下，作业会通过input的目录产生一个或者多个map任务。主要的决定因素有： input的文件总个数，input的文件大小，集群设置的文件块大小(目前为128M, 可在hive中通过set dfs.block.size;命令查看到，该参数不能自定义修改)；
-
-举例： a) 假设input目录下有1个文件a,大小为780M,那">
+<meta name="twitter:description" content="1. Set proper number of map
+Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files,">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -123,12 +114,15 @@
       </p>
       <div class="article-entry" itemprop="articleBody">
         <p><img src="http://3sxautomotive.com/The-Performance-Factory-Logo-WhiteBG-600.jpg" alt=""></p>
-<p>###1. Set proper number of map </p>
+<h3 id="1-_Set_proper_number_of_map">1. Set proper number of map</h3><ol>
+<li>Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files, the setting of block size (default is 128M which can be set by set dfs.block.size) </li>
+<li>Examples</li>
+</ol>
+<ul>
+<li>假设input目录下有1个文件a,大小为780M,那么hadoop会将该文件a分隔成7个块（6个128m的块和1个12m的块），从而产生7个map数<br></li>
+<li>假设input目录下有3个文件a,b,c,大小分别为10m，20m，130m，那么hadoop会分隔成4个块（10m,20m,128m,2m）,从而产生4个map数<br>即，如果文件大于块大小(128m),那么会拆分，如果小于块大小，则把该文件当成一个块。</li>
+</ul>
 <ol>
-<li><p>通常情况下，作业会通过input的目录产生一个或者多个map任务。<br>主要的决定因素有： input的文件总个数，input的文件大小，集群设置的文件块大小(目前为128M, 可在hive中通过set dfs.block.size;命令查看到，该参数不能自定义修改)；</p>
-</li>
-<li><p>举例： <br><br>a) 假设input目录下有1个文件a,大小为780M,那么hadoop会将该文件a分隔成7个块（6个128m的块和1个12m的块），从而产生7个map数<br><br>b) 假设input目录下有3个文件a,b,c,大小分别为10m，20m，130m，那么hadoop会分隔成4个块（10m,20m,128m,2m）,从而产生4个map数<br>即，如果文件大于块大小(128m),那么会拆分，如果小于块大小，则把该文件当成一个块。</p>
-</li>
 <li><p>是不是map数越多越好？<br><br>答案是否定的。如果一个任务有很多小文件（远远小于块大小128m）,则每个小文件也会被当做一个块，用一个map任务来完成，<br>而一个map任务启动和初始化的时间远远大于逻辑处理的时间，就会造成很大的资源浪费。<br>而且，同时可执行的map数是受限的。</p>
 </li>
 <li><p>是不是保证每个map处理接近128m的文件块，就高枕无忧了？ <br><br>答案也是不一定。比如有一个127m的文件，正常会用一个map去完成，但这个文件只有一个或者两个小字段，却有几千万的记录，<br>如果map处理的逻辑比较复杂，用一个map任务去做，肯定也比较耗时。</p>
@@ -157,25 +151,41 @@ from <span class="tag">a</span> group by data_desc
 select * <span class="keyword">from</span> a <span class="keyword">distribute</span> <span class="keyword">by</span> <span class="keyword">rand</span>(<span class="number">123</span>);</span> 
 </code></pre><p>这样会将a表的记录，随机的分散到包含10个文件的a_1表中，再用a_1代替上面sql中的a表，则会用10个map任务去完成。每个map任务处理大于12M（几百万记录）的数据，效率肯定会好很多。</p>
 <p>看上去，貌似这两种有些矛盾，一个是要合并小文件，一个是要把大文件拆成小文件，这点正是重点需要关注的地方，根据实际情况，控制map数量需要遵循两个原则：使大数据量利用合适的map数；使单个map任务处理合适的数据量；</p>
-<p>###2. Set proper number of reduce </p>
-<ol>
+<h3 id="2-_Set_proper_number_of_reduce">2. Set proper number of reduce</h3><ol>
 <li><p>Hive自己如何确定reduce数： <br><br>reduce个数的设定极大影响任务执行效率，不指定reduce个数的情况下，Hive会猜测确定一个reduce个数，基于以下两个设定：</p>
-<p>  hive.exec.reducers.bytes.per.reducer（默认为1000^3=1G）<br>  hive.exec.reducers.max（每个任务最大的reduce数，默认为999）<br>计算reducer数的公式很简单N=min(参数2，总输入数据量/参数1)<br><br>即，如果reduce的输入（map的输出）总大小不超过1G,那么只会有一个reduce任务；如：</p>
-<p>  select pt,count(1) from popt_tbaccountcopy_mes<br>  where pt = ‘2012-07-04’ group by pt;<br><code>/group/p_sdo_data/p_sdo_data_etl/pt/popt_tbaccountcopy_mes/pt=2012-07-04</code> 总大小为9G多，因此这句有10个reduce</p>
+<pre><code>hive<span class="class">.exec</span><span class="class">.reducers</span><span class="class">.bytes</span><span class="class">.per</span><span class="class">.reducer</span>（默认为<span class="number">1000</span>^<span class="number">3</span>=<span class="number">1</span>G） 
+hive<span class="class">.exec</span><span class="class">.reducers</span><span class="class">.max</span>（每个任务最大的reduce数，默认为<span class="number">999</span>）
+</code></pre><p>计算reducer数的公式很简单N=min(参数2，总输入数据量/参数1)<br><br>即，如果reduce的输入（map的输出）总大小不超过1G,那么只会有一个reduce任务；如：</p>
+<pre><code><span class="operator">select pt,<span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> popt_tbaccountcopy_mes 
+<span class="keyword">where</span> pt = <span class="string">'2012-07-04'</span> <span class="keyword">group</span> <span class="keyword">by</span> pt;</span> 
+</code></pre><p>‘/group/p_sdo_data/p_sdo_data_etl/pt/popt_tbaccountcopy_mes/pt=2012-07-04’ 总大小为9G多，因此这句有10个reduce</p>
 </li>
 <li><p>调整reduce个数方法一： <br><br>调整hive.exec.reducers.bytes.per.reducer参数的值；</p>
-<p>  set hive.exec.reducers.bytes.per.reducer=500000000; （500M）<br>  select pt,count(1) from popt_tbaccountcopy_mes<br>  where pt = ‘2012-07-04’ group by pt; //这次有20个reduce</p>
-</li>
+<pre><code><span class="operator"><span class="keyword">set</span> hive.exec.reducers.<span class="keyword">bytes</span>.per.reducer=<span class="number">500000000</span>;</span> （500M）
+<span class="operator">select pt,<span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> popt_tbaccountcopy_mes 
+<span class="keyword">where</span> pt = <span class="string">'2012-07-04'</span> <span class="keyword">group</span> <span class="keyword">by</span> pt;</span> //这次有20个reduce
+</code></pre></li>
 <li><p>调整reduce个数方法二； <br></p>
-<p>  set mapred.reduce.tasks = 15;<br>  select pt,count(1) from popt_tbaccountcopy_mes<br>  where pt = ‘2012-07-04’ group by pt; //这次有15个reduce</p>
-</li>
+<pre><code><span class="operator"><span class="keyword">set</span> mapred.reduce.tasks = <span class="number">15</span>;</span>
+<span class="operator">select pt,<span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> popt_tbaccountcopy_mes 
+<span class="keyword">where</span> pt = <span class="string">'2012-07-04'</span> <span class="keyword">group</span> <span class="keyword">by</span> pt;</span> //这次有15个reduce
+</code></pre></li>
 <li><p>reduce个数并不是越多越好； <br><br>同map一样，启动和初始化reduce也会消耗时间和资源；<br>另外，有多少个reduce,就会有多少个输出文件，如果生成了很多个小文件，那么如果这些小文件作为下一个任务的输入，则也会出现小文件过多的问题；</p>
 </li>
-<li><p>什么情况下只有一个reduce； <br><br>很多时候你会发现任务中不管数据量多大，不管你有没有设置调整reduce个数的参数，任务中一直都只有一个reduce任务；其实只有一个reduce任务的情况，除了数据量小于hive.exec.reducers.bytes.per.reducer参数值的情况外，还有以下原因：<br><br>a)    没有group by的汇总，比如把</p>
-<p>  select pt,count(1) from popt_tbaccountcopy_mes<br>  where pt = ‘2012-07-04’ group by pt;<br>写成 </p>
-<p>  select count(1) from popt_tbaccountcopy_mes where pt = ‘2012-07-04’;<br>这点非常常见，希望大家尽量改写。<br><br>b)    用了Order by<br><br>c)    有笛卡尔积. 通常这些情况下，除了找办法来变通和避免，我暂时没有什么好的办法，因为这些操作都是全局的，所以hadoop不得不用一个reduce去完成；</p>
+<li><p>什么情况下只有一个reduce； <br><br>很多时候你会发现任务中不管数据量多大，不管你有没有设置调整reduce个数的参数，任务中一直都只有一个reduce任务；其实只有一个reduce任务的情况，除了数据量小于hive.exec.reducers.bytes.per.reducer参数值的情况外，还有以下原因：<br></p>
 </li>
 </ol>
+<ul>
+<li><p>没有group by的汇总，比如把</p>
+<pre><code><span class="operator">select pt,<span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> popt_tbaccountcopy_mes 
+<span class="keyword">where</span> pt = <span class="string">'2012-07-04'</span> <span class="keyword">group</span> <span class="keyword">by</span> pt;</span> 
+</code></pre><p>写成 </p>
+<pre><code><span class="function"><span class="keyword">select</span> <span class="title">count</span>(<span class="params"><span class="number">1</span></span>) <span class="keyword">from</span> popt_tbaccountcopy_mes <span class="keyword">where</span> pt </span>= <span class="string">'2012-07-04'</span>;
+</code></pre><p>这点非常常见，希望大家尽量改写。<br></p>
+</li>
+<li>用了Order by<br></li>
+<li>有笛卡尔积. 通常这些情况下，除了找办法来变通和避免，我暂时没有什么好的办法，因为这些操作都是全局的，所以hadoop不得不用一个reduce去完成；</li>
+</ul>
 <p>同样的，在设置reduce个数的时候也需要考虑这两个原则：使大数据量利用合适的reduce数；使单个reduce任务处理合适的数据量；</p>
 
       </div>
@@ -187,7 +197,7 @@ select * <span class="keyword">from</span> a <span class="keyword">distribute</s
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/" data-id="cijupakzn006qutv1ag3n78q5" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/" data-id="cijupl36h006qvsv1i41622af" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/#comments" class="article-comment-link">Comments</a>
         

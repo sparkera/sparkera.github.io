@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/</loc>
+    <lastmod>2016-01-26T01:12:50.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2012/06/18/Hive-SerDe/</loc>
     <lastmod>2016-01-26T01:06:18.000Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://sparkera.ca/2013/04/22//posts/115/index.html/</loc>
     <lastmod>2016-01-25T01:40:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/</loc>
-    <lastmod>2016-01-25T01:34:25.000Z</lastmod>
   </url>
   
   <url>

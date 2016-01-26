@@ -374,11 +374,8 @@ Create a cluster-deploy.sh script, shown as follows: $ vi cluster-deploy.sh
       <p class="article-excerpt">
         
         
-###1. Set proper number of map 
-
-通常情况下，作业会通过input的目录产生一个或者多个map任务。主要的决定因素有： input的文件总个数，input的文件大小，集群设置的文件块大小(目前为128M, 可在hive中通过set dfs.block.size;命令查看到，该参数不能自定义修改)；
-
-举例： a) 假设input目录下有1个文件a,大小为780M,
+1. Set proper number of map
+Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files
       </p>
     </div>
   </article>
