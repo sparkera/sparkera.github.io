@@ -17,7 +17,7 @@ In the">
 Adding Nodes
 In the">
 <meta property="og:image" content="http://i.imgur.com/M11e3Av.png">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:updated_time" content="2016-01-26T03:07:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Adding or Removing Hadoop Nodes">
 <meta name="twitter:description" content="I am here to give step completely. I saw some version of step before, but many of them either are not complete or confused or wrong, e.g. someone even stop the cluster to do that!
@@ -118,30 +118,30 @@ In the">
       <div class="article-entry" itemprop="articleBody">
         <p>I am here to give step completely. I saw some version of step before, but many of them either are not complete or confused or wrong, e.g. someone even stop the cluster to do that!</p>
 <h4 id="Adding_Nodes">Adding Nodes</h4><ul>
-<li>In the candidate nodes to add, update the host name in <code>&quot;/etc/hostname&quot;</code> to following the name standard in the cluster and also set proper DNS mapping in <code>&quot;/etc/hosts&quot;</code> for assigned IP address in network. </li>
-<li>In the candidate nodes to add, add namenode IP address to <code>&quot;/etc/hosts&quot;</code> </li>
+<li>In the candidate nodes to add, update the host name in ‘“/etc/hostname”‘ to following the name standard in the cluster and also set proper DNS mapping in ‘“/etc/hosts”‘ for assigned IP address in network. </li>
+<li>In the candidate nodes to add, add namenode IP address to ‘“/etc/hosts”‘ </li>
 <li>Install SSH and copy the SSH keys to the node from other modes in the cluster </li>
-<li>Copy Hadoop install files to the adding nodes and make proper configuration by synchronizing <code>&quot;core-site.xml&quot;, &quot;mapred-site.xml&quot;, &quot;hdfs-site.xml&quot;</code> from other nodes in cluster only </li>
-<li>Add the IP address of adding nodes to <code>&quot;/etc/hosts&quot;</code> in the namenode </li>
-<li>Append the IP address of adding nodes to <code>&quot;conf/slaves&quot;</code> in the name nodes </li>
+<li>Copy Hadoop install files to the adding nodes and make proper configuration by synchronizing ‘“core-site.xml”, “mapred-site.xml”, “hdfs-site.xml”‘ from other nodes in cluster only </li>
+<li>Add the IP address of adding nodes to ‘“/etc/hosts”‘ in the namenode </li>
+<li>Append the IP address of adding nodes to ‘“conf/slaves”‘ in the name nodes </li>
 <li><p>Start Hadoop thread in adding nodes manually this time (later the name nodes will bring them up if the cluster restart </p>
 <pre><code>[root<span class="constant">@slave</span>-<span class="number">004</span> Hadoop]<span class="preprocessor"># ./bin/hadoop-daemon.sh start datanode</span>
 [root<span class="constant">@slave</span>-<span class="number">004</span> Hadoop]<span class="preprocessor"># ./bin/hadoop-daemon.sh start tasktracker</span>
 </code></pre></li>
-<li><p>Balance the data to new added nodes, [root@slave-004 Hadoop]# ./bin/start-balancer.sh</p>
-</li>
+<li><p>Balance the data to new added nodes, </p>
+<pre><code>[root<span class="constant">@slave</span>-<span class="number">004</span> Hadoop]<span class="preprocessor"># ./bin/start-balancer.sh</span>
+</code></pre></li>
 </ul>
-<p><br></p>
 <h4 id="Removing_Nodes">Removing Nodes</h4><ul>
 <li>Add list of datanode(s) that needs to decommission to exclude file (assume this file is located under hadoop/conf directory) on namenode.</li>
-<li><p>Modify the namenode <code>hdfs-site.xml</code> config file to set the property for <code>dfs.hosts.exclude</code> (see below). ignore this step if you have already have this property set.</p>
+<li><p>Modify the namenode ‘hdfs-site.xml’ config file to set the property for ‘dfs.hosts.exclude’ (see below). ignore this step if you have already have this property set.</p>
 <pre><code><span class="variable">&lt;property&gt;</span>
     <span class="variable">&lt;name&gt;</span>dfs.hosts.exclude<span class="variable">&lt;/name&gt;</span>
     <span class="variable">&lt;value&gt;</span>/usr/lib/hadoop/conf/exclude<span class="variable">&lt;/value&gt;</span>
     <span class="variable">&lt;description&gt;</span> List of nodes <span class="keyword">to</span> decommission <span class="variable">&lt;/description&gt;</span>
 <span class="variable">&lt;/property&gt;</span>
 </code></pre></li>
-<li><p>Modify the namenode <code>mapred-site.xml</code> config file to set the property for <code>mapred.hosts.exclude</code>(see below), ignore this step if you have already have this property set.</p>
+<li><p>Modify the namenode ‘mapred-site.xml’ config file to set the property for ‘mapred.hosts.exclude’(see below), ignore this step if you have already have this property set.</p>
 <pre><code><span class="variable">&lt;property&gt;</span>
     <span class="variable">&lt;name&gt;</span>mapred.hosts.exclude<span class="variable">&lt;/name&gt;</span>
     <span class="variable">&lt;value&gt;</span>/usr/lib/hadoop/conf/exclude<span class="variable">&lt;/value&gt;</span>
@@ -154,11 +154,13 @@ In the">
 <li>Check the NameNode (50070) admin UI if the state of changed to “Decommission in Progress” for the datanodes that are in exclude list. They will start copying their blocks to other datanodes in the cluster. This process may take minutes to hours depending on data volume on decommissioned nodes</li>
 <li>When all datanodes report their state as “Decommissioned”, then all the blocks have been replicated. Now you can shutdown the all decommissioned nodes (reboot them). </li>
 <li>Remove decommissioned nodes from slaves file (on all nodes) </li>
-<li>Now run the following command to refresh the nodes on namenode. [root@slave-004 Hadoop]<span style="font-size: 13px;line-height: 19px">% hadoop dfsadmin –refreshNodes </span></li>
+<li><p>Now run the following command to refresh the nodes on namenode. [</p>
+<pre><code>root<span class="annotation">@slave</span>-<span class="number">004</span> Hadoop]% hadoop dfsadmin –refreshNodes 
+</code></pre></li>
 <li>Run rebalancer, to make all nodes are ballanced well after adding or removing nodes. </li>
 <li>Run “hadoop fsck -blocks” command to see how data replication status </li>
 </ul>
-<p><br><br><strong>Notes:</strong> You can leave exclude property that you have set previously, but empty the exclude file after decommissioning. </p>
+<p><strong>Notes:</strong> You can leave exclude property that you have set previously, but empty the exclude file after decommissioning. </p>
 <p><img src="http://i.imgur.com/M11e3Av.png" alt=""></p>
 
       </div>
@@ -170,7 +172,7 @@ In the">
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/" data-id="cijutke9u005a4mv1mqdu9eiw" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/" data-id="cijutp2i9005a56v1au2mu0ma" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/#comments" class="article-comment-link">Comments</a>
         

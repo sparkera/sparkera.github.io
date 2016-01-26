@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
+    <lastmod>2016-01-26T03:07:56.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/04/24/Hive-vs-Pig/</loc>
     <lastmod>2016-01-26T03:04:15.000Z</lastmod>
   </url>
@@ -207,22 +212,12 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -242,6 +237,11 @@
   </url>
   
   <url>
+    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/04/19//posts/114/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
+    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
+    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -282,11 +282,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -297,12 +292,12 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
+    <loc>http://sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/05/27/Install-Jekyll-in-MacOS/</loc>
+    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -322,12 +317,17 @@
   </url>
   
   <url>
+    <loc>http://sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/404.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
+    <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
