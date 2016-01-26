@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2012/08/25/Hadoop-Split-and-Block/</loc>
+    <lastmod>2016-01-26T01:34:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2012/07/06/Hadoop-Serialization-Framework/</loc>
     <lastmod>2016-01-26T01:29:34.000Z</lastmod>
   </url>
@@ -197,11 +202,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/about/index.html</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2014/12/23/Hive-Get-MAX-MIN-Value-Rows/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -287,22 +287,17 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/08/25/Hadoop-Split-and-Block/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
+    <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
+    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -322,12 +317,17 @@
   </url>
   
   <url>
+    <loc>http://sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/404.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <loc>http://sparkera.ca/about/index.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   

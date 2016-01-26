@@ -7,19 +7,19 @@
   <title>Hadoop Split and Block | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="There are two confusing concepts in Hadoop, block and split
-####Block - A Physical DivisionHDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 12">
+Block - A Physical DivisionHDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 128-MB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop Split and Block">
 <meta property="og:url" content="http://sparkera.ca/2012/08/25/Hadoop-Split-and-Block/index.html">
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="There are two confusing concepts in Hadoop, block and split
-####Block - A Physical DivisionHDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 12">
+Block - A Physical DivisionHDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 128-MB">
 <meta property="og:image" content="http://i.imgur.com/OuU4CYW.png">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:updated_time" content="2016-01-26T01:34:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop Split and Block">
 <meta name="twitter:description" content="There are two confusing concepts in Hadoop, block and split
-####Block - A Physical DivisionHDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 12">
+Block - A Physical DivisionHDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 128-MB">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -114,7 +114,7 @@
       </p>
       <div class="article-entry" itemprop="articleBody">
         <p>There are two confusing concepts in Hadoop, block and split</p>
-<p>####Block - A Physical Division<br>HDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 128-MB text file was put in to HDFS, HDFS would divide the file into two blocks (128 MB/64 MB) and distribute the two chunks to the data nodes in the cluster. The main reason to setting proper block size is to balance the load of each map and reduce throughput so that the overall job takes better time to finish. Because the block size is the boundary of number of blocks, so it is a very important setting. The best way to decide the proper size is to understand your data profile (average size, etc) of your business.</p>
+<h4 id="Block_-_A_Physical_Division">Block - A Physical Division</h4><p>HDFS was designed to hold and manage large amounts of data; a default block size is 64 MB. That means if a 128-MB text file was put in to HDFS, HDFS would divide the file into two blocks (128 MB/64 MB) and distribute the two chunks to the data nodes in the cluster. The main reason to setting proper block size is to balance the load of each map and reduce throughput so that the overall job takes better time to finish. Because the block size is the boundary of number of blocks, so it is a very important setting. The best way to decide the proper size is to understand your data profile (average size, etc) of your business.</p>
 <p>To set up the block size, you need to modify/override setting in hdfs-site.xml:</p>
 <pre><code><span class="variable">&lt;property&gt;</span>
     <span class="variable">&lt;name&gt;</span>dfs.<span class="built_in">block</span>.size<span class="variable">&lt;name&gt;</span>
@@ -123,9 +123,9 @@
 <span class="variable">&lt;property&gt;</span>
 </code></pre><p><strong>Note</strong>, changing this setting will not affect the block size of any files currently in HDFS. It will only affect the block size of files placed into HDFS after this setting has taken effect. That means you need to reload the data or put new data using “hadoop fs -put” to make setting effective on the data.</p>
 <p>By default every block has 3 replications across nodes. It is set by <code>dfs.replication</code> in in hdfs-site.xml<br><br></p>
-<p>####Split - A Logical Division<br>When Hadoop submits jobs, it splits the input data logically and process by each Mapper. Split is only a reference. Split has details in <code>org.apache.hadoop.mapreduce.InputSplit</code>and rules (how to split) decided by <code>getSplits()</code> in class <code>org.apache.hadoop.mapreduce.Input.FileInputFormat</code>. By default, the <code>size of split = block size = 64M</code>.</p>
+<h4 id="Split_-_A_Logical_Division">Split - A Logical Division</h4><p>When Hadoop submits jobs, it splits the input data logically and process by each Mapper. Split is only a reference. Split has details in <code>org.apache.hadoop.mapreduce.InputSplit</code>and rules (how to split) decided by <code>getSplits()</code> in class <code>org.apache.hadoop.mapreduce.Input.FileInputFormat</code>. By default, the <code>size of split = block size = 64M</code>.</p>
 <p>For FileInputFormat, TextInputFormat, they read data by lines. Then, one line could be across two split. To aviod mistakes of mapper parcing splits, the reader will read one extra line across split boundary (in next() method). Of couse, reader will skip the first line when continue reading next to aviod dupliate reading. Here is a <a href="http://my.oschina.net/xiangchen/blog/99653" target="_blank" rel="external">reference for more details</a>.<br><br></p>
-<p>####Split - Compare and Summary<br>Below is summary between split and block</p>
+<h4 id="Split_-_Compare_and_Summary">Split - Compare and Summary</h4><p>Below is summary between split and block</p>
 <ul>
 <li>One split must contain n times of blocks where n is integer and &gt; 0</li>
 <li>A split will not contain blocks from two files or split will not cross file boundaries</li>
@@ -144,7 +144,7 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2012/08/25/Hadoop-Split-and-Block/" data-id="cijuq6lg9006gxpv1q5wz1ng6" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2012/08/25/Hadoop-Split-and-Block/" data-id="cijuqd3wn006gy9v155331grn" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2012/08/25/Hadoop-Split-and-Block/#comments" class="article-comment-link">Comments</a>
         
