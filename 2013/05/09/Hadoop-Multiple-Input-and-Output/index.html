@@ -7,22 +7,19 @@
   <title>Hadoop Multiple Input and Output | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="The following is an example of using multiple inputs (org.apache.hadoop.mapreduce.lib.input.MultipleInputs) with different input formats and different mapper implementations.
-
-MultipleInputs.addInputP">
+MultipleInputs.addInputPa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop Multiple Input and Output">
 <meta property="og:url" content="http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/index.html">
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="The following is an example of using multiple inputs (org.apache.hadoop.mapreduce.lib.input.MultipleInputs) with different input formats and different mapper implementations.
-
-MultipleInputs.addInputP">
+MultipleInputs.addInputPa">
 <meta property="og:image" content="http://cdn-data.motu.com/site/images/4pre/digital-io.jpg">
-<meta property="og:updated_time" content="2016-01-25T01:29:54.000Z">
+<meta property="og:updated_time" content="2016-01-26T03:17:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop Multiple Input and Output">
 <meta name="twitter:description" content="The following is an example of using multiple inputs (org.apache.hadoop.mapreduce.lib.input.MultipleInputs) with different input formats and different mapper implementations.
-
-MultipleInputs.addInputP">
+MultipleInputs.addInputPa">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -118,17 +115,15 @@ MultipleInputs.addInputP">
       <div class="article-entry" itemprop="articleBody">
         <p><img src="http://cdn-data.motu.com/site/images/4pre/digital-io.jpg" alt=""></p>
 <p>The following is an example of using multiple inputs (org.apache.hadoop.mapreduce.lib.input.MultipleInputs) with different input formats and different mapper implementations.</p>
-<ul>
-<li>MultipleInputs.addInputPath(job, accessLogPath, TextInputFormat.class, AccessLogMapper.class);</li>
-<li>MultipleInputs.addInputPath(job, userDataPath, TextInputFormat.class, UserDataMapper.class);</li>
-</ul>
-<p><strong>Note</strong>: <code>static void addInputPath(Job job, Path path, Class&lt;? extends InputFormat&gt; inputFormatClass, Class&lt;? extends Mapper&gt; mapperClass):</code> Add a Path with a custom InputFormat and Mapper to the list of inputs for the map-reduce job.</p>
+<pre><code><span class="tag">MultipleInputs</span><span class="class">.addInputPath</span>(<span class="tag">job</span>, <span class="tag">accessLogPath</span>, <span class="tag">TextInputFormat</span><span class="class">.class</span>, <span class="tag">AccessLogMapper</span><span class="class">.class</span>);
+
+<span class="tag">MultipleInputs</span><span class="class">.addInputPath</span>(<span class="tag">job</span>, <span class="tag">userDataPath</span>, <span class="tag">TextInputFormat</span><span class="class">.class</span>, <span class="tag">UserDataMapper</span><span class="class">.class</span>);
+</code></pre><p><strong>Note</strong>: <code>static void addInputPath(Job job, Path path, Class&lt;? extends InputFormat&gt; inputFormatClass, Class&lt;? extends Mapper&gt; mapperClass):</code> Add a Path with a custom InputFormat and Mapper to the list of inputs for the map-reduce job.</p>
 <p>Similarly, there is MultipleOutputs to write multiple destinations</p>
-<ul>
-<li>MultipleOutputs.addNamedOutput(job, “text”, TextOutputFormat.class, LongWritable.class, Text.class); //Defines additional single text based output ‘text’ for the job</li>
-<li>MultipleOutputs.addNamedOutput(job, “seq”,   SequenceFileOutputFormat.class,   LongWritable.class, Text.class); //Defines additional sequence-file based output ‘sequence’ for the job</li>
-</ul>
-<p><strong>Note</strong>: <code>static void addNamedOutput(Job job, String namedOutput, Class&lt;? extends OutputFormat&gt; outputFormatClass, Class&lt;?&gt; keyClass, Class&lt;?&gt; valueClass) :</code> Adds a named output for the job.</p>
+<pre><code>MultipleOutputs.addNamedOutput(job, “text”, TextOutputFormat.<span class="keyword">class</span>, LongWritable.<span class="keyword">class</span>, Text.<span class="keyword">class</span>); <span class="comment">//Defines additional single text based output ‘text’ for the job</span>
+
+MultipleOutputs.addNamedOutput(job, “seq”,   SequenceFileOutputFormat.<span class="keyword">class</span>,   LongWritable.<span class="keyword">class</span>, Text.<span class="keyword">class</span>); <span class="comment">//Defines additional sequence-file based output ‘sequence’ for the job</span>
+</code></pre><p><strong>Note</strong>: <code>static void addNamedOutput(Job job, String namedOutput, Class&lt;? extends OutputFormat&gt; outputFormatClass, Class&lt;?&gt; keyClass, Class&lt;?&gt; valueClass) :</code> Adds a named output for the job.</p>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -139,7 +134,7 @@ MultipleInputs.addInputP">
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/" data-id="cijutp2i2005156v1vgb0ppfw" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/" data-id="cijuu86u100516nv1zeg97j3s" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/#comments" class="article-comment-link">Comments</a>
         

@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
+    <lastmod>2016-01-26T03:19:04.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
+    <lastmod>2016-01-26T03:17:20.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/05/02/Adding-or-Removing-Hadoop-Nodes/</loc>
     <lastmod>2016-01-26T03:07:56.000Z</lastmod>
   </url>
@@ -54,11 +64,6 @@
   <url>
     <loc>http://sparkera.ca/2013/04/22//posts/115/index.html/</loc>
     <lastmod>2016-01-25T01:40:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/05/09/Hadoop-Multiple-Input-and-Output/</loc>
-    <lastmod>2016-01-25T01:29:54.000Z</lastmod>
   </url>
   
   <url>
@@ -212,16 +217,6 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2013/09/29/Hive-Composite-Data-Type/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -242,6 +237,11 @@
   </url>
   
   <url>
+    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/04/19//posts/114/index.html/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
+    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -282,12 +282,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/06/21/Hadoop%20Streaming/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
+    <loc>http://sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -297,17 +292,12 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2015/02/02/Data-Lake-Stages/</loc>
-    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sparkera.ca/2015/01/23/Setup-Spark-In-MAC/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2012/07/02/Rsync-Deployment/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -322,12 +312,22 @@
   </url>
   
   <url>
+    <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2015/03/15/Apache%20Hive%20Essentials%20Published/</loc>
+    <lastmod>2015-08-22T02:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/404.html</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2014/11/23/Move-To-The-Spark/</loc>
+    <loc>http://sparkera.ca/2014/04/05/Install-CDH-In-AWS/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
