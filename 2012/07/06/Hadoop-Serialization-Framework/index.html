@@ -7,25 +7,22 @@
   <title>Hadoop Serialization Framework | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Below are some mentioned in Hadoop In Practice and MapReduce Cookbooks
-####Where to use serialization
-
-In order to be used as a value data type of a MapReduce computation, a data type must implement t">
+Where to use serialization
+In order to be used as a value data type of a MapReduce computation, a data type must implement the or">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop Serialization Framework">
 <meta property="og:url" content="http://sparkera.ca/2012/07/06/Hadoop-Serialization-Framework/index.html">
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="Below are some mentioned in Hadoop In Practice and MapReduce Cookbooks
-####Where to use serialization
-
-In order to be used as a value data type of a MapReduce computation, a data type must implement t">
+Where to use serialization
+In order to be used as a value data type of a MapReduce computation, a data type must implement the or">
 <meta property="og:image" content="http://i.imgur.com/ltXrqAZ.png">
-<meta property="og:updated_time" content="2015-08-22T02:27:11.000Z">
+<meta property="og:updated_time" content="2016-01-26T01:29:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop Serialization Framework">
 <meta name="twitter:description" content="Below are some mentioned in Hadoop In Practice and MapReduce Cookbooks
-####Where to use serialization
-
-In order to be used as a value data type of a MapReduce computation, a data type must implement t">
+Where to use serialization
+In order to be used as a value data type of a MapReduce computation, a data type must implement the or">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -120,21 +117,14 @@ In order to be used as a value data type of a MapReduce computation, a data type
       </p>
       <div class="article-entry" itemprop="articleBody">
         <p>Below are some mentioned in Hadoop In Practice and MapReduce Cookbooks</p>
-<p>####Where to use serialization</p>
-<ul>
-<li><p>In order to be used as a value data type of a MapReduce computation, a data type must implement the org.apache.hadoop.io.Writable interface. The Writable interface which defines how Hadoop should serialize and de-serialize the values when transmitting and storing the data.</p>
-</li>
-<li><p>In order to be used as a key data type of a MapReduce computation, a data type must implement the org.apache.hadoop.io.WritableComparable<t> interface. </t></p>
-</li>
+<h4 id="Where_to_use_serialization">Where to use serialization</h4><ul>
+<li>In order to be used as a value data type of a MapReduce computation, a data type must implement the org.apache.hadoop.io.Writable interface. The Writable interface which defines how Hadoop should serialize and de-serialize the values when transmitting and storing the data.</li>
+<li>In order to be used as a key data type of a MapReduce computation, a data type must implement the org.apache.hadoop.io.WritableComparable<t> interface. </t></li>
 </ul>
-<p>####Hadoop’s Writable versus Java’s Serializable</p>
-<ul>
-<li><p>Hadoop’s Writable-based serialization framework provides a more efficient and customized serialization and representation of the data for MapReduce programs than using the general-purpose Java’s native serialization framework.</p>
-</li>
-<li><p>As opposed to Java’s serialization, Hadoop’s Writable framework does not write the type name with each object expecting all the clients of the serialized data to be aware of the types used in the serialized data. Omitting the type names makes the serialization process faster and results in compact, random accessible serialized data formats that can be easily interpreted by non-Java clients. </p>
-</li>
-<li><p>Hadoop’s Writable-based serialization also has the ability to reduce the object-creation overhead by reusing the Writable objects, which is not possible with the Java’s native serialization framework.</p>
-</li>
+<h4 id="Hadoop’s_Writable_versus_Java’s_Serializable">Hadoop’s Writable versus Java’s Serializable</h4><ul>
+<li>Hadoop’s Writable-based serialization framework provides a more efficient and customized serialization and representation of the data for MapReduce programs than using the general-purpose Java’s native serialization framework.</li>
+<li>As opposed to Java’s serialization, Hadoop’s Writable framework does not write the type name with each object expecting all the clients of the serialized data to be aware of the types used in the serialized data. Omitting the type names makes the serialization process faster and results in compact, random accessible serialized data formats that can be easily interpreted by non-Java clients. </li>
+<li>Hadoop’s Writable-based serialization also has the ability to reduce the object-creation overhead by reusing the Writable objects, which is not possible with the Java’s native serialization framework.</li>
 </ul>
 <p><img src="http://i.imgur.com/ltXrqAZ.png" alt=""></p>
 
@@ -147,7 +137,7 @@ In order to be used as a value data type of a MapReduce computation, a data type
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2012/07/06/Hadoop-Serialization-Framework/" data-id="cijuq18eb006jx5v15p02wc9r" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2012/07/06/Hadoop-Serialization-Framework/" data-id="cijuq6lgb006jxpv1t1d9fswg" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2012/07/06/Hadoop-Serialization-Framework/#comments" class="article-comment-link">Comments</a>
         
