@@ -15,7 +15,7 @@ Most of time, the job will generate one or multiple map task through number of i
 <meta property="og:description" content="1. Set proper number of map
 Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files,">
 <meta property="og:image" content="http://3sxautomotive.com/The-Performance-Factory-Logo-WhiteBG-600.jpg">
-<meta property="og:updated_time" content="2016-01-26T01:12:50.000Z">
+<meta property="og:updated_time" content="2016-01-26T01:25:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hive Performance Tuning - No. of MapReduce">
 <meta name="twitter:description" content="1. Set proper number of map
@@ -115,23 +115,23 @@ Most of time, the job will generate one or multiple map task through number of i
       <div class="article-entry" itemprop="articleBody">
         <p><img src="http://3sxautomotive.com/The-Performance-Factory-Logo-WhiteBG-600.jpg" alt=""></p>
 <h3 id="1-_Set_proper_number_of_map">1. Set proper number of map</h3><ol>
-<li>Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files, the setting of block size (default is 128M which can be set by set dfs.block.size) </li>
-<li>Examples</li>
+<li>Most of time, the job will generate one or multiple map task through number of input directories. There are factors, such as number of input files, the size of input files, the setting of block size (default is 128M which can be set by set dfs.block.size). For examples,</li>
 </ol>
 <ul>
-<li>假设input目录下有1个文件a,大小为780M,那么hadoop会将该文件a分隔成7个块（6个128m的块和1个12m的块），从而产生7个map数<br></li>
-<li>假设input目录下有3个文件a,b,c,大小分别为10m，20m，130m，那么hadoop会分隔成4个块（10m,20m,128m,2m）,从而产生4个map数<br>即，如果文件大于块大小(128m),那么会拆分，如果小于块大小，则把该文件当成一个块。</li>
+<li>If file a is in the directory <strong>[input]</strong> with size 780M, Hadoop will split the file into 7 blocks (6*128M+12M). As result, there are 7 maps created.</li>
+<li>If file a, b, c with size 10M, 20M, 130M, Hadoop will split into 4 blocks (10M, 20M, 128M, 2M). As result, there are 4 maps created. </li>
+<li>To conclude, split to new blocks if the file size is bigger than the block size. Or else, the file will take the whole block even if is not fully utilze it.</li>
 </ul>
 <ol>
-<li><p>是不是map数越多越好？<br><br>答案是否定的。如果一个任务有很多小文件（远远小于块大小128m）,则每个小文件也会被当做一个块，用一个map任务来完成，<br>而一个map任务启动和初始化的时间远远大于逻辑处理的时间，就会造成很大的资源浪费。<br>而且，同时可执行的map数是受限的。</p>
+<li><p><strong>More mapper more better?</strong> The answer is NO.如果一个任务有很多小文件（远远小于块大小128m）,则每个小文件也会被当做一个块，用一个map任务来完成，而一个map任务启动和初始化的时间远远大于逻辑处理的时间，就会造成很大的资源浪费。而且，同时可执行的map数是受限的。</p>
 </li>
-<li><p>是不是保证每个map处理接近128m的文件块，就高枕无忧了？ <br><br>答案也是不一定。比如有一个127m的文件，正常会用一个map去完成，但这个文件只有一个或者两个小字段，却有几千万的记录，<br>如果map处理的逻辑比较复杂，用一个map任务去做，肯定也比较耗时。</p>
+<li><p>是不是保证每个map处理接近128m的文件块，就高枕无忧了？ <br><br>答案也是不一定。比如有一个127m的文件，正常会用一个map去完成，但这个文件只有一个或者两个小字段，却有几千万的记录，如果map处理的逻辑比较复杂，用一个map任务去做，肯定也比较耗时。</p>
 </li>
 </ol>
 <p>针对上面的问题3和4，我们需要采取两种方式来解决：即减少map数和增加map数；</p>
 <p>如何合并小文件，减少map数？<br>假设一个SQL任务：</p>
 <pre><code><span class="function">Select <span class="title">count</span><span class="params">(<span class="number">1</span>)</span> from popt_tbaccountcopy_mes where pt </span>= ‘<span class="number">2012</span>-<span class="number">07</span>-<span class="number">04</span>’;
-</code></pre><p>该任务的inputdir  <code>/group/p_sdo_data/p_sdo_data_etl/pt/popt_tbaccountcopy_mes/pt=2012-07-04</code> 共有194个文件，其中很多是远远小于128m的小文件，总大小9G，正常执行会用194个map任务。Map总共消耗的计算资源： SLOTS_MILLIS_MAPS= 623,020</p>
+</code></pre><p>该任务的inputdir  ‘/group/p_sdo_data/p_sdo_data_etl/pt/popt_tbaccountcopy_mes/pt=2012-07-04’ 共有194个文件，其中很多是远远小于128m的小文件，总大小9G，正常执行会用194个map任务。Map总共消耗的计算资源： SLOTS_MILLIS_MAPS= 623,020</p>
 <p>我通过以下方法来在map执行前合并小文件，减少map数：</p>
 <pre><code><span class="operator"><span class="keyword">set</span> mapred.<span class="keyword">max</span>.<span class="keyword">split</span>.<span class="keyword">size</span>=<span class="number">100000000</span>;</span>
 <span class="operator"><span class="keyword">set</span> mapred.<span class="keyword">min</span>.<span class="keyword">split</span>.<span class="keyword">size</span>.per.node=<span class="number">100000000</span>;</span>
@@ -197,7 +197,7 @@ hive<span class="class">.exec</span><span class="class">.reducers</span><span cl
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/" data-id="cijupl36h006qvsv1i41622af" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/" data-id="cijuq18ee006qx5v190q1hibj" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/#comments" class="article-comment-link">Comments</a>
         
