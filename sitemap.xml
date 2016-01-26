@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://sparkera.ca/2012/05/30//posts/120/index.html/</loc>
-    <lastmod>2016-01-26T00:59:56.000Z</lastmod>
+    <loc>http://sparkera.ca/2012/06/18/Hive-SerDe/</loc>
+    <lastmod>2016-01-26T01:06:18.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sparkera.ca/2012/05/30/Little-About-MapReduce-Combiner/</loc>
+    <lastmod>2016-01-26T01:06:02.000Z</lastmod>
   </url>
   
   <url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://sparkera.ca/2012/06/20/Hive-Performance-Tuning/</loc>
     <lastmod>2016-01-25T01:34:25.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2012/06/18//posts/111/index.html/</loc>
-    <lastmod>2016-01-25T01:32:34.000Z</lastmod>
   </url>
   
   <url>
