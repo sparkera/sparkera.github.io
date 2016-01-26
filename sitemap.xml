@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2013/02/08/Sorting-of-Big-Data/</loc>
+    <lastmod>2016-01-26T02:26:09.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2012/09/08/Hadoop-Customize-Input-Output-Format/</loc>
-    <lastmod>2016-01-26T01:54:33.000Z</lastmod>
+    <lastmod>2016-01-26T02:06:36.000Z</lastmod>
   </url>
   
   <url>
@@ -59,11 +64,6 @@
   <url>
     <loc>http://sparkera.ca/2013/05/07/Hadoop-Customize-Data-Type/</loc>
     <lastmod>2016-01-24T21:17:44.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2013/02/08/Sorting-of-Big-Data/</loc>
-    <lastmod>2016-01-24T21:05:18.000Z</lastmod>
   </url>
   
   <url>
