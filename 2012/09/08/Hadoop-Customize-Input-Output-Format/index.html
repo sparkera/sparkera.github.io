@@ -9,11 +9,11 @@
   <meta name="description" content="hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop Customize Input Output Format">
-<meta property="og:url" content="http://sparkera.ca/2012/09/08//posts/102/index.html/index.html">
+<meta property="og:url" content="http://sparkera.ca/2012/09/08/Hadoop-Customize-Input-Output-Format/index.html">
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="hadoop">
 <meta property="og:image" content="https://groups.etown.edu/caap/files/2012/02/Input-Output-Event-Logo.jpg">
-<meta property="og:updated_time" content="2016-01-24T20:59:44.000Z">
+<meta property="og:updated_time" content="2016-01-26T01:54:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop Customize Input Output Format">
 <meta name="twitter:description" content="hadoop">
@@ -90,7 +90,7 @@
             </div>
             <div class="main-body-content">
               
-  <article id="post-/posts/102/index.html" class="article article-single article-type-post" itemscope itemprop="blogPost">
+  <article id="post-Hadoop-Customize-Input-Output-Format" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
       <!--  -->
       
@@ -105,7 +105,7 @@
         </header>
       
       <p class="article-byline">
-        <a href="/2012/09/08//posts/102/index.html/" class="article-date">
+        <a href="/2012/09/08/Hadoop-Customize-Input-Output-Format/" class="article-date">
   <time datetime="2012-09-08T04:00:00.000Z" itemprop="datePublished">2012-09-08</time>
 </a>
       </p>
@@ -113,21 +113,52 @@
         <p><img src="https://groups.etown.edu/caap/files/2012/02/Input-Output-Event-Logo.jpg" alt=""></p>
 <p>To customize inputformat, we need to do following</p>
 <ul>
-<li>Create customized *InputFormat class by extending Hadoop inputformat with your own type of class, such as <span style="text-decoration: underline">public class LogFileInputFormat extends FileInputFormat&lt;LongWritable, LogWritable&gt;{…}</span></li>
-<li>In above class, override “<span style="text-decoration: underline">public RecordReader&lt;T, T&gt; createRecordReader(InputSplit arg0, TaskAttemptContext arg1) throws IOException, InterruptedException {…}”</span>, which returns customized RecordReader class.</li>
-<li>In above class, override following one or all if you want to deal with splitable records<span style="text-decoration: underline">List&lt;InputSplit&gt; getSplits(JobContext job)</span> which generate the list of files and make them into FileSplits.<br><span style="text-decoration: underline">protected boolean isSplitable(JobContext context, Path filename) </span>which decides if or when records are splitable.</li>
-<li>Create customized RecordReader class by extending Hadoop RecordReader class, such as, <span style="text-decoration: underline">public class LogFileRecordReader extends RecordReader&lt;LongWritable, LogWritable&gt;{…}</span></li>
-<li>In above class override proper methods, such as</li>
+<li><p>Create customized <strong>InputFormat</strong> class by extending Hadoop inputformat with your own type of class, such as</p>
+<pre><code>public <span class="class"><span class="keyword">class</span> <span class="title">LogFileInputFormat</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">FileInputFormat&lt;LongWritable</span>, 
+</span><span class="type">LogWritable</span>&gt;
+</code></pre></li>
+<li><p>In above class, override </p>
+<pre><code>public <span class="type">RecordReader</span>&lt;T,T&gt; createRecordReader(<span class="type">InputSplit</span> arg0, <span class="type">TaskAttemptContext</span> arg1) throws <span class="type">IOException</span>, <span class="type">InterruptedException</span> <span class="decorator">{...}</span>
+</code></pre><p>   which returns customized RecordReader class.</p>
+</li>
+<li><p>In above class, override following one or all if you want to deal with splitable records </p>
+<pre><code>List&lt;InputSplit&gt; <span class="function"><span class="title">getSplits</span><span class="params">(JobContext job)</span></span>
+</code></pre><p>   which generate the list of files and make them into FileSplits.</p>
+<pre><code>protected boolean <span class="function"><span class="title">isSplitable</span><span class="params">(JobContext context, Path filename)</span></span> 
+</code></pre><p>   which decides if or when records are splitable.</p>
+</li>
+<li><p>Create customized RecordReader class by extending Hadoop RecordReader class, such as, </p>
+<pre><code>public <span class="class"><span class="keyword">class</span> <span class="title">LogFileRecordReader</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">RecordReader&lt;LongWritable</span>, <span class="title">LogWritable&gt;</span>{</span>...}
+</code></pre></li>
+<li><p>In above class override proper methods, such as</p>
+<pre><code>public boolean nextKeyValue() throws <span class="type">IOException</span>, <span class="type">InterruptedException</span> <span class="decorator">{...}</span>
+
+public <span class="type">LongWritable</span> getCurrentKey() throws <span class="type">IOException</span>, <span class="type">InterruptedException</span> <span class="decorator">{...}</span>
+
+public <span class="type">LogWritable</span> getCurrentValue() throws <span class="type">IOException</span>,<span class="type">InterruptedException</span> <span class="decorator">{...}</span>
+
+public <span class="type">float</span> getProgress() throws <span class="type">IOException</span>, <span class="type">InterruptedException</span> <span class="decorator">{...}</span>
+
+public <span class="type">void</span> close() throws <span class="type">IOException</span> <span class="decorator">{...}</span>
+</code></pre></li>
 </ul>
-<p><span style="text-decoration: underline">public boolean nextKeyValue() throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public LongWritable getCurrentKey() throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public LogWritable getCurrentValue() throws IOException,InterruptedException {…}</span><br><span style="text-decoration: underline"> public float getProgress() throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public void close() throws IOException {…}</span></p>
 <p>To customize Outputformat, we need to do following</p>
 <ul>
-<li>Create customized *OutputFormat class by extending Hadoop inputformat with your own type of class, such as <span style="text-decoration: underline">public class LogFileOutputFormat extends FileOutputFormat&lt;LongWritable, LogWritable&gt;{…}</span></li>
-<li>In above class, override “<span style="text-decoration: underline">public RecordWriter getRecordWriter(TaskAttemptContext job) throws IOException, InterruptedException {…}</span>“</li>
-<li>Create customized RecordWriter class by extending Hadoop RecordReader class, such as, extends RecordWriter&lt;T, T&gt;{…}</li>
-<li>In above class override proper methods, such as</li>
+<li><p>Create customized *OutputFormat class by extending Hadoop inputformat with your own type of class, such as </p>
+<pre><code>public <span class="class"><span class="keyword">class</span> <span class="title">LogFileOutputFormat</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">FileOutputFormat&lt;LongWritable</span>, <span class="title">LogWritable&gt;</span>{</span>...}
+</code></pre></li>
+<li><p>In above class, override </p>
+<pre><code>public <span class="type">RecordWriter</span> getRecordWriter(<span class="type">TaskAttemptContext</span> job) throws <span class="type">IOException</span>, <span class="type">InterruptedException</span> <span class="decorator">{...}</span>
+</code></pre></li>
+<li><p>Create customized RecordWriter class by extending Hadoop RecordReader class, such as, </p>
+<pre><code>extends <span class="type">RecordWriter</span>&lt;T,T&gt;<span class="decorator">{...}</span>
+</code></pre></li>
+<li><p>In above class override proper methods, such as</p>
+<pre><code>public <span class="type">void</span> write(<span class="type">TextArrayWritable</span> key, <span class="type">NullWritable</span> value) throws <span class="type">IOException</span>, <span class="type">InterruptedException</span> <span class="decorator">{...}</span>
+
+public synchronized <span class="type">void</span> close(<span class="type">TaskAttemptContext</span> context) throws <span class="type">IOException</span> <span class="decorator">{...}</span>
+</code></pre></li>
 </ul>
-<p><span style="text-decoration: underline">public void write(TextArrayWritable key, NullWritable value) throws IOException, InterruptedException {…}</span><br><span style="text-decoration: underline"> public synchronized void close(TaskAttemptContext context) throws IOException {…}</span></p>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -138,9 +169,9 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2012/09/08//posts/102/index.html/" data-id="cijuqd3wk006dy9v1z7ha4j3v" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2012/09/08/Hadoop-Customize-Input-Output-Format/" data-id="cijur2qm9006d06v1kcfmia3g" class="article-share-link">Share</a>
         
-          <a href="http://sparkera.ca/2012/09/08//posts/102/index.html/#comments" class="article-comment-link">Comments</a>
+          <a href="http://sparkera.ca/2012/09/08/Hadoop-Customize-Input-Output-Format/#comments" class="article-comment-link">Comments</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop/">hadoop</a></li></ul>
@@ -381,7 +412,7 @@
 <script>
   var disqus_shortname = 'sparkera';
   
-  var disqus_url = 'http://sparkera.ca/2012/09/08//posts/102/index.html/';
+  var disqus_url = 'http://sparkera.ca/2012/09/08/Hadoop-Customize-Input-Output-Format/';
   
   (function(){
     var dsq = document.createElement('script');
