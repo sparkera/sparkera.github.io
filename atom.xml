@@ -43,9 +43,9 @@
     <link href="http://sparkera.ca/2016/01/01/Happy-New-Year-2016/"/>
     <id>http://sparkera.ca/2016/01/01/Happy-New-Year-2016/</id>
     <published>2016-01-01T05:00:00.000Z</published>
-    <updated>2016-01-01T04:15:57.000Z</updated>
+    <updated>2016-01-29T02:03:57.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/happy2016.jpg" alt=""><br>It is the end of 2015 and HAPPY NEW YEAR - 2016. It is time to wrap up my writing calendar with some summary on Sparkera, myself, and Big Data ecosystem.</p>
-<p>In past 2015, I have published 21 articles in this blog, which finally got its name as SPARKERA - an era when a little spark can lead big fires. In this year, I also successfully migrated this blog from Jekyll to Hexo and renovate it with new UI and domain name. I also have my first book on Apache Hive published and start my career as an independent consultant for more challenge and exciting moment. In addition, I got more chances to share and teach my experience with many other people through various of courses, meetings, and talks. The year of 2015 is not easy but not regretful.</p>
+<p>In past 2015, I have published 21 articles in this blog, which finally got its name as SPARKERA - an era when a little spark can lead big fires. In this year, I also successfully migrated this blog from Jekyll to Hexo and renovate it with new UI and domain name. I also have my first book on Apache Hive published and start my career as an independent consultant for more challenge and exciting moment. In addition, I got more chances to share and teach my experience with many other people through various of courses, meetings, and talks. The year of 2015 is not easy but productive.</p>
 <p>In 2015, there are also greats ideas and projects we cannot neglect in the big data ecosystem as follows.</p>
 <ul>
 <li><a href="http://kylin.apache.org/" target="_blank" rel="external">Apache Kylin</a> - is really an innovative idea by providing SQL interface and multi-dimensional analysis (OLAP) on Hadoop and HBase. This tool has more use cases for enterprise users and it is a better solution when the enterprise wants to build a data warehouse on top of Hadoop ecosystem.</li>
@@ -55,11 +55,11 @@
 <li>Apache HDFS <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/CentralizedCacheManagement.html" target="_blank" rel="external">Cache</a> and <a href="https://issues.apache.org/jira/browse/HDFS-3107" target="_blank" rel="external">Truncate</a> - These two new features are expected for a long time to foresee Hadoop’s future strength as the core component in the big data ecosystem.</li>
 <li>Apache YARN - new features supporting management label, long running jobs, and dock support</li>
 <li><a href="https://spark.apache.org/docs/latest/sql-programming-guide.html" target="_blank" rel="external">Spark SQL and DataFrame</a> - Spark SQL brings Spark more closed to enterprise use case by leveraging the dataframe having schema and optimization on regular RDD. According to the benchmark, dataframe have great performance boost than regular RDD.</li>
-<li><a href="https://cwiki.apache.org/confluence/display/Hive/Hive+on+Spark%3A+Getting+Started" target="_blank" rel="external">Hive Over Spark</a> - makes Hive users/application to leverage powerful in-memory couting engine of Apache Spark.</li>
+<li><a href="https://cwiki.apache.org/confluence/display/Hive/Hive+on+Spark%3A+Getting+Started" target="_blank" rel="external">Hive Over Spark</a> - makes Hive users/application to leverage powerful in-memory computing engine of Apache Spark.</li>
 <li><a href="http://geode.incubator.apache.org/" target="_blank" rel="external">GemFire</a> and <a href="http://hawq.incubator.apache.org/" target="_blank" rel="external">HAWQ</a> - Very few enterprise would like to open source their leading products, but Pivotal did it and did for all its big data products. This is a great time to see the gap between enterprise ready products and open source softwares. This will also bring challenge and competitions for solutions, such as Impala, Hive, Spark SQL, HBase.</li>
-<li><a href="https://zeppelin.incubator.apache.org/" target="_blank" rel="external">Apache Zeppelin</a> - There is very few open source visulization tools avaliable, especially which supporting many framework or system. Its native supports Apache Spark and interactive code-to-result expereince attracting lots of community users.</li>
+<li><a href="https://zeppelin.incubator.apache.org/" target="_blank" rel="external">Apache Zeppelin</a> - There is very few open source visualization tools avaliable, especially which supporting many framework or system. Its native supports Apache Spark and interactive code-to-result experience attracting lots of community users.</li>
 </ul>
-<p>Well, again at the end, look forward a mazing and betutiful year of 2016 for me and you!</p>
+<p>Well, again at the end, look forward a mazing and beautiful year of 2016 for me and you!</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><img src="/images/happy2016.jpg" alt=""><br>It is the end of 2015 and HAPPY NEW YEAR - 2016. It is time to wrap up my writing calendar wi]]>

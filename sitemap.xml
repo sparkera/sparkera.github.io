@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2016/01/01/Happy-New-Year-2016/</loc>
+    <lastmod>2016-01-29T02:03:57.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2013/05/28/Hadoop-DistributedCache/</loc>
     <lastmod>2016-01-26T03:19:04.000Z</lastmod>
   </url>
@@ -124,11 +129,6 @@
   <url>
     <loc>http://sparkera.ca/2015/01/01/reviews-big-data/</loc>
     <lastmod>2016-01-04T02:19:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://sparkera.ca/2016/01/01/Happy-New-Year-2016/</loc>
-    <lastmod>2016-01-01T04:15:57.000Z</lastmod>
   </url>
   
   <url>
