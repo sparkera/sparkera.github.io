@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-01-30T02:56:28.000Z</updated>
+  <updated>2016-01-30T03:00:58.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://sparkera.ca/2016/02/01/Scala-Func-Call/"/>
     <id>http://sparkera.ca/2016/02/01/Scala-Func-Call/</id>
     <published>2016-02-01T05:00:00.000Z</published>
-    <updated>2016-01-30T02:56:28.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://media.licdn.com/media/p/4/005/0b5/10e/337e73f.png" alt=""></p>
+    <updated>2016-01-30T03:00:58.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/scala.png" alt=""></p>
 <p>From today, I start working on series of articles about how Scala is special and powerful than regular programming languages, such as Java, under tag <a href="http://sparkera.ca/tags/scala/">scalatips</a>. If you have any confused topic, please feel free to contact me so that I can try to use simple terms and explanations to help you understand it.</p>
 <p>Usually, there are a couple of ways when calling functions, such as call-by-reference, call-by-value and call-by-name. </p>
 <ol>
@@ -36,8 +36,8 @@
 <p>For above example, the function <code>printer</code> will pass into <code>x</code> as whole twice since the <code>x</code> is being called by <code>callByName</code> twice. As a result, the “calling printer” are shown twice.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="https://media.licdn.com/media/p/4/005/0b5/10e/337e73f.png" alt=""></p>
-<p>From today, I start working on series of articles abo]]>
+    <![CDATA[<p><img src="/images/scala.png" alt=""></p>
+<p>From today, I start working on series of articles about how Scala is special and powerful tha]]>
     </summary>
     
       <category term="scala" scheme="http://sparkera.ca/tags/scala/"/>
