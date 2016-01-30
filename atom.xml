@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-01-30T03:00:58.000Z</updated>
+  <updated>2016-01-30T13:19:44.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://sparkera.ca/2016/02/01/Scala-Func-Call/"/>
     <id>http://sparkera.ca/2016/02/01/Scala-Func-Call/</id>
     <published>2016-02-01T05:00:00.000Z</published>
-    <updated>2016-01-30T03:00:58.000Z</updated>
+    <updated>2016-01-30T13:19:44.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/scala.png" alt=""></p>
-<p>From today, I start working on series of articles about how Scala is special and powerful than regular programming languages, such as Java, under tag <a href="http://sparkera.ca/tags/scala/">scalatips</a>. If you have any confused topic, please feel free to contact me so that I can try to use simple terms and explanations to help you understand it.</p>
+<p>From today, I start working on series of articles about how Scala is special and powerful than regular programming languages, such as Java, under tag <a href="http://sparkera.ca/tags/scalatips/">scalatips</a>. If you have any confused topic, please feel free to contact me so that I can try to use simple terms and explanations to help you understand it.</p>
 <p>Usually, there are a couple of ways when calling functions, such as call-by-reference, call-by-value and call-by-name. </p>
 <ol>
 <li>call-by-reference: we are passing an alias of the variable to a function</li>
