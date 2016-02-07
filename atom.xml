@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-01-30T14:12:33.000Z</updated>
+  <updated>2016-02-07T00:24:34.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Scala Partially Applied Functions and Curry]]></title>
+    <link href="http://sparkera.ca/2016/02/06/Scala-Partial-Applied-Function/"/>
+    <id>http://sparkera.ca/2016/02/06/Scala-Partial-Applied-Function/</id>
+    <published>2016-02-06T05:00:00.000Z</published>
+    <updated>2016-02-07T00:24:34.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://jvtrigueros.github.io/dcc4-function-composition-scala/images/curry.jpg" alt=""></p>
+<p>###Partially Applied Functions<br>When you invoke a scala function, you need to apply the arguments to the function. If you pass all the expected arguments, you say the function is fully applied. If you only send only a few of arguments, the function is called partially applied function. The partially applied function in scala brings us the convenience of binding some arguments and leaving the rest to be filled in later.</p>
+<p>Below is an example of partially applied function in scala.<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; def <span class="function"><span class="title">sum</span><span class="params">(a:Int, b:Int, c:Int)</span></span> = <span class="tag">a</span> + <span class="tag">b</span> + c</span><br><span class="line">sum: (<span class="tag">a</span>: Int, <span class="tag">b</span>: Int, c: Int)Int</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="tag">var</span> sum1 = <span class="function"><span class="title">sum</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, _:Int)</span></span></span><br><span class="line">sum1: Int =&gt; Int = &lt;function1&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function"><span class="title">sum1</span><span class="params">(<span class="number">3</span>)</span></span></span><br><span class="line">res0: Int = <span class="number">6</span></span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function"><span class="title">sum</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span></span></span><br><span class="line">res1: Int = <span class="number">6</span></span><br></pre></td></tr></table></figure></p>
+<p>In the above example, <code>sum1</code> is partially applied for the first 2 arguments. Whenever, you want to omit all the argument in the function, such as doing var <code>sum1 = sum(_:Int, _:Int, _:Int)</code>, you can use <code>&lt;function&gt; _</code> to present as follows. Actually, partially applied function has an <code>apply</code> method, so you can leverate the short-cut function call.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; var sum2 = sum _</span><br><span class="line">sum2: (Int, Int, Int) =&gt; Int = &lt;function3&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; sum2(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">res2: Int = <span class="number">6</span></span><br><span class="line"></span><br><span class="line">scala&gt; sum2.apply(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">res3: Int = <span class="number">6</span></span><br></pre></td></tr></table></figure></p>
+<p>###Currying Functions<br>Currying, invented by Moses Schönfinkel and Gottlob Frege, is the technique of transforming a function that takes multiple arguments into a function that takes a single argument (the other arguments having been specified by the curry). Below is an example of function curry.<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; def <span class="function"><span class="title">add</span><span class="params">(x:Int)</span><span class="params">(y:Int)</span></span> = x + y</span><br><span class="line">add: (x: Int)(y: Int)Int</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function"><span class="title">add</span><span class="params">(<span class="number">1</span>)</span><span class="params">(<span class="number">2</span>)</span></span></span><br><span class="line">res7: Int = <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>In addition, a anonymous function returned from another function can be also curried as follows.<br><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; def add2(x:<span class="keyword">Int</span>) = (y:<span class="keyword">Int</span>) =&gt; x + y</span><br><span class="line">add: (x: <span class="keyword">Int</span>)<span class="keyword">Int</span> =&gt; <span class="keyword">Int</span></span><br><span class="line"></span><br><span class="line">scala&gt; add2(<span class="number">1</span>)(<span class="number">2</span>)</span><br><span class="line">res8: <span class="keyword">Int</span> = <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>You can also convert a regular function to its curried version through partially applied function as following example. <code>add4</code> is a curried function from partially applied function <code>add3</code>.<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; def add3(x:<span class="typename">Int</span>, y:<span class="typename">Int</span>) = x + y</span><br><span class="line">add3: (x: <span class="typename">Int</span>, y: <span class="typename">Int</span>)<span class="typename">Int</span></span><br><span class="line"></span><br><span class="line">scala&gt; <span class="variable"><span class="keyword">val</span> add4</span>=(add3 _).curried</span><br><span class="line">add4: <span class="typename">Int</span> =&gt; (<span class="typename">Int</span> =&gt; <span class="typename">Int</span>) = <span class="type">&lt;function1&gt;</span></span><br><span class="line"></span><br><span class="line">scala&gt; add4(<span class="number">1</span>)(<span class="number">2</span>)</span><br><span class="line">res9: <span class="typename">Int</span> = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">scala&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Most of time, we actually use in the other way by creating a specialized version of generalized function through curry function.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="function">def <span class="title">filterBy</span><span class="params">(f: Int =&gt; Boolean)</span><span class="params">(xs: List[Int])</span> </span>= &#123;xs filter f&#125;</span><br><span class="line">filterBy: (f: Int =&gt; Boolean)(xs: List[Int])List[Int]</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function">def <span class="title">even</span><span class="params">(x: Int)</span> </span>= x % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line">even: (x: Int)Boolean</span><br><span class="line"></span><br><span class="line">scala&gt; val xs = List(<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">6</span>, <span class="number">7</span>)</span><br><span class="line">xs: List[Int] = List(<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">6</span>, <span class="number">7</span>)</span><br><span class="line"></span><br><span class="line">scala&gt; val ts = List(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">15</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br><span class="line">ts: List[Int] = List(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">15</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br><span class="line"></span><br><span class="line">scala&gt; val evenFilter = filterBy(even) _</span><br><span class="line">evenFilter: List[Int] =&gt; List[Int] = &lt;function1&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; evenFilter(xs)</span><br><span class="line">res10: List[Int] = List(<span class="number">4</span>, <span class="number">12</span>, <span class="number">6</span>)</span><br><span class="line">                      </span><br><span class="line">scala&gt; evenFilter(ts)</span><br><span class="line">res12: List[Int] = List(<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>)</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://jvtrigueros.github.io/dcc4-function-composition-scala/images/curry.jpg" alt=""></p>
+<p>###Partially Applied Functions<br]]>
+    </summary>
+    
+      <category term="scala" scheme="http://sparkera.ca/tags/scala/"/>
+    
+      <category term="scalatips" scheme="http://sparkera.ca/tags/scalatips/"/>
+    
+      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Scala Call by Value vs. Name]]></title>
@@ -685,62 +713,6 @@
       <category term="books" scheme="http://sparkera.ca/tags/books/"/>
     
       <category term="java" scheme="http://sparkera.ca/tags/java/"/>
-    
-      <category term="Reviews" scheme="http://sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Coding" scheme="http://sparkera.ca/categories/Reviews/Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Scala Programming Books Reviews]]></title>
-    <link href="http://sparkera.ca/2015/01/01/reviews-scala-programming/"/>
-    <id>http://sparkera.ca/2015/01/01/reviews-scala-programming/</id>
-    <published>2015-01-01T13:00:11.000Z</published>
-    <updated>2016-01-05T00:13:02.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/beginscala.jpg" width="150" height="200" align="right"></p>
-<h3 id="Begining_Scala_2nd_ed"><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank" rel="external">Begining Scala 2nd ed</a></h3><p><img src="/images/3.5star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>Read complete this book@Oct. 2014. This book has very quick style of explaining scala with many detail examples. Even some examples has code defect and typo, it is easy to find out. The last part about scala best practice is really a valueable chapter. The other part is ok and cover everthing well enough but not deep enough.</p>
-<hr>
-<p><img src="http://akamaicovers.oreilly.com/images/0636920030287/lrg.jpg" width="150" height="200" align="right"></p>
-<h3 id="Learning_Scala_Practical_Functional_Programming_for_the_JVM"><a href="http://shop.oreilly.com/product/0636920030287.do?sortby=publicationDate" target="_blank" rel="external">Learning Scala Practical Functional Programming for the JVM</a></h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>TRead complete this book@Nov. 2014. The book is my 1st book read about scala. It introduces the basic concet of scala as well as advanced topics. The last few chapters are little hard to read, but overall it is a great scala book having latest of scala features covered.</p>
-<hr>
-<p><img src="http://akamaicovers.oreilly.com/images/0636920026914/lrg.jpg" width="150" height="200" align="right"></p>
-<h3 id="Scala_Cookbook"><a href="http://shop.oreilly.com/product/0636920026914.do" target="_blank" rel="external">Scala Cookbook</a></h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>The book is my 2nd book read about scala. This book is full of examples. It is more easier to learn thaning reading long chapters. I start reading it right now.</p>
-<hr>
-<p><img src="http://www.artima.com/images/puzzlersCover185x240.gif" width="150" height="200" align="right"></p>
-<h3 id="Scala_Puzzlers"><a href="http://scalapuzzlers.com/" target="_blank" rel="external">Scala Puzzlers</a></h3><p><img src="/images/4star.png" width="200" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.  </li>
-<li>Level Adv.  </li>
-</ul>
-<p>The book is my 3rd book read about scala. It is a free book in github and it is a fun book about scala. I start reading it right now.</p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/beginscala.jpg" width="150" height="200" align="right"></p>
-<h3 id="Begining_Scala_2nd_ed"><a href="https://onlybooks.o]]>
-    </summary>
-    
-      <category term="books" scheme="http://sparkera.ca/tags/books/"/>
-    
-      <category term="scala" scheme="http://sparkera.ca/tags/scala/"/>
     
       <category term="Reviews" scheme="http://sparkera.ca/categories/Reviews/"/>
     

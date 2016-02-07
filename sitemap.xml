@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2016/02/06/Scala-Partial-Applied-Function/</loc>
+    <lastmod>2016-02-07T00:24:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2016/02/01/Scala-Func-Call/</loc>
     <lastmod>2016-01-30T14:12:33.000Z</lastmod>
   </url>
@@ -242,7 +247,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
+    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -257,7 +262,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://sparkera.ca/2013/06/12/Commonly-Used-Maven-Plugins/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -337,7 +342,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/06/12/Commonly-Used-Maven-Plugins/</loc>
+    <loc>http://sparkera.ca/2013/06/18/Big-Data-Platform/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
