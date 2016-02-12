@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-02-07T01:00:13.000Z</updated>
+  <updated>2016-02-12T01:18:09.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Scala Partially Applied Functions and Curry]]></title>
+    <title><![CDATA[Partially Applied Functions and Curry]]></title>
     <link href="http://sparkera.ca/2016/02/06/Scala-Partial-Applied-Function/"/>
     <id>http://sparkera.ca/2016/02/06/Scala-Partial-Applied-Function/</id>
     <published>2016-02-06T05:00:00.000Z</published>
-    <updated>2016-02-07T01:00:13.000Z</updated>
+    <updated>2016-02-12T01:18:09.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Partially_Applied_Functions">Partially Applied Functions</h3><p>When you invoke a scala function, you need to apply the arguments to the function. If you pass all the expected arguments, you say the function is fully applied. If you only send only a few of arguments, the function is called partially applied function. The partially applied function in scala brings us the convenience of binding some arguments and leaving the rest to be filled in later.</p>
 <p>Below is an example of partially applied function in scala.<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; def <span class="function"><span class="title">sum</span><span class="params">(a:Int, b:Int, c:Int)</span></span> = <span class="tag">a</span> + <span class="tag">b</span> + c</span><br><span class="line">sum: (<span class="tag">a</span>: Int, <span class="tag">b</span>: Int, c: Int)Int</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="tag">var</span> sum1 = <span class="function"><span class="title">sum</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, _:Int)</span></span></span><br><span class="line">sum1: Int =&gt; Int = &lt;function1&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function"><span class="title">sum1</span><span class="params">(<span class="number">3</span>)</span></span></span><br><span class="line">res0: Int = <span class="number">6</span></span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function"><span class="title">sum</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span></span></span><br><span class="line">res1: Int = <span class="number">6</span></span><br></pre></td></tr></table></figure></p>
 <p>In the above example, <code>sum1</code> is partially applied for the first 2 arguments. Whenever you want to omit all the argument in the function, such as doing var <code>sum1 = sum(_:Int, _:Int, _:Int)</code>, you can use <code>&lt;function&gt; _</code> to present as follows. Actually, partially applied function has an <code>apply</code> method, so you can leverate the short-cut function call.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; var sum2 = sum _</span><br><span class="line">sum2: (Int, Int, Int) =&gt; Int = &lt;function3&gt;</span><br><span class="line"></span><br><span class="line">scala&gt; sum2(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">res2: Int = <span class="number">6</span></span><br><span class="line"></span><br><span class="line">scala&gt; sum2.apply(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">res3: Int = <span class="number">6</span></span><br></pre></td></tr></table></figure></p>
