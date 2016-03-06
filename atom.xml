@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-03-06T21:57:12.000Z</updated>
+  <updated>2016-03-06T22:02:10.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/"/>
     <id>http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/</id>
     <published>2016-03-06T05:00:00.000Z</published>
-    <updated>2016-03-06T21:57:12.000Z</updated>
+    <updated>2016-03-06T22:02:10.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often that we need to setup development environment for spark application in scala IDE environment. Today, I am here to give detail steps for developing the famous word count example in Apache Spark Scala API.</p>
 <h3 id="Environment">Environment</h3><ul>
 <li><a href="http://spark.apache.org/downloads.html" target="_blank" rel="external">Apache Spark v1.6</a></li>
@@ -37,13 +37,13 @@
 <li><p>Click “Next” button to go POM setting page and fill below information. Then, click “Finish”.</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Group Id = ca<span class="class">.sparkera</span><span class="class">.spark</span> </span><br><span class="line">Artifact Id = WordCount</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Open the “pom.xml” file in eclipse working area and add replace using code here. Save the file, then Eclipse will automatically download the proper jar files and build the work space.</p>
+<li><p>Open the “pom.xml” file in eclipse working area and add replace using code <a href="/images/spark_wc_pom.xml">here</a>. Save the file, then Eclipse will automatically download the proper jar files and build the work space.</p>
 </li>
 <li><p>Add Scala Nature to this project by right clicking on project -&gt; configure - &gt; Add Scala Nature. </p>
 </li>
-<li><p>Update Scala compiler version for Spark by right clicking on project- &gt; Properties -&gt; Scala Compiler -&gt; Use Project Settings -&gt;Scala Installation Latest 2.10 bundle (dynamic). </p>
+<li><p>Update Scala compiler version for Spark by right clicking on <code>project- &gt; Properties -&gt; Scala Compiler -&gt; Use Project Settings -&gt;Scala Installation Latest 2.10 bundle (dynamic)</code>. </p>
 </li>
-<li><p>Refeactor source folder src/main/java to src/main/scala by right click -&gt; Refactor -&gt; Rename. Create a package under this name it as ca.sparkera.spark.</p>
+<li><p>Refeactor source folder <code>src/main/java</code> to <code>src/main/scala</code> by <code>right click -&gt; Refactor -&gt; Rename.</code> Create a package under this name it as ca.sparkera.spark.</p>
 </li>
 <li><p>Create a Scala object under package created above package and name it as WordCount.scala by right clicking on the package -&gt; New -&gt; Scala Object and add WordCount as object name.</p>
 </li>
