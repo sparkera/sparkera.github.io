@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-02-12T01:18:09.000Z</updated>
+  <updated>2016-03-06T21:57:12.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Develop Spark WordCount]]></title>
+    <link href="http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/"/>
+    <id>http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/</id>
+    <published>2016-03-06T05:00:00.000Z</published>
+    <updated>2016-03-06T21:57:12.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often that we need to setup development environment for spark application in scala IDE environment. Today, I am here to give detail steps for developing the famous word count example in Apache Spark Scala API.</p>
+<h3 id="Environment">Environment</h3><ul>
+<li><a href="http://spark.apache.org/downloads.html" target="_blank" rel="external">Apache Spark v1.6</a></li>
+<li><a href="http://www.scala-lang.org/download/2.10.4.html" target="_blank" rel="external">Scala 2.10.4</a></li>
+<li><a href="http://scala-ide.org/download/sdk.html" target="_blank" rel="external">Eclipse Scala IDE</a></li>
+</ul>
+<h3 id="Download_Software_Needed">Download Software Needed</h3><ol>
+<li>Download the proper scala version and install it</li>
+<li>Download the Eclipse scala IDE from above link</li>
+</ol>
+<h3 id="Create_Scala_Project">Create Scala Project</h3><ol>
+<li><p>Open Scala Eclipse IDE. From the top menu, choose “File-&gt; New -&gt; Project -&gt; Maven project” with below information as example.</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Choose</span> <span class="string">"Creat a simple project (skip archtype selection)"</span></span><br><span class="line">Choose <span class="string">"Use default Workspace location"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Click “Next” button to go POM setting page and fill below information. Then, click “Finish”.</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Group Id = ca<span class="class">.sparkera</span><span class="class">.spark</span> </span><br><span class="line">Artifact Id = WordCount</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Open the “pom.xml” file in eclipse working area and add replace using code here. Save the file, then Eclipse will automatically download the proper jar files and build the work space.</p>
+</li>
+<li><p>Add Scala Nature to this project by right clicking on project -&gt; configure - &gt; Add Scala Nature. </p>
+</li>
+<li><p>Update Scala compiler version for Spark by right clicking on project- &gt; Properties -&gt; Scala Compiler -&gt; Use Project Settings -&gt;Scala Installation Latest 2.10 bundle (dynamic). </p>
+</li>
+<li><p>Refeactor source folder src/main/java to src/main/scala by right click -&gt; Refactor -&gt; Rename. Create a package under this name it as ca.sparkera.spark.</p>
+</li>
+<li><p>Create a Scala object under package created above package and name it as WordCount.scala by right clicking on the package -&gt; New -&gt; Scala Object and add WordCount as object name.</p>
+</li>
+<li><p>Paste below code as content for WordCount.scala</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ca.sparkera.spark</span><br><span class="line"><span class="keyword">import</span> org.apache.spark.<span class="type">SparkConf</span>  </span><br><span class="line"><span class="keyword">import</span> org.apache.spark.<span class="type">SparkContext</span>  </span><br><span class="line"><span class="keyword">import</span> org.apache.spark.<span class="type">SparkContext</span>._</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">WordCount</span> &#123;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(</span>args: <span class="type">Array</span>[<span class="type">String</span>]) &#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//check proper parameters - optional</span></span><br><span class="line">    <span class="keyword">if</span> (args.length &lt; <span class="number">1</span>) &#123;  </span><br><span class="line">      <span class="type">System</span>.err.println(<span class="string">"Usage: &lt;file&gt;"</span>)  </span><br><span class="line">      <span class="type">System</span>.exit(<span class="number">1</span>)  </span><br><span class="line">    &#125;   </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Configuration for a Spark application.        </span></span><br><span class="line">    <span class="function"><span class="keyword">val</span> <span class="title">conf</span> =</span> <span class="keyword">new</span> <span class="type">SparkConf</span>()  </span><br><span class="line">    conf.setAppName(<span class="string">"SparkWordCount"</span>).setMaster(<span class="string">"local"</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//Create Spark Context  </span></span><br><span class="line">    <span class="function"><span class="keyword">val</span> <span class="title">sc</span> =</span> <span class="keyword">new</span> <span class="type">SparkContext</span>(conf)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//Create MappedRDD by reading from HDFS file from path command line parameter  </span></span><br><span class="line">    <span class="function"><span class="keyword">val</span> <span class="title">rdd</span> =</span> sc.textFile(args(<span class="number">0</span>))  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//WordCount  </span></span><br><span class="line">    rdd.flatMap(_.split(<span class="string">" "</span>)).</span><br><span class="line">    map((_, <span class="number">1</span>)).</span><br><span class="line">    reduceByKey(_ + _).</span><br><span class="line">    map(x =&gt; (x._2, x._1)).</span><br><span class="line">    sortByKey(<span class="literal">false</span>).</span><br><span class="line">    map(x =&gt; (x._2, x._1)).</span><br><span class="line">    saveAsTextFile(<span class="string">"SparkWordCountResult"</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//stop context</span></span><br><span class="line">    sc.stop  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Run the application by right clicking on “WordCount.scala - &gt; Run as -&gt; Run Configurations -&gt; Arguments” and add input file path, such as /Users/will/Downloads/testdata/</p>
+</li>
+<li><p>Check the output files containing word count result from proper place where you can find from console output.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s -l /Users/will/workspace/WordCount/SparkWordCountResult</span><br><span class="line">total <span class="number">1248</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> will  staff       <span class="number">0</span>  <span class="number">6</span> Mar <span class="number">16</span>:<span class="number">30</span> _SUCCESS</span><br><span class="line">-rw-r--r--  <span class="number">1</span> will  staff   <span class="number">42669</span>  <span class="number">6</span> Mar <span class="number">16</span>:<span class="number">30</span> part-<span class="number">00000</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> will  staff   <span class="number">15600</span>  <span class="number">6</span> Mar <span class="number">16</span>:<span class="number">30</span> part-<span class="number">00001</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> will  staff  <span class="number">129997</span>  <span class="number">6</span> Mar <span class="number">16</span>:<span class="number">30</span> part-<span class="number">00002</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> will  staff  <span class="number">443519</span>  <span class="number">6</span> Mar <span class="number">16</span>:<span class="number">30</span> part-<span class="number">00003</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Note">Note</h3><ul>
+<li>Without using maven, we can alternatively add the downloaded spark assmeling jar file (at ../spark-1.6.0-bin-hadoop2.6/lib/spark-assembly-1.6.0-hadoop2.6.0.jar) to the scala project build path as external jar libaray.</li>
+<li>Most of time, we can export the scala spark code as jar file. Then, we copy it to the spark production cluster and submit it using <a href="http://spark.apache.org/docs/latest/submitting-applications.html" target="_blank" rel="external">spark-submit</a>.</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often that we need to setup development environment for spark application in scala ]]>
+    </summary>
+    
+      <category term="scala" scheme="http://sparkera.ca/tags/scala/"/>
+    
+      <category term="spark" scheme="http://sparkera.ca/tags/spark/"/>
+    
+      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Partially Applied Functions and Curry]]></title>
@@ -690,36 +749,6 @@
       <category term="spark" scheme="http://sparkera.ca/tags/spark/"/>
     
       <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Java Programming Books Reviews]]></title>
-    <link href="http://sparkera.ca/2015/01/01/reviews-java-programming/"/>
-    <id>http://sparkera.ca/2015/01/01/reviews-java-programming/</id>
-    <published>2015-01-01T13:01:11.000Z</published>
-    <updated>2016-01-15T01:28:11.000Z</updated>
-    <content type="html"><![CDATA[<p>Java is one of important programming language in big data ecosystem. Here, I recommand some great Java resource and books, which are very useful for big data development.<br><img src="http://whytoread.com/wp-content/uploads/2014/10/bestbooks-for-programming-java.jpg" alt=""></p>
-<hr>
-<p><img src="http://ecx.images-amazon.com/images/I/416oh7sATKL._SX331_BO1,204,203,200_.jpg" width="150" height="200" align="right"></p>
-<h3 id="Java_Quick_Syntax_Reference_-_(The_Expert’s_Voice)"><a href="https://onlybooks.org/beginning-scala-2nd-edition-32119" target="_blank" rel="external">Java Quick Syntax Reference - (The Expert’s Voice)</a></h3><p><img src="/images/5star.png" width="250" height="50" align="left"><br></p>
-<ul>
-<li>Level Ent. </li>
-<li>Level Mid.   </li>
-</ul>
-<p>Read complete this book@Jan. 2015. The Java Quick Syntax Reference is a quite short book for your review Java sytax or learning java in a faster way. It is a condensed code and syntax reference with only 70 pages. In addition, it is not raw syntax but trying to explain lots of useful tips. </p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Java is one of important programming language in big data ecosystem. Here, I recommand some great Java resource and books, which are very]]>
-    </summary>
-    
-      <category term="books" scheme="http://sparkera.ca/tags/books/"/>
-    
-      <category term="java" scheme="http://sparkera.ca/tags/java/"/>
-    
-      <category term="Reviews" scheme="http://sparkera.ca/categories/Reviews/"/>
-    
-      <category term="Coding" scheme="http://sparkera.ca/categories/Reviews/Coding/"/>
     
   </entry>
   
