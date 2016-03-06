@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-03-06T22:06:24.000Z</updated>
+  <updated>2016-03-06T22:08:39.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/"/>
     <id>http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/</id>
     <published>2016-03-06T05:00:00.000Z</published>
-    <updated>2016-03-06T22:06:24.000Z</updated>
+    <updated>2016-03-06T22:08:39.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often that we need to setup development environment for spark application in scala IDE environment. Today, I am here to give detail steps for developing the famous word count example in Apache Spark Scala API.</p>
 <h3 id="Environment">Environment</h3><ul>
 <li><a href="http://spark.apache.org/downloads.html" target="_blank" rel="external">Apache Spark v1.6</a></li>
@@ -31,13 +31,9 @@
 <li>Download the Eclipse scala IDE from above link</li>
 </ol>
 <h3 id="Create_Scala_Project">Create Scala Project</h3><ol>
-<li>Open Scala Eclipse IDE. From the top menu, choose <code>File-&gt; New -&gt; Project -&gt; Maven project</code> with below information as example.</li>
-</ol>
-<ul>
-<li>Choose <code>Creat a simple project (skip archtype selection)</code></li>
-<li>Choose <code>Use default Workspace location</code></li>
-</ul>
-<ol>
+<li><p>Open Scala Eclipse IDE. From the top menu, choose <code>File-&gt; New -&gt; Project -&gt; Maven project</code> with below information as example.</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Choose <span class="escape">`C</span>reat <span class="literal">a</span> simple project (skip archtype selection)<span class="escape">`</span><br><span class="line"></span>Choose <span class="escape">`U</span>se default Workspace location`</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>Click <code>Next</code> button to go POM setting page and fill below information. Then, click <code>Finish</code>.</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Group Id = ca<span class="class">.sparkera</span><span class="class">.spark</span> </span><br><span class="line">Artifact Id = WordCount</span><br></pre></td></tr></table></figure>
 </li>
