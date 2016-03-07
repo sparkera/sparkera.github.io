@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-03-06T22:08:39.000Z</updated>
+  <updated>2016-03-07T02:24:25.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/"/>
     <id>http://sparkera.ca/2016/03/06/Dev-Spark-WordCount/</id>
     <published>2016-03-06T05:00:00.000Z</published>
-    <updated>2016-03-06T22:08:39.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often that we need to setup development environment for spark application in scala IDE environment. Today, I am here to give detail steps for developing the famous word count example in Apache Spark Scala API.</p>
+    <updated>2016-03-07T02:24:25.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often to setup Apache Spark development environment through IDE. Since I do not cover much setup IDE details in my Spark course, I am here to give detail steps for developing the well known Spark word count example using scala API in Eclipse.</p>
 <h3 id="Environment">Environment</h3><ul>
 <li><a href="http://spark.apache.org/downloads.html" target="_blank" rel="external">Apache Spark v1.6</a></li>
 <li><a href="http://www.scala-lang.org/download/2.10.4.html" target="_blank" rel="external">Scala 2.10.4</a></li>
@@ -58,11 +58,12 @@
 </ol>
 <h3 id="Note">Note</h3><ul>
 <li>Without using maven, we can alternatively add the downloaded spark assmeling jar file (at <code>../spark-1.6.0-bin-hadoop2.6/lib/spark-assembly-1.6.0-hadoop2.6.0.jar</code>) to the scala project build path as external jar libaray.</li>
-<li>Most of time, we can export the scala spark code as jar file. Then, we copy it to the spark production cluster and submit it using <a href="http://spark.apache.org/docs/latest/submitting-applications.html" target="_blank" rel="external">spark-submit</a>.</li>
+<li>In real project, we usually export the above scala code as jar file, copy it to the spark cluster, and submit it using <a href="http://spark.apache.org/docs/latest/submitting-applications.html" target="_blank" rel="external">spark-submit</a>.</li>
+<li>Share a website to search <a href="http://mvnrepository.com/" target="_blank" rel="external">maven configurations</a></li>
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often that we need to setup development environment for spark application in scala ]]>
+    <![CDATA[<p><img src="/images/sparkwc.png" alt=""><br>It is quite often to setup Apache Spark development environment through IDE. Since I do not cov]]>
     </summary>
     
       <category term="scala" scheme="http://sparkera.ca/tags/scala/"/>
