@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-03-12T00:58:58.000Z</updated>
+  <updated>2016-03-12T03:14:36.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://sparkera.ca/2016/03/11/Scala-Apply-Method/"/>
     <id>http://sparkera.ca/2016/03/11/Scala-Apply-Method/</id>
     <published>2016-03-11T05:00:00.000Z</published>
-    <updated>2016-03-12T00:58:58.000Z</updated>
+    <updated>2016-03-12T03:14:36.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/apply_scala.png" alt=""><br>The apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. </p>
 <p>For example, we create a class of <code>RiceCooker</code> and its method <code>cook</code> to cook rice. Whenever we need to cook rice, we could call this method.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">cook</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">val</span> <span class="title">my_rice_cooker</span>:</span> <span class="type">RiceCooker</span> = <span class="keyword">new</span> <span class="type">RiceCooker</span>()</span><br><span class="line">my_rice_cooker.cook(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
 <p>Since the main function of <code>RiceCooker</code> is to cook rice, we can always put this <code>cook</code> function in an <code>apply</code> method as follows. As result, we can cook immediately after we put rice in the rice cooker without explicit invoking any methods.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">apply</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">val</span> <span class="title">my_rice_cooker</span>:</span> <span class="type">RiceCooker</span> = <span class="keyword">new</span> <span class="type">RiceCooker</span>()</span><br><span class="line">my_rice_cooker(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
@@ -32,6 +32,8 @@
     </summary>
     
       <category term="scala" scheme="http://sparkera.ca/tags/scala/"/>
+    
+      <category term="scalatips" scheme="http://sparkera.ca/tags/scalatips/"/>
     
       <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
     
