@@ -4,17 +4,22 @@
   <meta name="google-site-verification" content="jwTXFzpP2oTL-C-azr5nl4SZX_THzNy9xEzQ0BzTX-g" />
   <meta charset="utf-8">
   
-  <title>Archives: 2012/11 | Sparkera</title>
+  <title>Scala Apply Method | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A blog for big data, hadoop, spark, data mining, dw, bi, cloud computing, visulization.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sparkera">
-<meta property="og:url" content="http://sparkera.ca/archives/2012/11/index.html">
+  <meta name="description" content="ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
+For example, we create a class of RiceCooker and its method co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scala Apply Method">
+<meta property="og:url" content="http://sparkera.ca/2016/03/11/Scala-Apply-Method/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="A blog for big data, hadoop, spark, data mining, dw, bi, cloud computing, visulization.">
+<meta property="og:description" content="ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
+For example, we create a class of RiceCooker and its method co">
+<meta property="og:image" content="http://sparkera.ca/images/apply_scala.png">
+<meta property="og:updated_time" content="2016-03-12T00:52:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sparkera">
-<meta name="twitter:description" content="A blog for big data, hadoop, spark, data mining, dw, bi, cloud computing, visulization.">
+<meta name="twitter:title" content="Scala Apply Method">
+<meta name="twitter:description" content="ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
+For example, we create a class of RiceCooker and its method co">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -84,61 +89,66 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon fa fa-archive"></i>archive: 2012/11</h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/Blog/">Blog</a></h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-Scala-Apply-Method" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2012" class="archive-year"><i class="icon fa fa-calendar-o"></i>2012</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-<a href="/2012/11/10/Hadoop-Job-Patterns/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span style="background-image:url(http://imgur.com/OWTGVjD.jpg
-)" alt="Hadoop Job Patterns" class="thumbnail-image"></span>
+    <h1 class="article-title" itemprop="name">
+      Scala Apply Method
+    </h1>
   
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2016/03/11/Scala-Apply-Method/" class="article-date">
+  <time datetime="2016-03-11T05:00:00.000Z" itemprop="datePublished">2016-03-11</time>
 </a>
-
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
-        <p class="date"><time datetime="2012-11-10T05:00:00.000Z" itemprop="datePublished">2012-11-10</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2012/11/10/Hadoop-Job-Patterns/" class="title">Hadoop Job Patterns</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-In order to handle complex hadoop jobs, such as DAG, you can use oozie. Here, I am talking about the native support of job handlers in the Hadoop MapReduce framework. The limitation is that it only s
       </p>
-    </div>
-  </article>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/images/apply_scala.png" alt=""><br>ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. </p>
+<p>For example, we create a class of <code>RiceCooker</code> and its method <code>cook</code> to cook rice. Wheneverwe need cook rice, we could call this method.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">cook</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">val</span> <span class="title">my_rice_cooker</span>:</span> <span class="type">RiceCooker</span> = <span class="keyword">new</span> <span class="type">RiceCooker</span>()</span><br><span class="line">my_rice_cooker.cook(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
+<p>Since the main function of RiceCooker is to cook rice, we can always put this cook function in an <code>apply</code> method as follows. As result, we can cook immediately after we put rice in the rice cooker without explicit invoking the any methods.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">apply</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">val</span> <span class="title">my_rice_cooker</span>:</span> <span class="type">RiceCooker</span> = <span class="keyword">new</span> <span class="type">RiceCooker</span>()</span><br><span class="line">my_rice_cooker(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
+<p>In addition, we can also move the apply method to the <a href="http://docs.scala-lang.org/tutorials/tour/singleton-objects.html" target="_blank" rel="external">companion object</a>. As result, the <code>apply</code> method becomes <strong>STATIC</strong>. Then, we can invoke it without creating new objects as below example.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">apply</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">RiceCooker</span>(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
+<p>The best practice of using <code>apply</code> method in scala is to implement <a href="http://alvinalexander.com/scala/factory-pattern-in-scala-design-patterns" target="_blank" rel="external">factory pattern</a>. The standard library of List in scala is an example of initialize objects using <code>apply</code> method in its companion object without using regular <code>new</code> keyword.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val a = List(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure></p>
+<p>At the end, I give a comprehensive example of using the <code>apply</code> method in both way as follows.<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class <span class="type">Test</span>(n :<span class="type">Int</span>) &#123;</span><br><span class="line">val a = <span class="type">Array</span>[<span class="type">Int</span>](n)</span><br><span class="line">def apply(n :<span class="type">Int</span>) = a(n)</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * <span class="type">Scala</span> simply makes a.update(x,y) to a(x)=y <span class="keyword">with</span> syntactic sugar</span><br><span class="line"> */</span><br><span class="line">def update(n:<span class="type">Int</span>, v:<span class="type">Int</span>) = a(n) = v </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">object</span> <span class="type">Test</span> &#123;</span><br><span class="line">def apply(n :<span class="type">Int</span>) = new <span class="type">Test</span>(n)</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * <span class="type">Call</span> <span class="keyword">static</span> apply <span class="keyword">method</span> <span class="keyword">in</span> companion <span class="keyword">object</span> to create an <span class="keyword">object</span></span><br><span class="line"> */</span><br><span class="line">val tester = <span class="type">Test</span>(<span class="number">10</span>) </span><br><span class="line"></span><br><span class="line">tester(<span class="number">0</span>) = <span class="number">1</span> //<span class="type">This</span> <span class="keyword">is</span> equal to tester.update(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">/*</span><br><span class="line"> * <span class="type">Call</span> a regular apply <span class="keyword">method</span> defined <span class="keyword">in</span> the class</span><br><span class="line"> * println(tester(<span class="number">0</span>)) <span class="keyword">is</span> equal to println(tester.apply(<span class="number">0</span>))</span><br><span class="line"> */</span><br><span class="line">println(tester(<span class="number">0</span>))</span><br></pre></td></tr></table></figure></p>
 
-    
       </div>
-    
-  
-  
-    </div></section>
-  
-  
+	  <div class="addthis_native_toolbox">
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ccd80609fffe5a" async="async">
+  </script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ccd80609fffe5a" async="async">
+  </script>
+  </div>
+      <footer class="article-footer">
+        <a data-url="http://sparkera.ca/2016/03/11/Scala-Apply-Method/" data-id="cilof3p7p0003vlv1p7okr2kn" class="article-share-link">Share</a>
+        
+          <a href="http://sparkera.ca/2016/03/11/Scala-Apply-Method/#comments" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scala/">scala</a></li></ul>
 
+      </footer>
+    </div>
+  
+  </article>
+  
+  
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </section>
+  
+  
 
             </div>
           </section>
@@ -160,6 +170,19 @@ In order to handle complex hadoop jobs, such as DAG, you can use oozie. Here, I 
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/06/Dev-Spark-WordCount/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">Develop Spark WordCount</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
@@ -339,11 +362,13 @@ In order to handle complex hadoop jobs, such as DAG, you can use oozie. Here, I 
 <script>
   var disqus_shortname = 'sparkera';
   
+  var disqus_url = 'http://sparkera.ca/2016/03/11/Scala-Apply-Method/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
