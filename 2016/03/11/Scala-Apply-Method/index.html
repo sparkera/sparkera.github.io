@@ -6,20 +6,20 @@
   
   <title>Scala Apply Method | Sparkera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
-For example, we create a class of RiceCooker and its method co">
+  <meta name="description" content="The apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
+For example, we create a class of RiceCooker and its method cook">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scala Apply Method">
 <meta property="og:url" content="http://sparkera.ca/2016/03/11/Scala-Apply-Method/index.html">
 <meta property="og:site_name" content="Sparkera">
-<meta property="og:description" content="ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
-For example, we create a class of RiceCooker and its method co">
+<meta property="og:description" content="The apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
+For example, we create a class of RiceCooker and its method cook">
 <meta property="og:image" content="http://sparkera.ca/images/apply_scala.png">
-<meta property="og:updated_time" content="2016-03-12T00:52:04.000Z">
+<meta property="og:updated_time" content="2016-03-12T00:53:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scala Apply Method">
-<meta name="twitter:description" content="ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
-For example, we create a class of RiceCooker and its method co">
+<meta name="twitter:description" content="The apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. 
+For example, we create a class of RiceCooker and its method cook">
   
   
     <link rel="icon" href="/image/favicon.ico">
@@ -113,7 +113,7 @@ For example, we create a class of RiceCooker and its method co">
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="/images/apply_scala.png" alt=""><br>ItThe apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. </p>
+        <p><img src="/images/apply_scala.png" alt=""><br>The apply methods in scala has a nice syntactic sugar. It allows us to define semantics like java array access for an arbitrary class. </p>
 <p>For example, we create a class of <code>RiceCooker</code> and its method <code>cook</code> to cook rice. Wheneverwe need cook rice, we could call this method.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">cook</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">val</span> <span class="title">my_rice_cooker</span>:</span> <span class="type">RiceCooker</span> = <span class="keyword">new</span> <span class="type">RiceCooker</span>()</span><br><span class="line">my_rice_cooker.cook(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
 <p>Since the main function of RiceCooker is to cook rice, we can always put this cook function in an <code>apply</code> method as follows. As result, we can cook immediately after we put rice in the rice cooker without explicit invoking the any methods.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">apply</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">val</span> <span class="title">my_rice_cooker</span>:</span> <span class="type">RiceCooker</span> = <span class="keyword">new</span> <span class="type">RiceCooker</span>()</span><br><span class="line">my_rice_cooker(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
 <p>In addition, we can also move the apply method to the <a href="http://docs.scala-lang.org/tutorials/tour/singleton-objects.html" target="_blank" rel="external">companion object</a>. As result, the <code>apply</code> method becomes <strong>STATIC</strong>. Then, we can invoke it without creating new objects as below example.<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">RiceCooker</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">apply</span>(</span>cup_of_rice: <span class="type">Rice</span>) = &#123;</span><br><span class="line">    cup_of_rice.isDone = <span class="literal">true</span></span><br><span class="line">    cup_of_rice</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">RiceCooker</span>(<span class="keyword">new</span> <span class="type">Rice</span>())</span><br></pre></td></tr></table></figure></p>
@@ -129,7 +129,7 @@ For example, we create a class of RiceCooker and its method co">
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2016/03/11/Scala-Apply-Method/" data-id="cilof3p7p0003vlv1p7okr2kn" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2016/03/11/Scala-Apply-Method/" data-id="cilof53y00003w4v1yjra61jk" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2016/03/11/Scala-Apply-Method/#comments" class="article-comment-link">Comments</a>
         
