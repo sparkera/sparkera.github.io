@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="NewsLast week, HDP had announced to expend their strategic relationship with Pivotal. This will bring together Hortonworks’ expertise and support for data management and processing with Pivotal’s top">
 <meta property="og:image" content="http://thenewstack.io/wp-content/uploads/2015/09/6122510599_f5d461ef18_z.jpg">
-<meta property="og:updated_time" content="2016-04-19T01:41:20.000Z">
+<meta property="og:updated_time" content="2016-04-19T01:47:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apache HAWQ is Landing on HDP">
 <meta name="twitter:description" content="NewsLast week, HDP had announced to expend their strategic relationship with Pivotal. This will bring together Hortonworks’ expertise and support for data management and processing with Pivotal’s top">
@@ -116,10 +116,10 @@
 <ul>
 <li><p>Performance bottlenecks: When data synchronization is required which is quite common for big data analytics, the low performed nodes in the MPP cluster will be the bottleneck of the job running. All of the other jobs may just wait for this slow job to complete so it brings down the whole cluster performance, even worse failed the query because of OOM issue. This is the same problem where MapReduce like algorithms try to solve through <a href="https://en.wikipedia.org/wiki/Speculative_execution" target="_blank" rel="external">speculative execution</a>.</p>
 </li>
-<li><p>Concurrency bottlenecks: There is known concurrency issue that MPP’s concurrency is tightly depending on the job instead of the scale of processing units/resources. For example, clusters of 4 nodes and 400 nodes would support the same level of concurrency. Here is an <a href="http://hortonworks.com/blog/impala-vs-hive-performance-benchmark/" target="_blank" rel="external">article</a> mention about the same issue in Apache Impala from Yahoo team. A modern MPP system always has a limit of 50 machines in a typical cluster without much more scalabilities. And, this is an area that MapReduce like algorithms can well leverage its independent task processing model which scales well with more computing resource.</p>
+<li><p>Concurrency bottlenecks: There is known concurrency issue that MPP’s concurrency is tightly depending on the job instead of the scale of processing units/resources. For example, clusters of 50 nodes and 500 nodes would support the same level of concurrency. Here is an <a href="http://hortonworks.com/blog/impala-vs-hive-performance-benchmark/" target="_blank" rel="external">article</a> mentioning about the same issue in Apache Impala from Yahoo team. A modern MPP system always has such limitation of around 50 machines in a typical cluster without much more scalabilities. And, this is an area where MapReduce like algorithms can well leverage its independent task processing model and also scales well with more computing resource added.</p>
 </li>
 </ul>
-<h2 id="Future">Future</h2><p>For the coming release of HDP with the closer strategic relationship with Pivotal, Apache HAWQ will introduce a completely new design with a combined advantages from both of MPP and Batch. There is a good <a href="https://blog.pivotal.io/big-data-pivotal/products/apache-hawq-next-step-in-massively-parallel-processing" target="_blank" rel="external">article</a> covering more details for the future of Apache HAWQ. Read it and look forward how it looks like soon :).</p>
+<h2 id="Future">Future</h2><p>For the coming release of HDP with the closer strategic relationship with Pivotal, Apache HAWQ will introduce a completely new design with a combined advantages from both of MPP and Batch. Let’s look forward how it looks like soon :).</p>
 
       </div>
 	  <div class="addthis_native_toolbox">
@@ -130,7 +130,7 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2016/04/18/Apache-HAWQ-on-HDP/" data-id="cin6rlc6p0003gfv1a1n4a67o" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2016/04/18/Apache-HAWQ-on-HDP/" data-id="cin6rsxf10003gwv1zruej6p9" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2016/04/18/Apache-HAWQ-on-HDP/#comments" class="article-comment-link">Comments</a>
         
