@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2016/04/18/Apache-HAWQ-on-HDP/</loc>
+    <lastmod>2016-04-19T01:25:01.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2016/03/11/Scala-Apply-Method/</loc>
     <lastmod>2016-03-12T03:14:36.000Z</lastmod>
   </url>

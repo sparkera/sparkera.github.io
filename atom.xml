@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-03-12T03:14:36.000Z</updated>
+  <updated>2016-04-19T01:25:01.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Apache HAWQ is Landing on HDP]]></title>
+    <link href="http://sparkera.ca/2016/04/18/Apache-HAWQ-on-HDP/"/>
+    <id>http://sparkera.ca/2016/04/18/Apache-HAWQ-on-HDP/</id>
+    <published>2016-04-18T04:00:00.000Z</published>
+    <updated>2016-04-19T01:25:01.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://thenewstack.io/wp-content/uploads/2015/09/6122510599_f5d461ef18_z.jpg" alt=""></p>
+<h2 id="News">News</h2><p>Last week, <a href="http://hortonworks.com/" target="_blank" rel="external">HDP</a> announced to expend their strategic relationship with <a href="http://pivotal.io/" target="_blank" rel="external">Pivotal</a>. This will bring together Hortonworks’ expertise and support for data management and processing with Pivotal’s top analytics engine for Apache® HadoopTM. The full announcement is <a href="http://hortonworks.com/press-releases/hortonworks-pivotal-expand-relationship-deliver-enterprise-ready-modern-data-platforms-data-management-analytics/" target="_blank" rel="external">here</a>.</p>
+<p>This is to say as from my understanding, Pivotal will basically give up their Pivotal HD version and mainly resell Hortonworks Data Platform (HDP) for instead. As the return, Hortonworks will support and include Pivotal’s leading product (open sourced last year) <a href="http://hawq.incubator.apache.org/" target="_blank" rel="external">Apache HAWQ</a> to the next version of HDP around Q2 of 2016. This is obviously great deal with Hortonworks by “eliminating” a competitor as the open source big data solution provider. In addition, HDP finally gets a chance to include an MPP like SQL over Hadoop solution to its distribution to compete with <a href="http://impala.io/" target="_blank" rel="external">Impala</a> in CDH. Nowadays, Apache Hive + Tez is still the leading tool for a batch-oriented job. Considering the maturity as well as stability, this is not likely to change in a few years. On the other hand, data analytics need more near-real time access pattern with more flexibility, performance, but less consideration on reliability (Less frequent failures in the ad-hoc use case are tolerable). As a result, Apache Impala + <a href="http://getkudu.io/" target="_blank" rel="external">Apache Kudu</a> starts catching people’s eyes a lot mainly contributed by Cloudera. However, you are not likely to see them packed in the HDP software because of the underlying competitions I guess. However, the embrace of Apache HAWQ will change the game as for Hortonworks. </p>
+<h2 id="History_-_MPP_vs-_Batch">History - MPP vs. Batch</h2><p>The design of MPP solutions is the shared-nothing architecture. Each MMP executor has separate CPU, memory, and disk resources. These resources are dedicated to the executors at run time. There may be a managed data exchange through the network, usually called synchronization which is required for shuffling the data across the cluster to perform joins and aggregations. The concept of resource isolation behind MPP solutions works perfectly fine most of the time except for two scenarios as follows.</p>
+<ul>
+<li>Performance bottlenecks: When data synchronization is required which is quite common for big data analytics, the low performed nodes in the MPP cluster will be the bottleneck of the job running. All of the other jobs may just wait for this slow job to complete so it brings down the whole cluster performance, even worse failed the query because of OOM issue. This is the same problem where MapReduce like algorithms try to solve through <a href="https://en.wikipedia.org/wiki/Speculative_execution" target="_blank" rel="external">speculative execution</a>.</li>
+<li>Concurrency bottlenecks: There is known concurrency issue that MPP’s concurrency is tightly depending on the job instead of the scale of processing units/resources. For example, clusters of 4 nodes and 400 nodes would support the same level of concurrency. Here is an <a href="http://hortonworks.com/blog/impala-vs-hive-performance-benchmark/" target="_blank" rel="external">article</a> mention about the same issue in Apache Impala from Yahoo team. A modern MPP system always has a limit of 50 machines in a typical cluster without much more scalabilities. And, this is an area that MapReduce like algorithms can well leverage its independent task processing model which scales well with more computing resource.</li>
+</ul>
+<h2 id="Future">Future</h2><p>For the coming release of HDP with the closer strategic relationship with Pivotal, Apache HAWQ will introduce a completely new design with a combined advantages from both of MPP and Batch. There is a good <a href="https://blog.pivotal.io/big-data-pivotal/products/apache-hawq-next-step-in-massively-parallel-processing" target="_blank" rel="external">article</a> covering more details for this. Look forward how it looks like :).</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://thenewstack.io/wp-content/uploads/2015/09/6122510599_f5d461ef18_z.jpg" alt=""></p>
+<h2 id="News">News</h2><p>Last week, ]]>
+    </summary>
+    
+      <category term="bigdata" scheme="http://sparkera.ca/tags/bigdata/"/>
+    
+      <category term="hawq" scheme="http://sparkera.ca/tags/hawq/"/>
+    
+      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Scala Apply Method]]></title>
@@ -672,83 +701,6 @@
     </summary>
     
       <category term="bigdata" scheme="http://sparkera.ca/tags/bigdata/"/>
-    
-      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Data Lake Stages]]></title>
-    <link href="http://sparkera.ca/2015/02/02/Data-Lake-Stages/"/>
-    <id>http://sparkera.ca/2015/02/02/Data-Lake-Stages/</id>
-    <published>2015-02-02T05:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/datalake.png" align="left"> <br><br><br>Edd has post a very impressive <a href="http://www.forbes.com/sites/edddumbill/2014/01/14/the-data-lake-dream/" target="_blank" rel="external">blog</a> about how Hadoop ecosystem influence the data lake in enterprise recently. It discussed about the four following stages when enterprise’s data evolution  to the dream of data lake. I also share some of mine as addition.</p>
-<h5 id="Stage_1_-_Life_Before_Hadoop">Stage 1 - Life Before Hadoop</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage1.png" alt="Life Before Hadoop" title="Life Before Hadoop"></p>
-<p>In this stage, the enterprise data architecture has following characteristics.</p>
-<ul>
-<li>Applications stand alone with their databases</li>
-<li>Some applications contribute data to a data warehouse</li>
-<li>Analysts run reporting and analytics in data warehouse</li>
-</ul>
-<p>What’s more:</p>
-<ul>
-<li>This is a period where typical enterprise data warehouse (EDW) happens. Most of data sets are structured and well-organized. </li>
-</ul>
-<h5 id="Stage_2_-_Hadoop_Is_Introduced">Stage 2 - Hadoop Is Introduced</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage2.png" alt="Hadoop Is Introduced" title="Hadoop Is Introduced"></p>
-<p>In this stage, the enterprise data architecture has following characteristics.</p>
-<ul>
-<li>Applications contribute data to Hadoop</li>
-<li>Hadoop runs batch MapReduce jobs</li>
-<li>Hadoop used for ETL into warehouse or analytic databases</li>
-<li>Hadoop data reintroduced into applications</li>
-</ul>
-<p>What’s more:</p>
-<ul>
-<li>This is a period where typical EDW and hadoop merge happens. Most of data sets are semi-structured and unstructured with structured data. </li>
-<li>The hot data is more likely injected to EDW since EDW has better support to BI tools and faster response for ad-hoc query.</li>
-<li>Data in Hadoop becomes a center data depository considering the data volume and management cost. Therefore, the EDW also injects its data to the Hadoop. Here is where I disagree with the Edd since I believe it is more like a data exchange (bidirections) instead of single direction in the picture.</li>
-<li>Analytics over Hadoop/Big data starts as data verification, long period statistics, and trending calculations.</li>
-</ul>
-<h5 id="Stage_3_-_Growing_The_Data_Lake">Stage 3 - Growing The Data Lake</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage3.png" alt="Growing The Data Lake" title="Growing The Data Lake"></p>
-<p>In this stage, the enterprise data architecture has following characteristics.</p>
-<ul>
-<li>Newly built systems center around Hadoop by default</li>
-<li>Applications use each other’s data via Hadoop</li>
-<li>Interactive use of Hadoop as in-Hadoop databases deployed (e.g. Impala, Greenplum, Spark)</li>
-<li>Hadoop becomes a default data destination, governance and metadata become important</li>
-<li>Data warehouse use becomes the exception, where legacy or special requirements dictate</li>
-<li>External data sources integrated via Hadoop</li>
-</ul>
-<p>What’s more:</p>
-<ul>
-<li>This is a period where typical EDW being replaced happens. </li>
-<li>Analytics over Hadoop becomes well accepted in terms of performance and compatibility.</li>
-<li>However, the Hadoop is still playing role of OLAP instead of OLTP</li>
-</ul>
-<h5 id="Stage_4_-_Data_Lake_And_Application_Cloud">Stage 4 - Data Lake And Application Cloud</h5><p><img src="http://b-i.forbesimg.com/edddumbill/files/2014/01/stage4.png" alt="Data Lake And Application Cloud" title="Data Lake And Application Cloud"></p>
-<p>In this stage, the enterprise data architecture has following characteristics.</p>
-<ul>
-<li>New applications are built on a Hadoop application platform around the data lake</li>
-<li>Hadoop matures as an elastic distributed data computing platform, for both operational and analytical functions</li>
-<li>Data lake adds security and governance layers</li>
-<li>Data availability increases, application deployment time decreases</li>
-<li>Some apps still have special or legacy needs and execute independently</li>
-</ul>
-<p>What’s more:</p>
-<ul>
-<li>This is a period where typical Data Oriented Architecture (DOA) starts.</li>
-<li>Hadoop becomes the central, operational, analytical of enterprise data lake.</li>
-<li>Different data lakes can also flow/exchange with each other by data services in terms of <strong><em>DATA OCEAN</em></strong></li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/datalake.png" align="left"> <br><br><br>Edd has post a very impressive <a href="http://www.forbes.com/sites/edddumbill/]]>
-    </summary>
-    
-      <category term="bigdata" scheme="http://sparkera.ca/tags/bigdata/"/>
-    
-      <category term="hadoop" scheme="http://sparkera.ca/tags/hadoop/"/>
     
       <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
     
