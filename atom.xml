@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-04-19T01:47:09.000Z</updated>
+  <updated>2016-08-07T15:01:21.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -13,6 +13,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Apache Kafka Overview]]></title>
+    <link href="http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/"/>
+    <id>http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/</id>
+    <published>2016-08-07T04:00:00.000Z</published>
+    <updated>2016-08-07T15:01:21.000Z</updated>
+    <content type="html"><![CDATA[<p>The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, and Pig were all designed to process data in batches rather than continuously. Recently enterprises have discovered the power of analyzing and processing data and events as they happen instead of batches. Most traditional messaging systems, such as RabbitQ, EBS, neither scale up to handle big data in realtime nor use friendly with big data ecosystem. But, it is lucky that we have group of engineers at LinkedIn built and open-sourced distributed messaging framework that meets the demands of big data by scaling on commodity hardware, called <a href="http://kafka.apache.org/" target="_blank" rel="external">Kafka</a></p>
+<h2 id="What_is_Kafka?">What is Kafka?</h2><p>Apache Kafka is messaging system built to scale for big data. Similar to Apache ActiveMQ or RabbitMq, Kafka enables applications built on different platforms to communicate via asynchronous message passing. But Kafka differs from these more traditional messaging systems in key ways:</p>
+<p>It’s designed to scale horizontally, by adding more commodity servers.<br>It provides much higher throughput for both producer and consumer processes.<br>It can be used to support both batch and real-time use cases.<br>It doesn’t support JMS, Java’s message-oriented middleware API.</p>
+<h2 id="Kafka’s_Architecture">Kafka’s Architecture</h2><p>There are some basic terminology used in Kafka architecture:</p>
+<ul>
+<li>A producer is process that can publish a message to a topic.</li>
+<li>A consumer is a process that can subscribe to one or more topics and consume messages published to topics.</li>
+<li>A topic category is the name of the feed to which messages are published.</li>
+<li>A broker is a process running on single machine.</li>
+<li>A cluster is a group of brokers working together.</li>
+</ul>
+<p><img src="http://hortonworks.com/wp-content/uploads/2014/10/Kafka-Broker-Diagram.png" alt=""><br>From above Kafka’s architecture, we can see it has a very simple design, which can result in better performance and throughput. Every topic in Kafka is like a simple log file. When a producer publishes a message, the Kafka server appends it to the end of the log file for its given topic. The server also assigns an offset, which is a number used to permanently identify each message. As the number of messages grows, the value of each offset increases; for example if the producer publishes three messages the first one might get an offset of 1, the second an offset of 2, and the third an offset of 3.</p>
+<p>When the Kafka consumer first starts, it will send a pull request to the server, asking to retrieve any messages for a particular topic with an offset value higher than 0. The server will check the log file for that topic and return the three new messages. The consumer will process the messages, then send a request for messages with an offset higher than 3, and so on.</p>
+<p>In Kafka, the client is responsible for remembering the offset count and retrieving messages.The Kafka server doesn’t track or manage message consumption. By default, a Kafka server will keep a message for seven days. A background thread in the server checks and deletes messages that are seven days or older. A consumer can access messages as long as they are on the server. It can read a message multiple times, and even read messages in reverse order of receipt. But if the consumer fails to retrieve the message before the seven days are up, it will miss that message.</p>
+<h2 id="Why_Kafka_so_Quick">Why Kafka so Quick</h2><p>Kafka is fast for a number of reasons. Below are few aspects for your reference.</p>
+<ul>
+<li>Zero Copy: It calls the OS kernal direct rather than at the application layer to move data fast. Here is more explanation from <a href="https://en.wikipedia.org/wiki/Zero-copy" target="_blank" rel="external">wikipedia</a>.</li>
+<li>Batch Data in Chunks - Kafka is all about batching the data into chunks. This minimises cross machine latency with all the buffering/copying that accompanies this.</li>
+<li>Avoids Random Disk Access - as Kafka is an immutable commit log it does not need to rewind the disk and do many random I/O operations and can just access the disk in a sequential manner. This enables it to get similar speeds from a physical disk compared with memory.</li>
+<li>Can Scale Horizontally - The ability to have thousands of partitions for a single topic spread among thousands of machines means Kafka can handle huge loads.</li>
+</ul>
+<h2 id="Future">Future</h2><p>At earlier of this year, Kafka has announced two important features brought by <a href="http://www.confluent.io/" target="_blank" rel="external">confluent</a>, which is the company started by that group of enginners in LinkedIn. One is Kafka Connect and the other is Kafka Stream. These two new “killing” features will be a big impact in the big data ecosystem. I’ll talk about them for more details in later posts.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, an]]>
+    </summary>
+    
+      <category term="kafka" scheme="http://sparkera.ca/tags/kafka/"/>
+    
+      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Apache HAWQ is Landing on HDP]]></title>
@@ -673,34 +712,6 @@
       <category term="hadoop" scheme="http://sparkera.ca/tags/hadoop/"/>
     
       <category term="hive" scheme="http://sparkera.ca/tags/hive/"/>
-    
-      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Data Analysis]]></title>
-    <link href="http://sparkera.ca/2015/02/06/Data-Analysis/"/>
-    <id>http://sparkera.ca/2015/02/06/Data-Analysis/</id>
-    <published>2015-02-06T05:00:00.000Z</published>
-    <updated>2015-09-23T23:45:21.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/Data-Analysis.jpg" alt=""></p>
-<p>A friend of mine asked me what is data analysis. This is a simple but difficult question. It is simple because we talk about data analysis all the time and everywhere. It is difficult because there are so many ways of explaining it at different time. In the ear of big data, I think data analysis have three following areas.</p>
-<ul>
-<li><p>Flatten Analysis: Analysis is performed on the static data set from single dimentional view. Most analysis are simple enough focusing on the fixed scope of data. It is more or less like statistics, such as total, average, standard devidations, etc. Simple SQL or Excel tools can be used to do flatten data analysis.</p>
-</li>
-<li><p>Dimentional Analysis</p>
-</li>
-<li><p>Iterational Analysis</p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/Data-Analysis.jpg" alt=""></p>
-<p>A friend of mine asked me what is data analysis. This is a simple but difficult quest]]>
-    </summary>
-    
-      <category term="bigdata" scheme="http://sparkera.ca/tags/bigdata/"/>
     
       <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
     
