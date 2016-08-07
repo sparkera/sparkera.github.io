@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, and Pig were all designed to process data in batches rather than">
 <meta property="og:image" content="http://hortonworks.com/wp-content/uploads/2014/10/Kafka-Broker-Diagram.png">
-<meta property="og:updated_time" content="2016-08-07T15:01:21.000Z">
+<meta property="og:updated_time" content="2016-08-07T15:06:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apache Kafka Overview">
 <meta name="twitter:description" content="The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, and Pig were all designed to process data in batches rather than">
@@ -110,9 +110,14 @@
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, and Pig were all designed to process data in batches rather than continuously. Recently enterprises have discovered the power of analyzing and processing data and events as they happen instead of batches. Most traditional messaging systems, such as RabbitQ, EBS, neither scale up to handle big data in realtime nor use friendly with big data ecosystem. But, it is lucky that we have group of engineers at LinkedIn built and open-sourced distributed messaging framework that meets the demands of big data by scaling on commodity hardware, called <a href="http://kafka.apache.org/" target="_blank" rel="external">Kafka</a></p>
+        <p>The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, and Pig were all designed to process data in batches rather than continuously. Recently enterprises have discovered the power of analyzing and processing data and events as they happen instead of batches. Most traditional messaging systems, such as RabbitMq, neither scale up to handle big data in realtime nor use friendly with big data ecosystem. But, it is lucky that we have group of engineers at LinkedIn built and open-sourced distributed messaging framework that meets the demands of big data by scaling on commodity hardware, called <a href="http://kafka.apache.org/" target="_blank" rel="external">Kafka</a>.</p>
 <h2 id="What_is_Kafka?">What is Kafka?</h2><p>Apache Kafka is messaging system built to scale for big data. Similar to Apache ActiveMQ or RabbitMq, Kafka enables applications built on different platforms to communicate via asynchronous message passing. But Kafka differs from these more traditional messaging systems in key ways:</p>
-<p>It’s designed to scale horizontally, by adding more commodity servers.<br>It provides much higher throughput for both producer and consumer processes.<br>It can be used to support both batch and real-time use cases.<br>It doesn’t support JMS, Java’s message-oriented middleware API.</p>
+<ul>
+<li>It’s designed to scale horizontally, by adding more commodity servers.</li>
+<li>It provides much higher throughput for both producer and consumer processes.</li>
+<li>It can be used to support both batch and real-time use cases.</li>
+<li>It doesn’t support JMS, Java’s message-oriented middleware API.</li>
+</ul>
 <h2 id="Kafka’s_Architecture">Kafka’s Architecture</h2><p>There are some basic terminology used in Kafka architecture:</p>
 <ul>
 <li>A producer is process that can publish a message to a topic.</li>
@@ -142,7 +147,7 @@
   </script>
   </div>
       <footer class="article-footer">
-        <a data-url="http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/" data-id="cirkqncga0003jiv14pxradmo" class="article-share-link">Share</a>
+        <a data-url="http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/" data-id="cirkqu7fx0003kbv1e6d15un4" class="article-share-link">Share</a>
         
           <a href="http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/#comments" class="article-comment-link">Comments</a>
         
