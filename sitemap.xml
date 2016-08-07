@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/</loc>
+    <lastmod>2016-08-07T15:01:21.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2016/04/18/Apache-HAWQ-on-HDP/</loc>
     <lastmod>2016-04-19T01:47:09.000Z</lastmod>
   </url>
@@ -252,12 +257,12 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
+    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/</loc>
+    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
@@ -357,7 +362,7 @@
   </url>
   
   <url>
-    <loc>http://sparkera.ca/2013/07/02/HBase-Add-Backup-Master-Node/</loc>
+    <loc>http://sparkera.ca/2013/07/06/HBase-Disable-Major-Compaction/</loc>
     <lastmod>2015-08-22T02:27:11.000Z</lastmod>
   </url>
   
