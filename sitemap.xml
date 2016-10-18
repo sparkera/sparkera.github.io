@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sparkera.ca/2016/10/17/Apache-Hive-RowID-Generation/</loc>
+    <lastmod>2016-10-18T00:18:08.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/</loc>
-    <lastmod>2016-08-07T15:01:21.000Z</lastmod>
+    <lastmod>2016-08-07T15:06:51.000Z</lastmod>
   </url>
   
   <url>

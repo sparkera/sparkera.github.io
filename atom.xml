@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://sparkera.ca/"/>
-  <updated>2016-08-07T15:01:21.000Z</updated>
+  <updated>2016-10-18T00:18:08.000Z</updated>
   <id>http://sparkera.ca/</id>
   
   <author>
@@ -15,14 +15,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Apache Hive RowID Generation]]></title>
+    <link href="http://sparkera.ca/2016/10/17/Apache-Hive-RowID-Generation/"/>
+    <id>http://sparkera.ca/2016/10/17/Apache-Hive-RowID-Generation/</id>
+    <published>2016-10-17T04:00:00.000Z</published>
+    <updated>2016-10-18T00:18:08.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://www.codeinnovationsblog.com/wp-content/uploads/2016/08/big-data-hive.jpg" alt=""><br>It is quite often that we need a unique identifier for each single rows in the Apache Hive tables. This is quite useful when you need such columns as surrogate keys in data warehouse, as the primary key for data or use as system nature keys. There are following ways of doing that in Hive.</p>
+<h3 id="ROW_NUMBER()">ROW_NUMBER()</h3><p>Hive have a couple of internal functions to achieve this. <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+WindowingAndAnalytics" target="_blank" rel="external">ROW_NUMBER</a> function, which can generate row number for each partition of data. Although there is no documentation in the official wiki, you can easily find articles regarding use this function to generate row number for the whole table.</p>
+<pre><code><span class="type">SELECT</span> <span class="type">ROW_NUMBER</span><span class="literal">()</span> <span class="type">OVER</span> <span class="literal">()</span> <span class="keyword">as</span> row_num <span class="type">FROM</span> table_name
+</code></pre><p>However, it is reported in some version of Hive that the function has exceptions when used in views or weird behavior, see <a href="https://issues.apache.org/jira/browse/HIVE-11583" target="_blank" rel="external">here</a> and <a href="https://issues.apache.org/jira/browse/HIVE-13072" target="_blank" rel="external">there</a>. Therefore, it is a quite danger to use this approach right now since your result is unexpected across different version of Hive.</p>
+<h3 id="Java_Package">Java Package</h3><p>Hive is capable of leveraging Java internal packages naturally. By using Java’s UUID, you can directly generate a UUID number for each row as follows.</p>
+<pre><code><span class="keyword">SELECT</span> 
+regexp_replace(reflect(<span class="string">'java.util.UUID'</span>,<span class="string">'randomUUID'</span>), <span class="string">'-'</span>, <span class="string">''</span>) <span class="keyword">as</span> row_num  
+<span class="keyword">FROM</span> table_name
+</code></pre><p>As UUID generation logic defines, there are chance of collision. However, it is very low chance.</p>
+<h3 id="Hive_Mall_Ex">Hive Mall Ex</h3><p>Hivemall is a scalable machine learning library that runs on Apache Hive. It has provided a UDF called <a href="https://github.com/myui/hivemall/blob/master/core/src/main/java/hivemall/tools/mapred/RowIdUDF.java" target="_blank" rel="external">RowIdUDF</a>. It combines a MapReduce task ID and random number as row</p>
+<pre><code><span class="keyword">SELECT</span> rowid() <span class="keyword">as</span> row_num <span class="keyword">FROM</span> table_name
+</code></pre><h3 id="Hive_Virtual_Columns">Hive Virtual Columns</h3><p>Hive has provided three <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+VirtualColumns" target="_blank" rel="external">virtual columns</a> as follows.</p>
+<ul>
+<li>INPUT<strong>FILE</strong>NAME: Full URI of a file name in HDFS.</li>
+<li>BLOCK<strong>OFFSET</strong>INSIDE__FILE: Byte offset for the block from beginning of the file.</li>
+<li>ROW<strong>OFFSET</strong>INSIDE__BLOCK: Byte offset for the line within the block.</li>
+</ul>
+<p>We can always combine three above virtual columns to identify the each line in the table. In addition, we can control the length of this combined value by increasing the number of files (increasing the number of reducers). As result, the offset value becomes smaller for each block. The usage of this approach is as follows. Note, ROW<strong>OFFSET</strong>INSIDE__BLOCK is only available for RCFile or SequenceFile format of data.</p>
+<pre><code><span class="operator"><span class="keyword">SET</span> hive.exec.rowoffset=<span class="literal">true</span>;</span> // To enable ROW__OFFSET__INSIDE__BLOCK
+
+<span class="operator">SELECT 
+// <span class="keyword">Convert</span> <span class="keyword">file</span> <span class="keyword">name</span> <span class="keyword">as</span> <span class="built_in">number</span>, such <span class="keyword">as</span> <span class="number">000001</span>_0 <span class="keyword">to</span> <span class="number">10</span>
+<span class="keyword">concat</span>(<span class="keyword">cast</span>(regexp_replace(<span class="keyword">reverse</span>(<span class="keyword">split</span>(<span class="keyword">reverse</span>(INPUT__FILE__NAME),<span class="string">'/'</span>)[<span class="number">0</span>]),<span class="string">'_'</span>,<span class="string">''</span>) <span class="keyword">as</span> <span class="built_in">int</span>), 
+BLOCK__OFFSET__INSIDE__FILE, 
+ROW__OFFSET__INSIDE__BLOCK) <span class="keyword">as</span> row_num
+<span class="keyword">FROM</span> table_name</span>
+</code></pre><h3 id="Conclusion">Conclusion</h3><p>Before Hive ROW_NUMBER() function issue gets fixed, it is recommended to use either Hivemall rowid() or virtual columns. If you need to control the length of row id, you have to use Hive virtual columns approach.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://www.codeinnovationsblog.com/wp-content/uploads/2016/08/big-data-hive.jpg" alt=""><br>It is quite often that we need a un]]>
+    </summary>
+    
+      <category term="hive" scheme="http://sparkera.ca/tags/hive/"/>
+    
+      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Apache Kafka Overview]]></title>
     <link href="http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/"/>
     <id>http://sparkera.ca/2016/08/07/Apache-Kafka-Overview/</id>
     <published>2016-08-07T04:00:00.000Z</published>
-    <updated>2016-08-07T15:01:21.000Z</updated>
-    <content type="html"><![CDATA[<p>The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, and Pig were all designed to process data in batches rather than continuously. Recently enterprises have discovered the power of analyzing and processing data and events as they happen instead of batches. Most traditional messaging systems, such as RabbitQ, EBS, neither scale up to handle big data in realtime nor use friendly with big data ecosystem. But, it is lucky that we have group of engineers at LinkedIn built and open-sourced distributed messaging framework that meets the demands of big data by scaling on commodity hardware, called <a href="http://kafka.apache.org/" target="_blank" rel="external">Kafka</a></p>
+    <updated>2016-08-07T15:06:51.000Z</updated>
+    <content type="html"><![CDATA[<p>The big data processing started by focusing on the batch processing. Distributed data storage and querying tools like MapReduce, Hive, and Pig were all designed to process data in batches rather than continuously. Recently enterprises have discovered the power of analyzing and processing data and events as they happen instead of batches. Most traditional messaging systems, such as RabbitMq, neither scale up to handle big data in realtime nor use friendly with big data ecosystem. But, it is lucky that we have group of engineers at LinkedIn built and open-sourced distributed messaging framework that meets the demands of big data by scaling on commodity hardware, called <a href="http://kafka.apache.org/" target="_blank" rel="external">Kafka</a>.</p>
 <h2 id="What_is_Kafka?">What is Kafka?</h2><p>Apache Kafka is messaging system built to scale for big data. Similar to Apache ActiveMQ or RabbitMq, Kafka enables applications built on different platforms to communicate via asynchronous message passing. But Kafka differs from these more traditional messaging systems in key ways:</p>
-<p>It’s designed to scale horizontally, by adding more commodity servers.<br>It provides much higher throughput for both producer and consumer processes.<br>It can be used to support both batch and real-time use cases.<br>It doesn’t support JMS, Java’s message-oriented middleware API.</p>
+<ul>
+<li>It’s designed to scale horizontally, by adding more commodity servers.</li>
+<li>It provides much higher throughput for both producer and consumer processes.</li>
+<li>It can be used to support both batch and real-time use cases.</li>
+<li>It doesn’t support JMS, Java’s message-oriented middleware API.</li>
+</ul>
 <h2 id="Kafka’s_Architecture">Kafka’s Architecture</h2><p>There are some basic terminology used in Kafka architecture:</p>
 <ul>
 <li>A producer is process that can publish a message to a topic.</li>
@@ -676,37 +725,6 @@
     <![CDATA[<p>Finally, I made it. I got it published after working for 6 monthes.</p>
 <h3 id="Apache_Hive_Essentials">Apache Hive Essentials</h3><ul>
 <]]>
-    </summary>
-    
-      <category term="hadoop" scheme="http://sparkera.ca/tags/hadoop/"/>
-    
-      <category term="hive" scheme="http://sparkera.ca/tags/hive/"/>
-    
-      <category term="Blog" scheme="http://sparkera.ca/categories/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hive and Hadoop Exceptions]]></title>
-    <link href="http://sparkera.ca/2015/02/12/Hive%20and%20Hadoop%20Exceptions/"/>
-    <id>http://sparkera.ca/2015/02/12/Hive and Hadoop Exceptions/</id>
-    <published>2015-02-12T05:00:00.000Z</published>
-    <updated>2015-08-22T02:27:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
-<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports following exceptions</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.apache</span><span class="class">.hadoop</span><span class="class">.hive</span><span class="class">.ql</span><span class="class">.metadata</span><span class="class">.HiveException</span>:java<span class="class">.io</span><span class="class">.IOException</span>:Filesystem closed</span><br></pre></td></tr></table></figure>
-<p>According to the search <a href="http://mail-archives.apache.org/mod_mbox/hadoop-common-user/201207.mbox/%3CCAL=yAAE1mM-JRb=eJGkAtxWQ7AJ3e7WJCT9BhgWq7XDTNxrwfw@mail.gmail.com%3E" target="_blank" rel="external">here</a>, the mainly reason for this is that when multiple nodes read HFDS files if one node is offline, it will throw such exception when the other nodes are still reading the data cached. There are two ways to resolve this.</p>
-<ul>
-<li>Turn off JVM reuse</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapred.job.reuse.jvm.num.tasks<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>-1<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Disable caches</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.hdfs.impl.disable.cache<span class="tag">&lt;/<span class="title">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">value</span>&gt;</span>true<span class="tag">&lt;/<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">property</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/exceptions.png" alt=""></p>
-<p>I installed Hive 1.0.0 on Hadoop 1.2.1. When I try to enter the Hive CLI, it reports fol]]>
     </summary>
     
       <category term="hadoop" scheme="http://sparkera.ca/tags/hadoop/"/>
