@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Sparkera">
 <meta property="og:description" content="It is quite often that we need a unique identifier for each single rows in the Apache Hive tables. This is quite useful when you need such columns as surrogate keys in data warehouse, as the primary k">
 <meta property="og:image" content="http://www.codeinnovationsblog.com/wp-content/uploads/2016/08/big-data-hive.jpg">
-<meta property="og:updated_time" content="2016-10-18T00:18:08.000Z">
+<meta property="og:updated_time" content="2016-10-18T00:29:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apache Hive RowID Generation">
 <meta name="twitter:description" content="It is quite often that we need a unique identifier for each single rows in the Apache Hive tables. This is quite useful when you need such columns as surrogate keys in data warehouse, as the primary k">
@@ -122,12 +122,10 @@ regexp_replace(reflect(<span class="string">'java.util.UUID'</span>,<span class=
 <h3 id="Hive_Mall_Ex">Hive Mall Ex</h3><p>Hivemall is a scalable machine learning library that runs on Apache Hive. It has provided a UDF called <a href="https://github.com/myui/hivemall/blob/master/core/src/main/java/hivemall/tools/mapred/RowIdUDF.java" target="_blank" rel="external">RowIdUDF</a>. It combines a MapReduce task ID and random number as row</p>
 <pre><code><span class="keyword">SELECT</span> rowid() <span class="keyword">as</span> row_num <span class="keyword">FROM</span> table_name
 </code></pre><h3 id="Hive_Virtual_Columns">Hive Virtual Columns</h3><p>Hive has provided three <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+VirtualColumns" target="_blank" rel="external">virtual columns</a> as follows.</p>
-<ul>
-<li>INPUT<strong>FILE</strong>NAME: Full URI of a file name in HDFS.</li>
-<li>BLOCK<strong>OFFSET</strong>INSIDE__FILE: Byte offset for the block from beginning of the file.</li>
-<li>ROW<strong>OFFSET</strong>INSIDE__BLOCK: Byte offset for the line within the block.</li>
-</ul>
-<p>We can always combine three above virtual columns to identify the each line in the table. In addition, we can control the length of this combined value by increasing the number of files (increasing the number of reducers). As result, the offset value becomes smaller for each block. The usage of this approach is as follows. Note, ROW<strong>OFFSET</strong>INSIDE__BLOCK is only available for RCFile or SequenceFile format of data.</p>
+<pre><code>INPUT__FILE__NAME: Full URI <span class="operator">of</span> <span class="operator">a</span> <span class="built_in">file</span> name <span class="operator">in</span> HDFS.
+BLOCK__OFFSET__INSIDE__FILE: Byte <span class="built_in">offset</span> <span class="keyword">for</span> <span class="operator">the</span> block <span class="built_in">from</span> beginning <span class="operator">of</span> <span class="operator">the</span> <span class="built_in">file</span>.
+ROW__OFFSET__INSIDE__BLOCK: Byte <span class="built_in">offset</span> <span class="keyword">for</span> <span class="operator">the</span> <span class="built_in">line</span> <span class="operator">within</span> <span class="operator">the</span> block.
+</code></pre><p>We can always combine three above virtual columns to identify the each line in the table. In addition, we can control the length of this combined value by increasing the number of files (increasing the number of reducers). As result, the offset value becomes smaller for each block. The usage of this approach is as follows. Note, ROW<strong>OFFSET</strong>INSIDE__BLOCK is only available for RCFile or SequenceFile format of data.</p>
 <pre><code><span class="operator"><span class="keyword">SET</span> hive.exec.rowoffset=<span class="literal">true</span>;</span> // To enable ROW__OFFSET__INSIDE__BLOCK
 
 <span class="operator">SELECT 
